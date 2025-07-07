@@ -6,7 +6,7 @@ nav_order: 1
 
 This documentation covers the specifications of the G4 arena and how to run, design and analyse different experiments.
 
-## Repositories for running different experiments on the Reiser Lab Electrophysiology Setup
+## Repositories
 Code for running different experimental protocols can be found in different Github repositories. 
 The code found in these repositories contain a mixture of code that works using the G4 software tools (see link above) that run within a GUI, and custom scripts that work through the command line in MATLAB. 
 
