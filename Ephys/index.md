@@ -1,12 +1,10 @@
 ---
 title: Ephys
 has_children: true
-has_toc: false
+has_toc: true
 nav_order: 1
 layout: home
 ---
-
-# Index for ephys setup 
 
 1. TOC
 {:toc}
