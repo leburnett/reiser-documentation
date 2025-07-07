@@ -6,8 +6,7 @@ nav_order: 2
 layout: home
 ---
 
-1. TOC
-{:toc}
+Here is some general documentation for the Ephys setup. This includes information on how to design and run protocols, as well as the specifications of the arena used in experiments.
 
 # Arena specs
 
