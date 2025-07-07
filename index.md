@@ -1,5 +1,5 @@
 ---
-title: How to run ephys experiments - Reiser Lab - G4 setup
+title: Reiser-Ephys
 layout: home
 nav_order: 1
 ---
