@@ -3,7 +3,7 @@ title: Protocols
 parent: Ephys
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 1
 layout: home
 ---
 
