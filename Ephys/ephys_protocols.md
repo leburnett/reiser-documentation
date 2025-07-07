@@ -2,14 +2,15 @@
 title: Protocols
 parent: Ephys
 has_children: true
-has_toc: true
+has_toc: false
 nav_order: 3
 layout: home
 ---
 
 There are different protocols that can be run on the Ephys setup. This website contains documentation on the following protocols:
-- [Direction selectivity probe protocol]
-- [Nested receptive field protocol]
+
+1. TOC
+{:toc}
 
 ## How to design a protocol
 Patterns, functions, GUI / designer versus from script. 
