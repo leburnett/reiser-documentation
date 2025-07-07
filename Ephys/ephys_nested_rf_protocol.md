@@ -7,7 +7,7 @@ nav_order: 4
 layout: home
 ---
 
-The 'Nested RF Protocol' was designed by LE Burnett in 2024 for patch electrophysiology experiments ran by JY Park. It is a multi-step protocol that trys to probe the receptive field (RF) structure of the neuron being recorded. 
+The 'Nested RF Protocol' was designed by LE Burnett in 2024 for patch electrophysiology experiments ran by JY Park. It is a multi-step protocol that tries to probe the receptive field (RF) structure of the neuron being recorded. 
 
 
 # Protocol 1 
