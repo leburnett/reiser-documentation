@@ -1,11 +1,8 @@
 ---
 title: Ephys
-parent: Home
 has_children: true
-has_toc: true
+has_toc: false
 nav_order: 2
-permalink: /Ephys/
-layout: home
 ---
 
 # Index for ephys setup 
