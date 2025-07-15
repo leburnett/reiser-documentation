@@ -7,10 +7,16 @@ nav_order: 1
 layout: home
 ---
 
+1. TOC
+{:toc}
+
 The 'Nested RF Protocol' was designed by LE Burnett in 2024 for patch electrophysiology experiments ran by JY Park. 
-It is a multi-step protocol that tries to probe the receptive field (RF) structure of the neuron being recorded. It was based upon the protocol used in Gruntman et al. 2019(^ref). 
-The code for generating and running these protocols is publicly available here: https://github.com/leburnett/nested_RF_stimulus
-Running these experiments requires the user to have the 'G4_Display_Tools' repository (https://github.com/JaneliaSciComp/G4_Display_Tools) downloaded locally too. 
+It is a multi-step protocol that tries to probe the receptive field (RF) structure of the neuron being recorded. 
+
+It was based upon the protocol used in Gruntman et al. 2019(^ref). 
+
+The code for generating and running these protocols is publicly available (here)[https://github.com/leburnett/nested_RF_stimulus]
+Running these experiments requires the user to have the 'G4_Display_Tools' (repository)[https://github.com/JaneliaSciComp/G4_Display_Tools] downloaded locally too. 
 
 ## Descriptions of current protocols: 
 
@@ -177,7 +183,7 @@ The parameters that can be modified for P2 are:
         `int_dur_slow` - The duration of the interval between flash stimuli during the slow flashes (seconds).
         `px_flash` - The size of the flash stimuli (pixels). 
 
-        The range of pixel values of the display are set using the following parameters:
+The range of pixel values of the display are set using the following parameters:
         screen_width_start = 17;
         screen_width_end = 192;
         screen_height_start = 1;

@@ -6,6 +6,9 @@ nav_order: 2
 layout: home
 ---
 
+1. TOC
+{:toc}
+
 Here is some general documentation for the Ephys setup. This includes information on how to design and run protocols, as well as the specifications of the arena used in experiments.
 
 ## Rig specificiations
@@ -22,9 +25,8 @@ These protocols are designed to run on the Reiser Lab's G4 ephys LED panel setup
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
 There are different protocols that can be run on the Ephys setup. This website contains documentation on the following protocols:
-
-1. TOC
-{:toc}
+- nested_RF_stimulus protocol
+- DS_Probe_protocol
 
 ## Designing and running a protocol
 
