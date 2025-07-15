@@ -91,7 +91,8 @@ These protocols were updated in July 2025. Things that were updated in these pro
 
 P1 protocols are located within the repository within the `protocols` folder. However, a user may wish to make a new modified version of P1, so I will outline the steps to create a version of P1 from scratch below. 
 
-### Making P1 from scratch - brief. 
+### Making P1 from scratch
+#### Brief overview
 
 In order to run P1, there are a few steps that need to be done manually. 
 Briefly, the user needs to:
@@ -100,9 +101,8 @@ Briefly, the user needs to:
 - Save the experiment with the folder `protocols/LHS` or `protocols/RHS` etc. 
 - Make a copy of the file `protocols/processing_settings.mat` and put it within the experiment folder. 
 
-### Making P1 from scratch - detailed. 
+#### Detailed description
 
-#### Making the patterns and the position functions
 First, you need to make the patterns and functions that will be used in the protocol. This is done by running the function `src/stimulus_generation/generate_protocol1_stimuli.m`. 
 Within this function you can modify different parameters to suit your needs. 
 
