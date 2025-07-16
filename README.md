@@ -1,5 +1,5 @@
 # Overview
-This repository contains the code to generate the documentation website (https://leburnett.github.io/reiser-ephys-documentation). This documentation describes how to run electrophysiological experiments on the G4 ephys setup at HHMI's Janelia Research Campus. 
+This repository contains the code to generate the documentation website (https://leburnett.github.io/reiser-documentation). This documentation describes how to run electrophysiological experiments on the G4 ephys setup at HHMI's Janelia Research Campus. 
 
 ### Hardware:
 Generation 4 Modular LED Display designed by Reiser lab members. Detailed documentation can be found at https://reiserlab.github.io/Modular-LED-Display/G4/. 
