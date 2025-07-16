@@ -2,7 +2,7 @@
 title: Nested RF Protocol
 parent: Ephys
 has_children: true
-has_toc: false
+has_toc: true
 nav_order: 1
 layout: home
 ---
@@ -18,7 +18,7 @@ It was based upon the protocol used in Gruntman et al. 2019(^ref).
 The code for generating and running these protocols is publicly available (here)[https://github.com/leburnett/nested_RF_stimulus]
 Running these experiments requires the user to have the 'G4_Display_Tools' (repository)[https://github.com/JaneliaSciComp/G4_Display_Tools] downloaded locally too. 
 
-## Descriptions of current protocols: 
+## Overview of current protocols: 
 
 ### Protocol 1 (P1)
 
@@ -87,7 +87,7 @@ These protocols were updated in July 2025. Things that were updated in these pro
 
 
 
-## How to make the protocols from scratch:
+## How to make the protocols
 
 P1 protocols are located within the repository within the `protocols` folder. However, a user may wish to make a new modified version of P1, so I will outline the steps to create a version of P1 from scratch below. 
 
@@ -184,10 +184,10 @@ The parameters that can be modified for P2 are:
         `px_flash` - The size of the flash stimuli (pixels). 
 
 The range of pixel values of the display are set using the following parameters:
-        screen_width_start = 17;
-        screen_width_end = 192;
-        screen_height_start = 1;
-        screen_height_end = 48;
+        `screen_width_start = 17;`
+        `screen_width_end = 192;`
+        `screen_height_start = 1;`
+        `screen_height_end = 48;`
 
 In July 2025, the code that generates P2 was updated to include flashes of two sizes
 
@@ -216,58 +216,6 @@ In July 2025, the code that generates P2 was updated to include flashes of two s
 
 - `generate_protocol2` into the command line of MATLAB, or run the script. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## How to analyse the data from the protocols
-
-### Protocol 1 
-
-- Processing settings file...
-- Which boxes need to be ticked in the conductor?
-
-
-After protocol 1 has finished running - the processing functions should run automatically. This runs code wihtin `G4_Display_Tools` (which functions) - it returns LOG with data inside and it generates 4 plots (grid_ephys). 
-
-From these plots you can see the response of the cell to each flash location on the screen - both 12px and 6px and ON and OFF flashes.
-This protocol is mainly for the experimenter to determine where the RF of the cell is located in order to present the second protocol in the correct position. From these plots it is also possible to determine if the RF of the cell is too close to the edge of the screen, in which case it is not worth running protocol 2. You can also see if the quality of the recording is not good enough to run protocol 2.
-
-### Protocol 2
-
 Protocol 2 runs through a single script - not using the G4_experiment_conductor. 
 The patterns, functions and experiment data are all created and saved with every call of the script `generate_protocol2()`. 
 A pop-up appears that will ask the experimenter to enter the "peak_frame" (this is found above the subplot of the 6 pixel figure that pops up after P1 that haas the largest response). This is the frame that the experimenter will use to set the position of the stimuli in protocol 2.
@@ -276,21 +224,6 @@ Protocol 2 runs smaller flashes, 50% overlapping grid - 30 x 30 pixel square are
 Then it runs 4 pixel width moving bars in the same area, moving in 8 orientations, 16 directions (back and forth for each orientation).
 3 reps...
 
-### Processing the data
 
-On the ephys computer, each run of `generate_protocol2()` with create a new folder within `C:\matlabroot\G4_Protocols\nested_RF_protocol2` with the format "YYYY_MM_DD_HH_MM" of the date and time when the protocol was run. Within this folder there will be a `patterns` folder with the patterns that were used in the protocol, a `functions` folder with the position functions that were used, and a `params` folder containing a file with metadata about the protocol run. There will also be a folder `Log Files`, this itself will contain a subfolder with the exact date and time of the run that will contain the raw tdms files of the electrophysiology data and the frame position data. Witin `generate_protocol2()` there is a function `run_protocol2()` that runs the protocol created. At the very end of this function there is a function called `G4_TDMS_folder2struct(log_folder)` - another function from the `G4_Display_Tools` that will convert the tdms files into a combined structure (called `Log`) that can be used for analysis.
 
-`process_protocol2()` - - 
-Run the function within the experiment folder - `data/YYYY_MM_DD_HH_MM`. 
-It will read in the metadata file that has information about the strain of the fly, peak_frame, side of the arena.
 
-First, runs the bar processing. `process_bars_p2`
-- Timeseries plot
-
-Will return the resultant angle of the vector sum of the responses to the bars. 
-
-Then runs, flash analysis. `process_flash_p2`
-- Timeseries heatmap plots. 
-This takes in the resultant angle and plots the arrow on top of the heatmap plots. 
-
-Two plots generated, one for the 4 pixel flashes and the other for the 6 pixel flashes. 
