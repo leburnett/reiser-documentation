@@ -127,29 +127,80 @@ The cell array `data` is returned by the function `parse_bar_data` and is used f
 
 ##### Plotting the bar data
 
-1. Circular timeseries plot with central polar plot for both speeds.
+1. Circular timeseries plot with central polar plot for both speeds. (`src/analysis/plotting/plot_timeseries_polar_bars`)
 
-`data` is first fed into the function `src/analysis/plotting/plot_timeseries_polar_bars`. 
+This function plots the timeseries voltage data per condition for each repetition in light grey and the mean response across conditions in light blue for the fast stimuli and dark blue for the slow stimuli. These timeseries plots are positioned in a circle, with each plots position corresponding to the direction in which the bar stimulus was moving. For instance, the plot at the very top of the circle (N position on a compass) corresponds to the response of the cell to a horizontal bar moving from bottom to top. Whereas, the plot at the right of the circle (E position on a compass) corresponds to the response of the cell to a vertical bar moving from left to right. These timeseries plots include the 900ms of interval beforehand and 900ms after the end of the bar stimulus. Thin vertical black lines are added onto the subplot to show these times.
 
-Will return the resultant angle of the vector sum of the responses to the bars. 
+A polar plot is positioned in the centre of the timeseries plots. To generate the polar plot, the maximum of the mean response of the cell to each direction is calculated, the median voltage across the entire recording is subtracted from this value, then it is used as the magnitude of the polar plot. Specifically, the mean response across all repetitions for each condition is extracted. This data is then trimmed to exclde the 0.9s interval before and the last 0.7s of the interval after the flash. Then, the 98th percentile value from this trimmed data is found. This value is added to the array `max_v` which is the size [n_conditions, n_speeds] - so in this case [16 2]. The minimum value (2nd percentile value) in the second half of this trimmed data is stored in a similar way into the array `min_v`. These arrays are returned by the plotting function. 
 
+[ PNG - 0010]
+^ Circular timeseries + polar plot. Two colours = different speeds. 
 
+2. Polar plot with vector sum resultant angle arrow (`src/analysis/plotting/plot_polar_with_arrow`) 
 
+Plots the same polar plot as the one in the centre of `plot_timeseries_polar_bars` but as a full figure in itself. This function first calls the function `src/analysis/analyse_bar_DS/vector_sum_polar` to find the `resultant_angle` of the vector sum of the polar plot and then adds an arrow pointing in this `resultant_angle` on top of the polar plot. The arrow is hard coded to have a fixed magnitude of 30. This is because the polar plots use the median voltage subtracted peak voltage values and given the current results the rlim of [0 30] fits most data.
 
+[ PNG - 0011]
+^ polar plot with resultant angle arrow
 
+3. Heatmap of max values per direction (`src/analysis/plotting/plot_heatmap_bars`)
 
+This function takes in the array `max_v` (size:[n_conditions, n_speeds]) and produces a heatmap of these values. 
 
+[ PNG - 0012]
+^  Heatmap plot of max_v
 
+##### Calculating metrics from the bar data
 
+The responses to the moving bar stimuli are then further processed to the calculate:
+- How symmetric the polar plots are. 
+- The direction selectivity index (vector sum method and PD-ND method).
+These are calculated for both the slow and the fast speeds and all of these metrics are stroed in a struct `bar_results` which is saved as the file `peak_vals....mat` in the `results_folder`. The steps to generate these metrics are outlined below:
+
+1. The timeseries data is reordered using `src/analysis/helper/align_data_by_seq_angles`
+
+Initially, the cell array `data` has the rows (conditions) ordered by the order in which they are presented which flows through each orientation in one direction and then the opposite direction. This function simply reorders the rows in `data` so that the rows correspond to sequential angles (i.e. 0, 1/16pi, 2/16pi etc.. ). 
+
+2. Find the PD and then reorder the data again so that the PD is always positioned to pi/2 (up). (`src/analysis/helper/find_PD_and_order_idx`)
+
+Here, the preferred direction (resultant angle of the vector sum of the repsonse) is calculated again. (TODO - update this code so that it uses the same function as above...), and it finds which of the 16 directions is closest to the resultant angle of the vector sum. It then shifts the responses in this position to be aligned to pi/2 ('N' on the polar plot) and rearranges the other responses accordingly.
+
+[ PNG - 0013 ]
+^ polar plot with the PD repositioned to be in the pi/2 direction
+
+This code also uses the functions:
+-  `src/analysis/helper/compute_FWHM` to calculate the width of the polar plot at half of the maximum response
+-  `src/analysis/helper/compute_circular_var` to compute the circular variance. This function returns a number between 0 and 1. 0 would imply that the cell only responds in one direction and has very sharp tuning, 1 would imply the cell responds uniformly to all directions and has very broad tuning. 
+- The function `circ_vmpar` from the MATLAB Circular Statistics Toolbox. This function estimates the parameters of a von Mises distribution and returns `thetahat` (preferred direction) and `kappa` (concentration parameter).
+
+These metrics are found for the bar stimuli moving at both speeds. 
+
+The data that is eventually saved includes `data`, `data_ordered` - ordered by angle and `data_aligned` - data ordered with PD in the pi/2 position. The order `ord` in which to rearrange the initial `data` structure into the version with the PD in the pi/2 position is also saved, as well as `d_slow` which is the max_val data per direction reordered so that the PD response is in the pi/2 position and the struct `bar_results` which contains all of these metrics for the stimuli at both speeds. 
+
+`resultant_angle` - the angle of the preferred direction (PD) of the cell is returned by the overall script `process_bars_p2`. 
 
 
 
 
 #### Breakdown of `process_flash_p2`
 
+After the responses to the bar stimuli have been processed the function `src/analysis/protocol2/process_flash_p2` is used to process the responses to the two different flash stimuli. This function takes in the parameter `resultant_angle` from `process_bars_p2`. At the beginning of this function, the frame position data and the voltage data are once again loaded in. The median voltage across the entire experiment is calculated and the voltage data is also downsampled with `movmean(v_data, 20000)`. The function then runs through the data for the two different sizes of flash stimuli separately. 
+
 ##### Parsing the flash data
 
-The function `src/analysis/protocol2/pipeline/parse_flash_data` is used to parse the frame data to understand when the flash stimuli were presented.
+First, the function `src/analysis/protocol2/pipeline/parse_flash_data` is used to parse the frame data to understand when the flash stimuli were presented.
+
+
+
+
+
+
+
+
+
+
+
+
 
 ##### Plotting the flash data
 
