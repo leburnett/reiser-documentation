@@ -76,21 +76,16 @@ Firstly, using the value of the parameter `on_off`, which refers to whether brig
 
 Then `idx` is set to the timepoints for which the difference in the frame position is equal to `drop_at_end`. This happens both once during the 4 pixel flashes and for the last timepoint of the last 6 pixel flash. The 1st, 3rd and 5th values are removed to remove the timepoints during the 4 pixel flashes and so only the timepoints corresponding to the end of the 6 pixel flashes remain. This is useful because this is the stimulus before the bar stimuli start.
 
-` idx = find(diff_f_data == drop_at_end);`
-` idx([1,3,5]) = [];`
+`idx = find(diff_f_data == drop_at_end);` 
+`idx([1,3,5]) = [];`
 
 ![MATLAB figure of the frame position data over the entire P2 experiment (blue) with vertical lines indicating the 6 timepoints in the variable 'idx' (red).]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0002.png){:standalone .ifr data-img-class="pop"}
 
-[ PNG - 0003]
-^ Zoom in on just the second value of `idx` - end of first rep of 6 pixel flashes. 
+![Zoomed in view of the figure above showing only the second timepoint in 'idx' that corresponds to the end of the last 6 pixel flash in Rep 1.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0003.png){:standalone .ifr data-img-class="pop"}
 
 Since each flash stimulus is followed by a 440ms gap, and each bar stimulus is preceded by a 1000ms gap, there is a ~1440ms period before the first bar stimulus being presented and the last of the 6 pixel flashes being shown. Ultimately, the data will be broken up into chunks of the same length with 1000ms before the bar stimulus and until 900ms after the end of the bar stimulus, but first we want to find the range of timepoints during which ALL bar stimuli (both slow and fast) are presented for each repetition.
 
-[ PNG - 0004 ] 
-^ Zoom in on frame position data. 
-Red line = Last frame of the last flash of the 6 pixel flashes.
-Cyan line = after 440ms gap after flash and before 1000ms gap before bar stimulus starts. 
-Magenta line = first frame of the first bar stimulus.
+![Zoomed in view of frame position data. (Red) Last frame of the last flash of the 6 pixel flashes from Rep 1. (Cyan) Time point after 440ms gap after the last flash and 1000ms before bar stimulus starts. (Magenta) First frame of the first bar stimulus in Rep 1.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0004.png){:standalone .ifr data-img-class="pop"}
 
 [ PNG - 0005 ]
 ^ Zoom out of frame position data showing the end of the first rep of 6 pixel flashes, all bar stimuli and the beginning of the second rep of 4 pixel flashes.
