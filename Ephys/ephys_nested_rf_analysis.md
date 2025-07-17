@@ -250,4 +250,8 @@ The function `src/analysis/protocol2/gaussian_RF_estimate` fits and plots a rota
     `f1` - fitted inhib plot
     `f2` - fitted excite plot
 
-    
+[ PNG - 0019 ]
+^ fitted excitatory plot
+
+[ PNG - 0020 ]
+^ fitted inhibitory plot
