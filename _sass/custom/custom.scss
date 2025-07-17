@@ -95,6 +95,7 @@ h1,h2,hr{
 	padding-left:25px;
 	font-style:italic;
 	color:#666666;
+	font-size: 0.85em;
 }
 .ifr figcaption::before{
 	content:"Fig: ";
@@ -113,6 +114,7 @@ figure.ifr{
 	padding-left:25px;
 	font-style:italic;
 	color:#666666;
+	font-size: 0.85em;
 }
 .ifr_center figcaption::before{
 	content:"Fig: ";
