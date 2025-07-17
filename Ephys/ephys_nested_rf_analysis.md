@@ -46,7 +46,7 @@ This protocol is mainly for the experimenter to determine where the RF of the ce
 - Within this folder there will be a `patterns` folder with the patterns that were used in the protocol, a `functions` folder with the position functions that were used, and a `params` folder containing a file with metadata about the protocol run. 
 - There will also be a folder `Log Files`, this itself will contain a subfolder with the exact date and time of the run that will contain the raw tdms files of the electrophysiology data and the frame position data. Witin `generate_protocol2()` there is a function `run_protocol2()` that runs the protocol created. At the very end of this function there is a function called `G4_TDMS_folder2struct(log_folder)` - another function from the `G4_Display_Tools` that will convert the tdms files into a combined structure (called `Log`) that can be used for analysis.
 
-![Organisation of data - Protocol 2]({{ site.baseurl }}/imgs/nested_RF_stimulus/analysis/p2/0000.png){:standalone .ifr data-img-class="pop"}
+![Organisation of data - Protocol 2]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0000.png)
 
 ### How to process P2 data
 
