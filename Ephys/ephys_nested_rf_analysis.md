@@ -76,28 +76,34 @@ Firstly, using the value of the parameter `on_off`, which refers to whether brig
 
 Then `idx` is set to the timepoints for which the difference in the frame position is equal to `drop_at_end`. This happens both once during the 4 pixel flashes and for the last timepoint of the last 6 pixel flash. The 1st, 3rd and 5th values are removed to remove the timepoints during the 4 pixel flashes and so only the timepoints corresponding to the end of the 6 pixel flashes remain. This is useful because this is the stimulus before the bar stimuli start.
 
+![MATLAB figure of the frame position data over the entire P2 experiment (blue) with vertical lines indicating the 6 timepoints in the variable 'idx' (red).]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0002.png){:standalone .ifr data-img-class="pop"}
+
 `idx = find(diff_f_data == drop_at_end);` 
 `idx([1,3,5]) = [];`
 
-![MATLAB figure of the frame position data over the entire P2 experiment (blue) with vertical lines indicating the 6 timepoints in the variable 'idx' (red).]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0002.png){:standalone .ifr data-img-class="pop"}
+Since each flash stimulus is followed by a 440ms gap, and each bar stimulus is preceded by a 1000ms gap, there is a ~1440ms period before the first bar stimulus being presented and the last of the 6 pixel flashes being shown. 
 
 ![Zoomed in view of the figure above showing only the second timepoint in 'idx' that corresponds to the end of the last 6 pixel flash in Rep 1.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0003.png){:standalone .ifr data-img-class="pop"}
 
-Since each flash stimulus is followed by a 440ms gap, and each bar stimulus is preceded by a 1000ms gap, there is a ~1440ms period before the first bar stimulus being presented and the last of the 6 pixel flashes being shown. Ultimately, the data will be broken up into chunks of the same length with 1000ms before the bar stimulus and until 900ms after the end of the bar stimulus, but first we want to find the range of timepoints during which ALL bar stimuli (both slow and fast) are presented for each repetition.
+Ultimately, the data will be broken up into chunks of the same length with 1000ms before the bar stimulus and until 900ms after the end of the bar stimulus, but first we want to find the range of timepoints during which ALL bar stimuli (both slow and fast) are presented for each repetition.
 
 ![Zoomed in view of frame position data. (Red) Last frame of the last flash of the 6 pixel flashes from Rep 1. (Cyan) Time point after 440ms gap after the last flash and 1000ms before bar stimulus starts. (Magenta) First frame of the first bar stimulus in Rep 1.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0004.png){:standalone .ifr data-img-class="pop"}
 
 [ PNG - 0005 ]
 ^ Zoom out of frame position data showing the end of the first rep of 6 pixel flashes, all bar stimuli and the beginning of the second rep of 4 pixel flashes.
+
 The vertical bars are the timepoints that are found in the code. The two timepoints that represent the start and end of the first repetition of bar stimuli are defined as `rep1_rng` and are represented graphically by the magenta vertical bar and the green vertical bar. This range excludes the interval periods before the stimuli start and after the stimuli stop.
 
-This is the code that was used to plot the cyan, magenta and green lines:
-`plot([idx(1)+gap_between_flash_and_bars idx(1)+gap_between_flash_and_bars], [0 100], 'c')`
-`plot([start_f1 start_f1], [0 100], 'm')`
-`plot([end_f1 end_f1], [0 100], 'g')`
+![Overview of how the timing of the moving bar stimuli are found using the frame position data.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0005.png){:standalone .ifr }
 
-[ PNG - 0006 ]
-^ This shows the range of timepoints for the bar stimuli in rep1 (magenta lines), rep2 (red lines) and rep3 (green lines). The third rep uses the last frame of the experiment as the end of it's range. It doesn't matter that this includes the interval time at the end because the actual start and stop times of the bar stimuli are found within these ranges in the next step. 
+This is the code that was used to plot the cyan, magenta and green lines:
+`plot([idx(1)+gap_between_flash_and_bars idx(1)+gap_between_flash_and_bars], [0 100], 'c')` - 1000ms before the start of the first moving bar stimulus.
+`plot([start_f1 start_f1], [0 100], 'm')` - first frame of the first moving bar stimulus.
+`plot([end_f1 end_f1], [0 100], 'g')` - last frame of the last moving bar stimulus of the repetition.
+
+![Range of timepoints for the bar stimuli in rep1 (magenta lines), rep2 (red lines) and rep3 (green lines). The third rep uses the last frame of the experiment as the end of it's range. It doesn't matter that this includes the interval time at the end because the actual start and stop times of the bar stimuli are found within these ranges in the next step.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0006.png){:standalone .ifr data-img-class="pop"}
+
+
 
 2. <b>Find the timepoints for when each individual bar stimulus starts and stops. </b>
 
