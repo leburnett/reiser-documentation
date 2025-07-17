@@ -90,6 +90,7 @@ h1,h2,hr{
 
 .ifr figcaption{
 	text-align:left;
+	text-size-adjust:;
 	text-indent:-25px;
 	padding-left:25px;
 	font-style:italic;
@@ -113,7 +114,7 @@ figure.ifr{
 	font-style:italic;
 	color:#666666;
 }
-.ifrifr_center figcaption::before{
+.ifr_center figcaption::before{
 	content:"Fig: ";
 	font-weight:bold;
 	font-style:normal;
