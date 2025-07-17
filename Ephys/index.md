@@ -33,8 +33,8 @@ There are different protocols that can be run on the Ephys setup. This website c
 Protocols to be run on the G4 ephys arena can be designed in two ways. Through the in-built G4 GUIs or through custom scripts.
 
 The G4 GUIs are designed to be user-friendly and allow for the generation of patterns, position functions, and experiment designs without needing to write code.
-The full documentation can be found at https://reiserlab.github.io/Modular-LED-Display/G4/. 
-The code for the GUI can be found here: https://github.com/JaneliaSciComp/G4_Display_Tools. 
+The full documentation can be found [here](https://reiserlab.github.io/Modular-LED-Display/G4). 
+The code for the GUI can be found [here](https://github.com/JaneliaSciComp/G4_Display_Tools). 
 - Generate patterns in the `G4_pattern_generator_gui`.
 - Generate position functions in the `G4_function_generator_gui`.
 - Design the experiment in the `G4_experiment_designer`. 

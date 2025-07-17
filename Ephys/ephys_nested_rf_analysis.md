@@ -23,7 +23,7 @@ layout: home
 - Processing settings file...
 - Which boxes need to be ticked in the conductor?
 
-After protocol 1 has finished running - the processing functions should run automatically. This runs code wihtin `G4_Display_Tools` (which functions) - it returns LOG with data inside and it generates 4 plots (grid_ephys). 
+After protocol 1 has finished running - the processing functions should run automatically. This runs code wihtin [`G4_Display_Tools`](https://github.com/JaneliaSciComp/G4_Display_Tools) - it returns LOG with data inside and it generates 4 plots (grid_ephys). 
 
 From these plots you can see the response of the cell to each flash location on the screen - both 12px and 6px and ON and OFF flashes.
 This protocol is mainly for the experimenter to determine where the RF of the cell is located in order to present the second protocol in the correct position. From these plots it is also possible to determine if the RF of the cell is too close to the edge of the screen, in which case it is not worth running protocol 2. You can also see if the quality of the recording is not good enough to run protocol 2.
@@ -46,7 +46,7 @@ This protocol is mainly for the experimenter to determine where the RF of the ce
 - Within this folder there will be a `patterns` folder with the patterns that were used in the protocol, a `functions` folder with the position functions that were used, and a `params` folder containing a file with metadata about the protocol run. 
 - There will also be a folder `Log Files`, this itself will contain a subfolder with the exact date and time of the run that will contain the raw tdms files of the electrophysiology data and the frame position data. Witin `generate_protocol2()` there is a function `run_protocol2()` that runs the protocol created. At the very end of this function there is a function called `G4_TDMS_folder2struct(log_folder)` - another function from the `G4_Display_Tools` that will convert the tdms files into a combined structure (called `Log`) that can be used for analysis.
 
-[PNG - 0001]
+![Organisation of data - Protocol 2](imgs/nested_RF_stimulus/analysis/p2/0000.png){:standalone .ifr data-img-class="pop"}
 
 ### How to process P2 data
 
@@ -63,7 +63,8 @@ and then the voltage data:
 
 This is the data across the entire experiment, the three repetitions of the two flash stimuli and the tw2o bar stimuli. The voltage data is multiplied by 10 because during the data acquisition it is downsampled by a factor of 10. (TODO: ADD WHY). 
 
-[ PNG - General plot of f_data and v_data ]
+[ PNG - 0001 ] 
+^General plot of f_data and v_data 
 
 ##### Parsing the bar data
 

@@ -15,8 +15,8 @@ It is a multi-step protocol that tries to probe the receptive field (RF) structu
 
 It was based upon the protocol used in Gruntman et al. 2019(^ref). 
 
-The code for generating and running these protocols is publicly available (here)[https://github.com/leburnett/nested_RF_stimulus]
-Running these experiments requires the user to have the 'G4_Display_Tools' (repository)[https://github.com/JaneliaSciComp/G4_Display_Tools] downloaded locally too. 
+The code for generating and running these protocols is publicly available [here](https://github.com/leburnett/nested_RF_stimulus)
+Running these experiments requires the user to have the 'G4_Display_Tools' [repository](https://github.com/JaneliaSciComp/G4_Display_Tools) downloaded locally too. 
 
 ## Overview of current protocols: 
 
