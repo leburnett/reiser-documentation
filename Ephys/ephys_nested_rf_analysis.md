@@ -46,7 +46,7 @@ This protocol is mainly for the experimenter to determine where the RF of the ce
 - Within this folder there will be a `patterns` folder with the patterns that were used in the protocol, a `functions` folder with the position functions that were used, and a `params` folder containing a file with metadata about the protocol run. 
 - There will also be a folder `Log Files`, this itself will contain a subfolder with the exact date and time of the run that will contain the raw tdms files of the electrophysiology data and the frame position data. Witin `generate_protocol2()` there is a function `run_protocol2()` that runs the protocol created. At the very end of this function there is a function called `G4_TDMS_folder2struct(log_folder)` - another function from the `G4_Display_Tools` that will convert the tdms files into a combined structure (called `Log`) that can be used for analysis.
 
-![Folder and file organisation for one P2 experiment.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0000.png){:standalone .ifr data-img-class="pop"}
+![Folder and file organisation for one P2 experiment.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0000.png){:standalone .ifr .pop}
 
 ### How to process P2 data
 
@@ -83,33 +83,32 @@ Then `idx` is set to the timepoints for which the difference in the frame positi
 
 Since each flash stimulus is followed by a 440ms gap, and each bar stimulus is preceded by a 1000ms gap, there is a ~1440ms period before the first bar stimulus being presented and the last of the 6 pixel flashes being shown. 
 
-![Zoomed in view of the figure above showing only the second timepoint in 'idx' that corresponds to the end of the last 6 pixel flash in Rep 1.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0003.png){:standalone .ifr data-img-class="pop"}
+![Zoomed in view of the figure above showing only the second timepoint in 'idx' that corresponds to the end of the last 6 pixel flash in Rep 1.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0003.png){:standalone .ifr_center .pop}
 
 Ultimately, the data will be broken up into chunks of the same length with 1000ms before the bar stimulus and until 900ms after the end of the bar stimulus, but first we want to find the range of timepoints during which ALL bar stimuli (both slow and fast) are presented for each repetition.
 
-![Zoomed in view of frame position data. (Red) Last frame of the last flash of the 6 pixel flashes from Rep 1. (Cyan) Time point after 440ms gap after the last flash and 1000ms before bar stimulus starts. (Magenta) First frame of the first bar stimulus in Rep 1.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0004.png){:standalone .ifr data-img-class="pop"}
-
-[ PNG - 0005 ]
-^ Zoom out of frame position data showing the end of the first rep of 6 pixel flashes, all bar stimuli and the beginning of the second rep of 4 pixel flashes.
+![Zoomed in view of frame position data. (Red) Last frame of the last flash of the 6 pixel flashes from Rep 1. (Cyan) Time point after 440ms gap after the last flash and 1000ms before bar stimulus starts. (Magenta) First frame of the first bar stimulus in Rep 1.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0004.png){:standalone .ifr_center .pop}
 
 The vertical bars are the timepoints that are found in the code. The two timepoints that represent the start and end of the first repetition of bar stimuli are defined as `rep1_rng` and are represented graphically by the magenta vertical bar and the green vertical bar. This range excludes the interval periods before the stimuli start and after the stimuli stop.
 
-![Overview of how the timing of the moving bar stimuli are found using the frame position data.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0005.png){:standalone .ifr }
+![Overview of how the timing of the moving bar stimuli are found using the frame position data. The figure shows the end of the 6 pixel flashes, both bar stimuli and the start of the second repetition of the 4 pixel size flashes.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0005.png){:standalone .ifr_center .pop}
 
 This is the code that was used to plot the cyan, magenta and green lines:
 `plot([idx(1)+gap_between_flash_and_bars idx(1)+gap_between_flash_and_bars], [0 100], 'c')` - 1000ms before the start of the first moving bar stimulus.
 `plot([start_f1 start_f1], [0 100], 'm')` - first frame of the first moving bar stimulus.
 `plot([end_f1 end_f1], [0 100], 'g')` - last frame of the last moving bar stimulus of the repetition.
 
-![Range of timepoints for the bar stimuli in rep1 (magenta lines), rep2 (red lines) and rep3 (green lines). The third rep uses the last frame of the experiment as the end of it's range. It doesn't matter that this includes the interval time at the end because the actual start and stop times of the bar stimuli are found within these ranges in the next step.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0006.png){:standalone .ifr data-img-class="pop"}
+![Range of timepoints for the bar stimuli in rep1 (magenta lines), rep2 (red lines) and rep3 (green lines). The third rep uses the last frame of the experiment as the end of it's range. It doesn't matter that this includes the interval time at the end because the actual start and stop times of the bar stimuli are found within these ranges in the next step.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0006.png){:standalone .ifr_center .pop}
 
+<br>
 
 2. <b>Find the timepoints for when each individual bar stimulus starts and stops. </b>
 
 Now that we have extracted the range of timepoints during which all of the bar stimuli of one repetition are presented, we now want to extract the timepoints for each individual bar stimulus (one sweep of the bar) within each repetition. To do this, the difference between frame positions are used again. This time we are looking for the timepoints when the frame position changes from 0 (the background interval frame) and 
 
-[ PNG - 0007]
-^ Red vertical lines for the start and end of each bar stimulus. From `idxs_all{1,1}`. These are the indices only for the first repetition of bar stimuli. 
+![Frame position over one repetition of all of the moving bar stimuli. Red vertical lines indicate the start and end of each individual flash sweep. These values are stored within 'idxs_all{1,1}']({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0007.png){:standalone .ifr_center .pop}
+
+<br>
 
 3. <b>Create the cell array `data` which combines the voltage data for each bar stimulus including 9000ms before and after each sweep of the bar.</b>
 
