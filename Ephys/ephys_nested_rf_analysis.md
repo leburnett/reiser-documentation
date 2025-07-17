@@ -46,7 +46,7 @@ This protocol is mainly for the experimenter to determine where the RF of the ce
 - Within this folder there will be a `patterns` folder with the patterns that were used in the protocol, a `functions` folder with the position functions that were used, and a `params` folder containing a file with metadata about the protocol run. 
 - There will also be a folder `Log Files`, this itself will contain a subfolder with the exact date and time of the run that will contain the raw tdms files of the electrophysiology data and the frame position data. Witin `generate_protocol2()` there is a function `run_protocol2()` that runs the protocol created. At the very end of this function there is a function called `G4_TDMS_folder2struct(log_folder)` - another function from the `G4_Display_Tools` that will convert the tdms files into a combined structure (called `Log`) that can be used for analysis.
 
-![Folder and file organisation of data for one P2 experiment]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0000.png){:standalone .ifr data-img-class="pop"}
+![Folder and file organisation for one P2 experiment.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0000.png){:standalone .ifr data-img-class="pop"}
 
 ### How to process P2 data
 
@@ -70,7 +70,7 @@ This is the data across the entire experiment, the three repetitions of the two 
 
 The function `src/analysis/protocol2/pipeline/parse_bar_data` is used to parse the frame data to understand when the moving bar stimuli were presented.
 
-1. Find the range of timepoints during which all of the bar stimuli for each repetition were being presented. This includes both the slow and fast bars. 
+1. <b>Find the range of timepoints during which all of the bar stimuli for each repetition were being presented. This includes both the slow and fast bars.</b>
 
 Firstly, using the value of the parameter `on_off`, which refers to whether bright ('on') or dark (off') stimuli were used during the protocol, the parameter `drop_at_end` is set to either '-200' for `on_off` == 'on' or '-100' for `on_off` == 'off'. 
 
@@ -79,7 +79,7 @@ Then `idx` is set to the timepoints for which the difference in the frame positi
 ` idx = find(diff_f_data == drop_at_end);`
 ` idx([1,3,5]) = [];`
 
-![MATLAB figure or frame position data over the entire P2 experiment (blue) with vertical red lines indicating the 6 timepoints in `idx`]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0002.png){:standalone .ifr data-img-class="pop"}
+![MATLAB figure of the frame position data over the entire P2 experiment (blue) with vertical lines indicating the 6 timepoints in the variable 'idx' (red).]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0002.png){:standalone .ifr data-img-class="pop"}
 
 [ PNG - 0003]
 ^ Zoom in on just the second value of `idx` - end of first rep of 6 pixel flashes. 
@@ -104,14 +104,14 @@ This is the code that was used to plot the cyan, magenta and green lines:
 [ PNG - 0006 ]
 ^ This shows the range of timepoints for the bar stimuli in rep1 (magenta lines), rep2 (red lines) and rep3 (green lines). The third rep uses the last frame of the experiment as the end of it's range. It doesn't matter that this includes the interval time at the end because the actual start and stop times of the bar stimuli are found within these ranges in the next step. 
 
-2. Find the timepoints for when each individual bar stimulus starts and stops. 
+2. <b>Find the timepoints for when each individual bar stimulus starts and stops. </b>
 
 Now that we have extracted the range of timepoints during which all of the bar stimuli of one repetition are presented, we now want to extract the timepoints for each individual bar stimulus (one sweep of the bar) within each repetition. To do this, the difference between frame positions are used again. This time we are looking for the timepoints when the frame position changes from 0 (the background interval frame) and 
 
 [ PNG - 0007]
 ^ Red vertical lines for the start and end of each bar stimulus. From `idxs_all{1,1}`. These are the indices only for the first repetition of bar stimuli. 
 
-3. Create the cell array `data` which combines the voltage data for each bar stimulus including 9000ms before and after each sweep of the bar.
+3. <b>Create the cell array `data` which combines the voltage data for each bar stimulus including 9000ms before and after each sweep of the bar.</b>
 
 The indices found above and stored in `idxs_all` are then used to extract the relevant voltage data for each bar sweep. Since there is a 1000ms gap between each bar sweep (added in July 2025), 900ms is added before and after the bar sweep timepoints to see the baseline voltage between each sweep.
 
@@ -127,7 +127,7 @@ The cell array `data` is returned by the function `parse_bar_data` and is used f
 
 ##### Plotting the bar data
 
-1. Circular timeseries plot with central polar plot for both speeds. (`src/analysis/plotting/plot_timeseries_polar_bars`)
+1. <b>Circular timeseries plot with central polar plot for both speeds. (`src/analysis/plotting/plot_timeseries_polar_bars`)</b>
 
 This function plots the timeseries voltage data per condition for each repetition in light grey and the mean response across conditions in light blue for the fast stimuli and dark blue for the slow stimuli. These timeseries plots are positioned in a circle, with each plots position corresponding to the direction in which the bar stimulus was moving. For instance, the plot at the very top of the circle (N position on a compass) corresponds to the response of the cell to a horizontal bar moving from bottom to top. Whereas, the plot at the right of the circle (E position on a compass) corresponds to the response of the cell to a vertical bar moving from left to right. These timeseries plots include the 900ms of interval beforehand and 900ms after the end of the bar stimulus. Thin vertical black lines are added onto the subplot to show these times.
 
@@ -136,14 +136,14 @@ A polar plot is positioned in the centre of the timeseries plots. To generate th
 [ PNG - 0010]
 ^ Circular timeseries + polar plot. Two colours = different speeds. 
 
-2. Polar plot with vector sum resultant angle arrow (`src/analysis/plotting/plot_polar_with_arrow`) 
+2. <b>Polar plot with vector sum resultant angle arrow (`src/analysis/plotting/plot_polar_with_arrow`) </b>
 
 Plots the same polar plot as the one in the centre of `plot_timeseries_polar_bars` but as a full figure in itself. This function first calls the function `src/analysis/analyse_bar_DS/vector_sum_polar` to find the `resultant_angle` of the vector sum of the polar plot and then adds an arrow pointing in this `resultant_angle` on top of the polar plot. The arrow is hard coded to have a fixed magnitude of 30. This is because the polar plots use the median voltage subtracted peak voltage values and given the current results the rlim of [0 30] fits most data.
 
 [ PNG - 0011]
 ^ polar plot with resultant angle arrow
 
-3. Heatmap of max values per direction (`src/analysis/plotting/plot_heatmap_bars`)
+3. <b>Heatmap of max values per direction (`src/analysis/plotting/plot_heatmap_bars`)</b>
 
 This function takes in the array `max_v` (size:[n_conditions, n_speeds]) and produces a heatmap of these values. 
 
@@ -157,11 +157,11 @@ The responses to the moving bar stimuli are then further processed to the calcul
 - The direction selectivity index (vector sum method and PD-ND method).
 These are calculated for both the slow and the fast speeds and all of these metrics are stroed in a struct `bar_results` which is saved as the file `peak_vals....mat` in the `results_folder`. The steps to generate these metrics are outlined below:
 
-1. The timeseries data is reordered using `src/analysis/helper/align_data_by_seq_angles`
+1. <b>The timeseries data is reordered using `src/analysis/helper/align_data_by_seq_angles`</b>
 
 Initially, the cell array `data` has the rows (conditions) ordered by the order in which they are presented which flows through each orientation in one direction and then the opposite direction. This function simply reorders the rows in `data` so that the rows correspond to sequential angles (i.e. 0, 1/16pi, 2/16pi etc.. ). 
 
-2. Find the PD and then reorder the data again so that the PD is always positioned to pi/2 (up). (`src/analysis/helper/find_PD_and_order_idx`)
+2. <b>Find the PD and then reorder the data again so that the PD is always positioned to pi/2 (up). (`src/analysis/helper/find_PD_and_order_idx`)</b>
 
 Here, the preferred direction (resultant angle of the vector sum of the repsonse) is calculated again. (TODO - update this code so that it uses the same function as above...), and it finds which of the 16 directions is closest to the resultant angle of the vector sum. It then shifts the responses in this position to be aligned to pi/2 ('N' on the polar plot) and rearranges the other responses accordingly.
 
@@ -198,7 +198,7 @@ First, the function `src/analysis/protocol2/pipeline/parse_flash_data` is used t
 `max_data` - 98th percentile value during flash presentation (TODO)
 `min_data` - 2nd percentile value during second half of flash presentation (TODO - include interval time after too).
 
-1. Find the range of timepoints during which all of the flash stimuli for each repetition were being presented.
+1. <b>Find the range of timepoints during which all of the flash stimuli for each repetition were being presented.</b>
 Similar to how the bar data is parsed, the difference between the frame positions is used to coarsely divide the data up into the different stimuli. For the flash stimuli the variable `idx` contains the timepoints that correspond to the start of the different flash stimuli. The same conditions as used for parsing the bar data are used to find the end of the 6 pixel flashes and these indices are stored in `idx_6px`. 
 
 [ PNG - 0014 ]
@@ -207,7 +207,7 @@ Similar to how the bar data is parsed, the difference between the frame position
 [ PNG - 0015 ]
 ^ close up of 0014 for the start of 4px flashes - rep 1. 
 
-2. Find the timepoints for when individual flash stimuli start and stop.  
+2. <b>Find the timepoints for when individual flash stimuli start and stop. </b> 
 
 `start_flash_idxs` is then generated that contains the timepoints within the range of the flash repetitions where the difference in frame position is >0 - this happens whenever a flash starts. These indices are then used to extract the frame data and voltage data per flash. For each flash, the data extracted includes 1000 datapoints before the flash starts until 6000 datapoints after the flash starts. As of July 2025, both the 4 and 6 pixel flashes are presented for 160ms then have a 440ms interval before the next flash starts. 160+440 = 600ms = ~6000 datapoints. So, the data extracted includes 1000 datapoints before the flash starts until just before the next flash starts. The timeseries of frame data is stored within the array `data_frame` of size [n_reps, 7000], the median-subtracted voltage data is stored in the array `data_flash` of size [n_reps, 7000] and the raw voltage data is stored in the array `data_flash_raw` of size [n_reps, 7000]. 
 
@@ -215,7 +215,7 @@ Similar to how the bar data is parsed, the difference between the frame position
 ^ Red line shows the start of the first flash
 Cyan line shows the actual range of timepoints for the first flash - 1000 timepoints before to 6000 timepoints after.
 
-3. Compute metrics across flash reps and for the mean flash response. 
+3. <b>Compute metrics across flash reps and for the mean flash response. </b>
 
 A number of metrics are then calculated for each individual flash position including the variance across and within reps, the maximum and minimum voltage during the rep and the difference between the maximum and the minimum response. These metrics are then used to assign each flash position to a `cmap` group for later plotting. Basically, flash positions that showed a large depolarising response get assigned to group 1 and will have a warm colourmap in the heatmap plot, flash positions in group 2 have a large hyperpolarising response and will have a cool colourmap and flash positions that don't have a big enough difference in their maximum and minimum voltage across the flash presentation are assigned to group 3 and will be white in the heatmap.  
 
@@ -223,14 +223,14 @@ A number of metrics are then calculated for each individual flash position inclu
 
 Within `process_flash_p2`, the code loops through the 4 pixel size flashes and then the 6 pixel size flashes. It makes two receptive field plots for both and stores metrics about the voltage data and the receptive field size and shape in a nested structure `rf_results`. 
 
-1. Grid format plot with the mean timeseries of each flash response and the subplot's background colour-coded by the `cmap_id` value and `data_comb` value. (`src/analysis/plotting/plot_rf_estimate_timeseries_line`)
+1. <b>Grid format plot with the mean timeseries of each flash response and the subplot's background colour-coded by the `cmap_id` value and `data_comb` value. (`src/analysis/plotting/plot_rf_estimate_timeseries_line`)</b>
 
 This figure contains the mean voltage timeseries per flash position organised by its location in space (corresponding to its position on the screen from the fly's perspective). The voltage data is downsampled by 10 to try and reduce the size of the figure slightly. If a flash position subplot is assigned `cmap_id` of 1 or 2 then it's background is filled with a uniform red or blue background, respectively. The intensity of the background is proportional to that flash position's `data_comb` value that is linked to it's absolute maximum or minimum voltage. These values were normalised between 0 and 1 before passing the array into the function. So, flash positions with the highest maximum voltages will have the darkest red backgrounds and flash positions that elicited the lowest minimum voltage will have the darkest blue backgrounds. Flash positions with `cmap_id` value = 3 will have white / grey backgrounds. The `resultant_angle` from the processing of the bar stimuli is passed through to this function and an arrow is overlaid on top of the subplots, positioned within the centre of the figure and pointing in the direction of the `resultant_angle`.
 
 [ PNG - 0017 ]
 ^ Timeseries heatmap plot
 
-2. (`src/analysis/plotting/plot_heatmap_flash_responses`)
+2. <b>Heatmap plot (`src/analysis/plotting/plot_heatmap_flash_responses`)</b>
 
 This function creates a heatmap of the normalised values within `data_comb` (values between 0 and 1) using a redblue colourmap. The colourmap is centred around the median value to get a good colour range and so that the median value is white. 
 
