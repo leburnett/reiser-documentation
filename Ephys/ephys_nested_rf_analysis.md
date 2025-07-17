@@ -46,7 +46,7 @@ This protocol is mainly for the experimenter to determine where the RF of the ce
 - Within this folder there will be a `patterns` folder with the patterns that were used in the protocol, a `functions` folder with the position functions that were used, and a `params` folder containing a file with metadata about the protocol run. 
 - There will also be a folder `Log Files`, this itself will contain a subfolder with the exact date and time of the run that will contain the raw tdms files of the electrophysiology data and the frame position data. Witin `generate_protocol2()` there is a function `run_protocol2()` that runs the protocol created. At the very end of this function there is a function called `G4_TDMS_folder2struct(log_folder)` - another function from the `G4_Display_Tools` that will convert the tdms files into a combined structure (called `Log`) that can be used for analysis.
 
-![Organisation of data - Protocol 2]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0000.png){:standalone .ifr data-img-class="pop"}
+![Folder and file organisation of data for one P2 experiment]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0000.png){:standalone .ifr data-img-class="pop"}
 
 ### How to process P2 data
 
@@ -79,8 +79,7 @@ Then `idx` is set to the timepoints for which the difference in the frame positi
 ` idx = find(diff_f_data == drop_at_end);`
 ` idx([1,3,5]) = [];`
 
-[ PNG - 0002]
-^ This shows the values of `idx`. 
+![MATLAB figure or frame position data over the entire P2 experiment (blue) with vertical red lines indicating the 6 timepoints in `idx`]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0002.png){:standalone .ifr data-img-class="pop"}
 
 [ PNG - 0003]
 ^ Zoom in on just the second value of `idx` - end of first rep of 6 pixel flashes. 
