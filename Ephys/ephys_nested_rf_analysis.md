@@ -78,7 +78,7 @@ Then `idx` is set to the timepoints for which the difference in the frame positi
 
 ![MATLAB figure of the frame position data over the entire P2 experiment (blue) with vertical lines indicating the 6 timepoints in the variable 'idx' (red).]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0002.png){:standalone .ifr_center data-img-class="pop"}
 
-`idx = find(diff_f_data == drop_at_end);` 
+`idx = find(diff_f_data == drop_at_end);`  
 `idx([1,3,5]) = [];`
 
 Since each flash stimulus is followed by a 440ms gap, and each bar stimulus is preceded by a 1000ms gap, there is a ~1440ms period before the first bar stimulus being presented and the last of the 6 pixel flashes being shown. 
