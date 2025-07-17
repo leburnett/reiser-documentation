@@ -76,7 +76,7 @@ Firstly, using the value of the parameter `on_off`, which refers to whether brig
 
 Then `idx` is set to the timepoints for which the difference in the frame position is equal to `drop_at_end`. This happens both once during the 4 pixel flashes and for the last timepoint of the last 6 pixel flash. The 1st, 3rd and 5th values are removed to remove the timepoints during the 4 pixel flashes and so only the timepoints corresponding to the end of the 6 pixel flashes remain. This is useful because this is the stimulus before the bar stimuli start.
 
-![MATLAB figure of the frame position data over the entire P2 experiment (blue) with vertical lines indicating the 6 timepoints in the variable 'idx' (red).]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0002.png){:standalone .ifr data-img-class="pop"}
+![MATLAB figure of the frame position data over the entire P2 experiment (blue) with vertical lines indicating the 6 timepoints in the variable 'idx' (red).]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0002.png){:standalone .ifr_center data-img-class="pop"}
 
 `idx = find(diff_f_data == drop_at_end);` 
 `idx([1,3,5]) = [];`
@@ -102,7 +102,6 @@ This is the code that was used to plot the cyan, magenta and green lines:
 `plot([end_f1 end_f1], [0 100], 'g')` - last frame of the last moving bar stimulus of the repetition.
 
 ![Range of timepoints for the bar stimuli in rep1 (magenta lines), rep2 (red lines) and rep3 (green lines). The third rep uses the last frame of the experiment as the end of it's range. It doesn't matter that this includes the interval time at the end because the actual start and stop times of the bar stimuli are found within these ranges in the next step.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0006.png){:standalone .ifr data-img-class="pop"}
-
 
 
 2. <b>Find the timepoints for when each individual bar stimulus starts and stops. </b>
