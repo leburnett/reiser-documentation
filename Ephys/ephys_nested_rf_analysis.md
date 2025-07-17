@@ -11,14 +11,14 @@ layout: home
 {:toc}
 
 
-# How to analyse the data from the nested RF protocol.
+How to analyse the data from the nested RF protocol.
 
 
 
 
 
 
-## Protocol 1 
+# Protocol 1 
 
 - Processing settings file...
 - Which boxes need to be ticked in the conductor?
@@ -36,11 +36,11 @@ This protocol is mainly for the experimenter to determine where the RF of the ce
 
 
 
+<br>
 
+# Protocol 2
 
-## Protocol 2
-
-### How the data is organised
+## How the data is organised
 
 - Each run of `generate_protocol2()` with create a new folder within `C:\matlabroot\G4_Protocols\nested_RF_protocol2` with the format "YYYY_MM_DD_HH_MM" of the date and time when the protocol was run. 
 - Within this folder there will be a `patterns` folder with the patterns that were used in the protocol, a `functions` folder with the position functions that were used, and a `params` folder containing a file with metadata about the protocol run. 
@@ -48,13 +48,17 @@ This protocol is mainly for the experimenter to determine where the RF of the ce
 
 ![Folder and file organisation for one P2 experiment.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0000.png){:standalone .ifr .pop}
 
-### How to process P2 data
+<br>
+
+## How to process P2 data
 
 Run the function `src/analysis/process_protocol2()` within the experiment folder (`data/YYYY_MM_DD_HH_MM`). This function reads in the metadata file that has information about the strain of the fly, peak_frame, side of the arena.
 
 The responses to the moving bar stimuli are processed first, since this analysis generates a vector sum of the responses of the cell to bars moving in the 16 different directions. The resultant angle of this vector sum is then fed in to the function that processes the flash responses and overlays an arrow with this direction on top of the receptive field plots. 
 
-#### Breakdown of `process_bars_p2`
+<br>
+
+### Breakdown of `process_bars_p2`
 
 This function reads in the frame data:
         `f_data = Log.ADC.Volts(1, :); % frame data`
@@ -66,7 +70,9 @@ This is the data across the entire experiment, the three repetitions of the two 
 [ PNG - 0001 ] 
 ^General plot of f_data and v_data 
 
-##### Parsing the bar data
+<br>
+
+#### Parsing the bar data
 
 The function `src/analysis/protocol2/pipeline/parse_bar_data` is used to parse the frame data to understand when the moving bar stimuli were presented.
 
@@ -76,10 +82,10 @@ Firstly, using the value of the parameter `on_off`, which refers to whether brig
 
 Then `idx` is set to the timepoints for which the difference in the frame position is equal to `drop_at_end`. This happens both once during the 4 pixel flashes and for the last timepoint of the last 6 pixel flash. The 1st, 3rd and 5th values are removed to remove the timepoints during the 4 pixel flashes and so only the timepoints corresponding to the end of the 6 pixel flashes remain. This is useful because this is the stimulus before the bar stimuli start.
 
-![MATLAB figure of the frame position data over the entire P2 experiment (blue) with vertical lines indicating the 6 timepoints in the variable 'idx' (red).]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0002.png){:standalone .ifr_center .pop}
-
 `idx = find(diff_f_data == drop_at_end);`  
-`idx([1,3,5]) = [];`
+`idx([1,3,5]) = [];`  
+
+![MATLAB figure of the frame position data over the entire P2 experiment (blue) with vertical lines indicating the 6 timepoints in the variable 'idx' (red).]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0002.png){:standalone .ifr_center .pop}
 
 Since each flash stimulus is followed by a 440ms gap, and each bar stimulus is preceded by a 1000ms gap, there is a ~1440ms period before the first bar stimulus being presented and the last of the 6 pixel flashes being shown. 
 
@@ -94,9 +100,9 @@ The vertical bars are the timepoints that are found in the code. The two timepoi
 ![Overview of how the timing of the moving bar stimuli are found using the frame position data. The figure shows the end of the 6 pixel flashes, both bar stimuli and the start of the second repetition of the 4 pixel size flashes.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0005.png){:standalone .ifr_center .pop}
 
 This is the code that was used to plot the cyan, magenta and green lines:
-`plot([idx(1)+gap_between_flash_and_bars idx(1)+gap_between_flash_and_bars], [0 100], 'c')` - 1000ms before the start of the first moving bar stimulus.
-`plot([start_f1 start_f1], [0 100], 'm')` - first frame of the first moving bar stimulus.
-`plot([end_f1 end_f1], [0 100], 'g')` - last frame of the last moving bar stimulus of the repetition.
+`plot([idx(1)+gap_between_flash_and_bars idx(1)+gap_between_flash_and_bars], [0 100], 'c')` - 1000ms before the start of the first moving bar stimulus.  
+`plot([start_f1 start_f1], [0 100], 'm')` - first frame of the first moving bar stimulus.  
+`plot([end_f1 end_f1], [0 100], 'g')` - last frame of the last moving bar stimulus of the repetition.  
 
 ![Range of timepoints for the bar stimuli in rep1 (magenta lines), rep2 (red lines) and rep3 (green lines). The third rep uses the last frame of the experiment as the end of it's range. It doesn't matter that this includes the interval time at the end because the actual start and stop times of the bar stimuli are found within these ranges in the next step.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0006.png){:standalone .ifr_center .pop}
 
@@ -104,7 +110,7 @@ This is the code that was used to plot the cyan, magenta and green lines:
 
 2. <b>Find the timepoints for when each individual bar stimulus starts and stops. </b>
 
-Now that we have extracted the range of timepoints during which all of the bar stimuli of one repetition are presented, we now want to extract the timepoints for each individual bar stimulus (one sweep of the bar) within each repetition. To do this, the difference between frame positions are used again. This time we are looking for the timepoints when the frame position changes from 0 (the background interval frame) and 
+Now that we have extracted the range of timepoints during which all of the bar stimuli of one repetition are presented, we now want to extract the timepoints for each individual bar stimulus (one sweep of the bar) within each repetition. To do this, the difference between frame positions are used again. This time we are looking for the timepoints when the frame position changes from 0 (the background interval frame) and a frame when the bar is being presented. For all moving bar stimuli, the bar first appears around frame 10, therefore an absolute difference of >9 in frame position was used to find the timepoints when the bar starts and stops. 
 
 ![Frame position over one repetition of all of the moving bar stimuli. Red vertical lines indicate the start and end of each individual flash sweep. These values are stored within 'idxs_all{1,1}']({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0007.png){:standalone .ifr_center .pop}
 
@@ -124,7 +130,7 @@ This data is combined into the [32 x 4] cell array `data`. The voltage data for 
 
 The cell array `data` is returned by the function `parse_bar_data` and is used for plotting and analysing the responses to the bar stimuli.
 
-##### Plotting the bar data
+#### Plotting the bar data
 
 1. <b>Circular timeseries plot with central polar plot for both speeds. (`src/analysis/plotting/plot_timeseries_polar_bars`)</b>
 
@@ -149,7 +155,7 @@ This function takes in the array `max_v` (size:[n_conditions, n_speeds]) and pro
 [ PNG - 0012]
 ^  Heatmap plot of max_v
 
-##### Calculating metrics from the bar data
+#### Calculating metrics from the bar data
 
 The responses to the moving bar stimuli are then further processed to the calculate:
 - How symmetric the polar plots are. 
@@ -181,11 +187,11 @@ The data that is eventually saved includes `data`, `data_ordered` - ordered by a
 
 
 
-#### Breakdown of `process_flash_p2`
+### Breakdown of `process_flash_p2`
 
 After the responses to the bar stimuli have been processed the function `src/analysis/protocol2/process_flash_p2` is used to process the responses to the two different flash stimuli. This function takes in the parameter `resultant_angle` from `process_bars_p2`. At the beginning of this function, the frame position data and the voltage data are once again loaded in. The median voltage across the entire experiment is calculated and the voltage data is also downsampled with `movmean(v_data, 20000)`. The function then runs through the data for the two different sizes of flash stimuli separately. 
 
-##### Parsing the flash data
+#### Parsing the flash data
 
 First, the function `src/analysis/protocol2/pipeline/parse_flash_data` is used to parse the frame data to understand when the flash stimuli were presented. This functions requires `on_off`, `slow_fast` and `px_size` as input parameters to know whether bright 'on' or dark 'off' stimuli were presented, whether the 'slow' or 'fast' flash speed was used and the size of the flash in pixels, respectively. This function returns several square arrays all of size [n_rows, n_cols] that contain individual values per flash position. 
 
@@ -218,7 +224,7 @@ Cyan line shows the actual range of timepoints for the first flash - 1000 timepo
 
 A number of metrics are then calculated for each individual flash position including the variance across and within reps, the maximum and minimum voltage during the rep and the difference between the maximum and the minimum response. These metrics are then used to assign each flash position to a `cmap` group for later plotting. Basically, flash positions that showed a large depolarising response get assigned to group 1 and will have a warm colourmap in the heatmap plot, flash positions in group 2 have a large hyperpolarising response and will have a cool colourmap and flash positions that don't have a big enough difference in their maximum and minimum voltage across the flash presentation are assigned to group 3 and will be white in the heatmap.  
 
-##### Plotting the flash data
+#### Plotting the flash data
 
 Within `process_flash_p2`, the code loops through the 4 pixel size flashes and then the 6 pixel size flashes. It makes two receptive field plots for both and stores metrics about the voltage data and the receptive field size and shape in a nested structure `rf_results`. 
 
@@ -239,7 +245,7 @@ This function creates a heatmap of the normalised values within `data_comb` (val
 [ PNG - 0018 ]
 ^ Heatmap plot
 
-##### Calculating metrics from the flash data
+#### Calculating metrics from the flash data
 
 The function `src/analysis/protocol2/gaussian_RF_estimate` fits and plots a rotated 2D Gaussian fit around the excitatory and inhibitory lobes of the receptive field. It takes in the normalised and unnormalised versions of `data_comb` as it's inputs and uses the built in MATLAB function `lsqcurvefit` to optimise the parameters for the gaussian fit. The function generates multiple plots showing the fitted data for both the excitatory and the inhibitory lobes and returns the metrics:
     `optEx` - 
