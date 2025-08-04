@@ -154,8 +154,17 @@ You should then see that a folder has been made within the `protocols/LHS` folde
 
         - Make a copy of the file `protocols/processing_settings.mat` and paste it within the newly created experiment folder `protocols/LHS/protocol1_...`. 
 
-        [TODO - update which parameters of the processing_settings.mat file needs to be checked / updated].
+Within the `processing_settings.mat` file, whenever a new project is created the `settings.path_to_protocol` variable must be updated to the path of the `.g4p` file within the new experiment folder. For P1 protocols, it is impoprtant to make sure that the correct 'ephys processing' variables are set too. 
 
+`settings.path_to_protocol` - must be set to  the path to the protocol, including the full name of the `.g4p` file (with the extension).
+
+The following variables should be set for a P1 protocol:
+`settings.is_ephys_grid = 1;`
+`settings.neutral_frame = 1;`
+`settings.grid_columns = [8, 16];`
+`settings.grid_rows = [4, 8];`
+
+If a variation of P1 is made that only uses one pixel size, then the values for `settings.grid_columns` and `settings.grid_rows` will be integers and not tuples.
 
 ### Making P2 from scratch. 
 
@@ -169,7 +178,7 @@ These patterns were made using the `G4_pattern_generator_gui` using the followin
 
 [ PNG - Add png of whatthe pattern genertor looks like for ]
 
-Describe changing the rotation of the arena to generate the bars moving at different angles. 
+To make the patterns of the bars in different orientations, the "arena parameters" were updated to rotate the 'arena' to get the desired rotation of the bar. 
 
 #### Modifying the parameters of P2
 

@@ -7,15 +7,10 @@ nav_order: 1
 layout: home
 ---
 
-1. TOC
-{:toc}
-
-
 How to analyse the data from the nested RF protocol.
 
-
-
-
+1. TOC
+{:toc}
 
 
 # Protocol 1 
@@ -48,8 +43,6 @@ This protocol is mainly for the experimenter to determine where the RF of the ce
 
 ![Folder and file organisation for one P2 experiment.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0000.png){:standalone .ifr .pop}
 
-<br>
-
 ## How to process P2 data
 
 Run the function `src/analysis/process_protocol2()` within the experiment folder (`data/YYYY_MM_DD_HH_MM`). This function reads in the metadata file that has information about the strain of the fly, peak_frame, side of the arena.
@@ -65,7 +58,7 @@ This function reads in the frame data:
 and then the voltage data:
         `v_data = Log.ADC.Volts(2, :)*10; % voltage data`
 
-This is the data across the entire experiment, the three repetitions of the two flash stimuli and the tw2o bar stimuli. The voltage data is multiplied by 10 because during the data acquisition it is downsampled by a factor of 10. (TODO: ADD WHY). 
+This is the data across the entire experiment, the three repetitions of the two flash stimuli and the two bar stimuli. The voltage data is multiplied by 10 because during the data acquisition it is downsampled by a factor of 10. (TODO: ADD WHY). 
 
 [ PNG - 0001 ] 
 ^General plot of f_data and v_data 
@@ -204,13 +197,22 @@ First, the function `src/analysis/protocol2/pipeline/parse_flash_data` is used t
 `min_data` - 2nd percentile value during second half of flash presentation (TODO - include interval time after too).
 
 1. <b>Find the range of timepoints during which all of the flash stimuli for each repetition were being presented.</b>
-Similar to how the bar data is parsed, the difference between the frame positions is used to coarsely divide the data up into the different stimuli. For the flash stimuli the variable `idx` contains the timepoints that correspond to the start of the different flash stimuli. The same conditions as used for parsing the bar data are used to find the end of the 6 pixel flashes and these indices are stored in `idx_6px`. 
+
+Similar to how the bar data is parsed, the difference between the frame positions is used to coarsely divide the data up into the different stimuli. For the flash stimuli the variable `idx` contains the timepoints that correspond to the <b>start</b> of the different flash stimuli repetitions (both the 4 pixel and the 6 pixel flashes). 
+
+As a reminder, P2 consists of 4 pixel flash stimuli presented, followed by 6 pixel flash stimuli of one contrast (designated by the value of the parameter `on_off`). Both the 'on' and the 'off' versions of P2 use the same pattern files that contain frames with dark flashes followed by frames with bright flashes. It is only the position functions, the files that tell the controller which frame of the pattern to present, that differ between the 'on' and 'off' versions of P2. Because of this, a key difference then between the 'on' and 'off' versions of P2 is that the first flash of both the 4 pixel and 6 pixel flashes for the 'off' version is frame 2 of the pattern - which is equal to the value 1 in `f_data`. Whereas in the 'on' version of P2, the first flash of the 4 pixel flashes is `f_data` = 197 and the first flash of the 6 pixel flashes is `f_data` = 101. This is because there are 196 4 pixel dark flashes and 100 6 pixel dark flashes in the pattern before the bright flashes. This information is used to find the start of the 4 pixel flashes and the 6 pixel flashes.
+
+To find the end of the flash stimuli repetitions, the beginning of the 6 pixel flash stimuli is used to set the end of the 4 pixel flash stimuli. The end of the 6 pixel flash stimuli is found using the same method that is used when parsing the bar data. These timepoint indices are stored in `idx_6px`. 
 
 [ PNG - 0014 ]
-^ f_data with vertical lines for the beginning of each flash stimulus. 
+^ f_data with vertical lines for the beginning of each flash stimulus - OFF STIMULUS.
 
 [ PNG - 0015 ]
 ^ close up of 0014 for the start of 4px flashes - rep 1. 
+
+[ PNG - 0015-5 ]
+^ f_data with vertical lines for the beginning of each flash stimulus - ON STIMULUS.
+
 
 2. <b>Find the timepoints for when individual flash stimuli start and stop. </b> 
 
