@@ -44,7 +44,7 @@ When any protocol is started by clicking on the "Run" button within the MATLAB e
 
 Within the function `initialize_video_and_folder`, `params` is added to with the current date, the experiment time and the protocol which is being run. The in-built MATLAB function `input` is used within this function enable the user to type a string describing initial notes before the experiment has started. This string is also added to `params`. Within the protocol script itself, there is another call to `input` which can be used to enter notes at the end of experiment. These notes could relate to the general behaviour of the group of flies or some experimental abnormality. After this final `input` call, the function `export_to_google_sheets` is run which takes in the URL of the pre-made google form that will be filled by the values of `params`. 
 
-## How to make google form logging system
+## How to make the google form logging system
 <b>1</b> - Generate a pop up to take in data from the user. See`get_input_parameters` or `get_video_observations` in this repository for inspiration.<br>
 <b>2</b> - Use the MATLAB function `input` if you want to include a long form string in your documentation.<br>
 <b>3</b> - Make a google form with "questions" relating to the fields of data that you would like to record. The "questions" do not need to match exactly the naming of the struct that is returned from GUI.<br> 
