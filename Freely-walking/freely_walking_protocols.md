@@ -50,15 +50,15 @@ The protocol used was protocol 27.
 3 - Make a google form with "questions" relating to the fields of data that you would like to record. The "questions" do not need to match exactly the naming of the struct that is returned from GUI. 
 4 - Set the "type" of each question to "short answer" question. Don't use "date" or "time" even if you have those fields. 
 
-    ![Select 'short answer' when creating the google form.]({{ site.baseurl }}/assets/imgs/freely/protocols/0002.png){:standalone .ifr_center .pop}
+![Select 'short answer' when creating the google form.]({{ site.baseurl }}/assets/imgs/freely/protocols/0002.png){:standalone .ifr_center .pop}
 
 5 - Click on the three-dot menu (⋮) in the top right and select "Pre-fill form".
 
-    ![Select 'Pre-fill form']({{ site.baseurl }}/assets/imgs/freely/protocols/0003.png){:standalone .ifr_center .pop}
+![Select 'Pre-fill form']({{ site.baseurl }}/assets/imgs/freely/protocols/0003.png){:standalone .ifr_center .pop}
 
 6 - Fill in sample responses and click "Get link" to generate a URL.
 
-    ![Fill in the form with example entries then press 'Get link'.]({{ site.baseurl }}/assets/imgs/freely/protocols/0004.png){:standalone .ifr_center .pop}
+![Fill in the form with example entries then press 'Get link'.]({{ site.baseurl }}/assets/imgs/freely/protocols/0004.png){:standalone .ifr_center .pop}
 
 7 - Copy the generated link (it will look something like this):
 
@@ -99,9 +99,9 @@ googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLScgK2F-PiaHaW9AiqUjHNZ
 ```
 10 - Publish the form. 
 
-    ![Publish the form to make it accessible.]({{ site.baseurl }}/assets/imgs/freely/protocols/0005.png){:standalone .ifr_center .pop}
+![Publish the form to make it accessible.]({{ site.baseurl }}/assets/imgs/freely/protocols/0005.png){:standalone .ifr_center .pop}
 
 11 - Try running the script and see if a response is recorded within the form! Once you get responses you can open a google sheet and look at the combined responses there. 
 
-    ![View the responses in the 'response' tab within the form.]({{ site.baseurl }}/assets/imgs/freely/protocols/0006.png){:standalone .ifr_center .pop}
-    ![Or, view the responses in the linked google sheet.]({{ site.baseurl }}/assets/imgs/freely/protocols/0007.png){:standalone .ifr_center .pop}
+![View the responses in the 'response' tab within the form.]({{ site.baseurl }}/assets/imgs/freely/protocols/0006.png){:standalone .ifr_center .pop}
+![Or, view the responses in the linked google sheet.]({{ site.baseurl }}/assets/imgs/freely/protocols/0007.png){:standalone .ifr_center .pop}
