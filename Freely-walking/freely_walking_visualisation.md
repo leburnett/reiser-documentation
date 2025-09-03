@@ -1,9 +1,10 @@
 ---
-title: Freely-walking-analysis
+title: Freely-walking-visualisation
 parent: Freely-walking
 has_children: true
 has_toc: true
 nav_order: 10
+layout: home
 ---
 
 1. TOC
