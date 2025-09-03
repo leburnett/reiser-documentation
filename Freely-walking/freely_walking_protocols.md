@@ -40,7 +40,7 @@ The protocol used was protocol 27.
 
     When any protocol is started by clicking on the "Run" button within the MATLAB editor, the function `get_input_parameters()` is run which opens a pop up window where the user can fill in details about the current experiment using a series of dropdown boxes (See figure). These values are assigned to fields within the struct `params` which is returned by the function.
 
-![`get_input_parameters` GUI that pops up when you run any protocol.]({{ site.baseurl }}/assets/imgs/freely/protocols/0001.png){:standalone .ifr_center}
+![`get_input_parameters` GUI that pops up when you run any protocol.]({{ site.baseurl }}/assets/imgs/freely/protocols/0001.png){:standalone .ifr}
 
     Within the function `initialize_video_and_folder`, `params` is added to with the current date, the experiment time and the protocol which is being run. The in-built MATLAB function `input` is used within this function enable the user to type a string describing initial notes before the experiment has started. This string is also added to `params`. Within the protocol script itself, there is another call to `input` which can be used to enter notes at the end of experiment. These notes could relate to the general behaviour of the group of flies or some experimental abnormality. After this final `input` call, the function `export_to_google_sheets` is run which takes in the URL of the pre-made google form that will be filled by the values of `params`. 
 
@@ -103,7 +103,10 @@ googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLScgK2F-PiaHaW9AiqUjHNZ
 
 ![Publish the form to make it accessible.]({{ site.baseurl }}/assets/imgs/freely/protocols/0005.png){:standalone .ifr_center}
 
-<b>11</b> - Try running the script and see if a response is recorded within the form! Once you get responses you can open a google sheet and look at the combined responses there. 
+<b>11</b> - Try running the script and see if a response is recorded within the form!
 
 ![View the responses in the 'response' tab within the form.]({{ site.baseurl }}/assets/imgs/freely/protocols/0006.png){:standalone .ifr_center}
+
+Once you get responses you can open a google sheet and look at the combined responses there. 
+
 ![Or, view the responses in the linked google sheet.]({{ site.baseurl }}/assets/imgs/freely/protocols/0007.png){:standalone .ifr_center}
