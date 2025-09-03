@@ -3,7 +3,7 @@ title: Freely-walking-analysis
 parent: Freely-walking
 has_children: true
 has_toc: true
-nav_order: 5
+nav_order: 20
 layout: home
 ---
 

@@ -3,7 +3,7 @@ title: Freely-walking-visualisation
 parent: Freely-walking
 has_children: true
 has_toc: true
-nav_order: 10
+nav_order: 30
 layout: home
 ---
 
