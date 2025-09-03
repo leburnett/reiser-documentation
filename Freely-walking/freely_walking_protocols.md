@@ -45,10 +45,10 @@ When any protocol is started by clicking on the "Run" button within the MATLAB e
 Within the function `initialize_video_and_folder`, `params` is added to with the current date, the experiment time and the protocol which is being run. The in-built MATLAB function `input` is used within this function enable the user to type a string describing initial notes before the experiment has started. This string is also added to `params`. Within the protocol script itself, there is another call to `input` which can be used to enter notes at the end of experiment. These notes could relate to the general behaviour of the group of flies or some experimental abnormality. After this final `input` call, the function `export_to_google_sheets` is run which takes in the URL of the pre-made google form that will be filled by the values of `params`. 
 
 ## How to make google form logging system
-<b>1</b> - Generate a pop up to take in data from the user. See`get_input_parameters` or `get_video_observations` in this repository for inspiration.
-<b>2</b> - Use the MATLAB function `input` if you want to include a long form string in your documentation.
-<b>3</b> - Make a google form with "questions" relating to the fields of data that you would like to record. The "questions" do not need to match exactly the naming of the struct that is returned from GUI. 
-<b>4</b> - Set the "type" of each question to "short answer" question. Don't use "date" or "time" even if you have those fields. 
+<b>1</b> - Generate a pop up to take in data from the user. See`get_input_parameters` or `get_video_observations` in this repository for inspiration.<br>
+<b>2</b> - Use the MATLAB function `input` if you want to include a long form string in your documentation.<br>
+<b>3</b> - Make a google form with "questions" relating to the fields of data that you would like to record. The "questions" do not need to match exactly the naming of the struct that is returned from GUI.<br> 
+<b>4</b> - Set the "type" of each question to "short answer" question. Don't use "date" or "time" even if you have those fields.<br> 
 
 ![Select 'short answer' when creating the google form.]({{ site.baseurl }}/assets/imgs/freely/protocols/0002.png){:standalone .ifr_center}
 
@@ -66,14 +66,15 @@ Within the function `initialize_video_and_folder`, `params` is added to with the
 "https://docs.google.com/forms/d/e/1FAIpQLScgK2F-PiaHaW9AiqUjHNZ9D1WYpF1-W19sEwlob2orr2wyfg/viewform?usp=pp_url&entry.104586054=10_23_25&entry.1144953751=10_04_27&entry.1017789798=empty_split&entry.462337747=10&entry.635492352=4Hz_gratings&entry.1832623891=1&entry.932164432=None&entry.324082057=None&entry.1509506971=None&entry.350553119=Sparse&entry.1178542927=None&entry.1494282419=10&entry.183573490=Test+case"
 ```
 
-<b>8</b> - From this link extract the "googleFormURL" and the entry IDs. 
+<b>8</b> - From this link extract the "googleFormURL" and the entry IDs.<br> 
 To find the "googleFormURL", get the first part of this URL up to "/viewform?....". Copy this initial part of the URL and after the last "/" add "formResponse". So, the final URL will be:
 
 ```
 googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLScgK2F-PiaHaW9AiqUjHNZ9D1WYpF1-W19sEwlob2orr2wyfg/formResponse"
 ```
 
-<b>9</b> - Then, each number after `entry.` is the entry ID that corresponds to each field in your form, these need to be added within the `webwrite` call. This is what the code in MATLAB will look like:
+<b>9</b> - Link the MATLAB data with the questions in the google form.<br>
+Each number after `entry.` is the entry ID that corresponds to each field in your form, these need to be added within the `webwrite` call. This is what the code in MATLAB will look like:
 
 ```
     % Google Form Response URL (Make sure it ends with /formResponse)
@@ -109,4 +110,4 @@ googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLScgK2F-PiaHaW9AiqUjHNZ
 
 Once you get responses you can open a google sheet and look at the combined responses there. 
 
-![Or, view the responses in the linked google sheet.]({{ site.baseurl }}/assets/imgs/freely/protocols/0007.png){:standalone .ifr_center}
+![View the responses in the linked google sheet.]({{ site.baseurl }}/assets/imgs/freely/protocols/0007.png){:standalone .ifr_center}
