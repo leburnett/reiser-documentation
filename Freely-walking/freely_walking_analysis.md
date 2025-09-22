@@ -142,13 +142,16 @@ Saves in the results ".mat" file "_data.mat":
 ### Explanation of the different functions used to combine data.
 
 #### **combine_data_one_cohort**
+This function is used within `process_data_features` to combine the data from all flies within a single experiment (vial of flies) into a single struct called `comb_data`. This struct contains fields for each behavioural metric (e.g. 'fv_data') and each field contains a 2D array of size [n_flies x n_frames]. This function takes in the output from FlyTracker (the 'feat' and 'trx' variables).
 
-comb_data_one_cohort_cond
+Critically, this function checks for flies with bad tracking and removes them. The tracked data returned from FlyTracker is also smoothed and checked for moments when the tracking might have gone wrong (when vel > 50 mms-1), those points are set to NaN and filled using an appropriate method for the datatype. This processed data is what is then saved to the results file and used to create the cross cohort 'DATA' struct used for all downstream analyses and plotting. The original data is never altered however and can be found in the original data folder.
 
-comb_data_across_cohorts_cond
+#### **comb_data_one_cohort_cond**
+Both `comb_data_one_cohort_cond` and `comb_data_across_cohorts_cond` create the nested data structure 'DATA' based on the conditions within the experiment. However, the single cohort version is **only** used within `process_data_features` to create the 'DATA' struct that is used for creating the overview time series plots that are saved per vial.
 
-A lot of the faff comes down to finding out which condition was being presented. Now this is saved in the LOG and so there shouldn't be as much confusion. For processing the screen data this is not so much of a problem. 
+#### **comb_data_across_cohorts_cond**
 
+This function is used within `process_screen_data` to combine the data from all flies across multiple cohorts (vials of flies) into a single struct called `DATA`. This struct contains fields for each behavioural metric (e.g. 'fv_data') and each field contains a 3D array of size [n_flies x n_frames x n_cohorts]. This function takes in the output from multiple runs of `process_data_features` (the 'comb_data' variable saved in the results .mat file). In order for this function to work, the experiments must have been run using a protocol that saves the condition number to the LOG file. This was not done for earlier protocols and so might cause trouble if trying to analyse earlier experiments.
 
 
 ## Level 2 - analyse across cohorts: `process_screen_data`
@@ -183,13 +186,8 @@ This [function](https://github.com/leburnett/freely-walking-optomotor/blob/proce
 
 
 
-
-
 ## Processing of other protocols
 
 Data from `protocol_30` and `protocol_31` run the functions `plot_errorbar_tuning_curve_diff_contrasts` and `plot_errorbar_tuning_diff_speeds`, respectively. Which plot tuning curve plots in addition to the timeseries plots. 
 
-- Runs the function `generate_movie_from_ufmf` which makes individual movies each rep of each condition per experiment. 
-
 Data from `protocol_25` - individual flies used the script `single_lady_analysis.m`. 
-
