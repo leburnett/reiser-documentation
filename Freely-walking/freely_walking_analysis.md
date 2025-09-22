@@ -76,36 +76,37 @@ Runs the function `process_data_features` per cohort and experiment.
 Processes the tracked data from FlyTracker. 
 
 Loads: 
-    - LOG (metadata about the experiment.)
-    - feat (from FlyTracker)
-    - trx (from FlyTracker)
+- LOG (metadata about the experiment.)
+- feat (from FlyTracker)
+- trx (from FlyTracker)
 
 Saves in the results ".mat" file "_data.mat":
-    - LOG
-    - feat (updated with "poorly tracked" flies removed)
-    - trx (updated with "poorly tracked" flies removed)
-    - comb_data (combined data from all flies in the vial across the entire experiment)
-    - n_fly_data (3 x 1 array of [n_flies_in_arena, n_flies_tracked, n_flies_removed]). Useful to see how many flies were "lost" during the processing due to tracking errors.
+- LOG
+- feat (updated with "poorly tracked" flies removed)
+- trx (updated with "poorly tracked" flies removed)
+- comb_data (combined data from all flies in the vial across the entire experiment)
+- n_fly_data (3 x 1 array of [n_flies_in_arena, n_flies_tracked, n_flies_removed]). Useful to see how many flies were "lost" during the processing due to tracking errors.
 
 1. Combines the tracking data for all flies within one data across the entire experiment - the data is not parsed based on condition yet.
 
 The function `comb_data_one_cohort` combines the data from all flies within a single experiment (vial of flies) into a single struct called `comb_data`. This struct contains fields for each behavioural metric (e.g. 'fv_data', 'av_data', 'curv_data', 'dist_data') and each field contains a 2D array of size [n_flies x n_frames]. This function takes in the output from FlyTracker (the 'feat' and 'trx' variables). 
+
 The data is first checked for inccorect or incomplete tracking. It runs the function `check_tracking_FlyTrk` which checks the rows of the table `trx` and removes any rows that do not contain the mode number of datapoints (frames). 
 
 The data extracted directly from the FlyTracker output are:
-    - distance from the edge of the arena (from `feat`).
-    - heading (from `trx`).
-    - x position (from `trx`).
-    - y position (from `trx`).
+- distance from the edge of the arena (from `feat`).
+- heading (from `trx`).
+- x position (from `trx`).
+- y position (from `trx`).
 
 Data calculated from this data:
-    - angular velocity (using the function `vel_estimate`)
-    - forward velocity (two point, in direction of heading)
-    - three point velocity in any direction (using the function `calculate_three_point_velocity`)
-    - turning rate (angular velocity / forward velocity)
-    - viewing distance (using the function `calculate_viewing_distance`)
-    - inter fly distance (using the function `calculate_distance_to_nearest_fly`)
-    - inter fly angle (using the function `calculate_distance_to_nearest_fly`)
+- angular velocity (using the function `vel_estimate`)
+- forward velocity (two point, in direction of heading)
+- three point velocity in any direction (using the function `calculate_three_point_velocity`)
+- turning rate (angular velocity / forward velocity)
+- viewing distance (using the function `calculate_viewing_distance`)
+- inter fly distance (using the function `calculate_distance_to_nearest_fly`)
+- inter fly angle (using the function `calculate_distance_to_nearest_fly`)
 
 [PNG - example of this "comb_data" structure.]
 
