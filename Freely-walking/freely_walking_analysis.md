@@ -10,7 +10,15 @@ layout: home
 1. TOC
 {:toc}
 
-# How to analyse the data from the MIC screen
+# Overview
+
+The data acquired from freely-walking optomotor experiments, especially during the screen using protocol 27, is analysed in two main steps.
+
+The first step (`process_freely_walking_data`) is done per cohort (each vial of flies that was run). This creates several "overview" level plots for the individual cohort. 
+
+The second step (`process_screen_data`) combines data from across cohorts and parses the data based on the condition too. This creates plots that compare the behaviour of each strain against the empty-split control flies.
+
+# Requirements for analysing the data from the MIC screen
 
 In order for the processing pipeline to run, within each experiment folder there should be: 
 - a .ufmf video of the entire experiment
@@ -36,6 +44,11 @@ The LOG file contains metadata about the experiment (fly strain, date and time, 
         - <span style="color: blue"> plot_errorbar_tuning_diff_speeds </span>
         - generate_circ_stim_ufmf
             - create_stim_video_loop
+
+- process_screen_data
+    - <span style="color: red"> comb_data_across_cohorts_cond </span>
+    - <span style="color: red"> generate_exp_data_struct </span>
+    - <span style="color: blue"> plot_allcond_acrossgroups_tuning </span>
         
 From the running of `process_freely_walking_data`, a results .mat file is generated that contains the LOG, feat, trx, comb_data and n_fly_data variables. This .mat file has "_data.mat" at the end of the filename and is saved within the "save_folder" specified in `process_freely_walking_data`.
 `comb_data_one_cohort_cond` does create the ultimate 'DATA' struct that is used for generating most plots, but it is not saved in the results file because it was getting too big and there were memory issues with trying to save it. 
@@ -128,6 +141,30 @@ The data from all flies is combined into an easier to manipulate 'struct' called
 - Runs the function `plot_allcond_onecohort_tuning` which generates a [(n_conditions/2) x 2] subplot figure of the timeseries data during each condition (mean+SEM of all the flies in the vial) as well as tuning curves per condition. 
 
 [PNG - example of this figure]
+
+
+____________________
+
+Detailed explanation of the differences between the functions:
+
+combine_data_one_cohort
+
+comb_data_one_cohort_cond
+
+comb_data_across_cohorts_cond
+
+A lot of the faff comes down to finding out which condition was being presented. Now this is saved in the LOG and so there shouldn't be as much confusion. For processing the screen data this is not so much of a problem. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
