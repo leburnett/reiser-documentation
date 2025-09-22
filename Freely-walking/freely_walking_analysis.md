@@ -1,5 +1,5 @@
 ---
-title: Analysis
+title: Analysis (freely-walking)
 parent: Freely-walking
 has_children: true
 has_toc: true
