@@ -71,7 +71,6 @@ Runs the function `process_data_features` per cohort and experiment.
     - Feat_overview timeseries
     - Timeseries per behavioural metric per vial.
 
-
 ### Description of `process_data_features`
 Processes the tracked data from FlyTracker. 
 
@@ -87,62 +86,59 @@ Saves in the results ".mat" file "_data.mat":
 - comb_data (combined data from all flies in the vial across the entire experiment)
 - n_fly_data (3 x 1 array of [n_flies_in_arena, n_flies_tracked, n_flies_removed]). Useful to see how many flies were "lost" during the processing due to tracking errors.
 
-1. Combines the tracking data for all flies within one data across the entire experiment - the data is not parsed based on condition yet.
+1. Combine the tracking data for all flies within one vial across the entire experiment - the data is not parsed based on condition yet.
 
-The function `comb_data_one_cohort` combines the data from all flies within a single experiment (vial of flies) into a single struct called `comb_data`. This struct contains fields for each behavioural metric (e.g. 'fv_data', 'av_data', 'curv_data', 'dist_data') and each field contains a 2D array of size [n_flies x n_frames]. This function takes in the output from FlyTracker (the 'feat' and 'trx' variables). 
+    The function `comb_data_one_cohort` combines the data from all flies within a single experiment (vial of flies) into a single struct called `comb_data`. This struct contains fields for each behavioural metric (e.g. 'fv_data', 'av_data', 'curv_data', 'dist_data') and each field contains a 2D array of size [n_flies x n_frames]. This function takes in the output from FlyTracker (the 'feat' and 'trx' variables). 
 
-The data is first checked for inccorect or incomplete tracking. It runs the function `check_tracking_FlyTrk` which checks the rows of the table `trx` and removes any rows that do not contain the mode number of datapoints (frames). 
+    The data is first checked for incorect or incomplete tracking. It runs the function `check_tracking_FlyTrk` which checks the rows of the table `trx` and removes any rows that do not contain the mode number of datapoints (frames). 
 
-The data extracted directly from the FlyTracker output are:
-- distance from the edge of the arena (from `feat`).
-- heading (from `trx`).
-- x position (from `trx`).
-- y position (from `trx`).
+    The data extracted directly from the FlyTracker output are:
+    - distance from the edge of the arena (from `feat`).
+    - heading (from `trx`).
+    - x position (from `trx`).
+    - y position (from `trx`).
 
-Data calculated from this data:
-- angular velocity (using the function `vel_estimate`)
-- forward velocity (two point, in direction of heading)
-- three point velocity in any direction (using the function `calculate_three_point_velocity`)
-- turning rate (angular velocity / forward velocity)
-- viewing distance (using the function `calculate_viewing_distance`)
-- inter fly distance (using the function `calculate_distance_to_nearest_fly`)
-- inter fly angle (using the function `calculate_distance_to_nearest_fly`)
+    Data calculated from this data:
+    - angular velocity (using the function `vel_estimate`)
+    - forward velocity (two point, in direction of heading)
+    - three point velocity in any direction (using the function `calculate_three_point_velocity`)
+    - turning rate (angular velocity / forward velocity)
+    - viewing distance (using the function `calculate_viewing_distance`)
+    - inter fly distance (using the function `calculate_distance_to_nearest_fly`)
+    - inter fly angle (using the function `calculate_distance_to_nearest_fly`)
 
-[PNG - example of this "comb_data" structure.]
+    [PNG - example of this "comb_data" structure.]
 
 2. Create plots that give an overview of the behaviour of the flies during the entire experiment.
 
-- Runs the function `make_overview` which generates a figure containing histogram subplots of the general behaviour of the flies over the entire length of the protocol. 
+    - Runs the function `make_overview` which generates a figure containing histogram subplots of the general behaviour of the flies over the entire length of the protocol. 
 
-[PNG - example of this figure]
+    [PNG - example of this figure]
 
-- Runs the function `plot_all_features_filt` which generates a plot of timeseries data for all flies over the entire length of the protocol. This figure is comprised of 4 subplots which show the forward velocity, angular velocity, turning rate and distance from the centre of the arena across the entire experiment. Coloured rectangles are used in the background to indicate when each condition occurred.
+    - Runs the function `plot_all_features_filt` which generates a plot of timeseries data for all flies over the entire length of the protocol. This figure is comprised of 4 subplots which show the forward velocity, angular velocity, turning rate and distance from the centre of the arena across the entire experiment. Coloured rectangles are used in the background to indicate when each condition occurred.
 
-[PNG - example of this figure]
+    [PNG - example of this figure]
 
-- Runs the function `plot_all_features_acclim` which generates a plot of timeseries data for all flies during the 5 minutes of acclimatisation in the dark. It uses the frame number that corresponds to the end of the acclimatisation period from the LOG file to determine which range of data to plot. The forward velocity, angular velocity, turning rate and both absolute and relative distance from the centre of the arena are plotted.
+    - Runs the function `plot_all_features_acclim` which generates a plot of timeseries data for all flies during the 5 minutes of acclimatisation in the dark. It uses the frame number that corresponds to the end of the acclimatisation period from the LOG file to determine which range of data to plot. The forward velocity, angular velocity, turning rate and both absolute and relative distance from the centre of the arena are plotted.
 
-    `acclim_end = LOG.acclim_off1.stop_f;`
-    `range_of_data_to_plot = 1:acclim_end;`
+        `acclim_end = LOG.acclim_off1.stop_f;`
+        `range_of_data_to_plot = 1:acclim_end;`
 
-[PNG - example of this figure]
+    [PNG - example of this figure]
 
 3. Parse the behavioural data based on the conditions within the experiment.
 
-The data from all flies is combined into an easier to manipulate 'struct' called `DATA` through the function `comb_data_one_cohort_cond`.
+    The data from all flies is combined into an easier to manipulate 'struct' called `DATA` through the function `comb_data_one_cohort_cond`.
 
-[PNG - example of DATA structure.]
+    [PNG - example of DATA structure.]
 
 4. Plot the data that has been parsed based on condition.
 
-- Runs the function `plot_allcond_onecohort_tuning` which generates a [(n_conditions/2) x 2] subplot figure of the timeseries data during each condition (mean+SEM of all the flies in the vial) as well as tuning curves per condition. 
+    - Runs the function `plot_allcond_onecohort_tuning` which generates a [(n_conditions/2) x 2] subplot figure of the timeseries data during each condition (mean+SEM of all the flies in the vial) as well as tuning curves per condition. 
 
-[PNG - example of this figure]
+    [PNG - example of this figure]
 
-
-____________________
-
-Detailed explanation of the differences between the functions:
+### Explanation of the different functions used to combine data.
 
 combine_data_one_cohort
 
@@ -154,32 +150,7 @@ A lot of the faff comes down to finding out which condition was being presented.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Processing of other protocols
-
-Data from `protocol_30` and `protocol_31` run the functions `plot_errorbar_tuning_curve_diff_contrasts` and `plot_errorbar_tuning_diff_speeds`, respectively. Which plot tuning curve plots in addition to the timeseries plots. 
-
-- Runs the function `generate_movie_from_ufmf` which makes individual movies each rep of each condition per experiment. 
-
-Data from `protocol_25` - individual flies used the script `single_lady_analysis.m`. 
-
-
-
-
-## `process_screen_data`
+## Level 2 - analyse across cohorts: `process_screen_data`
 
 This function works by using the .mat results files that were generated after running `process_freely_walking_data`. It heavily relies upon the structured format of the data into the same 'DATA' struct created by `comb_data_one_cohort_cond` but instead uses `comb_data_across_cohorts_cond` to generate the structure across all flies from multiple cohorts.
 
@@ -195,7 +166,10 @@ This function works by using the .mat results files that were generated after ru
 - 5 x figures per strain (timeseries per condition)
 - Text file and 2 plots of the number of vials per strain and the number of flies per strain. 
 
-## Making p-value heatmap using `make_summary_heat_maps_p27`
+[PNG - example of the timeseries plots for one strain against the empty split flies]
+
+
+## Level 3 - Statistical analysis of the data across cohorts: `make_summary_heat_maps_p27`
 
 This [function](https://github.com/leburnett/freely-walking-optomotor/blob/processing_computer/plotting_functions/summary_plot/make_summary_heat_maps_p27.m) generates a red-blue heatmap of the p-value for different behavioural metrics across each condition compared to the empty-split control flies.  
 
@@ -203,3 +177,18 @@ This [function](https://github.com/leburnett/freely-walking-optomotor/blob/proce
 - It then uses the function `make_pvalue_heatmap_across_strains` to generate arrays of all of the p-values.
 - A False-Detection Rate adjustment is performed using `fdr_bh`. 
 - The data is plotted altogether using the function `plot_pval_heatmap_strains`. 
+
+[PNG - example heatmap figure]
+
+
+
+
+
+## Processing of other protocols
+
+Data from `protocol_30` and `protocol_31` run the functions `plot_errorbar_tuning_curve_diff_contrasts` and `plot_errorbar_tuning_diff_speeds`, respectively. Which plot tuning curve plots in addition to the timeseries plots. 
+
+- Runs the function `generate_movie_from_ufmf` which makes individual movies each rep of each condition per experiment. 
+
+Data from `protocol_25` - individual flies used the script `single_lady_analysis.m`. 
+
