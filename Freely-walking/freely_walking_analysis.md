@@ -86,7 +86,8 @@ Saves in the results ".mat" file "_data.mat":
 - comb_data (combined data from all flies in the vial across the entire experiment)
 - n_fly_data (3 x 1 array of [n_flies_in_arena, n_flies_tracked, n_flies_removed]). Useful to see how many flies were "lost" during the processing due to tracking errors.
 
-1. Combine the tracking data for all flies within one vial across the entire experiment - the data is not parsed based on condition yet.
+1. **Combine the tracking data for all flies within one vial across the entire experiment**
+    The data is not parsed based on condition yet.
 
     The function `comb_data_one_cohort` combines the data from all flies within a single experiment (vial of flies) into a single struct called `comb_data`. This struct contains fields for each behavioural metric (e.g. 'fv_data', 'av_data', 'curv_data', 'dist_data') and each field contains a 2D array of size [n_flies x n_frames]. This function takes in the output from FlyTracker (the 'feat' and 'trx' variables). 
 
@@ -109,7 +110,7 @@ Saves in the results ".mat" file "_data.mat":
 
     [PNG - example of this "comb_data" structure.]
 
-2. Create plots that give an overview of the behaviour of the flies during the entire experiment.
+2. **Create plots that give an overview of the behaviour of the flies during the entire experiment.**
 
     - Runs the function `make_overview` which generates a figure containing histogram subplots of the general behaviour of the flies over the entire length of the protocol. 
 
@@ -126,13 +127,13 @@ Saves in the results ".mat" file "_data.mat":
 
     [PNG - example of this figure]
 
-3. Parse the behavioural data based on the conditions within the experiment.
+3. **Parse the behavioural data based on the conditions within the experiment.**
 
     The data from all flies is combined into an easier to manipulate 'struct' called `DATA` through the function `comb_data_one_cohort_cond`.
 
     [PNG - example of DATA structure.]
 
-4. Plot the data that has been parsed based on condition.
+4. **Plot the data that has been parsed based on condition.**
 
     - Runs the function `plot_allcond_onecohort_tuning` which generates a [(n_conditions/2) x 2] subplot figure of the timeseries data during each condition (mean+SEM of all the flies in the vial) as well as tuning curves per condition. 
 
