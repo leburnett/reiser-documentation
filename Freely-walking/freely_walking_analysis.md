@@ -89,11 +89,11 @@ Saves in the results ".mat" file "_data.mat":
 1. **Combine the tracking data for all flies within one vial across the entire experiment**
     The data is not parsed based on condition yet.
 
-    The function `comb_data_one_cohort` combines the data from all flies within a single experiment (vial of flies) into a single struct called `comb_data`. This struct contains fields for each behavioural metric (e.g. 'fv_data', 'av_data', 'curv_data', 'dist_data') and each field contains a 2D array of size [n_flies x n_frames]. This function takes in the output from FlyTracker (the 'feat' and 'trx' variables). 
+    The function `comb_data_one_cohort` combines the data from all flies within a single experiment (vial of flies) into a single struct called `comb_data`. This struct contains fields for each behavioural metric (e.g. 'fv_data') and each field contains a 2D array of size [n_flies x n_frames]. This function takes in the output from FlyTracker (the 'feat' and 'trx' variables). 
 
     The data is first checked for incorect or incomplete tracking. It runs the function `check_tracking_FlyTrk` which checks the rows of the table `trx` and removes any rows that do not contain the mode number of datapoints (frames). 
 
-    The data extracted directly from the FlyTracker output are:
+    The data extracted directly from the **FlyTracker** output are:
     - distance from the edge of the arena (from `feat`).
     - heading (from `trx`).
     - x position (from `trx`).
@@ -141,7 +141,7 @@ Saves in the results ".mat" file "_data.mat":
 
 ### Explanation of the different functions used to combine data.
 
-combine_data_one_cohort
+#### **combine_data_one_cohort**
 
 comb_data_one_cohort_cond
 
