@@ -52,23 +52,17 @@ Functions in <span style="color: blue">blue</span> are used for plotting the dat
     - <span style="color: red"> generate_exp_data_struct </span>
     - <span style="color: blue"> plot_allcond_acrossgroups_tuning </span>
         
-From the running of `process_freely_walking_data`, a results .mat file is generated that contains the LOG, feat, trx, comb_data and n_fly_data variables. This .mat file has "_data.mat" at the end of the filename and is saved within the "save_folder" specified in `process_freely_walking_data`.
-`comb_data_one_cohort_cond` does create the ultimate 'DATA' struct that is used for generating most plots, but it is not saved in the results file because it was getting too big and there were memory issues with trying to save it. 
 
-~ Think about efficient saving. We probably don't need to save all of these formats. There's a lot of double saving of things altogether so that you don't have to keep opening all of the individual files, but this is not really necessary if all of the processing and plotting is done in one go. ~
-
-
-
-## `process_freely_walking_data`
+## Level 1 - analyse per cohort: `process_freely_walking_data`
 
 ### Inputs 
 
 Requires string of the date for which you want to analyse the data. It will process all of the data from experiments conducted with any protocol that are within that day. 
 
-Runs the function `process_data_features`.  
+Runs the function `process_data_features` per cohort and experiment. 
 
 ### Outputs
-- Exports a text file of the number of flies ran per protocol and per strain. [TODO: name of text file]
+- Exports a text file of the number of flies ran per protocol and per strain.
 - Results .mat file
     - Contains: [LOG, feat, trx, comb_data, n_fly_data]
     - per vial
