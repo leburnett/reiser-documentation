@@ -1,5 +1,5 @@
 ---
-title: Freely-walking-analysis
+title: Analysis
 parent: Freely-walking
 has_children: true
 has_toc: true
@@ -32,23 +32,23 @@ The LOG file contains metadata about the experiment (fly strain, date and time, 
 
 ### Tree structure of processing functions
 
-- process_freely_walking_data
-    - process_data_features
-        - <span style="color: red"> combine_data_one_cohort </span>
-        - <span style="color: blue"> make_overview </span>
-        - <span style="color: blue"> plot_all_features_filt </span>
-        - <span style="color: blue"> plot_all_features_acclim </span>
-        - <span style="color: red"> comb_data_one_cohort_cond *** </span>
-        - <span style="color: blue"> plot_allcond_onecohort_tuning </span>
-        - <span style="color: blue"> plot_errorbar_tuning_curve_diff_contrasts </span>
-        - <span style="color: blue"> plot_errorbar_tuning_diff_speeds </span>
-        - generate_circ_stim_ufmf
-            - create_stim_video_loop
+    - process_freely_walking_data
+        - process_data_features
+            - <span style="color: red"> combine_data_one_cohort </span>
+            - <span style="color: blue"> make_overview </span>
+            - <span style="color: blue"> plot_all_features_filt </span>
+            - <span style="color: blue"> plot_all_features_acclim </span>
+            - <span style="color: red"> comb_data_one_cohort_cond *** </span>
+            - <span style="color: blue"> plot_allcond_onecohort_tuning </span>
+            - <span style="color: blue"> plot_errorbar_tuning_curve_diff_contrasts </span>
+            - <span style="color: blue"> plot_errorbar_tuning_diff_speeds </span>
+            - generate_circ_stim_ufmf
+                - create_stim_video_loop
 
-- process_screen_data
-    - <span style="color: red"> comb_data_across_cohorts_cond </span>
-    - <span style="color: red"> generate_exp_data_struct </span>
-    - <span style="color: blue"> plot_allcond_acrossgroups_tuning </span>
+    - process_screen_data
+        - <span style="color: red"> comb_data_across_cohorts_cond </span>
+        - <span style="color: red"> generate_exp_data_struct </span>
+        - <span style="color: blue"> plot_allcond_acrossgroups_tuning </span>
         
 From the running of `process_freely_walking_data`, a results .mat file is generated that contains the LOG, feat, trx, comb_data and n_fly_data variables. This .mat file has "_data.mat" at the end of the filename and is saved within the "save_folder" specified in `process_freely_walking_data`.
 `comb_data_one_cohort_cond` does create the ultimate 'DATA' struct that is used for generating most plots, but it is not saved in the results file because it was getting too big and there were memory issues with trying to save it. 

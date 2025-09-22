@@ -1,5 +1,5 @@
 ---
-title: Freely-walking-observations
+title: Recording observations
 parent: Freely-walking
 has_children: true
 has_toc: true

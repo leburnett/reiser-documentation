@@ -1,5 +1,5 @@
 ---
-title: Freely-walking-visualisation
+title: Visualisation
 parent: Freely-walking
 has_children: true
 has_toc: true
@@ -10,7 +10,7 @@ layout: home
 1. TOC
 {:toc}
 
-# `generate_circ_stim_ufmf`
+# Create per condition vidoes with `generate_circ_stim_ufmf`
 
 This function can be used to generate .mp4 videos of each individual condition within an experiment. These videos contain the behavioural video of the flies, recorded in IR, with the visual stimulus displayed around the outside of this circular image. 2s trajectories of the flies are superimposed on to the image and only every other frame from the behavioural video is used so the videos are 2x the speed of real time.
 

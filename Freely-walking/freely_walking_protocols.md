@@ -1,5 +1,5 @@
 ---
-title: Freely-walking-protocols
+title: Protocols
 parent: Freely-walking
 has_children: true
 has_toc: true
