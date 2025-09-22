@@ -133,26 +133,26 @@ After running `src/stimulus_generation/generate_protocol1_stimuli.m` you should 
 
 [ PNG of empty experiment designer GUI ]
 
-        - Load the patterns and position functions into the experiment designer
-                File-Import-Folder - navigate to the folder where you saved the patterns and position functions that you just made. All patterns and position functions that are saved in this folder will be imported into the GUI. 
-                You will have to do this twice, once for the patterns and once for the position functions.
+- Load the patterns and position functions into the experiment designer
+        File-Import-Folder - navigate to the folder where you saved the patterns and position functions that you just made. All patterns and position functions that are saved in this folder will be imported into the GUI. 
+        You will have to do this twice, once for the patterns and once for the position functions.
 
 [ PNG - importing folder]
 
-        - Set the "pre" stimulus with pattern 0001 and the static position function (0003).
-        - Set condition 1 as pattern 0001 and position function 0001.
-        - Set condition 2 as pattern 0002 and position function 0002.
-        - Set the number of repetitions to 4.
-        - Set the acquisition rate for the first two channels (voltage and frame position) as 10,000 Hz. 
+- Set the "pre" stimulus with pattern 0001 and the static position function (0003).
+- Set condition 1 as pattern 0001 and position function 0001.
+- Set condition 2 as pattern 0002 and position function 0002.
+- Set the number of repetitions to 4.
+- Set the acquisition rate for the first two channels (voltage and frame position) as 10,000 Hz. 
 
 [ PNG - how the experiment designer should look]
         
-        - Set the name of the protocol to something logical. For instance, one of the protocols within the repository is named: `protocol1_4reps_12px_6px_LHS_2sbkg_200msfl_50msint`.
-        - Save the protocol. 
+- Set the name of the protocol to something logical. For instance, one of the protocols within the repository is named: `protocol1_4reps_12px_6px_LHS_2sbkg_200msfl_50msint`.
+- Save the protocol. 
 
 You should then see that a folder has been made within the `protocols/LHS` folder with the name of the protocol and within that folder there should be a `.g4p` file with the same name as the folder. 
 
-        - Make a copy of the file `protocols/processing_settings.mat` and paste it within the newly created experiment folder `protocols/LHS/protocol1_...`. 
+- Make a copy of the file `protocols/processing_settings.mat` and paste it within the newly created experiment folder `protocols/LHS/protocol1_...`. 
 
 Within the `processing_settings.mat` file, whenever a new project is created the `settings.path_to_protocol` variable must be updated to the path of the `.g4p` file within the new experiment folder. For P1 protocols, it is impoprtant to make sure that the correct 'ephys processing' variables are set too. 
 
