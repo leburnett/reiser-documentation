@@ -12,13 +12,45 @@ layout: home
 
 # How to analyse the data from the MIC screen
 
+In order for the processing pipeline to run, within each experiment folder there should be: 
+- a .ufmf video of the entire experiment
+- a .mat 'LOG' file 
+- a subdirectory that contains the file 'trx.mat' and the "-feat.mat" file outputted by FlyTracker.
+
+The ufmf video is a compressed video format that is generated through the BIAS acquisition software. The difference between frames is stored, not the entire frame data.
+The LOG file contains metadata about the experiment (fly strain, date and time, which pattern was used for which condition) and it also contains the frame numbers at which each condition started and ended. This includes sub-parts of the conditions, such as when the stimulus changes direction. These frame numbers are recorded during the experiment by MATLAB interfacing with the image acquisition software, BIAS. The file 'trx' contains a MATLAB table array of the tracked data from FlyTracker. Each row in the table corresponds to an individual object that was tracked and the table contains columns of data about different behavioural metrics. All rows should have arrays of the same length that correspond to the total number of frames in the video. 
+
+~ What are the differences between feat and trx? When are they made during the tracking process? ~
+
+### Tree structure of processing functions
+
+- process_freely_walking_data
+    - process_data_features
+        - <span style="color: red"> combine_data_one_cohort </span>
+        - <span style="color: blue"> make_overview </span>
+        - <span style="color: blue"> plot_all_features_filt </span>
+        - <span style="color: blue"> plot_all_features_acclim </span>
+        - <span style="color: red"> comb_data_one_cohort_cond *** </span>
+        - <span style="color: blue"> plot_allcond_onecohort_tuning </span>
+        - <span style="color: blue"> plot_errorbar_tuning_curve_diff_contrasts </span>
+        - <span style="color: blue"> plot_errorbar_tuning_diff_speeds </span>
+        - generate_circ_stim_ufmf
+            - create_stim_video_loop
+        
+From the running of `process_freely_walking_data`, a results .mat file is generated that contains the LOG, feat, trx, comb_data and n_fly_data variables. This .mat file has "_data.mat" at the end of the filename and is saved within the "save_folder" specified in `process_freely_walking_data`.
+`comb_data_one_cohort_cond` does create the ultimate 'DATA' struct that is used for generating most plots, but it is not saved in the results file because it was getting too big and there were memory issues with trying to save it. 
+
+~ Think about efficient saving. We probably don't need to save all of these formats. There's a lot of double saving of things altogether so that you don't have to keep opening all of the individual files, but this is not really necessary if all of the processing and plotting is done in one go. ~
+
+
+
 ## `process_freely_walking_data`
 
 ### Inputs 
 
 Requires string of the date for which you want to analyse the data. It will process all of the data from experiments conducted with any protocol that are within that day. 
 
-Runs the function `process_data_features` 
+Runs the function `process_data_features`.  
 
 ### Outputs
 - Exports a text file of the number of flies ran per protocol and per strain. [TODO: name of text file]
@@ -30,6 +62,7 @@ Runs the function `process_data_features`
     - Feat_overview timeseries
     - Timeseries per behavioural metric per vial.
 
+
 ### Description of `process_data_features`
 Processes the tracked data from FlyTracker. 
 
@@ -38,13 +71,68 @@ Loads:
     - feat (from FlyTracker)
     - trx (from FlyTracker)
 
-- Runs the function `make_overview` which generates a plot of histograms of the general behaviour of the flies over the entire length of the protocol. 
-- Runs the function `plot_all_features_filt` which generates a plot of timeseries data for all flies over the entire length of the protocol. fv_data, av_data and dist_data. 
-- Runs the function `plot_all_features_acclim` which generates a plot of timeseries data for all flies during the 5 minutes of acclimatisation in the dark. fv_data, av_data and dist_data. 
+Saves in the results ".mat" file "_data.mat":
+    - LOG
+    - feat (updated with "poorly tracked" flies removed)
+    - trx (updated with "poorly tracked" flies removed)
+    - comb_data (combined data from all flies in the vial across the entire experiment)
+    - n_fly_data (3 x 1 array of [n_flies_in_arena, n_flies_tracked, n_flies_removed]). Useful to see how many flies were "lost" during the processing due to tracking errors.
 
-The data from all flies is combined into an easier to manipulate 'struct' called `DATA` through the function `comb_data_one_cohort_cond`
+1. Combines the tracking data for all flies within one data across the entire experiment - the data is not parsed based on condition yet.
+
+The function `comb_data_one_cohort` combines the data from all flies within a single experiment (vial of flies) into a single struct called `comb_data`. This struct contains fields for each behavioural metric (e.g. 'fv_data', 'av_data', 'curv_data', 'dist_data') and each field contains a 2D array of size [n_flies x n_frames]. This function takes in the output from FlyTracker (the 'feat' and 'trx' variables). 
+The data is first checked for inccorect or incomplete tracking. It runs the function `check_tracking_FlyTrk` which checks the rows of the table `trx` and removes any rows that do not contain the mode number of datapoints (frames). 
+
+The data extracted directly from the FlyTracker output are:
+    - distance from the edge of the arena (from `feat`).
+    - heading (from `trx`).
+    - x position (from `trx`).
+    - y position (from `trx`).
+
+Data calculated from this data:
+    - angular velocity (using the function `vel_estimate`)
+    - forward velocity (two point, in direction of heading)
+    - three point velocity in any direction (using the function `calculate_three_point_velocity`)
+    - turning rate (angular velocity / forward velocity)
+    - viewing distance (using the function `calculate_viewing_distance`)
+    - inter fly distance (using the function `calculate_distance_to_nearest_fly`)
+    - inter fly angle (using the function `calculate_distance_to_nearest_fly`)
+
+[PNG - example of this "comb_data" structure.]
+
+2. Create plots that give an overview of the behaviour of the flies during the entire experiment.
+
+- Runs the function `make_overview` which generates a figure containing histogram subplots of the general behaviour of the flies over the entire length of the protocol. 
+
+[PNG - example of this figure]
+
+- Runs the function `plot_all_features_filt` which generates a plot of timeseries data for all flies over the entire length of the protocol. This figure is comprised of 4 subplots which show the forward velocity, angular velocity, turning rate and distance from the centre of the arena across the entire experiment. Coloured rectangles are used in the background to indicate when each condition occurred.
+
+[PNG - example of this figure]
+
+- Runs the function `plot_all_features_acclim` which generates a plot of timeseries data for all flies during the 5 minutes of acclimatisation in the dark. It uses the frame number that corresponds to the end of the acclimatisation period from the LOG file to determine which range of data to plot. The forward velocity, angular velocity, turning rate and both absolute and relative distance from the centre of the arena are plotted.
+
+    `acclim_end = LOG.acclim_off1.stop_f;`
+    `range_of_data_to_plot = 1:acclim_end;`
+
+[PNG - example of this figure]
+
+3. Parse the behavioural data based on the conditions within the experiment.
+
+The data from all flies is combined into an easier to manipulate 'struct' called `DATA` through the function `comb_data_one_cohort_cond`.
+
+[PNG - example of DATA structure.]
+
+4. Plot the data that has been parsed based on condition.
 
 - Runs the function `plot_allcond_onecohort_tuning` which generates a [(n_conditions/2) x 2] subplot figure of the timeseries data during each condition (mean+SEM of all the flies in the vial) as well as tuning curves per condition. 
+
+[PNG - example of this figure]
+
+
+
+
+
 
 ### Processing of other protocols
 
