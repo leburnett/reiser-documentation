@@ -153,6 +153,7 @@ Sequence of stimuli in the protocol:
 - Number of repetitions: 3
 - Only ONE contrast - either ON (15/15) or OFF (0/15)
 - Square flashes presented on 50% overlapping grid.
+- 1s interval between each bar sweep
 
 Sequence of stimuli in the protocol:
 - 10s background at the start and between repetitions 
@@ -160,17 +161,18 @@ Sequence of stimuli in the protocol:
 - 6 pixel square flashes - 160ms duration - 440ms interval
 - 4 pixel wide bar sweeps - 28 dps
 - 4 pixel wide bar sweeps - 56 dps
-- 1s interval between each bar sweep
 
 [<b>Note for LEB.</b> Results file: "Summer2025_MARCM_p2_analysis". Data: 2025_07_12 to 2025_09_12]
 
 #### P2 protocol (Oct 2025 - Nov 2025) - T4/T5 experiments - AUTUMN
 
 - Area of arena presented: [30 x 30 pixels area]
+The 6 x 6 pixel flashes are presented in a 33 x 33 pixel square area - larger than the 30 x 30 pixel square area for the 4 x 4 pixel flashes - to get an even number of flashes on a 50% overlapping grid.
 - Background intensity: (4/15) - gs_val = 4.
 - Number of repetitions: 3
 - Only ONE contrast - either ON (15/15) or OFF (0/15)
 - Square flashes presented on 50% overlapping grid.
+- 1s interval between each bar sweep
 
 Sequence of stimuli in the protocol:
 - 10s background at the start and between repetitions 
@@ -179,13 +181,15 @@ Sequence of stimuli in the protocol:
 - 6 pixel square flashes - 160ms duration - 440ms interval
 - 4 pixel wide bar sweeps - 28 dps
 - 4 pixel wide bar sweeps - 56 dps
-- 4 pixel wide bar sweeps - 168 dps
-- 1s interval between each bar sweep
-- 4 pixel wide bar flashes - 80ms duration - Xms interval
-- 4 pixel wide bar flashes - 14ms duration - Xms interval
+- <b>4 pixel wide bar sweeps - 168 dps</b>
+- <b>4 pixel wide bar flashes - 80ms duration - 920ms interval</b>
+- <b>4 pixel wide bar flashes - 14ms duration - 486ms interval</b>
+
+The bar flashes are presented in different random orders for each repetition.
+The bar flash stimuli contains 11 different positions. From 2025_10_15 - 2025_10_23, the "central" bar flash is positioned in the middle of the 30 x 30 pixel area, then the 5 positions either side are this bar moved by 1 pixel increments and decrements from this position in the 8 different orientations.
+From 2024_10_23 onwards, these 5 other positions are the central bar moved by 2 pixel increments and decrements. 
 
 [<b>Note for LEB.</b> Results file: "Autumn2025_MARCM_p2_analysis". Data: 2025_10_15 to 2025_11_17]
-
 
 #### P2 protocol (Nov-Dec 2025) - T4/T5 pharmacology experiments
 
@@ -193,80 +197,23 @@ Sequence of stimuli in the protocol:
 - Background intensity: (4/15) - gs_val = 4.
 - Number of repetitions: 3
 - Only ONE contrast - either ON (15/15) or OFF (0/15)
+- 1s interval between each bar sweep
+- NO SQUARE PIXEL FLASHES PRESENTED IN P2.
 
 Sequence of stimuli in the protocol:
 - 10s background at the start and between repetitions 
 - 3s background interval between sweep speeds and between bar flash speeds. 
 - 4 pixel wide bar sweeps - 28 dps
 - 4 pixel wide bar sweeps - 56 dps
+- 4 pixel wide bar sweeps - 168 dps
+- <b>4 pixel wide bar sweeps - 250 dps</b>
+- <b>4 pixel wide bar sweeps - 500 dps</b>
+- 4 pixel wide bar flashes - 80ms duration - 920ms interval
+- 4 pixel wide bar flashes - 14ms duration - 486ms interval
 
-Stimuli details:
-- Bar width (4 pixels)
-- Bar speeds: 28 degrees per second and 56 degrees per second 
+There are 88 bar flash stimuli. 8 different orientations. Bar centred on the 30 x 30 pixel square and then moved by 2 pixel steps in either direction along this axis.
 
 [<b>Note for LEB.</b> Results file: "Autumn2025_T4T5_Pharma". Data: 2025_11_18 to 2025_12_22]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Intensity values: These protocols have a background pixel intensity value of 6 (out of 15), dark stimuli have a pixel value of 0 and bright stimuli have a pixel value of 15.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### Previous version of P2
-These protocols were updated in July 2025. Things that were updated in these protocols to the original protocols:
-
-- The background intensity pixel value was decreased from 6 (out of 15) to 4.
-- Instead of showing 4 x 4 pixel flashes at two different speeds (160ms + 340ms and 80ms + 170ms), it was decided to change to two different size flashes at the same speed [4 x 4 pixel flashes (160ms + 440ms) and 6 x 6 pixel flashes (160ms + 440ms)]. Although the flash duration is the same as the slower flash speed before, the interval duration was increased by 100ms from 340ms to 440ms. 
-- The 6 x 6 pixel flashes are presented in a 33 x 33 pixel sqaure area - larger than the 30 x 30 pixel square area for the 4 x 4 pixel flashes - to get an even number of flashes on a 50% overlapping grid.
-- A 1s interval of a greyscale background was added at the beginning of every bar stimulus (every direction).
-
-
-
-
-
-
-
-
-
-
-
 
 
 
