@@ -224,7 +224,9 @@ There are 88 bar flash stimuli. 8 different orientations. Bar centred on the 30 
 
 [<b>Note for LEB.</b> Results file: "Autumn2025_T4T5_Pharma". Data: 2025_11_18 to 2025_12_22]
 
-
+<br>
+![Example polar plot of a T4 cell after Octopamine application showing the responses to the 5 different bar sweep speeds in the P2 version used in Dec 2025.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0007.png){:standalone .ifr .pop}
+<br>
 
 
 
