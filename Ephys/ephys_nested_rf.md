@@ -97,7 +97,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 [<b>Note for LEB.</b> Results file: "Autumn2025_T4T5_Pharma". Data: 2025_11_18 to 2025_12_22]
 
-![The plots of the spatial position of the 6 pixel flashes used to generate protocol 2.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0002.png){:standalone .ifr .pop}
+![The plots of the spatial position of the 6 pixel flashes used to generate protocol 2.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0002.png){:standalone .ifr_center .pop}
 
 ## Protocol 2 (P2)
 
@@ -112,6 +112,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 - Location: P2 is made de novo every time the function `generate_protocol2()` is run. A new folder of the format 'yyyy_MM_dd_HH_mm' is made within the the folder 'C:\matlabroot\G4_Protocols\nested_RF_protocol2' that contains both the patterns, functions and experiment file `currentExp.mat` and the data that was recorded in the `Log` file. 
 
 ![Example polar plot of bar sweep responses in a control RNAi fly to P2 in Dec 2024.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0005.png){:standalone .ifr .pop}
+<br>
 
 ### P2 protocol (Dec 2024 - Jan 2025) - RNAi experiments
 
@@ -132,6 +133,7 @@ Sequence of stimuli in the protocol:
 <br>
 ![Example receptive field analysis to 4 pixel square flashes in the same fly as the polar plot above.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0006.png){:standalone .ifr .pop}
 <br>
+<br>
 
 ### P2 protocol (April 2025 - May 2025) - TmY3, TmY18, TmY5a, Tm5Y
 
@@ -150,6 +152,7 @@ Sequence of stimuli in the protocol:
 
 [<b>Note for LEB.</b> Results file: "Exp_Log_NestedRF_v2". Data: 2025_04_08 to 2025_05_09]
 
+<br>
 ### P2 protocol (July 2025 - Sep 2025) - T4/T5 experiments - SUMMER
 
 - Area of arena presented: [30 x 30 pixels area]
@@ -167,7 +170,7 @@ Sequence of stimuli in the protocol:
 - 4 pixel wide bar sweeps - 56 dps
 
 [<b>Note for LEB.</b> Results file: "Summer2025_MARCM_p2_analysis". Data: 2025_07_12 to 2025_09_12]
-
+<br>
 ### P2 protocol (Oct 2025 - Nov 2025) - T4/T5 experiments - AUTUMN
 
 - Area of arena presented: [30 x 30 pixels area]
@@ -199,7 +202,7 @@ From 2024_10_23 onwards, these 5 other positions are the central bar moved by 2 
 [<b>Note for LEB.</b> Results file: "Autumn2025_MARCM_p2_analysis". Data: 2025_10_15 to 2025_11_17]
 
 ![Example bar flash stimuli analysis. Timeseries are plotted for the responses to each flash. The coloured squares in the top row correspond to the colours of the bars in the images in the furthest left column. Left column contains an image of all 11 bars of that orientation overlaid. This example was made for the bar flashes that were shifted by 1 pixel steps.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0004.png){:standalone .ifr .pop}
-
+<br>
 ### P2 protocol (Nov 2025 - Dec 2025) - T4/T5 pharmacology experiments
 
 - Area of arena presented: [30 x 30 pixels area]
@@ -228,6 +231,7 @@ There are 88 bar flash stimuli. 8 different orientations. Bar centred on the 30 
 ![Example polar plot of a T4 cell after Octopamine application showing the responses to the 5 different bar sweep speeds in the P2 version used in Dec 2025.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0007.png){:standalone .ifr .pop}
 <br>
 
+<br><br>
 
 ## How to make the protocols
 
