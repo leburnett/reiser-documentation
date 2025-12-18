@@ -114,7 +114,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 ### P2 protocol (Dec 2024 - Jan 2025) - RNAi experiments
 
-- Area of arena presented: [30 x 30 pixels area]
+- Area of arena presented: [30 x 30 pixel area]
 - Background intensity: (6/15) - gs_val = 4.
 - Number of repetitions: 3
 - Only ONE contrast - either ON (15/15) or OFF (0/15)
@@ -135,7 +135,7 @@ Sequence of stimuli in the protocol:
 
 ### P2 protocol (April 2025 - May 2025) - TmY3, TmY18, TmY5a, Tm5Y
 
-- Area of arena presented: [30 x 30 pixels area]
+- Area of arena presented: [30 x 30 pixel area]
 - Background intensity: (6/15) - gs_val = 4.
 - Number of repetitions: 3
 - Only ONE contrast - either ON (15/15) or OFF (0/15)
@@ -153,7 +153,8 @@ Sequence of stimuli in the protocol:
 <br>
 ### P2 protocol (July 2025 - Sep 2025) - T4/T5 experiments - SUMMER
 
-- Area of arena presented: [30 x 30 pixels area]
+- Area of arena presented: [30 x 30 pixel area]
+The 6 x 6 pixel flashes are presented in a 33 x 33 pixel square area - larger than the 30 x 30 pixel square area for the 4 x 4 pixel flashes - to get an even number of flashes on a 50% overlapping grid.
 - Background intensity: (4/15) - gs_val = 4.
 - Number of repetitions: 3
 - Only ONE contrast - either ON (15/15) or OFF (0/15)
@@ -171,7 +172,7 @@ Sequence of stimuli in the protocol:
 <br>
 ### P2 protocol (Oct 2025 - Nov 2025) - T4/T5 experiments - AUTUMN
 
-- Area of arena presented: [30 x 30 pixels area]
+- Area of arena presented: [30 x 30 pixel area]
 The 6 x 6 pixel flashes are presented in a 33 x 33 pixel square area - larger than the 30 x 30 pixel square area for the 4 x 4 pixel flashes - to get an even number of flashes on a 50% overlapping grid.
 - Background intensity: (4/15) - gs_val = 4.
 - Number of repetitions: 3
@@ -204,7 +205,7 @@ From 2024_10_23 onwards, these 5 other positions are the central bar moved by 2 
 <br>
 ### P2 protocol (Nov 2025 - Dec 2025) - T4/T5 pharmacology experiments
 
-- Area of arena presented: [30 x 30 pixels area]
+- Area of arena presented: [30 x 30 pixel area]
 - Background intensity: (4/15) - gs_val = 4.
 - Number of repetitions: 3
 - Only ONE contrast - either ON (15/15) or OFF (0/15)
