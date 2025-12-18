@@ -151,6 +151,7 @@ Sequence of stimuli in the protocol:
 [<b>Note for LEB.</b> Results file: "Exp_Log_NestedRF_v2". Data: 2025_04_08 to 2025_05_09]
 
 <br>
+
 ### P2 protocol (July 2025 - Sep 2025) - T4/T5 experiments - SUMMER
 
 - Area of arena presented: [30 x 30 pixel area]
@@ -170,6 +171,7 @@ Sequence of stimuli in the protocol:
 
 [<b>Note for LEB.</b> Results file: "Summer2025_MARCM_p2_analysis". Data: 2025_07_12 to 2025_09_12]
 <br>
+
 ### P2 protocol (Oct 2025 - Nov 2025) - T4/T5 experiments - AUTUMN
 
 - Area of arena presented: [30 x 30 pixel area]
@@ -203,6 +205,7 @@ From 2024_10_23 onwards, these 5 other positions are the central bar moved by 2 
 ![Example bar flash stimuli analysis. Timeseries are plotted for the responses to each flash. The coloured squares in the top row correspond to the colours of the bars in the images in the furthest left column. Left column contains an image of all 11 bars of that orientation overlaid. This example was made for the bar flashes that were shifted by 1 pixel steps.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0004.png){:standalone .ifr_center}
 
 <br>
+
 ### P2 protocol (Nov 2025 - Dec 2025) - T4/T5 pharmacology experiments
 
 - Area of arena presented: [30 x 30 pixel area]
