@@ -97,6 +97,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 [<b>Note for LEB.</b> Results file: "Autumn2025_T4T5_Pharma". Data: 2025_11_18 to 2025_12_22]
 
+![The plots of the spatial position of the 6 pixel flashes used to generate protocol 2.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0002.png){:standalone .ifr .pop}
 
 ## Protocol 2 (P2)
 
@@ -110,7 +111,9 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 - Location: P2 is made de novo every time the function `generate_protocol2()` is run. A new folder of the format 'yyyy_MM_dd_HH_mm' is made within the the folder 'C:\matlabroot\G4_Protocols\nested_RF_protocol2' that contains both the patterns, functions and experiment file `currentExp.mat` and the data that was recorded in the `Log` file. 
 
-![The plots of the spatial position of the 6 pixel flashes used to generate protocol 2.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0002.png){:standalone .ifr .pop}
+<br>
+![Example polar plot of bar sweep responses in a control RNAi fly to P2 in Dec 2024.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0005.png){:standalone .ifr .pop}
+<br>
 
 ### P2 protocol (Dec 2024 - January 2025) - RNAi experiments
 
@@ -129,7 +132,6 @@ Sequence of stimuli in the protocol:
 [<b>Note for LEB.</b> Results file: "Spring2025_RNAi_Protocol2_Analysis". Data: 2024_12_12 to 2025_01_23. See the file "RNAi_exp_log".]
 
 <br>
-![Example polar plot of bar sweep responses in a control RNAi fly to P2 in Dec 2024.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0005.png){:standalone .ifr .pop}
 ![Example receptive field analysis to 4 pixel square flashes in the same fly as the polar plot above.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0006.png){:standalone .ifr .pop}
 <br>
 
@@ -227,8 +229,6 @@ There are 88 bar flash stimuli. 8 different orientations. Bar centred on the 30 
 <br>
 ![Example polar plot of a T4 cell after Octopamine application showing the responses to the 5 different bar sweep speeds in the P2 version used in Dec 2025.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0007.png){:standalone .ifr .pop}
 <br>
-
-
 
 
 ## How to make the protocols
