@@ -167,7 +167,8 @@ Here, the preferred direction (resultant angle of the vector sum of the repsonse
 ^ polar plot with the PD repositioned to be in the pi/2 direction
 
 This code also uses the functions:
--  `src/analysis/helper/compute_FWHM` to calculate the width of the polar plot at half of the maximum response
+-  `src/analysis/helper/compute_FWHM` to calculate the width of the polar plot at half of the maximum response. 
+
 -  `src/analysis/helper/compute_circular_var` to compute the circular variance. This function returns a number between 0 and 1. 0 would imply that the cell only responds in one direction and has very sharp tuning, 1 would imply the cell responds uniformly to all directions and has very broad tuning. 
 - The function `circ_vmpar` from the MATLAB Circular Statistics Toolbox. This function estimates the parameters of a von Mises distribution and returns `thetahat` (preferred direction) and `kappa` (concentration parameter).
 
@@ -177,7 +178,19 @@ The data that is eventually saved includes `data`, `data_ordered` - ordered by a
 
 `resultant_angle` - the angle of the preferred direction (PD) of the cell is returned by the overall script `process_bars_p2`. 
 
+#### Breakdown of variables in `process_bars_p2`
 
+- `max_v` - 98th percentile value of the raw voltage during the presentation of each bar stimulus. This is calculated within `plot_timeseries_polar_bars` and fed into the function `find_PD_and_order_idx`. Within `find_PD_and_order_idx`, the median voltage is then subtracted from this array to return `responses`.
+
+- `responses` - median subtracted `max_v`. 
+
+- `magnitude` - normalised between 0 and 1. Magnitude of vector sum. 
+
+- `d_slow`/`d_fast` - angle and median-subtracted voltage responses to each direction. These angles are now shifted so that the maximum result is aligned with pi/2, not the actual direction in which the bar was moving. The response data is unaffected though and can be used for quantification of the tuning width. 
+
+- `cv` - circular variance of the responses. If CV = 0, all responses are in one direction (sharp tuning). If CV = 1, responses are uniformly spread (broad tuning).
+
+- `thetahat` and `kappa` - parameters of the von Mises distribution fitted to the data. `thetahat` is the preferred direction (PD) and `kappa` is the concentration parameter (higher values = sharper tuning).
 
 
 ### Breakdown of `process_flash_p2`

@@ -16,7 +16,7 @@ For the sake of clarity, this documentation will centre on how to run and analys
 ## Rig specificiations
 These protocols are designed to run on the Reiser Lab's G3 18 x 3 LED panel setup.
 
-[0000 - PNG of setup]
+[0000 - PNG of setup - annotated]
 
 - 18 panel circumeference.
 - 3 panel height. 

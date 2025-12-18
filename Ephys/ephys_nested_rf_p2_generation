@@ -1,0 +1,23 @@
+---
+title: Generate P2
+parent: Nested RF Protocol
+has_children: true
+has_toc: true
+nav_order: 50
+layout: home
+---
+
+How the second part of the nested RF protocol, P2, is generated. 
+
+
+Describe how "create_protocol2" and "run_protocol2" work.
+
+
+`create_protocol2` basically makes the ".g4p" content which is required to run the protocol on the G4 arena. 
+
+"pattern_order", "func_order" and "trial_dur". 
+
+
+
+The fact that you need to create an array of the patterns and position functions to be run together. 
+Make the two static functions. 
