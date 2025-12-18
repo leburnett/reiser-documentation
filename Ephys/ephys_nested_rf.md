@@ -18,9 +18,7 @@ It was based upon the protocol used in Gruntman et al. 2019(^ref).
 The code for generating and running these protocols is publicly available [here](https://github.com/leburnett/nested_RF_stimulus)
 Running these experiments requires the user to have the 'G4_Display_Tools' [repository](https://github.com/JaneliaSciComp/G4_Display_Tools) downloaded locally too. 
 
-## Overview of current protocols: 
-
-### Protocol 1 (P1)
+## Protocol 1 (P1)
 
 - Designed to be quick and coarse.
 - <b>Aim 1:</b> Find which flash location elicits the greatest response.
@@ -38,7 +36,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 ![Quadrant spatial organisation of flash presentation. Colourscale is the frame number. So flashes are presented from blue to yellow.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0001.png){:standalone .ifr .pop}
 
-#### P1 protocol (Dec 2024 - January 2025) - RNAi experiments
+### P1 protocol (Dec 2024 - January 2025) - RNAi experiments
 
 - Area of arena presented: Left half of the arena screen (LHS). 17:112 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
 - Background intensity: (6/15) - gs_val = 4.
@@ -53,7 +51,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 [<b>Note for LEB.</b> Results file: "Spring2025_RNAi_Protocol2_Analysis". Data: 2024_12_12 to 2025_01_23. See the file "RNAi_exp_log".]
 
-#### P1 protocol (April 2025 - May 2025) - TmY3, TmY18, TmY5a, Tm5Y
+### P1 protocol (April 2025 - May 2025) - TmY3, TmY18, TmY5a, Tm5Y
 
 - Area of arena presented: Right half of the arena screen (LHS). 97:196 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
 - Background intensity: (6/15) - gs_val = 4.
@@ -68,7 +66,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 [<b>Note for LEB.</b> Results file: "Exp_Log_NestedRF_v2". Data: 2025_04_08 to 2025_05_09]
 
-#### P1 protocol (July 2025 - Nov 2025) - T4/T5 experiments
+### P1 protocol (July 2025 - Nov 2025) - T4/T5 experiments
 
 - Area of arena presented: Left half of the arena screen (LHS). 17:112 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
 - Background intensity: (4/15) - gs_val = 4.
@@ -83,7 +81,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 [<b>Note for LEB.</b> Results file: "Summer2025_MARCM_p2_analysis" and "Autumn2025_MARCM_p2_analysis". Data: 2025_07_12 to 2025_11_13]
 
-#### P1 protocol (Sep-Dec 2025) - pharmacology experiments
+### P1 protocol (Sep-Dec 2025) - pharmacology experiments
 
 - Area of arena presented: Left half of the arena screen (LHS). 17:112 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
 - Background intensity: (4/15) - gs_val = 4.
@@ -99,7 +97,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 [<b>Note for LEB.</b> Results file: "Autumn2025_T4T5_Pharma". Data: 2025_11_18 to 2025_12_22]
 
 
-### Protocol 2 (P2)
+## Protocol 2 (P2)
 
 - <b>Overview:</b>
 - Longer, high resolution probing of the cell's receptive field.
@@ -113,7 +111,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 ![The plots of the spatial position of the 6 pixel flashes used to generate protocol 2.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0002.png){:standalone .ifr .pop}
 
-#### P2 protocol (Dec 2024 - January 2025) - RNAi experiments
+### P2 protocol (Dec 2024 - January 2025) - RNAi experiments
 
 - Area of arena presented: [30 x 30 pixels area]
 - Background intensity: (6/15) - gs_val = 4.
@@ -129,7 +127,7 @@ Sequence of stimuli in the protocol:
 
 [<b>Note for LEB.</b> Results file: "Spring2025_RNAi_Protocol2_Analysis". Data: 2024_12_12 to 2025_01_23. See the file "RNAi_exp_log".]
 
-#### P2 protocol (April 2025 - May 2025) - TmY3, TmY18, TmY5a, Tm5Y
+### P2 protocol (April 2025 - May 2025) - TmY3, TmY18, TmY5a, Tm5Y
 
 - Area of arena presented: [30 x 30 pixels area]
 - Background intensity: (6/15) - gs_val = 4.
@@ -146,7 +144,7 @@ Sequence of stimuli in the protocol:
 
 [<b>Note for LEB.</b> Results file: "Exp_Log_NestedRF_v2". Data: 2025_04_08 to 2025_05_09]
 
-#### P2 protocol (July 2025 - Sep 2025) - T4/T5 experiments - SUMMER
+### P2 protocol (July 2025 - Sep 2025) - T4/T5 experiments - SUMMER
 
 - Area of arena presented: [30 x 30 pixels area]
 - Background intensity: (4/15) - gs_val = 4.
@@ -164,7 +162,7 @@ Sequence of stimuli in the protocol:
 
 [<b>Note for LEB.</b> Results file: "Summer2025_MARCM_p2_analysis". Data: 2025_07_12 to 2025_09_12]
 
-#### P2 protocol (Oct 2025 - Nov 2025) - T4/T5 experiments - AUTUMN
+### P2 protocol (Oct 2025 - Nov 2025) - T4/T5 experiments - AUTUMN
 
 - Area of arena presented: [30 x 30 pixels area]
 The 6 x 6 pixel flashes are presented in a 33 x 33 pixel square area - larger than the 30 x 30 pixel square area for the 4 x 4 pixel flashes - to get an even number of flashes on a 50% overlapping grid.
@@ -191,7 +189,7 @@ From 2024_10_23 onwards, these 5 other positions are the central bar moved by 2 
 
 [<b>Note for LEB.</b> Results file: "Autumn2025_MARCM_p2_analysis". Data: 2025_10_15 to 2025_11_17]
 
-#### P2 protocol (Nov-Dec 2025) - T4/T5 pharmacology experiments
+### P2 protocol (Nov-Dec 2025) - T4/T5 pharmacology experiments
 
 - Area of arena presented: [30 x 30 pixels area]
 - Background intensity: (4/15) - gs_val = 4.
@@ -224,8 +222,7 @@ There are 88 bar flash stimuli. 8 different orientations. Bar centred on the 30 
 
 P1 protocols are located within the repository within the `protocols` folder. However, a user may wish to make a new modified version of P1, so I will outline the steps to create a version of P1 from scratch below. 
 
-### Making P1 from scratch
-#### Brief overview
+### Making P1 from scratch - overview
 
 In order to run P1, there are a few steps that need to be done manually. 
 Briefly, the user needs to:
@@ -234,7 +231,7 @@ Briefly, the user needs to:
 - Save the experiment with the folder `protocols/LHS` or `protocols/RHS` etc. 
 - Make a copy of the file `protocols/processing_settings.mat` and put it within the experiment folder. 
 
-#### Detailed description
+### Making P1 from scratch - detailed
 
 First, you need to make the patterns and functions that will be used in the protocol. This is done by running the function `src/stimulus_generation/generate_protocol1_stimuli.m`. 
 Within this function you can modify different parameters to suit your needs. 
@@ -365,7 +362,4 @@ A pop-up appears that will ask the experimenter to enter the "peak_frame" (this 
 Protocol 2 runs smaller flashes, 50% overlapping grid - 30 x 30 pixel square area centred on the centre of the flash found in P1 (peak_frame). 
 Then it runs 4 pixel width moving bars in the same area, moving in 8 orientations, 16 directions (back and forth for each orientation).
 3 reps...
-
-
-
 
