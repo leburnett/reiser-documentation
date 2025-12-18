@@ -82,7 +82,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 [<b>Note for LEB.</b> Results file: "Summer2025_MARCM_p2_analysis" and "Autumn2025_MARCM_p2_analysis". Data: 2025_07_12 to 2025_11_13]
 
-### P1 protocol (Sep-Dec 2025) - pharmacology experiments
+### P1 protocol (Sep 2025 - Dec 2025) - pharmacology experiments
 
 - Area of arena presented: Left half of the arena screen (LHS). 17:112 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
 - Background intensity: (4/15) - gs_val = 4.
@@ -111,11 +111,9 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 - Location: P2 is made de novo every time the function `generate_protocol2()` is run. A new folder of the format 'yyyy_MM_dd_HH_mm' is made within the the folder 'C:\matlabroot\G4_Protocols\nested_RF_protocol2' that contains both the patterns, functions and experiment file `currentExp.mat` and the data that was recorded in the `Log` file. 
 
-<br>
 ![Example polar plot of bar sweep responses in a control RNAi fly to P2 in Dec 2024.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0005.png){:standalone .ifr .pop}
-<br>
 
-### P2 protocol (Dec 2024 - January 2025) - RNAi experiments
+### P2 protocol (Dec 2024 - Jan 2025) - RNAi experiments
 
 - Area of arena presented: [30 x 30 pixels area]
 - Background intensity: (6/15) - gs_val = 4.
@@ -202,7 +200,7 @@ From 2024_10_23 onwards, these 5 other positions are the central bar moved by 2 
 
 ![Example bar flash stimuli analysis. Timeseries are plotted for the responses to each flash. The coloured squares in the top row correspond to the colours of the bars in the images in the furthest left column. Left column contains an image of all 11 bars of that orientation overlaid. This example was made for the bar flashes that were shifted by 1 pixel steps.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0004.png){:standalone .ifr .pop}
 
-### P2 protocol (Nov-Dec 2025) - T4/T5 pharmacology experiments
+### P2 protocol (Nov 2025 - Dec 2025) - T4/T5 pharmacology experiments
 
 - Area of arena presented: [30 x 30 pixels area]
 - Background intensity: (4/15) - gs_val = 4.
