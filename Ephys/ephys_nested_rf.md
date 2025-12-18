@@ -190,8 +190,6 @@ Sequence of stimuli in the protocol:
 - <b>4 pixel wide bar flashes - 80ms duration - 920ms interval</b>
 - <b>4 pixel wide bar flashes - 14ms duration - 486ms interval</b>
 
-![Bar flash stimuli examples showing the 11 different positions for the 8 different orientations.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0003.png){:standalone .ifr .pop}
-
 The bar flashes are presented in different random orders for each repetition.
 The bar flash stimuli contains 11 different positions. 
 From 2025_10_15 - 2025_10_23, the "central" bar flash is positioned in the middle of the 30 x 30 pixel area, then the 5 positions either side are this bar moved by 1 pixel increments and decrements from this position in the 8 different orientations.
@@ -199,7 +197,10 @@ From 2024_10_23 onwards, these 5 other positions are the central bar moved by 2 
 
 [<b>Note for LEB.</b> Results file: "Autumn2025_MARCM_p2_analysis". Data: 2025_10_15 to 2025_11_17]
 
-![Example bar flash stimuli analysis. Timeseries are plotted for the responses to each flash. The coloured squares in the top row correspond to the colours of the bars in the images in the furthest left column. Left column contains an image of all 11 bars of that orientation overlaid. This example was made for the bar flashes that were shifted by 1 pixel steps.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0004.png){:standalone .ifr .pop}
+![Bar flash stimuli examples showing the 11 different positions for the 8 different orientations.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0003.png){:standalone .ifr_center}
+
+![Example bar flash stimuli analysis. Timeseries are plotted for the responses to each flash. The coloured squares in the top row correspond to the colours of the bars in the images in the furthest left column. Left column contains an image of all 11 bars of that orientation overlaid. This example was made for the bar flashes that were shifted by 1 pixel steps.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0004.png){:standalone .ifr_center}
+
 <br>
 ### P2 protocol (Nov 2025 - Dec 2025) - T4/T5 pharmacology experiments
 
@@ -227,7 +228,7 @@ There are 88 bar flash stimuli. 8 different orientations. Bar centred on the 30 
 
 ![Example polar plot of a T4 cell after Octopamine application showing the responses to the 5 different bar sweep speeds in the P2 version used in Dec 2025.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0007.png){:standalone .ifr_center}
 
-<br><br>
+<br>
 
 ## How to make the protocols
 
