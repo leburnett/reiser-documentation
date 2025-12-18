@@ -128,11 +128,10 @@ Sequence of stimuli in the protocol:
 - 4 pixel wide bar sweeps - 28 dps
 - 4 pixel wide bar sweeps - 56 dps
 
+![Example receptive field analysis to 4 pixel square flashes in the same fly as the polar plot above.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0006.png){:standalone .ifr .pop}
+
 [<b>Note for LEB.</b> Results file: "Spring2025_RNAi_Protocol2_Analysis". Data: 2024_12_12 to 2025_01_23. See the file "RNAi_exp_log".]
 
-<br>
-![Example receptive field analysis to 4 pixel square flashes in the same fly as the polar plot above.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0006.png){:standalone .ifr .pop}
-<br>
 <br>
 
 ### P2 protocol (April 2025 - May 2025) - TmY3, TmY18, TmY5a, Tm5Y
