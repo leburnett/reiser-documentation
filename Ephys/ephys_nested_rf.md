@@ -32,9 +32,10 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 <br><b>Intensity values:</b> These protocols have a background pixel intensity value of 4 (out of 15), dark stimuli have a pixel value of 0 and bright stimuli have a pixel value of 15.
 <br><b>Stimulus parameters:</b> Each protocol consists of both dark and bright flashing squares of 12 x 12 pixel size and then 6 x 6 pixel size that are presented on a non-overlapping grid on one half of the arena screen. One half of the arena relates to an area of 6 x 3 panels (16 x 6 = 96 pixels wide, 16 x 3 = 48 pixels high). In the G4 ephys LED panel setup each pixel is 1.25 degrees of visual anlge per pixel. So, a 12 pixel square is 15 degrees of visual angle, and a 6 pixel square is 7.5 degrees of visual angle. Each flash is presented for 200ms with an inter-flash interval of 150ms.
 <br><b>Protocol design:</b> The protocol starts with 5s of a full field greyscale frame at the background value intensity for 5s, then runs through the larger 12 x 12 pixel flashes first, then the smaller 6 x 6 pixel flashes. The order in which the flashes are presented is not random, but was designed to avoid consecutive flashes appearing close enough to each other that they would activate the same cell's RF. These stimuli (5s static grey + 12 pixel bright and dark flashes + 6 pixel bright and dark flashes) are repeated 4 times.
-<br><b>Flash presentation:</b> The flashes are presented so that dark and light flashes are shown alternately. To try and explain how the flashes are presented: the screen was divided into 4 quadrants, then a dark flash is presented in the lower left corner of the top left quadrant, then a light flash in the lower left corner of the top right quadrant, then a dark flash in the lower left corner of the bottom left quadrant, and finally a light flash in the lower left corner of the bottom right quadrant. This is then repeated for the adjacent flash position in each quadrant, and repeats until both dark and light flashes have been presented in all positions on the screen.
 
 ![Quadrant spatial organisation of flash presentation. Colourscale is the frame number. So flashes are presented from blue to yellow.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0001.png){:standalone .ifr .pop}
+
+<br><b>Flash presentation:</b> The flashes are presented so that dark and light flashes are shown alternately. To try and explain how the flashes are presented: the screen was divided into 4 quadrants, then a dark flash is presented in the lower left corner of the top left quadrant, then a light flash in the lower left corner of the top right quadrant, then a dark flash in the lower left corner of the bottom left quadrant, and finally a light flash in the lower left corner of the bottom right quadrant. This is then repeated for the adjacent flash position in each quadrant, and repeats until both dark and light flashes have been presented in all positions on the screen.
 
 ### P1 protocol (Dec 2024 - January 2025) - RNAi experiments
 
@@ -126,6 +127,11 @@ Sequence of stimuli in the protocol:
 - 4 pixel wide bar sweeps - 56 dps
 
 [<b>Note for LEB.</b> Results file: "Spring2025_RNAi_Protocol2_Analysis". Data: 2024_12_12 to 2025_01_23. See the file "RNAi_exp_log".]
+
+<br>
+![Example polar plot of bar sweep responses in a control RNAi fly to P2 in Dec 2024.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0005.png){:standalone .ifr .pop}
+![Example receptive field analysis to 4 pixel square flashes in the same fly as the polar plot above.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0006.png){:standalone .ifr .pop}
+<br>
 
 ### P2 protocol (April 2025 - May 2025) - TmY3, TmY18, TmY5a, Tm5Y
 
