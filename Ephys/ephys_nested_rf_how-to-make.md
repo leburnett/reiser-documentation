@@ -9,6 +9,15 @@ layout: home
 
 ## How to make the protocols
 
+__________________________________________________________________________________________________
+
+
+1. TOC
+{:toc}
+
+__________________________________________________________________________________________________
+
+
 P1 protocols are located within the repository within the `protocols` folder. However, a user may wish to make a new modified version of P1, so I will outline the steps to create a version of P1 from scratch below. 
 
 ### Making P1 from scratch - overview
@@ -80,6 +89,9 @@ The following variables should be set for a P1 protocol:
 `settings.grid_rows = [4, 8];`
 
 If a variation of P1 is made that only uses one pixel size, then the values for `settings.grid_columns` and `settings.grid_rows` will be integers and not tuples.
+
+__________________________________________________________________________________________________
+
 
 ### Making P2 from scratch. 
 
