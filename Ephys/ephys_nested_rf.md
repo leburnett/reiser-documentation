@@ -22,3 +22,6 @@ ________________________________________________________________________________
 
 The premise of the nested receptive field protocol was to make a multi-step protocol consisting of a short <b>first protocol</b> that determines the rough receptive field location and preferred contrast of the cell, and a longer <b>second protocol</b> that is only presented at the location of the RF determined in protocol 1. This follow-up protocol probes the direction selectivity of the cell using moving bar stimuli, as well as measuring the ON and OFF receptive field structure at higher spatial resolution using small flashing squares.
 
+____________________________________________________________________________________________________________________
+
+For the benefit of people working with the data that Jin Yong Park recorded, this code was cloned locally onto the computer next to the G4 electrophysiology rig and can be found here: `C:\matlabroot\G4_Protocols\nested_RF_protocol2\`. 
