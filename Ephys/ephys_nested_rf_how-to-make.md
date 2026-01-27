@@ -100,8 +100,7 @@ ________________________________________________________________________________
 ### Pre-making the full field bar stimuli for P2
 Using the `G4_pattern_generator_gui` full field bar stimuli were made. A single vertical bar stimulus was made, 4 pixels width, then the "rotation" of the arena was updated to get the patterns in the 8 different orientations (1/8 pi). These patterns were saved in `\results\patterns\protocol2\full_field_bars` or after July 2025 changed to lower contrast bars (background = 4 not 6) `\results\patterns\protocol2\full_field_bars4`. 
 
-{: .important }
-The patterns 0015 and 0016 (OFF bars at 6/8 and 7/8pi) were updated in OCTOBER 2025 (15/10/2025). Previously, they were moving in the opposite direction to the other bar stimuli. This has been corrected now. The processing scripts will also need to be updated. 
+    `The patterns 0015 and 0016 (OFF bars at 6/8 and 7/8pi) were updated in OCTOBER 2025 (15/10/2025). Previously, they were moving in the opposite direction to the other bar stimuli. This has been corrected now. The processing scripts will also need to be updated.` 
 
 ![G4_pattern_generator_gui view when making the full field bar stimuli.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/patterns/0001.png){:standalone .ifr_center}
 
