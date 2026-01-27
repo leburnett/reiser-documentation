@@ -119,12 +119,12 @@ Using the `G4_pattern_generator_gui` full field bar stimuli were made. A single 
 Configure Arena:
 - Arena rotation (roll): 2.7489 radians for (7/8*pi)
 
-![G4_pattern_generator_gui view when making the full field bar stimuli. Configure arena pop-up.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/patterns/0002.png){:standalone .ifr_center .pop}
+![G4_pattern_generator_gui view when making the full field bar stimuli. Configure arena pop-up.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/patterns/0002.png){:standalone .ifr_center}
 
 More options: 
 - Shift pattern in starting phase: 44
 
-![G4_pattern_generator_gui view when making the full field bar stimuli. More options pop-up.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/patterns/0003.png){:standalone .ifr_center .pop}
+![G4_pattern_generator_gui view when making the full field bar stimuli. More options pop-up.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/patterns/0003.png){:standalone .ifr_center}
 
 
 #### How the cropped bar patterns are generated
