@@ -20,5 +20,6 @@ Running these experiments requires the user to have the 'G4_Display_Tools' [repo
 
 ____________________________________________________________________________________________________________________
 
+{: .highlight }
 The premise of the nested receptive field protocol was to make a multi-step protocol consisting of a short first protocol that determines the rough receptive field location and preferred contrast of the cell, and a second longer protocol that is only presented at the location of the RF determined in protocol 1. This follow-up protocol probes the direction selectivity of the cell using moving bar stimuli, as well as measuring the ON and OFF receptive field structure at higher spatial resolution using small flashing squares.
 
