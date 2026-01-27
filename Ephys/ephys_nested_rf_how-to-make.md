@@ -103,7 +103,7 @@ Using the `G4_pattern_generator_gui` full field bar stimuli were made. A single 
 {: .important }
 > The patterns 0015 and 0016 (OFF bars at 6/8 and 7/8pi) were updated in OCTOBER 2025 (15/10/2025). Previously, they were moving in the opposite direction to the other bar stimuli. This has been corrected now. The processing scripts will also need to be updated. 
 
-![G4_pattern_generator_gui view when making the full field bar stimuli.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/patterns/0001.png){:standalone .ifr_center .pop}
+![G4_pattern_generator_gui view when making the full field bar stimuli.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/patterns/0001.png){:standalone .ifr_center}
 
 - Pattern: Square grating
 - Step size (deg): 1.25
