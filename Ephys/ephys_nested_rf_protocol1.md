@@ -14,6 +14,8 @@ Designed to be quick and coarse.
 - <b>Aim 2:</b> Determine whether the cell shows a preferred contrast to dark or light flashes.
 Use this location and preferred contrast to create and run protocol 2 (P2). 
 
+__________________________________________________________________________________________________
+
 <b>Overview:</b><br>
 Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are presented on one half of the arena screen (either left or right half). Both dark and bright squares are presented in an alternating order. The order of presentation is designed to avoid consecutive flashes appearing close enough to each other that they would activate the same cell's RF. These stimuli are repeated 4 times.
 
@@ -86,4 +88,4 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 [<b>Note for LEB.</b> Results file: "Autumn2025_T4T5_Pharma". Data: 2025_11_18 to 2025_12_22]
 
-![The plots of the spatial position of the 6 pixel flashes used to generate protocol 2.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0002.png){:standalone .ifr_center}
+![Example plots that are generated after running protocol 1.They show the responses of the cell to 6 pixel square flashes being presented at different locations on the screen. The location of each subplot corresponds to the actual location of the flash on the arena from the fly's perspective. Thinner lines show the responses to each repetition and the thicker line shows the mean across repetitions. The plots show the responses to light and dark flashes separately. The number above each subplot is the frame number within the pattern that contains the flash in that location. The number above the subplot with the largest response should be entered when running `generate_protocol2()`.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0002.png){:standalone .ifr_center}
