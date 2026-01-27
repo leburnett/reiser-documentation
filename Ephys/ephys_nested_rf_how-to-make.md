@@ -50,13 +50,9 @@ This position function will be saved within the same 'Functions' folder as the o
 After running `src/stimulus_generation/generate_protocol1_stimuli.m` you should now have two pattern files within `protocols/LHS/patterns` etc. and three position functions within `protocols/LHS/functions` etc. You are now ready to assemble these components into a protocol. To do this: 
         - Run the code: `G4_experiment_designer` in the MATLAB Command Window and the GUI window will appear. 
 
-[ PNG of empty experiment designer GUI ]
-
 - Load the patterns and position functions into the experiment designer
         File-Import-Folder - navigate to the folder where you saved the patterns and position functions that you just made. All patterns and position functions that are saved in this folder will be imported into the GUI. 
         You will have to do this twice, once for the patterns and once for the position functions.
-
-[ PNG - importing folder]
 
 - Set the "pre" stimulus with pattern 0001 and the static position function (0003).
 - Set condition 1 as pattern 0001 and position function 0001.
@@ -64,7 +60,7 @@ After running `src/stimulus_generation/generate_protocol1_stimuli.m` you should 
 - Set the number of repetitions to 4.
 - Set the acquisition rate for the first two channels (voltage and frame position) as 10,000 Hz. 
 
-[ PNG - how the experiment designer should look]
+![Screenshot of the G4_Experiment_Designer used to make a version of protocol 1 with 6 and 12 pixel square flashes].({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/protocol_generation/0000.png){:standalone .ifr_center}
         
 - Set the name of the protocol to something logical. For instance, one of the protocols within the repository is named: `protocol1_4reps_12px_6px_LHS_2sbkg_200msfl_50msint`.
 - Save the protocol. 
