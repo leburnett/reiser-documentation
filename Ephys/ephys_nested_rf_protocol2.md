@@ -89,7 +89,6 @@ Sequence of stimuli in the protocol:
 - 4 pixel wide bar sweeps - 56 dps
 
 [<b>Note for LEB.</b> Results file: "Summer2025_MARCM_p2_analysis". Data: 2025_07_12 to 2025_09_12]
-<br>
 
 _______________________________
 
