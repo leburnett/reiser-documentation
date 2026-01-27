@@ -1,5 +1,5 @@
 ---
-title: Protocoll 1
+title: Protocol 1
 parent: Nested RF Protocol
 has_children: true
 has_toc: true
