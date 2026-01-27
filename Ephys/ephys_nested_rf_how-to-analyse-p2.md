@@ -9,6 +9,19 @@ layout: home
 
 # Protocol 2
 
+The data from protocol 2 is processed using the function `process_protocol2()`. This function should be called within the experiment folder that was created when `generate_protocol2()` was run. It should follow the format `data/YYYY_MM_DD_HH_MM`. 
+
+This function reads in the metadata file that has information about the strain of the fly, peak_frame, side of the arena.
+
+The responses to the moving bar stimuli are processed first, since this analysis generates a vector sum of the responses of the cell to bars moving in the 16 different directions. 
+
+The resultant angle of this vector sum is then fed in to the function that processes the flash responses and overlays an arrow with this direction on top of the receptive field plots. 
+
+<b>Bar sweep analysis:</b> Produces polar plots of the responses to bars moving in 16 different directions, as well as a vector sum arrow that indicates the preferred direction of motion of the cell.
+
+<b>Flash analysis:</b> Produces heatmaps of the responses to the 4 pixel square flashes at both 160ms and 80ms durations, for both ON and OFF contrasts. An arrow is overlaid on these plots that indicates the preferred direction of motion found in the bar sweep analysis.
+
+
 ## How the data is organised
 
 - Each run of `generate_protocol2()` with create a new folder within `C:\matlabroot\G4_Protocols\nested_RF_protocol2` with the format "YYYY_MM_DD_HH_MM" of the date and time when the protocol was run. 
@@ -17,8 +30,3 @@ layout: home
 
 ![Folder and file organisation for one P2 experiment.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/analysis/p2/0000.png){:standalone .ifr .pop}
 
-## How to process P2 data
-
-Run the function `src/analysis/process_protocol2()` within the experiment folder (`data/YYYY_MM_DD_HH_MM`). This function reads in the metadata file that has information about the strain of the fly, peak_frame, side of the arena.
-
-The responses to the moving bar stimuli are processed first, since this analysis generates a vector sum of the responses of the cell to bars moving in the 16 different directions. The resultant angle of this vector sum is then fed in to the function that processes the flash responses and overlays an arrow with this direction on top of the receptive field plots. 
