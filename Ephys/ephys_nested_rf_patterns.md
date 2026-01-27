@@ -1,9 +1,9 @@
 ---
 title: Patterns
-parent: Nested RF Protocol
+parent: How to make the protocols
 has_children: true
 has_toc: true
-nav_order: 50
+nav_order: 100
 layout: home
 ---
 
