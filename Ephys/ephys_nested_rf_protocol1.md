@@ -9,11 +9,14 @@ layout: home
 
 ## Protocol 1 (P1)
 
-Designed to be quick and coarse.
+Designed to be quick - this protocol takes between 6-7.5 minutes depending on the version used.
+
 - <b>Aim 1:</b> Find which flash location elicits the greatest response.
 - <b>Aim 2:</b> Determine whether the cell shows a preferred contrast to dark or light flashes.
 Use this location and preferred contrast to create and run protocol 2 (P2). 
 
+1. TOC
+{:toc}
 __________________________________________________________________________________________________
 
 <b>Overview:</b><br>
