@@ -9,18 +9,18 @@ layout: home
 
 ## How to make the protocols
 
-__________________________________________________________________________________________________
+_____________________________________________________________________________________________
 
 
 1. TOC
 {:toc}
 
-__________________________________________________________________________________________________
+______________________________________________________________________________________________
 
 
 P1 protocols are located within the repository within the `protocols` folder. However, a user may wish to make a new modified version of P1, so I will outline the steps to create a version of P1 from scratch below. 
 
-### Making P1 from scratch - overview
+### Making P1 from scratch 
 
 In order to run P1, there are a few steps that need to be done manually. 
 Briefly, the user needs to:
@@ -28,8 +28,6 @@ Briefly, the user needs to:
 - Open the `G4_experiment_designer` and compile the experiment. 
 - Save the experiment with the folder `protocols/LHS` or `protocols/RHS` etc. 
 - Make a copy of the file `protocols/processing_settings.mat` and put it within the experiment folder. 
-
-### Making P1 from scratch - detailed
 
 First, you need to make the patterns and functions that will be used in the protocol. This is done by running the function `src/stimulus_generation/generate_protocol1_stimuli.m`. 
 Within this function you can modify different parameters to suit your needs. 
@@ -90,8 +88,7 @@ The following variables should be set for a P1 protocol:
 
 If a variation of P1 is made that only uses one pixel size, then the values for `settings.grid_columns` and `settings.grid_rows` will be integers and not tuples.
 
-__________________________________________________________________________________________________
-
+______________________________________________________________________
 
 ### Making P2 from scratch. 
 
@@ -99,7 +96,9 @@ Protocol 2 is made from scratch every time that you run the function `generate_p
 
 #### Pre-making the full field bar stimuli for P2
 Using the `G4_pattern_generator_gui` full field bar stimuli were made. A single vertical bar stimulus was made, 4 pixels width, then the "rotation" of the arena was updated to get the patterns in the 8 different orientations (1/8 pi). These patterns were saved in `\results\patterns\protocol2\full_field_bars` or after July 2025 changed to lower contrast bars (background = 4 not 6) `\results\patterns\protocol2\full_field_bars`. 
-The patterns 0015 and 0016 (OFF bars at 6/8 and 7/8pi) were updated in OCTOBER 2025 (15/10/2025). Previously, they were moving in the opposite direction to the other bar stimuli. This has been corrected now. The processing scripts will also need to be updated. 
+
+{: .important }
+> The patterns 0015 and 0016 (OFF bars at 6/8 and 7/8pi) were updated in OCTOBER 2025 (15/10/2025). Previously, they were moving in the opposite direction to the other bar stimuli. This has been corrected now. The processing scripts will also need to be updated. 
 
 ![G4_pattern_generator_gui view when making the full field bar stimuli.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/patterns/0001.png){:standalone .ifr_center .pop}
 
