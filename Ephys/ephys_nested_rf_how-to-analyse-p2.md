@@ -1,5 +1,5 @@
 ---
-title: How to analyse protocol 2
+title: How to analyse P2
 parent: How to analyse the data
 has_children: true
 has_toc: true

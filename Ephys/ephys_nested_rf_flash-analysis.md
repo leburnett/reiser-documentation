@@ -1,14 +1,11 @@
 ---
 title: Flash analysis
-parent: How to analyse protocol 2
+parent: How to analyse P2
 has_children: true
 has_toc: true
 nav_order: 2100
 layout: home
 ---
-
-
-
 
 ### Breakdown of `process_flash_p2`
 

@@ -1,6 +1,6 @@
 ---
 title: Bar sweep analysis
-parent: How to analyse protocol 2
+parent: How to analyse P2
 has_children: true
 has_toc: true
 nav_order: 2000
