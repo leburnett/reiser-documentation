@@ -10,7 +10,9 @@ layout: home
 
 ## Protocol 2 (P2)
 
-- <b>Aim 1:</b> Determine higher resolution features of the cell's receptive field by using smaler flashes.
+More in-depth and feature-focussed protocol. This protocol typically takes between 20-25 minutes.
+
+- <b>Aim 1:</b> Determine higher resolution features of the cell's receptive field by using smaller flashes.
 - <b>Aim 2:</b> Determine whether the cell displays directionally selective responses to bar sweeps in 16 directions. 
 
 __________________________________________________________________________________________________
@@ -30,7 +32,7 @@ ________________________________________________________________________________
 - These stimuli are presented within a 30 x 30 pixel area. The rest of the arena is set to the background intensity value.
 - Only presents either dark or light stimuli. However, at the end of the protocol the `peak_frame` value that generates the protocol at the same location with the inverse contrast is returned so that the protocol can be run twice, once for each contrast if desired. 
 
-- Location: P2 is made de novo every time the function `generate_protocol2()` is run. A new folder of the format 'yyyy_MM_dd_HH_mm' is made within the the folder 'C:\matlabroot\G4_Protocols\nested_RF_protocol2' that contains both the patterns, functions and experiment file `currentExp.mat` and the data that was recorded in the `Log` file. 
+- <b>Location:</b> P2 is made de novo every time the function `generate_protocol2()` is run. A new folder of the format 'yyyy_MM_dd_HH_mm' is made within the the folder 'C:\matlabroot\G4_Protocols\nested_RF_protocol2' that contains both the patterns, functions and experiment file `currentExp.mat` and the data that was recorded in the `Log` file. 
 
 _______________________________
 
