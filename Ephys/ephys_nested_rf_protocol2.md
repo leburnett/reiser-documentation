@@ -10,7 +10,7 @@ layout: home
 
 ## Protocol 2 (P2)
 
-More in-depth and feature-focussed protocol. This protocol typically takes between 20-25 minutes.
+More in-depth and feature-focused protocol. This protocol typically takes between 20-25 minutes.
 
 - <b>Aim 1:</b> Determine higher resolution features of the cell's receptive field by using smaller flashes.
 - <b>Aim 2:</b> Determine whether the cell displays directionally selective responses to bar sweeps in 16 directions. 
