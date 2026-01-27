@@ -15,6 +15,8 @@ Designed to be quick - this protocol takes between 6-7.5 minutes depending on th
 - <b>Aim 2:</b> Determine whether the cell shows a preferred contrast to dark or light flashes.
 Use this location and preferred contrast to create and run protocol 2 (P2). 
 
+__________________________________________________________________________________________________
+
 1. TOC
 {:toc}
 __________________________________________________________________________________________________
@@ -30,6 +32,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 ![Quadrant spatial organisation of flash presentation. Colourscale is the frame number. So flashes are presented from blue to yellow.]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/overview/0001.png){:standalone .ifr .pop}
 
 <br><b>Flash presentation:</b> The flashes are presented so that dark and light flashes are shown alternately. To try and explain how the flashes are presented: the screen was divided into 4 quadrants, then a dark flash is presented in the lower left corner of the top left quadrant, then a light flash in the lower left corner of the top right quadrant, then a dark flash in the lower left corner of the bottom left quadrant, and finally a light flash in the lower left corner of the bottom right quadrant. This is then repeated for the adjacent flash position in each quadrant, and repeats until both dark and light flashes have been presented in all positions on the screen.
+__________________________________________________________________________________________________
 
 ### P1 protocol (Dec 2024 - January 2025) - RNAi experiments
 
@@ -46,6 +49,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 
 [<b>Note for LEB.</b> Results file: "Spring2025_RNAi_Protocol2_Analysis". Data: 2024_12_12 to 2025_01_23. See the file "RNAi_exp_log".]
 
+__________________________________________________________________________________________________
 ### P1 protocol (April 2025 - May 2025) - TmY3, TmY18, TmY5a, Tm5Y
 
 - Area of arena presented: Right half of the arena screen (LHS). 97:196 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
@@ -60,7 +64,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 - Protocol: "protocol1_10kHz_4reps_12px_6px_RHS_2sbkg_200msfl_50msint_04-08-25_08-08-42" and "protocol1_10kHz_4reps_12px_6px_RHS2_2sbkg_200msfl_50msint_81_180_05-05-25_16-18-66"
 
 [<b>Note for LEB.</b> Results file: "Exp_Log_NestedRF_v2". Data: 2025_04_08 to 2025_05_09]
-
+__________________________________________________________________________________________________
 ### P1 protocol (July 2025 - Nov 2025) - T4/T5 experiments
 
 - Area of arena presented: Left half of the arena screen (LHS). 17:112 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
@@ -75,7 +79,7 @@ Flickering squares of two different sizes (12 x 12 pixels and 6 x 6 pixels) are 
 - Protocol: "protocol1_10kHz_4reps_12px_6px_LHS_2sbkg_200msfl_150msint_07-10-25_15-45-60"
 
 [<b>Note for LEB.</b> Results file: "Summer2025_MARCM_p2_analysis" and "Autumn2025_MARCM_p2_analysis". Data: 2025_07_12 to 2025_11_13]
-
+__________________________________________________________________________________________________
 ### P1 protocol (Sep 2025 - Dec 2025) - pharmacology experiments
 
 - Area of arena presented: Left half of the arena screen (LHS). 17:112 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
