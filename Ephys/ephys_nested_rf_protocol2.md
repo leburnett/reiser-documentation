@@ -12,10 +12,13 @@ layout: home
 
 - <b>Aim 1:</b> Determine higher resolution features of the cell's receptive field by using smaler flashes.
 - <b>Aim 2:</b> Determine whether the cell displays directionally selective responses to bar sweeps in 16 directions. 
+
 __________________________________________________________________________________________________
+
 
 1. TOC
 {:toc}
+
 __________________________________________________________________________________________________
 
 
