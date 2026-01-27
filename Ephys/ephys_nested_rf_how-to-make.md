@@ -67,7 +67,7 @@ After running `src/stimulus_generation/generate_protocol1_stimuli.m` you should 
 - Set the number of repetitions to 4.
 - Set the acquisition rate for the first two channels (voltage and frame position) as 10,000 Hz. 
 
-![Screenshot of the G4_Experiment_Designer used to make a version of protocol 1 with 6 and 12 pixel square flashes].({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/protocol_generation/0000.png){:standalone .ifr_center}
+![Screenshot of the G4_Experiment_Designer used to make a version of protocol 1 with 6 and 12 pixel square flashes]({{ site.baseurl }}/assets/imgs/ephys/nested_RF_stimulus/protocol_generation/0000.png){:standalone .ifr_center}
         
 - Set the name of the protocol to something logical. For instance, one of the protocols within the repository is named: `protocol1_4reps_12px_6px_LHS_2sbkg_200msfl_50msint`.
 - Save the protocol. 
