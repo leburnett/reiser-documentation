@@ -58,10 +58,9 @@ website:
 
 format:
   html:
-    theme: 
-      light: yeti 
-      dark: darkly
-    css: styles.css
+    theme:
+      light: [yeti, theme-light.scss]
+      dark: [yeti, theme-dark.scss]
     toc: true
     toc-depth: 3
     code-copy: true
