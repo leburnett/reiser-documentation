@@ -3,27 +3,26 @@ project:
   output-dir: _site
 
 website:
-  title: "Lab Documentation"
-  description: "Documentation on how to run experiments on the G3/G4 LED arena setups in the Reiser Lab at HHMI Janelia Research Campus"
+  title: ""
+  description: "Documentation on experiments run on G3/G4 LED arena setups in the Reiser Lab at HHMI Janelia Research Campus."
 
   navbar:
-    background: primary
+    background: dark
     search: true
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Ephys"
+      - text: "Electrophysiology"
         href: Ephys/index.qmd
       - text: "Freely-walking"
         href: Freely-walking/index.qmd
-      - text: "Tethered"
-        href: Tethered/index.qmd
 
   sidebar:
-    - title: "Ephys"
+    - title: "Electrophysiology"
       style: docked
       contents:
         - Ephys/index.qmd
+        - Ephys/ephys_rig_specs.qmd
         - section: "Nested RF Protocol"
           contents:
             - Ephys/ephys_nested_rf.qmd
@@ -35,7 +34,6 @@ website:
                 - Ephys/ephys_nested_rf_how-to-run.qmd
             - section: "Analysis"
               contents:
-                - Ephys/ephys_nested_rf_analysis.qmd
                 - Ephys/ephys_nested_rf_how-to-analyse-p1.qmd
                 - Ephys/ephys_nested_rf_how-to-analyse-p2.qmd
                 - Ephys/ephys_nested_rf_bar-sweep-analysis.qmd
@@ -44,6 +42,7 @@ website:
     - title: "Freely-walking"
       contents:
         - Freely-walking/index.qmd
+        - Freely-walking/freely-walking-rig-specs.qmd
         - Freely-walking/freely_walking_protocols.qmd
         - section: "Analysis"
           contents:
@@ -52,18 +51,16 @@ website:
         - Freely-walking/freely_walking_visualisation.qmd
         - Freely-walking/freely_walking_observations.qmd
 
-    - title: "Tethered"
-      contents:
-        - Tethered/index.qmd
-
   page-navigation: true
 
-  repo-url: https://github.com/leburnett/reiser-documentation
-  repo-actions: [edit, issue]
+  repo-url: https://github.com/leburnett/labdocs
+  repo-actions: [issue]
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: yeti 
+      dark: darkly
     css: styles.css
     toc: true
     toc-depth: 3

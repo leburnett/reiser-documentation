@@ -1,0 +1,12 @@
+---
+title: "Rig Specs"
+---
+This page describes the specifications of the G4 electrophysiology rig used in the Reiser Lab at HHMI Janelia Research Campus.
+
+[PNG of setup]
+
+- 18 panel circumference area. However, there is only space for 12 panels on the arena circuit board and in our setup the leftmost panel is not used, so there are 11 panels in total.
+- Since this is a G4 (4th generation)setup, each panel is 16 x 16 pixels, so the arena is 12 x 16 = 192 pixels wide and 3 x 16 = 48 pixels high.
+- Each pixel is 1.25 degrees of visual angle per pixel, so the arena is 240 degrees wide and 60 degrees high.
+- The arena can be tilted in elevation depending on how the fly is positioned in the rig.
+- The LEDS are green LEDs with a peak wavelength of (XX nm).

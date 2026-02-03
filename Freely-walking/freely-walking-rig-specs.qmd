@@ -1,0 +1,15 @@
+---
+title: "Rig Specs"
+---
+
+These protocols are designed to run on the Reiser Lab's G3 18 x 3 LED panel setup.
+
+[0000 - PNG of setup - annotated]
+
+- 18 panel circumeference.
+- 3 panel height.
+- Each panel is 8 x 8 pixels, so the arena is 18 x 8 = 144 pixels wide and 3 x 8 = 24 pixels high.
+- Each pixel is 1.875 degrees of visual angle per pixel and covers 360 degrees of visual angle along the azimuth and 45 degrees of visual angle along the elevation.
+- The LEDS are green LEDs with a peak wavelength of ~570 nm.
+
+There is a lot of useful, and more detailed documentation on the specifications of the G3 arena and how to design and run protocols [here](https://reiserlab.github.io/Modular-LED-Display/Generation%203/Software/docs/g3_user-guide.html).
