@@ -3,3 +3,11 @@ title: "Overview"
 ---
 
 This documentation covers the setup specifications and how to design, run and analyse experiments using different G3/G4 LED Panel setups within the Reiser Lab at HHMI's Janelia Research Campus.
+
+___________
+
+<b>Useful resources:</b>
+
+- This [page](https://reiserlab.github.io/Modular-LED-Display/Generation%203/Software/docs/g3_user-guide.html) has useful historical information about running experiments on the G3 and G4 arenas, especially tethered flight experiments. It further explains how the MATLAB `panel_com` class of functions can be used to interact with and display patterns on the LED arenas. 
+
+- This [page](https://reiserlab.github.io/Modular-LED-Display/G4/) has more detailed information on the G4 setups and the different GUIs that can be used to generate patterns and run protocols on the G4 arena.
