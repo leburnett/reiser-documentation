@@ -1,10 +1,5 @@
 ---
-title: How to run the protocols
-parent: Nested RF Protocol
-has_children: true
-has_toc: true
-nav_order: 90
-layout: home
+title: "How to run the protocols"
 ---
 
 ## How to run the protocols
@@ -18,12 +13,12 @@ layout: home
 
 ### Protocol 2 - script
 
-- `generate_protocol2` into the command line of MATLAB, or run the script. 
+- `generate_protocol2` into the command line of MATLAB, or run the script.
 
-Protocol 2 runs through a single script - not using the G4_experiment_conductor. 
-The patterns, functions and experiment data are all created and saved with every call of the script `generate_protocol2()`. 
+Protocol 2 runs through a single script - not using the G4_experiment_conductor.
+The patterns, functions and experiment data are all created and saved with every call of the script `generate_protocol2()`.
 A pop-up appears that will ask the experimenter to enter the "peak_frame" (this is found above the subplot of the 6 pixel figure that pops up after P1 that haas the largest response). This is the frame that the experimenter will use to set the position of the stimuli in protocol 2.
 
-Protocol 2 runs smaller flashes, 50% overlapping grid - 30 x 30 pixel square area centred on the centre of the flash found in P1 (peak_frame). 
+Protocol 2 runs smaller flashes, 50% overlapping grid - 30 x 30 pixel square area centred on the centre of the flash found in P1 (peak_frame).
 Then it runs 4 pixel width moving bars in the same area, moving in 8 orientations, 16 directions (back and forth for each orientation).
 3 reps...

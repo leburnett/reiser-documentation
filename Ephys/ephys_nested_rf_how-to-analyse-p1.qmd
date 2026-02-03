@@ -1,18 +1,13 @@
 ---
-title: How to analyse P1
-parent: How to analyse the data
-has_children: true
-has_toc: true
-nav_order: 1000
-layout: home
+title: "How to analyse P1"
 ---
 
-# Protocol 1 
+# Protocol 1
 
 - Processing settings file...
 - Which boxes need to be ticked in the conductor?
 
-After protocol 1 has finished running - the processing functions should run automatically. This runs code wihtin [`G4_Display_Tools`](https://github.com/JaneliaSciComp/G4_Display_Tools) - it returns LOG with data inside and it generates 4 plots (grid_ephys). 
+After protocol 1 has finished running - the processing functions should run automatically. This runs code wihtin [`G4_Display_Tools`](https://github.com/JaneliaSciComp/G4_Display_Tools) - it returns LOG with data inside and it generates 4 plots (grid_ephys).
 
 From these plots you can see the response of the cell to each flash location on the screen - both 12px and 6px and ON and OFF flashes.
 This protocol is mainly for the experimenter to determine where the RF of the cell is located in order to present the second protocol in the correct position. From these plots it is also possible to determine if the RF of the cell is too close to the edge of the screen, in which case it is not worth running protocol 2. You can also see if the quality of the recording is not good enough to run protocol 2.
