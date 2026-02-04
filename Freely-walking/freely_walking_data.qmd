@@ -1,0 +1,29 @@
+---
+title: "Data"
+---
+
+[Link](freely_walking_logging_system.qmd) to documentation on how the automatic logging system was set up. 
+
+[Link](https://docs.google.com/spreadsheets/d/1IsT3YndxAy3yN8o38r5RGK4dZsEdPXe0In4-OTEcXNw/edit?resourcekey=&gid=35583985#gid=35583985) to the google sheet with the automatic logging of experiments. 
+
+Each protocol run generates:
+
+- **Video**: UFMF format via SimpleBiasCameraInterface
+- **LOG.mat**: Trial timing, conditions, temperature, metadata
+- **Google Sheets**: Optional export for experiment tracking
+
+Output folder structure:
+```
+project_data_folder/
+  YYYY-MM-DD/
+    protocol_name/
+      strain/
+        sex/
+          HH-MM-SS/
+            LOG_YYYYMMDD_HHMMSS.mat
+            video.ufmf
+```
+
+## Where to locate the data
+
+

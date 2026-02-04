@@ -1,5 +1,5 @@
 ---
-title: "Visual Patterns"
+title: "Overview"
 ---
 
 This section documents all visual stimulus patterns used in the freely-walking optomotor experiments on the G3 LED arena.

@@ -17,3 +17,19 @@ The premise of the nested receptive field protocol was to make a multi-step prot
 ____________________________________________________________________________________________________________________
 
 For the benefit of people working with the data that Jin Yong Park recorded, this code was cloned locally onto the computer next to the G4 electrophysiology rig and can be found here: `C:\matlabroot\G4_Protocols\nested_RF_protocol2\`.
+
+____________________________________________________________________________________________________________________
+
+## Documentation Pages
+
+| Page | Description |
+|:-----|:------------|
+| [Protocol 1](ephys_nested_rf_protocol1.qmd) | Details of the initial screening protocol |
+| [Protocol 2](ephys_nested_rf_protocol2.qmd) | Details of the detailed characterization protocol |
+| [Data Structure](ephys_nested_rf_data_structure.qmd) | Folder organization and file formats |
+| [Version History](ephys_nested_rf_version_history.qmd) | Protocol versions timeline and parameter comparison |
+| [Experiment Summary](ephys_nested_rf_experiment_summary.qmd) | Summary charts of experiments by strain and condition |
+| [How to Make](ephys_nested_rf_how-to-make.qmd) | Instructions for creating new protocols |
+| [How to Run](ephys_nested_rf_how-to-run.qmd) | Instructions for running experiments |
+| [How to Analyse P1](ephys_nested_rf_how-to-analyse-p1.qmd) | Analysis guide for Protocol 1 |
+| [How to Analyse P2](ephys_nested_rf_how-to-analyse-p2.qmd) | Analysis guide for Protocol 2 |

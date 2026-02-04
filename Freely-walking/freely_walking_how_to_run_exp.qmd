@@ -1,0 +1,13 @@
+---
+title: "Quickstart"
+---
+
+## How to run a protocol
+
+- Arena on and controller on.
+- BIAS open
+- PControl open in MATLAB
+- Camera open to view flies live in the arena (visible light).
+- Run MATLAB protocol script.
+
+The protocol used for the Motion-Induced Centring screen was protocol 27. 

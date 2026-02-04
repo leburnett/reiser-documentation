@@ -28,6 +28,7 @@ website:
             - Ephys/ephys_nested_rf.qmd
             - Ephys/ephys_nested_rf_protocol1.qmd
             - Ephys/ephys_nested_rf_protocol2.qmd
+            - Ephys/ephys_nested_rf_version_history.qmd
             - section: "How to guides"
               contents:
                 - Ephys/ephys_nested_rf_how-to-make.qmd
@@ -38,11 +39,14 @@ website:
                 - Ephys/ephys_nested_rf_how-to-analyse-p2.qmd
                 - Ephys/ephys_nested_rf_bar-sweep-analysis.qmd
                 - Ephys/ephys_nested_rf_flash-analysis.qmd
+            - Ephys/ephys_nested_rf_data_structure.qmd
 
     - title: "Freely-walking"
       contents:
         - Freely-walking/index.qmd
         - Freely-walking/freely-walking-rig-specs.qmd
+        - Freely-walking/freely_walking_how_to_run_exp.qmd
+        - Freely-walking/freely_walking_data.qmd
         - section: "Protocols"
           contents:
             - Freely-walking/freely_walking_protocols_index.qmd
