@@ -1,0 +1,213 @@
+---
+title: "Overview"
+---
+
+This section documents all experiment protocols used for freely-walking optomotor experiments on the G3 LED arena.
+
+## What is a Protocol?
+
+A protocol is a MATLAB script that defines a complete experimental session, including:
+
+- **Timing parameters**: Acclimation periods, trial durations, inter-stimulus intervals
+- **Stimulus conditions**: Which patterns to show, at what speeds, in what order
+- **Data logging**: Video recording, temperature monitoring, metadata collection
+
+
+## Protocol Overview
+
+| Protocol | Description | Patterns | Conditions |
+|----------|-------------|----------|------------|
+| [Protocol_v1](protocols/freely_walking_Protocol_v1.qmd) | Circadian optomotor experiments | 2 | 0 |
+| [Protocol_v10_all_tests](protocols/freely_walking_Protocol_v10_all_tests.qmd) | Testing spatial frequencies, speed, and trial lengths | 4 | 8 |
+| [protocol_10](protocols/freely_walking_protocol_10.qmd) | Testing spatial frequencies, speed, and trial lengths | 0 | 0 |
+| [protocol_11](protocols/freely_walking_protocol_11.qmd) | Protocol_v11 | 2 | 0 |
+| [protocol_12](protocols/freely_walking_protocol_12.qmd) | Short, all high contrast, replacing flicker with all ON | 2 | 0 |
+| [protocol_13](protocols/freely_walking_protocol_13.qmd) | Very long num_trials_per_block (20, 40, 60) | 2 | 0 |
+| [protocol_14](protocols/freely_walking_protocol_14.qmd) | Different interval stimuli - flicker, static gratings, ON/OFF | 2 | 0 |
+| [protocol_15](protocols/freely_walking_protocol_15.qmd) | Testing skinny bars (4ON 12OFF) (12ON 4OFF) | 3 | 3 |
+| [protocol_16](protocols/freely_walking_protocol_16.qmd) | Testing skinny bars (2ON 6OFF) | 3 | 3 |
+| [protocol_17](protocols/freely_walking_protocol_17.qmd) | 2ON 14OFF grating stimulus, flicker x4 | 2 | 0 |
+| [protocol_18](protocols/freely_walking_protocol_18.qmd) | Based on protocol 10 with curtain ON/OFF stimuli | 3 | 6 |
+| [protocol_19](protocols/freely_walking_protocol_19.qmd) | Curtain ON/OFF and 2ON 14OFF stimuli | 6 | 12 |
+| [protocol_20](protocols/freely_walking_protocol_20.qmd) | Shifted centre with 60deg patterns | 3 | 6 |
+| [protocol_21](protocols/freely_walking_protocol_21.qmd) | Follow-up protocol 1 after protocol 19 screen | 5 | 10 |
+| [protocol_22](protocols/freely_walking_protocol_22.qmd) | Follow-up protocol 2 - bar fixation, reverse phi | 8 | 8 |
+| [protocol_23](protocols/freely_walking_protocol_23.qmd) | Test different contrast values for ON/OFF bars | 2 | 2 |
+| [protocol_24](protocols/freely_walking_protocol_24.qmd) | Screen Protocol 1 - multi-stimulus | 10 | 10 |
+| [protocol_25](protocols/freely_walking_protocol_25.qmd) | Short protocol for testing individual flies | 4 | 4 |
+| [protocol_26](protocols/freely_walking_protocol_26.qmd) | Test different curtain stimuli (32 pixels) | 6 | 4 |
+| [protocol_27](protocols/freely_walking_protocol_27.qmd) | Screen Protocol 2 - comprehensive stimulus set | 12 | 12 |
+| [protocol_28](protocols/freely_walking_protocol_28.qmd) | Test reverse phi modifications | 2 | 0 |
+| [protocol_29](protocols/freely_walking_protocol_29.qmd) | Screen Protocol 3 - with CW/CCW intervals | 12 | 12 |
+| [protocol_30](protocols/freely_walking_protocol_30.qmd) | Different contrasts test | 3 | 7 |
+| [protocol_31](protocols/freely_walking_protocol_31.qmd) | 60deg and 15deg gratings - 4 speeds | 8 | 10 |
+| [protocol_32](protocols/freely_walking_protocol_32.qmd) | 60deg and 15deg gratings - long trials | 7 | 5 |
+| [protocol_33](protocols/freely_walking_protocol_33.qmd) | Low luminance 60deg grating and flicker | 4 | 2 |
+| [protocol_r4](protocols/freely_walking_protocol_r4.qmd) | Reverse v4 - different switch intervals | 2 | 0 |
+| [protocol_v2](protocols/freely_walking_protocol_v2.qmd) | All high contrast optomotor patterns | 2 | 0 |
+| [protocol_v3](protocols/freely_walking_protocol_v3.qmd) | Optomotor stimulus one direction only | 2 | 0 |
+| [protocol_v4](protocols/freely_walking_protocol_v4.qmd) | Different switch intervals - short to long | 2 | 0 |
+| [protocol_v5](protocols/freely_walking_protocol_v5.qmd) | Short, all high contrast, for individual fly | 2 | 0 |
+| [protocol_v6](protocols/freely_walking_protocol_v6.qmd) | Optomotor with shifted centre of rotation | 1 | 0 |
+| [protocol_v7](protocols/freely_walking_protocol_v7.qmd) | Different speeds | 2 | 0 |
+| [protocol_v8](protocols/freely_walking_protocol_v8.qmd) | Optomotor freely walking with 4 pixel stripes | 2 | 0 |
+| [protocol_v9](protocols/freely_walking_protocol_v9.qmd) | Different spatial frequencies | 6 | 0 |
+
+: {.bordered .striped}
+
+
+## Protocol Structure Reference
+
+### Timing Parameters
+
+| Parameter | Description | Typical Value |
+|-----------|-------------|---------------|
+| `t_acclim_start` | Dark acclimation before stimuli | 300s (5 min) |
+| `t_acclim_end` | Dark acclimation after stimuli | 30s |
+| `t_interval` | Inter-stimulus interval | 15-30s |
+| `t_flash` | Calibration flash duration | 5s |
+| `t_pause` | Command pause (hardware timing) | 0.01s |
+
+### Condition Array Format
+
+The `all_conditions` matrix has 7 columns:
+
+| Column | Field | Description |
+|--------|-------|-------------|
+| 1 | pattern_id | Pattern number to display |
+| 2 | interval_id | Pattern for inter-stimulus interval |
+| 3 | speed_patt | Speed for main pattern (fps) |
+| 4 | speed_int | Speed for interval pattern (fps)|
+| 5 | trial_dur | Trial duration (seconds) |
+| 6 | int_dur | Interval duration (seconds) |
+| 7 | condition_n | Condition number |
+
+### Speed Values
+
+| Speed Value | Approximate Rate |
+|-------------|------------------|
+| 0 | Static (no motion) |
+| 1 | Minimal (fixation) |
+| 8 | ~4 Hz |
+| 32 | ~16 Hz |
+| 64 | ~32 Hz |
+| 127 | Maximum (~63 Hz) |
+
+## Data Output
+
+Each protocol run generates:
+
+- **Video**: UFMF format via SimpleBiasCameraInterface
+- **LOG.mat**: Trial timing, conditions, temperature, metadata
+- **Google Sheets**: Optional export for experiment tracking
+
+Output folder structure:
+```
+project_data_folder/
+  YYYY-MM-DD/
+    protocol_name/
+      strain/
+        sex/
+          HH-MM-SS/
+            LOG_YYYYMMDD_HHMMSS.mat
+            video.ufmf
+```
+
+## Protocol Categories
+
+### Screen Protocols (Comprehensive)
+
+These protocols include a wide variety of stimuli for characterizing visual responses:
+
+- **protocol_24**: Screen Protocol 1 - Original comprehensive protocol
+- **protocol_27**: Screen Protocol 2 - Updated March 2025, includes reverse phi
+- **protocol_29**: Screen Protocol 3 - With intervals between CW/CCW
+
+### Versioned Protocols (Development Series)
+
+Early development protocols used for establishing experimental parameters:
+
+- **Protocol_v1 - v10**: Progressive refinement of experimental design
+- Focus on different spatial frequencies, speeds, and trial structures
+
+### Numbered Protocols (Specific Experiments)
+
+Purpose-specific protocols for particular experiments:
+
+- **protocol_10-13**: T4T5 experiments with varying parameters
+- **protocol_15-16**: Skinny bar gap testing
+- **protocol_18-19**: Curtain stimuli
+- **protocol_30-33**: Contrast and luminance variations
+
+
+
+## Adding a New Protocol
+
+When you create a new experiment protocol, follow these steps to add it to this documentation:
+
+### Step 1: Create the Protocol File
+
+Create your protocol in the `freely-walking-optomotor/protocols/` directory.
+
+Your protocol should follow this structure:
+
+```matlab
+% protocol_XX.m - Brief description
+%
+% Includes:
+% - List of stimuli types
+% - Key parameters
+
+clear
+
+% Initialize temperature recording
+d = initialize_temp_recording();
+
+% Protocol parameters
+t_acclim_start = 300;  % seconds
+t_interval = 20;       % seconds
+t_pause = 0.01;
+
+% Conditions: [pattern_id, interval_id, speed, speed_int, trial_dur, int_dur, condition_n]
+all_conditions = [
+    9, 47, 127, 1, 15, t_interval, 1;  % 60 deg gratings - 4Hz
+    % Add more conditions...
+];
+
+% ... rest of protocol
+```
+
+### Step 2: Generate Documentation
+
+From the `freely-walking-optomotor` directory, run:
+
+```bash
+cd /path/to/freely-walking-optomotor
+pixi run -e default --manifest-path python/freely-walking-python/pixi.toml \
+    python docs_generator/generate_protocol_docs.py \
+    protocols/protocol_XX.m
+```
+
+This will:
+
+1. Parse the protocol file and extract metadata
+2. Create a `.qmd` documentation page in `reiser-documentation/Freely-walking/`
+
+### Step 3: Preview and Deploy
+
+```bash
+cd /path/to/reiser-documentation
+quarto preview
+```
+
+Once satisfied, commit and push to deploy.
+
+## Regenerating All Protocol Documentation
+
+To regenerate documentation for all protocols:
+
+```bash
+cd /path/to/freely-walking-optomotor
+pixi run -e default --manifest-path python/freely-walking-python/pixi.toml \
+    python docs_generator/generate_protocol_docs.py
+```

@@ -1,0 +1,82 @@
+---
+title: "protocol_26"
+---
+
+Protocol_26.m  - test different curtain stimuli. 32 pixels instead of 16.
+cond 1 = binary on
+cond 2 = binary off
+cond 3 = greyscale ON
+cond 4 = greyscale OFF
+20s interval
+30s trial duration - 2x trials
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 4 |
+| Patterns Used | 6 |
+| t_acclim_start | 30s |
+| t_acclim_end | 30s |
+| t_interval | 20s |
+| t_flash | 5s |
+| t_pause | 0.01 |
+
+
+## Conditions
+
+| # | Pattern | Speed | Duration | Description |
+|--:|:--------|------:|---------:|:------------|
+| 1 | [Pattern 51](../patterns/freely_walking_pattern_51.qmd) | 127 | 15s | ON - 32px - binary - 1-0 |
+| 2 | [Pattern 52](../patterns/freely_walking_pattern_52.qmd) | 127 | 15s | OFF - 32 px - binary - 1-0 |
+| 3 | [Pattern 56](../patterns/freely_walking_pattern_56.qmd) | 127 | 15s | ON - 32px - greyscale - 4-0 |
+| 4 | [Pattern 55](../patterns/freely_walking_pattern_55.qmd) | 127 | 15s | OFF - 32px - greyscale - 4-0 |
+
+
+## Pattern Previews
+
+
+#### [Pattern 47](../patterns/freely_walking_pattern_47.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_47_bkg_0_gsval1_2frames/frame_0000.png){.ifr}
+
+#### [Pattern 51](../patterns/freely_walking_pattern_51.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_51_ON_curtains_32px/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_51_ON_curtains_32px/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 52](../patterns/freely_walking_pattern_52.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_52_OFF_curtains_32px/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_52_OFF_curtains_32px/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 55](../patterns/freely_walking_pattern_55.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 56](../patterns/freely_walking_pattern_56.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_56_OFF_R_curtains_32px_4_0/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_56_OFF_R_curtains_32px_4_0/frame_0000.png){.ifr}
+:::
+

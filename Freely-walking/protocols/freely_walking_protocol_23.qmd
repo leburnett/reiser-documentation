@@ -1,0 +1,40 @@
+---
+title: "protocol_23"
+---
+
+Protocol_23.m  - test different contrast values for ON and OFF bars
+Based on protocol 19
+Includes:
+- ALL OFF interval frame.
+- 8 pixel ON and OFF bar fixation - 180 deg apart
+----- varying contrast values (2, 4, and 6)
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 2 |
+| Patterns Used | 2 |
+| t_acclim | 20s |
+| t_pause | 0.015 |
+
+
+## Conditions
+
+| # | Pattern | Speed | Duration | Description |
+|--:|:--------|------:|---------:|:------------|
+| 1 | [Pattern 45](../patterns/freely_walking_pattern_45.qmd) | 9 | -s | bar fixation - 16px ON |
+| 2 | [Pattern 46](../patterns/freely_walking_pattern_46.qmd) | 9 | -s | bar fixation - 16px OFF |
+
+
+## Pattern Previews
+
+
+#### [Pattern 45](../patterns/freely_walking_pattern_45.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_45_16px_bar_fixation_ON/frame_0000.png){.ifr}
+
+#### [Pattern 46](../patterns/freely_walking_pattern_46.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_46_16px_bar_fixation_OFF/frame_0000.png){.ifr}
+

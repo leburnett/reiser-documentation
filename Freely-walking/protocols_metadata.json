@@ -1,0 +1,554 @@
+[
+  {
+    "name": "Protocol_v1",
+    "description": "Protocol_v1.m file for HMS experiments, June 2024\nexp_str = 'Circadian_optomotor_freewalking_';",
+    "num_conditions": 0,
+    "patterns_used": [
+      1,
+      7
+    ],
+    "timing": {
+      "t_acclim": 10,
+      "trial_len": 10
+    }
+  },
+  {
+    "name": "Protocol_v10_all_tests",
+    "description": "Protocol_v10_all_tests.m - testing spatial frequencies, speed, and trial lengths in\none big protocol",
+    "num_conditions": 8,
+    "patterns_used": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "t_pause": 0.015
+    }
+  },
+  {
+    "name": "protocol_10",
+    "description": "Protocol_v10_all_tests.m - testing spatial frequencies, speed, and trial lengths in\none big protocol",
+    "num_conditions": 0,
+    "patterns_used": [],
+    "timing": {
+      "t_acclim": 20,
+      "t_pause": 0.015
+    }
+  },
+  {
+    "name": "protocol_11",
+    "description": "Protocol_v11.m file",
+    "num_conditions": 0,
+    "patterns_used": [
+      6,
+      7
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "trial_len": 10
+    }
+  },
+  {
+    "name": "protocol_12",
+    "description": "Protocol_v12.m file\nShort, all high contrast, protocol. Replacing flicker with all ON",
+    "num_conditions": 0,
+    "patterns_used": [
+      1,
+      2
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "trial_len": 10
+    }
+  },
+  {
+    "name": "protocol_13",
+    "description": "Protocol_v13.m file\nvery long num_trials_per_block (20, 40, 60)",
+    "num_conditions": 0,
+    "patterns_used": [
+      1,
+      2
+    ],
+    "timing": {
+      "t_acclim": 10,
+      "trial_len": 10
+    }
+  },
+  {
+    "name": "protocol_14",
+    "description": "Protocol_14.m file\nShort, all high contrast, protocol.\nDifferent 'interval' stimuli - flicker - static gratings - all ON - all\nOFF",
+    "num_conditions": 0,
+    "patterns_used": [
+      6,
+      7
+    ],
+    "timing": {
+      "t_acclim": 10,
+      "t_pause": 0.015,
+      "trial_len": 10
+    }
+  },
+  {
+    "name": "protocol_15",
+    "description": "Protocol_15 - testing the sider gap skinny bars (4ON 12OFF) (12ON 4OFF)",
+    "num_conditions": 3,
+    "patterns_used": [
+      4,
+      13,
+      16
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "t_pause": 0.015
+    }
+  },
+  {
+    "name": "protocol_16",
+    "description": "Protocol_16 - testing the sider gap skinny bars (2ON 6OFF) (2ON 6OFF)",
+    "num_conditions": 3,
+    "patterns_used": [
+      4,
+      11,
+      15
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "t_pause": 0.015
+    }
+  },
+  {
+    "name": "protocol_17",
+    "description": "Protocol_17.m file\nShort, all high contrast, protocol.\n2ON 14 OFF grating stimulus, flicker x4",
+    "num_conditions": 0,
+    "patterns_used": [
+      17,
+      18
+    ],
+    "timing": {
+      "t_acclim": 10,
+      "t_pause": 0.015,
+      "trial_len": 15
+    }
+  },
+  {
+    "name": "protocol_18",
+    "description": "Protocol_18.m  - based on protocol 10 - but includes the 'curtain' ON /\nOFF stimuli.",
+    "num_conditions": 6,
+    "patterns_used": [
+      9,
+      19,
+      20
+    ],
+    "timing": {
+      "t_acclim": 2,
+      "t_pause": 0.015
+    }
+  },
+  {
+    "name": "protocol_19",
+    "description": "Protocol_19.m  - based on protocol 10 - but includes the 'curtain' ON /\nOFF stimuli and the 2ON 14OFF stimuli.",
+    "num_conditions": 12,
+    "patterns_used": [
+      4,
+      9,
+      17,
+      19,
+      20,
+      24
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "t_pause": 0.015
+    }
+  },
+  {
+    "name": "protocol_20",
+    "description": "Protocol_v20_all_tests.m - shifted centre with 60deg patterns - all OFF in\nthe middle.",
+    "num_conditions": 6,
+    "patterns_used": [
+      21,
+      22,
+      23
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "t_pause": 0.015
+    }
+  },
+  {
+    "name": "protocol_21",
+    "description": "Protocol_21.m  - follow up protocol 1 after protocol 19 double effector test screen.\nBased on protocol 19\nIncludes:\n- greyscale interval frame.\n- slower curtain stimuli\n- fast grating stimuli\n- slower...",
+    "num_conditions": 10,
+    "patterns_used": [
+      7,
+      19,
+      20,
+      26,
+      27
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "t_pause": 0.015
+    }
+  },
+  {
+    "name": "protocol_22",
+    "description": "Protocol_22.m  - follow up protocol 2 after protocol 19 double effector test screen.\nBased on protocol 19\nIncludes:\n- greyscale interval frame.\n- 4 pixel OFF bar fixation - 180 deg apart\n- Reverse Phi...",
+    "num_conditions": 8,
+    "patterns_used": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "t_pause": 0.015
+    }
+  },
+  {
+    "name": "protocol_23",
+    "description": "Protocol_23.m  - test different contrast values for ON and OFF bars\nBased on protocol 19\nIncludes:\n- ALL OFF interval frame.\n- 8 pixel ON and OFF bar fixation - 180 deg apart\n----- varying contrast va...",
+    "num_conditions": 2,
+    "patterns_used": [
+      45,
+      46
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "t_pause": 0.015
+    }
+  },
+  {
+    "name": "protocol_24",
+    "description": "Protocol_24.m  - Screen protocol 1\nBased on protocol 19\nIncludes:\n- off background interval - pattern 47\n- 60 deg gratings - 2 speeds\n- thin non50:50 bars - 2 speeds\n- curtains - fast  - on / off\n- re...",
+    "num_conditions": 10,
+    "patterns_used": [
+      9,
+      10,
+      17,
+      19,
+      20,
+      24,
+      27,
+      32,
+      47,
+      48
+    ],
+    "timing": {
+      "t_acclim_start": 300,
+      "t_acclim_end": 30,
+      "t_interval": 20,
+      "t_flash": 5,
+      "t_pause": 0.01
+    }
+  },
+  {
+    "name": "protocol_25",
+    "description": "Protocol_25.m  - short protocol for testing individual flies.\nIncludes:\n- off background interval - pattern 47\n- 60 deg gratings - 2 speeds\n- flicker - 1 speed\n20s interval\n30s trial duration - 2x15s ...",
+    "num_conditions": 4,
+    "patterns_used": [
+      10,
+      27,
+      47,
+      48
+    ],
+    "timing": {
+      "t_acclim_start": 300,
+      "t_acclim_end": 30,
+      "t_interval": 20,
+      "t_flash": 5,
+      "t_pause": 0.01
+    }
+  },
+  {
+    "name": "protocol_26",
+    "description": "Protocol_26.m  - test different curtain stimuli. 32 pixels instead of 16.\ncond 1 = binary on\ncond 2 = binary off\ncond 3 = greyscale ON\ncond 4 = greyscale OFF\n20s interval\n30s trial duration - 2x trial...",
+    "num_conditions": 4,
+    "patterns_used": [
+      47,
+      48,
+      51,
+      52,
+      55,
+      56
+    ],
+    "timing": {
+      "t_acclim_start": 30,
+      "t_acclim_end": 30,
+      "t_interval": 20,
+      "t_flash": 5,
+      "t_pause": 0.01
+    }
+  },
+  {
+    "name": "protocol_27",
+    "description": "Protocol_27.m  - Screen protocol 2 - updated 10th March 2025\nBased on protocol 24\nIncludes:\n- off background interval - pattern 47\n- 60 deg gratings - 2 speeds\n- thin non50:50 bars - 2 speeds\n- curtai...",
+    "num_conditions": 12,
+    "patterns_used": [
+      9,
+      10,
+      17,
+      21,
+      24,
+      27,
+      47,
+      48,
+      51,
+      52,
+      57,
+      60
+    ],
+    "timing": {
+      "t_acclim_start": 300,
+      "t_acclim_end": 30,
+      "t_interval": 20,
+      "t_flash": 5,
+      "t_pause": 0.01
+    }
+  },
+  {
+    "name": "protocol_28",
+    "description": "Protocol_28.m  - Test REVERSE PHI modifications\nTry GSVAL = 3, not 4.\nTry wider bars.",
+    "num_conditions": 0,
+    "patterns_used": [
+      47,
+      48
+    ],
+    "timing": {
+      "t_acclim_start": 30,
+      "t_acclim_end": 30,
+      "t_interval": 15,
+      "t_flash": 5,
+      "t_pause": 0.01
+    }
+  },
+  {
+    "name": "protocol_29",
+    "description": "Protocol_29.m  - Screen protocol 3  - with intervals between CW and CCW - updated 13th March 2025\nIncludes:\n- off background interval - pattern 47\n- 60 deg gratings - 2 speeds\n- thin non50:50 bars - 2...",
+    "num_conditions": 12,
+    "patterns_used": [
+      9,
+      10,
+      17,
+      21,
+      24,
+      27,
+      32,
+      47,
+      48,
+      51,
+      52,
+      57
+    ],
+    "timing": {
+      "t_acclim_start": 30,
+      "t_acclim_end": 30,
+      "t_interval": 15,
+      "t_flash": 5,
+      "t_pause": 0.01
+    }
+  },
+  {
+    "name": "protocol_30",
+    "description": "Protocol_30.m  - Different contrasts - generated 12th May 2025\nBased on protocol 27 and protocol 1\n20s interval\n30s trial duration - 2x trials\nstationary bars = 60s only one position",
+    "num_conditions": 7,
+    "patterns_used": [
+      1,
+      47,
+      48
+    ],
+    "timing": {
+      "t_acclim_start": 300,
+      "t_acclim_end": 30,
+      "t_interval": 20,
+      "t_flash": 5,
+      "t_pause": 0.01
+    }
+  },
+  {
+    "name": "protocol_31",
+    "description": "Protocol_31.m  - 60deg and 15 deg gratings - 4 different speeds\nBased on protocol 27 and protocol 10\nIncludes:\n- off background interval - pattern 47\n20s interval\n30s trial duration - 2x trials\nstatio...",
+    "num_conditions": 10,
+    "patterns_used": [
+      4,
+      5,
+      9,
+      10,
+      27,
+      47,
+      48,
+      63
+    ],
+    "timing": {
+      "t_acclim_start": 300,
+      "t_acclim_end": 30,
+      "t_interval": 20,
+      "t_flash": 5,
+      "t_pause": 0.01
+    }
+  },
+  {
+    "name": "protocol_32",
+    "description": "Protocol_32.m  - 60deg and 15 deg gratings - very long trial durations\nBased on protocol 31\nIncludes:\n- off background interval - pattern 47\n- greyscale (4-bit - 3 val) background for interval - patte...",
+    "num_conditions": 5,
+    "patterns_used": [
+      4,
+      5,
+      9,
+      10,
+      25,
+      47,
+      48
+    ],
+    "timing": {
+      "t_acclim_start": 300,
+      "t_acclim_end": 30,
+      "t_interval": 20,
+      "t_flash": 5,
+      "t_pause": 0.01
+    }
+  },
+  {
+    "name": "protocol_33",
+    "description": "Protocol_33.m  - short protocol with low luminance 60 degree grating and\nflicker.\nGS_VAL = 3, on value = 3, off value = 0.\nIncludes:\n- off background interval - pattern 47\n- 60 deg gratings - 1 speed\n...",
+    "num_conditions": 2,
+    "patterns_used": [
+      47,
+      48,
+      64,
+      65
+    ],
+    "timing": {
+      "t_acclim_start": 30,
+      "t_acclim_end": 30,
+      "t_interval": 20,
+      "t_flash": 5,
+      "t_pause": 0.01
+    }
+  },
+  {
+    "name": "protocol_r4",
+    "description": "Protocol_v4_reverse.m file\nDifferent switch intervals - long to short",
+    "num_conditions": 0,
+    "patterns_used": [
+      1,
+      7
+    ],
+    "timing": {
+      "t_acclim": 20
+    }
+  },
+  {
+    "name": "protocol_v2",
+    "description": "Protocol_v2.m file\nAll high contrast optomotor patterns.",
+    "num_conditions": 0,
+    "patterns_used": [
+      1,
+      7
+    ],
+    "timing": {
+      "t_acclim": 60,
+      "trial_len": 10
+    }
+  },
+  {
+    "name": "protocol_v3",
+    "description": "Protocol_v3.m file\nOptomotor stimulus only moves in one direction\n% Input parameters:\nThese parameters will be saved in the log file.",
+    "num_conditions": 0,
+    "patterns_used": [
+      1,
+      7
+    ],
+    "timing": {
+      "t_acclim": 60,
+      "trial_len": 10
+    }
+  },
+  {
+    "name": "protocol_v4",
+    "description": "Protocol_v4.m file\nDifferent switch intervals - short to long\n% Input parameters:\nThese parameters will be saved in the log file.",
+    "num_conditions": 0,
+    "patterns_used": [
+      1,
+      7
+    ],
+    "timing": {
+      "t_acclim": 20
+    }
+  },
+  {
+    "name": "protocol_v5",
+    "description": "Protocol_v5.m file\nShort, all high contrast, protocol. Initially for testing an individual\nfly.",
+    "num_conditions": 0,
+    "patterns_used": [
+      1,
+      7
+    ],
+    "timing": {
+      "t_acclim": 10,
+      "trial_len": 10
+    }
+  },
+  {
+    "name": "protocol_v6",
+    "description": "Protocol_v6_shiftcentre.m\nOptomotor stimulus with shifted centre of rotation.",
+    "num_conditions": 0,
+    "patterns_used": [
+      7
+    ],
+    "timing": {
+      "t_acclim": 10,
+      "trial_len": 10
+    }
+  },
+  {
+    "name": "protocol_v7",
+    "description": "Protocol_v7.m - different speeds",
+    "num_conditions": 0,
+    "patterns_used": [
+      6,
+      7
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "trial_len": 10
+    }
+  },
+  {
+    "name": "protocol_v8",
+    "description": "Protocol_v8.m file - optomotor freely walking with 4 pixel stripes\n% Input parameters:\nThese parameters will be saved in the log file.",
+    "num_conditions": 0,
+    "patterns_used": [
+      4,
+      5
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "trial_len": 10
+    }
+  },
+  {
+    "name": "protocol_v9",
+    "description": "Protocol_v9.m file - different spatial frequecies",
+    "num_conditions": 0,
+    "patterns_used": [
+      4,
+      5,
+      6,
+      7,
+      9,
+      10
+    ],
+    "timing": {
+      "t_acclim": 20,
+      "trial_len": 10
+    }
+  }
+]

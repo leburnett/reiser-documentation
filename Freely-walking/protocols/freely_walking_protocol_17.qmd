@@ -1,0 +1,37 @@
+---
+title: "protocol_17"
+---
+
+Protocol_17.m file
+Short, all high contrast, protocol.
+2ON 14 OFF grating stimulus, flicker x4
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 0 |
+| Patterns Used | 2 |
+| t_acclim | 10s |
+| t_pause | 0.015 |
+| trial_len | 15s |
+
+
+
+## Pattern Previews
+
+
+#### [Pattern 17](../patterns/freely_walking_pattern_17.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_17_optomotor_skinny_2ON_14OFF_binary/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_17_optomotor_skinny_2ON_14OFF_binary/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 18](../patterns/freely_walking_pattern_18.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_18_flicker_2ON_14OFF/frame_0000.png){.ifr}
+

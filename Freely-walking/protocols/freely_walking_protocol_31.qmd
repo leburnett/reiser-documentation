@@ -1,0 +1,96 @@
+---
+title: "protocol_31"
+---
+
+Protocol_31.m  - 60deg and 15 deg gratings - 4 different speeds
+Based on protocol 27 and protocol 10
+Includes:
+- off background interval - pattern 47
+20s interval
+30s trial duration - 2x trials
+stationary bars = 60s only one position
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 10 |
+| Patterns Used | 8 |
+| t_acclim_start | 300s |
+| t_acclim_end | 30s |
+| t_interval | 20s |
+| t_flash | 5s |
+| t_pause | 0.01 |
+
+
+## Conditions
+
+| # | Pattern | Speed | Duration | Description |
+|--:|:--------|------:|---------:|:------------|
+| 1 | [Pattern 9](../patterns/freely_walking_pattern_09.qmd) | 32 | 15s | 60 deg gratings - 1Hz - 1 px step pattern |
+| 2 | [Pattern 9](../patterns/freely_walking_pattern_09.qmd) | 64 | 15s | 60 deg gratings - 2Hz - 1 px step pattern |
+| 3 | [Pattern 9](../patterns/freely_walking_pattern_09.qmd) | 127 | 15s | 60 deg gratings - 4Hz - 1 px step pattern |
+| 4 | [Pattern 27](../patterns/freely_walking_pattern_27.qmd) | 127 | 15s | 60 deg gratings - 8Hz - 2px step pattern |
+| 5 | [Pattern 10](../patterns/freely_walking_pattern_10.qmd) | 8 | 15s | 60 deg gratings - Flicker - 4Hz |
+| 6 | [Pattern 4](../patterns/freely_walking_pattern_04.qmd) | 32 | 15s | 15 deg gratings - 4Hz - 1 px step pattern |
+| 7 | [Pattern 4](../patterns/freely_walking_pattern_04.qmd) | 64 | 15s | 15 deg gratings - 8Hz - 1 px step pattern |
+| 8 | [Pattern 4](../patterns/freely_walking_pattern_04.qmd) | 127 | 15s | 15 deg gratings - 16Hz - 1 px step pattern |
+| 9 | [Pattern 63](../patterns/freely_walking_pattern_63.qmd) | 127 | 15s | 15 deg gratings - 32Hz - 2px step pattern |
+| 10 | [Pattern 5](../patterns/freely_walking_pattern_05.qmd) | 8 | 15s | 15 deg gratings - Flicker - 4Hz |
+
+
+## Pattern Previews
+
+
+#### [Pattern 4](../patterns/freely_walking_pattern_04.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_04_optomotor_4pixel_binary/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_04_optomotor_4pixel_binary/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 5](../patterns/freely_walking_pattern_05.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_05_flicker_4pixel_binary/frame_0000.png){.ifr}
+
+#### [Pattern 9](../patterns/freely_walking_pattern_09.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_09_optomotor_16pixel_binary/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_09_optomotor_16pixel_binary/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 10](../patterns/freely_walking_pattern_10.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_10_flicker_16pixel_binary/frame_0000.png){.ifr}
+
+#### [Pattern 27](../patterns/freely_walking_pattern_27.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_27_optomotor_16pixel_binary_2pxsteps/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_27_optomotor_16pixel_binary_2pxsteps/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 47](../patterns/freely_walking_pattern_47.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_47_bkg_0_gsval1_2frames/frame_0000.png){.ifr}
+
+#### [Pattern 63](../patterns/freely_walking_pattern_63.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_63_optomotor_4pixel_binary_2pxsteps/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_63_optomotor_4pixel_binary_2pxsteps/frame_0000.png){.ifr}
+:::
+

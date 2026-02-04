@@ -1,0 +1,53 @@
+---
+title: "protocol_30"
+---
+
+Protocol_30.m  - Different contrasts - generated 12th May 2025
+Based on protocol 27 and protocol 1
+20s interval
+30s trial duration - 2x trials
+stationary bars = 60s only one position
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 7 |
+| Patterns Used | 3 |
+| t_acclim_start | 300s |
+| t_acclim_end | 30s |
+| t_interval | 20s |
+| t_flash | 5s |
+| t_pause | 0.01 |
+
+
+## Conditions
+
+| # | Pattern | Speed | Duration | Description |
+|--:|:--------|------:|---------:|:------------|
+| 1 | [Pattern 1](../patterns/freely_walking_pattern_01.qmd) | 64 | 15s |  |
+| 2 | [Pattern 1](../patterns/freely_walking_pattern_01.qmd) | 64 | 15s |  |
+| 3 | [Pattern 1](../patterns/freely_walking_pattern_01.qmd) | 64 | 15s |  |
+| 4 | [Pattern 1](../patterns/freely_walking_pattern_01.qmd) | 64 | 15s |  |
+| 5 | [Pattern 1](../patterns/freely_walking_pattern_01.qmd) | 64 | 15s |  |
+| 6 | [Pattern 1](../patterns/freely_walking_pattern_01.qmd) | 64 | 15s |  |
+| 7 | [Pattern 1](../patterns/freely_walking_pattern_01.qmd) | 64 | 15s |  |
+
+
+## Pattern Previews
+
+
+#### [Pattern 1](../patterns/freely_walking_pattern_01.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_01_optomotor_contrast_72_RC/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_01_optomotor_contrast_72_RC/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 47](../patterns/freely_walking_pattern_47.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_47_bkg_0_gsval1_2frames/frame_0000.png){.ifr}
+

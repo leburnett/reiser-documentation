@@ -1,31 +1,6 @@
 ---
-title: "Protocols"
+title: "Experiment Logging System"
 ---
-
-# Description of the protocol used for the Motion-Induced Centring (MIC) screen
-
-The protocol used was protocol 27.
-
-## How to generate the stimuli
-
-## Breakdown of the protcol structure.
-
-## How to run the protocol
-
-- Arena on and controller on.
-- BIAS open
-- PControl open in MATLAB
-- Camera open to view flies live in the arena (visible light).
-- Run MATLAB protocol script.
-
-# Description of the other protocols that were used.
-
-1. p10
-2. p24
-3. p25
-4. p30
-5. p31
-6. p32
 
 ## Automatic logging of experiments using a google form.
 As well as recording which experiments were run in a physical lab book, the running of any "protocol_X" script will automatically log the experiment using an in-built [google form](https://docs.google.com/spreadsheets/d/1IsT3YndxAy3yN8o38r5RGK4dZsEdPXe0In4-OTEcXNw/edit?resourcekey=&gid=35583985#gid=35583985). This process works by feeding the parameter "params" into a pre-made google form which then exports the results to a google sheet.

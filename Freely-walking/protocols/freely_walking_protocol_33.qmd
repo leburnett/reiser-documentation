@@ -1,0 +1,50 @@
+---
+title: "protocol_33"
+---
+
+Protocol_33.m  - short protocol with low luminance 60 degree grating and
+flicker.
+GS_VAL = 3, on value = 3, off value = 0.
+Includes:
+- off background interval - pattern 47
+- 60 deg gratings - 1 speed
+- 60 deg flicker - 1 speed
+20s interval
+30s trial duration - 2x15s trials
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 2 |
+| Patterns Used | 4 |
+| t_acclim_start | 30s |
+| t_acclim_end | 30s |
+| t_interval | 20s |
+| t_flash | 5s |
+| t_pause | 0.01 |
+
+
+## Conditions
+
+| # | Pattern | Speed | Duration | Description |
+|--:|:--------|------:|---------:|:------------|
+| 1 | [Pattern 64](../patterns/freely_walking_pattern_64.qmd) | 64 | 15s | 60 deg gratings - 4Hz - low luminance |
+| 2 | [Pattern 65](../patterns/freely_walking_pattern_65.qmd) | 8 | 15s | Flicker - 4Hz |
+
+
+## Pattern Previews
+
+
+#### [Pattern 47](../patterns/freely_walking_pattern_47.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_47_bkg_0_gsval1_2frames/frame_0000.png){.ifr}
+
+#### [Pattern 64](../patterns/freely_walking_pattern_64.qmd)
+
+*Pattern 64 images not yet generated.*
+
+#### [Pattern 65](../patterns/freely_walking_pattern_65.qmd)
+
+*Pattern 65 images not yet generated.*
+

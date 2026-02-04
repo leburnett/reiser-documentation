@@ -1,0 +1,89 @@
+---
+title: "protocol_21"
+---
+
+Protocol_21.m  - follow up protocol 1 after protocol 19 double effector test screen.
+Based on protocol 19
+Includes:
+- greyscale interval frame.
+- slower curtain stimuli
+- fast grating stimuli
+- slower grating stimuli.
+Created new:
+- greyscale background pattern for interval
+- 30 deg and 60 deg grating patterns that move by 2 pixels every frame
+instead of 1 in order to mimic double the speed.
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 10 |
+| Patterns Used | 5 |
+| t_acclim | 20s |
+| t_pause | 0.015 |
+
+
+## Conditions
+
+| # | Pattern | Speed | Duration | Description |
+|--:|:--------|------:|---------:|:------------|
+| 1 | [Pattern 27](../patterns/freely_walking_pattern_27.qmd) | 29 | -s | grating - 60 deg |
+| 2 | [Pattern 27](../patterns/freely_walking_pattern_27.qmd) | 29 | -s |  |
+| 3 | [Pattern 26](../patterns/freely_walking_pattern_26.qmd) | 29 | -s | grating - 30 deg - - 3 |
+| 4 | [Pattern 26](../patterns/freely_walking_pattern_26.qmd) | 29 | -s | - - 4 |
+| 5 | [Pattern 19](../patterns/freely_walking_pattern_19.qmd) | 29 | -s | ON curtain - - 5 |
+| 6 | [Pattern 19](../patterns/freely_walking_pattern_19.qmd) | 29 | -s | - - 6 |
+| 7 | [Pattern 20](../patterns/freely_walking_pattern_20.qmd) | 29 | -s | OFF curtain - - 7 |
+| 8 | [Pattern 20](../patterns/freely_walking_pattern_20.qmd) | 29 | -s | - - 8 |
+| 9 | [Pattern 7](../patterns/freely_walking_pattern_07.qmd) | 29 | -s | Flicker as a stimulus - 60 deg - slow |
+| 10 | [Pattern 7](../patterns/freely_walking_pattern_07.qmd) | 29 | -s | Flicker as a stimulus - 60 deg - fast |
+
+
+## Pattern Previews
+
+
+#### [Pattern 7](../patterns/freely_walking_pattern_07.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_07_flicker_8pixel_binary/frame_0000.png){.ifr}
+
+#### [Pattern 19](../patterns/freely_walking_pattern_19.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_19_ON_curtains_16px/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_19_ON_curtains_16px/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 20](../patterns/freely_walking_pattern_20.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_20_OFF_curtains_16px/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_20_OFF_curtains_16px/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 26](../patterns/freely_walking_pattern_26.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_26_optomotor_8pixel_binary_2pxsteps/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_26_optomotor_8pixel_binary_2pxsteps/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 27](../patterns/freely_walking_pattern_27.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_27_optomotor_16pixel_binary_2pxsteps/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_27_optomotor_16pixel_binary_2pxsteps/frame_0000.png){.ifr}
+:::
+

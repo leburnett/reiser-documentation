@@ -1,0 +1,55 @@
+---
+title: "Pattern_16_optomotor_wide_12ON_4OFF_binary"
+---
+
+## Preview
+
+
+::: {.content-visible when-format="html"}
+![Pattern_16_optomotor_wide_12ON_4OFF_binary animation](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/animation.gif){.ifr_center}
+:::
+
+::: {.content-visible when-format="pdf"}
+![Pattern_16_optomotor_wide_12ON_4OFF_binary](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/frame_0000.png){.ifr_center}
+:::
+
+
+## Metadata
+
+| Property | Value |
+|:---------|------:|
+| Pattern ID | 16 |
+| Type | Optomotor Grating |
+| Greyscale Levels | 2 (gs_val=1) |
+| Animation Frames | 192 |
+| Y Frames | 1 |
+
+: {.bordered .striped}
+
+## Description
+
+Moving vertical stripe pattern used to elicit optomotor responses. The pattern rotates around the arena to test motion detection. Binary (2-level) contrast.
+
+
+
+## Frame Gallery
+
+::: {layout-ncol=4}
+
+![Frame 0](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/frame_0000.png)
+
+![Frame 1](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/frame_0001.png)
+
+![Frame 2](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/frame_0002.png)
+
+![Frame 3](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/frame_0003.png)
+
+![Frame 4](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/frame_0004.png)
+
+![Frame 5](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/frame_0005.png)
+
+![Frame 6](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/frame_0006.png)
+
+![Frame 7](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/frame_0007.png)
+
+:::

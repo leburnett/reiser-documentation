@@ -1,0 +1,180 @@
+---
+title: "Visual Patterns"
+---
+
+This section documents all visual stimulus patterns used in the freely-walking optomotor experiments on the G3 LED arena.
+
+## Pattern Categories
+
+The patterns are organized into several categories based on their visual properties and experimental purpose:
+
+| Category | Description | Example Patterns |
+|----------|-------------|------------------|
+| **Optomotor Gratings** | Moving vertical stripe patterns for motion detection | Pattern 06 (8px), Pattern 09 (16px) |
+| **Flicker** | Temporal contrast without spatial motion | Pattern 10, Pattern 07 |
+| **Curtains** | Progressive edge stimuli (ON/OFF) | Pattern 19, Pattern 20, Pattern 51-52 |
+| **Reverse Phi** | Contrast-reversing apparent motion | Pattern 31-33, Pattern 58-62 |
+| **Bar Fixation** | Stationary bars for phototaxis | Pattern 30, Pattern 37-46 |
+| **Background** | Uniform patterns for intervals | Pattern 47, Pattern 25 |
+
+## Pattern Overview
+
+| Pattern | Name | Type |
+|---------|------|------|
+| [01](patterns/freely_walking_pattern_01.qmd) | optomotor_contrast_72_RC | Optomotor Grating |
+| [02](patterns/freely_walking_pattern_02.qmd) | flicker_72_RC | Flicker |
+| [03](patterns/freely_walking_pattern_03.qmd) | optomotor_shifted_centre | Optomotor Grating |
+| [04](patterns/freely_walking_pattern_04.qmd) | optomotor_4pixel_binary | Optomotor Grating |
+| [05](patterns/freely_walking_pattern_05.qmd) | flicker_4pixel_binary | Flicker |
+| [06](patterns/freely_walking_pattern_06.qmd) | optomotor_8pixel_binary | Optomotor Grating |
+| [07](patterns/freely_walking_pattern_07.qmd) | flicker_8pixel_binary | Flicker |
+| [08](patterns/freely_walking_pattern_08.qmd) | optomotor_8pixel_shifted_binary | Optomotor Grating |
+| [09](patterns/freely_walking_pattern_09.qmd) | optomotor_16pixel_binary | Optomotor Grating |
+| [10](patterns/freely_walking_pattern_10.qmd) | flicker_16pixel_binary | Flicker |
+| [11](patterns/freely_walking_pattern_11.qmd) | optomotor_skinny_2ON_6OFF_binary | Optomotor Grating |
+| [12](patterns/freely_walking_pattern_12.qmd) | flicker_2ON_6OFF | Flicker |
+| [13](patterns/freely_walking_pattern_13.qmd) | optomotor_skinny_4ON_12OFF_binary | Optomotor Grating |
+| [14](patterns/freely_walking_pattern_14.qmd) | flicker_4ON_12OFF | Flicker |
+| [15](patterns/freely_walking_pattern_15.qmd) | optomotor_wide_6ON_2OFF_binary | Optomotor Grating |
+| [16](patterns/freely_walking_pattern_16.qmd) | optomotor_wide_12ON_4OFF_binary | Optomotor Grating |
+| [17](patterns/freely_walking_pattern_17.qmd) | optomotor_skinny_2ON_14OFF_binary | Optomotor Grating |
+| [18](patterns/freely_walking_pattern_18.qmd) | flicker_2ON_14OFF | Flicker |
+| [19](patterns/freely_walking_pattern_19.qmd) | ON_curtains_16px | ON Curtain |
+| [20](patterns/freely_walking_pattern_20.qmd) | OFF_curtains_16px | OFF Curtain |
+| [21](patterns/freely_walking_pattern_21.qmd) | 0-8shift_60deg_1-875step | Shifted Center |
+| [22](patterns/freely_walking_pattern_22.qmd) | 0shift_60deg_1-875step | Shifted Center |
+| [23](patterns/freely_walking_pattern_23.qmd) | minus0-8shift_60deg_1-875step | Shifted Center |
+| [24](patterns/freely_walking_pattern_24.qmd) | optomotor_skinny_2OFF_14ON_binary | Optomotor Grating |
+| [25](patterns/freely_walking_pattern_25.qmd) | bkg_3_gsval4_2frames | Background |
+| [26](patterns/freely_walking_pattern_26.qmd) | optomotor_8pixel_binary_2pxsteps | Optomotor Grating |
+| [27](patterns/freely_walking_pattern_27.qmd) | optomotor_16pixel_binary_2pxsteps | Optomotor Grating |
+| [28](patterns/freely_walking_pattern_28.qmd) | optomotor_skinny_2ON_14OFF_binary_2pxsteps | Optomotor Grating |
+| [29](patterns/freely_walking_pattern_29.qmd) | bkg_1_gsval4_2frames | Background |
+| [30](patterns/freely_walking_pattern_30.qmd) | 4px_bar_fixation | Bar Fixation |
+| [31](patterns/freely_walking_pattern_31.qmd) | RevPhi_0_3_8_1px_step | Reverse Phi |
+| [32](patterns/freely_walking_pattern_32.qmd) | RevPhi_0_3_8_4px_step | Reverse Phi |
+| [33](patterns/freely_walking_pattern_33.qmd) | RevPhi_0_3_8_8px_step | Reverse Phi |
+| [34](patterns/freely_walking_pattern_34.qmd) | FoE_1-875_step_30deg | Focus of Expansion |
+| [35](patterns/freely_walking_pattern_35.qmd) | FoE_1-875_step_15deg | Focus of Expansion |
+| [36](patterns/freely_walking_pattern_36.qmd) | FoE_1-875_step_60deg | Focus of Expansion |
+| [37](patterns/freely_walking_pattern_37.qmd) | 8px_bar_fixation_OFF | Bar Fixation (OFF) |
+| [38](patterns/freely_walking_pattern_38.qmd) | 8px_bar_fixation_ON | Bar Fixation (ON) |
+| [39](patterns/freely_walking_pattern_39.qmd) | 8px_bar_fixation_ON_2con | Bar Fixation (ON) |
+| [40](patterns/freely_walking_pattern_40.qmd) | 8px_bar_fixation_ON_4con | Bar Fixation (ON) |
+| [41](patterns/freely_walking_pattern_41.qmd) | 8px_bar_fixation_ON_6con | Bar Fixation (ON) |
+| [42](patterns/freely_walking_pattern_42.qmd) | 8px_bar_fixation_OFF_2con | Bar Fixation (OFF) |
+| [43](patterns/freely_walking_pattern_43.qmd) | 8px_bar_fixation_OFF_4con | Bar Fixation (OFF) |
+| [44](patterns/freely_walking_pattern_44.qmd) | 8px_bar_fixation_OFF_6con | Bar Fixation (OFF) |
+| [45](patterns/freely_walking_pattern_45.qmd) | 16px_bar_fixation_ON | Bar Fixation (ON) |
+| [46](patterns/freely_walking_pattern_46.qmd) | 16px_bar_fixation_OFF | Bar Fixation (OFF) |
+| [47](patterns/freely_walking_pattern_47.qmd) | bkg_0_gsval1_2frames | Background |
+| [48](patterns/freely_walking_pattern_48.qmd) | full_flashes_0_1_binary_2frames | Full Field Flash |
+| [49](patterns/freely_walking_pattern_49.qmd) | 16px_bar_fixation_OFF_3con | Bar Fixation (OFF) |
+| [50](patterns/freely_walking_pattern_50.qmd) | 16px_bar_fixation_ON_3con | Bar Fixation (ON) |
+| [51](patterns/freely_walking_pattern_51.qmd) | ON_curtains_32px | ON Curtain |
+| [52](patterns/freely_walking_pattern_52.qmd) | OFF_curtains_32px | OFF Curtain |
+| [53](patterns/freely_walking_pattern_53.qmd) | ON_curtains_32px_4_9 | ON Curtain |
+| [54](patterns/freely_walking_pattern_54.qmd) | ON_R_curtains_32px_4_9 | ON Curtain |
+| [55](patterns/freely_walking_pattern_55.qmd) | OFF_curtains_32px_4_0 | OFF Curtain |
+| [56](patterns/freely_walking_pattern_56.qmd) | OFF_R_curtains_32px_4_0 | OFF Curtain |
+| [57](patterns/freely_walking_pattern_57.qmd) | 32px_single_bar_ON | Other |
+| [58](patterns/freely_walking_pattern_58.qmd) | RevPhi_gsval3_0_3_7_8-24px_4px_step | Reverse Phi |
+| [59](patterns/freely_walking_pattern_59.qmd) | RevPhi_gsval3_0_3_7_16-16px_4px_step | Reverse Phi |
+| [60](patterns/freely_walking_pattern_60.qmd) | RevPhi_gsval3_0_3_7_16-16px_8px_step | Reverse Phi |
+| [61](patterns/freely_walking_pattern_61.qmd) | RevPhi_gsval3_0_2_7_16-16px_4px_step | Reverse Phi |
+| [62](patterns/freely_walking_pattern_62.qmd) | RevPhi_gsval2_0_1_3_16-16px_4px_step | Reverse Phi |
+| [63](patterns/freely_walking_pattern_63.qmd) | optomotor_4pixel_binary_2pxsteps | Optomotor Grating |
+
+: {.bordered .striped}
+
+## Pattern Gallery
+
+Below is a gallery of all patterns. Click on any pattern number in the table above to see detailed information including animated previews.
+
+::: {.callout-note}
+Patterns are displayed as they appear on the cylindrical LED arena (3 rows x 192 columns of LEDs), scaled up for visibility.
+:::
+
+## Adding a New Pattern
+
+When you create a new pattern for the LED arena, follow these steps to add it to this documentation:
+
+### Step 1: Create the Pattern File
+
+Create your pattern using MATLAB. Pattern generation scripts are located in:
+
+```
+freely-walking-optomotor/script_to_make_patterns/
+```
+
+Your pattern file should follow the naming convention: `Pattern_XX_descriptive_name.mat`
+
+The pattern struct should contain:
+
+- `pattern.Pats` - 3D or 4D array of pixel values
+- `pattern.x_num` - Number of animation frames
+- `pattern.y_num` - Number of contrast levels (usually 1)
+- `pattern.gs_val` - Greyscale value (1=binary, 2=4-level, 3=8-level, 4=16-level)
+- `pattern.num_panels` - Number of panels (72)
+
+### Step 2: Generate Documentation
+
+From the `freely-walking-optomotor` directory, run:
+```bash
+cd /path/to/freely-walking-optomotor
+pixi run -e default --manifest-path python/freely-walking-python/pixi.toml \
+    python docs_generator/generate_pattern_docs.py \
+    patterns/Patterns_optomotor/Pattern_XX_your_pattern.mat
+```
+
+This will:
+
+1. Generate PNG frames and an animated GIF in `reiser-documentation/assets/imgs/freely/patterns/`
+2. Create a `.qmd` documentation page in `reiser-documentation/Freely-walking/`
+
+### Step 3: Update Navigation
+
+Add your new pattern to `reiser-documentation/_quarto.yml` under the Patterns section:
+
+```yaml
+- section: "Patterns"
+  contents:
+    - Freely-walking/freely_walking_patterns_index.qmd
+    - Freely-walking/freely_walking_pattern_XX.qmd  # Add your pattern here
+```
+
+### Step 4: Preview and Deploy
+
+```bash
+cd /path/to/reiser-documentation
+quarto preview
+```
+
+Once satisfied, commit and push to deploy.
+
+## Regenerating All Pattern Documentation
+
+To regenerate documentation for all patterns:
+
+```bash
+cd /path/to/freely-walking-optomotor
+pixi run -e default --manifest-path python/freely-walking-python/pixi.toml \
+    python docs_generator/generate_pattern_docs.py
+```
+
+## Technical Details
+
+### Arena Geometry
+
+- **Display**: Cylindrical LED arena with 72 panels
+- **Resolution**: 3 rows x 192 columns (each panel is 8x8 pixels)
+- **Panel arrangement**: `fliplr(flipud(reshape(1:72, 3, 24)))`
+
+### Greyscale Levels
+
+| gs_val | Levels | Use Case |
+|--------|--------|----------|
+| 1 | 2 (binary) | High contrast patterns |
+| 2 | 4 | Low contrast experiments |
+| 3 | 8 | Reverse phi, intermediate contrast |
+| 4 | 16 | Fine contrast gradients |

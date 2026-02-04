@@ -1,0 +1,35 @@
+---
+title: "Pattern_57_32px_single_bar_ON"
+---
+
+## Preview
+
+
+![Pattern_57_32px_single_bar_ON](../../assets/imgs/freely/patterns/Pattern_57_32px_single_bar_ON/frame_0000.png){.ifr_center}
+
+
+## Metadata
+
+| Property | Value |
+|:---------|------:|
+| Pattern ID | 57 |
+| Type | Other |
+| Greyscale Levels | 2 (gs_val=1) |
+| Animation Frames | 1 |
+| Y Frames | 1 |
+
+: {.bordered .striped}
+
+## Description
+
+Visual stimulus pattern for behavioral experiments. 32-pixel stripe width.
+
+
+
+## Frame Gallery
+
+::: {layout-ncol=4}
+
+![Frame 0](../../assets/imgs/freely/patterns/Pattern_57_32px_single_bar_ON/frame_0000.png)
+
+:::

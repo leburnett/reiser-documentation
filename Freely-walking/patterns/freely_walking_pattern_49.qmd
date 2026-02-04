@@ -1,0 +1,37 @@
+---
+title: "Pattern_49_16px_bar_fixation_OFF_3con"
+---
+
+## Preview
+
+
+![Pattern_49_16px_bar_fixation_OFF_3con](../../assets/imgs/freely/patterns/Pattern_49_16px_bar_fixation_OFF_3con/frame_0000.png){.ifr_center}
+
+
+## Metadata
+
+| Property | Value |
+|:---------|------:|
+| Pattern ID | 49 |
+| Type | Bar Fixation (OFF) |
+| Greyscale Levels | 16 (gs_val=4) |
+| Animation Frames | 2 |
+| Y Frames | 1 |
+
+: {.bordered .striped}
+
+## Description
+
+Stationary dark bar pattern used for fixation experiments. 16-pixel stripe width.
+
+
+
+## Frame Gallery
+
+::: {layout-ncol=4}
+
+![Frame 0](../../assets/imgs/freely/patterns/Pattern_49_16px_bar_fixation_OFF_3con/frame_0000.png)
+
+![Frame 1](../../assets/imgs/freely/patterns/Pattern_49_16px_bar_fixation_OFF_3con/frame_0001.png)
+
+:::

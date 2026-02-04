@@ -1,0 +1,62 @@
+---
+title: "protocol_20"
+---
+
+Protocol_v20_all_tests.m - shifted centre with 60deg patterns - all OFF in
+the middle.
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 6 |
+| Patterns Used | 3 |
+| t_acclim | 20s |
+| t_pause | 0.015 |
+
+
+## Conditions
+
+| # | Pattern | Speed | Duration | Description |
+|--:|:--------|------:|---------:|:------------|
+| 1 | [Pattern 21](../patterns/freely_walking_pattern_21.qmd) | 64 | -s | 0.8 shift |
+| 2 | [Pattern 21](../patterns/freely_walking_pattern_21.qmd) | 127 | -s | 0.8 shift |
+| 3 | [Pattern 22](../patterns/freely_walking_pattern_22.qmd) | 64 | -s | 0 shift |
+| 4 | [Pattern 22](../patterns/freely_walking_pattern_22.qmd) | 127 | -s | 0 shift |
+| 5 | [Pattern 23](../patterns/freely_walking_pattern_23.qmd) | 64 | -s | -0.8 shift |
+| 6 | [Pattern 23](../patterns/freely_walking_pattern_23.qmd) | 127 | -s | -0.8 shift |
+
+
+## Pattern Previews
+
+
+#### [Pattern 21](../patterns/freely_walking_pattern_21.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_21_0-8shift_60deg_1-875step_32frames_1bit_Pattern_G4/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_21_0-8shift_60deg_1-875step_32frames_1bit_Pattern_G4/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 22](../patterns/freely_walking_pattern_22.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_22_0shift_60deg_1-875step_32frames_1bit_Pattern_G4/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_22_0shift_60deg_1-875step_32frames_1bit_Pattern_G4/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 23](../patterns/freely_walking_pattern_23.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_23_minus0-8shift_60deg_1-875step_32frames_1bit_Pattern_G4/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_23_minus0-8shift_60deg_1-875step_32frames_1bit_Pattern_G4/frame_0000.png){.ifr}
+:::
+

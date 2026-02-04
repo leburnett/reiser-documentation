@@ -10,6 +10,19 @@ _freeze/
 *.pdf
 !README.html
 
+# LaTeX intermediate files (generated during PDF rendering)
+*.aux
+*.log
+*.tex
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Quarto mediabag directories (generated during PDF rendering)
+**/*_files/
+
 # OS generated files
 .DS_Store
 .DS_Store?

@@ -1,0 +1,37 @@
+---
+title: "Pattern_02_flicker_72_RC"
+---
+
+## Preview
+
+
+![Pattern_02_flicker_72_RC](../../assets/imgs/freely/patterns/Pattern_02_flicker_72_RC/frame_0000.png){.ifr_center}
+
+
+## Metadata
+
+| Property | Value |
+|:---------|------:|
+| Pattern ID | 2 |
+| Type | Flicker |
+| Greyscale Levels | 8 (gs_val=3) |
+| Animation Frames | 2 |
+| Y Frames | 1 |
+
+: {.bordered .striped}
+
+## Description
+
+Temporal contrast pattern that alternates between light and dark states without spatial motion. Used to test flicker sensitivity.
+
+
+
+## Frame Gallery
+
+::: {layout-ncol=4}
+
+![Frame 0](../../assets/imgs/freely/patterns/Pattern_02_flicker_72_RC/frame_0000.png)
+
+![Frame 1](../../assets/imgs/freely/patterns/Pattern_02_flicker_72_RC/frame_0001.png)
+
+:::

@@ -1,0 +1,55 @@
+---
+title: "Pattern_55_OFF_curtains_32px_4_0"
+---
+
+## Preview
+
+
+::: {.content-visible when-format="html"}
+![Pattern_55_OFF_curtains_32px_4_0 animation](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/animation.gif){.ifr_center}
+:::
+
+::: {.content-visible when-format="pdf"}
+![Pattern_55_OFF_curtains_32px_4_0](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/frame_0000.png){.ifr_center}
+:::
+
+
+## Metadata
+
+| Property | Value |
+|:---------|------:|
+| Pattern ID | 55 |
+| Type | OFF Curtain |
+| Greyscale Levels | 16 (gs_val=4) |
+| Animation Frames | 33 |
+| Y Frames | 1 |
+
+: {.bordered .striped}
+
+## Description
+
+Progressive edge stimulus where a dark region expands across the arena. Tests responses to expanding dark edges. 32-pixel stripe width.
+
+
+
+## Frame Gallery
+
+::: {layout-ncol=4}
+
+![Frame 0](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/frame_0000.png)
+
+![Frame 1](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/frame_0001.png)
+
+![Frame 2](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/frame_0002.png)
+
+![Frame 3](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/frame_0003.png)
+
+![Frame 4](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/frame_0004.png)
+
+![Frame 5](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/frame_0005.png)
+
+![Frame 6](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/frame_0006.png)
+
+![Frame 7](../../assets/imgs/freely/patterns/Pattern_55_OFF_curtains_32px_4_0/frame_0007.png)
+
+:::

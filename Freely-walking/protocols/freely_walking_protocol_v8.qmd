@@ -1,0 +1,36 @@
+---
+title: "protocol_v8"
+---
+
+Protocol_v8.m file - optomotor freely walking with 4 pixel stripes
+% Input parameters:
+These parameters will be saved in the log file.
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 0 |
+| Patterns Used | 2 |
+| t_acclim | 20s |
+| trial_len | 10s |
+
+
+
+## Pattern Previews
+
+
+#### [Pattern 4](../patterns/freely_walking_pattern_04.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_04_optomotor_4pixel_binary/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_04_optomotor_4pixel_binary/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 5](../patterns/freely_walking_pattern_05.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_05_flicker_4pixel_binary/frame_0000.png){.ifr}
+

@@ -1,0 +1,108 @@
+---
+title: "protocol_22"
+---
+
+Protocol_22.m  - follow up protocol 2 after protocol 19 double effector test screen.
+Based on protocol 19
+Includes:
+- greyscale interval frame.
+- 4 pixel OFF bar fixation - 180 deg apart
+- Reverse Phi - 4 bit - 1 pix step - 8 pixel width bar - 24 px gap.
+- Reverse Phi - 4 bit - 4 pix step
+- Reverse Phi - 4 bit - 8 pix step
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 8 |
+| Patterns Used | 8 |
+| t_acclim | 20s |
+| t_pause | 0.015 |
+
+
+## Conditions
+
+| # | Pattern | Speed | Duration | Description |
+|--:|:--------|------:|---------:|:------------|
+| 1 | [Pattern 37](../patterns/freely_walking_pattern_37.qmd) | 29 | -s | 1 = bar fixation - OFF bar |
+| 2 | [Pattern 38](../patterns/freely_walking_pattern_38.qmd) | 29 | -s | 1 = bar fixation - ON bar |
+| 3 | [Pattern 31](../patterns/freely_walking_pattern_31.qmd) | 29 | -s | reverse phi - 1px step |
+| 4 | [Pattern 32](../patterns/freely_walking_pattern_32.qmd) | 29 | -s | 4 px step |
+| 5 | [Pattern 33](../patterns/freely_walking_pattern_33.qmd) | 29 | -s | 8 px step |
+| 6 | [Pattern 34](../patterns/freely_walking_pattern_34.qmd) | 29 | -s | FoE - 30deg |
+| 7 | [Pattern 35](../patterns/freely_walking_pattern_35.qmd) | 29 | -s | 15 deg |
+| 8 | [Pattern 36](../patterns/freely_walking_pattern_36.qmd) | 29 | -s | 60 deg |
+
+
+## Pattern Previews
+
+
+#### [Pattern 31](../patterns/freely_walking_pattern_31.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_31_RevPhi_0_3_8_1px_step/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_31_RevPhi_0_3_8_1px_step/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 32](../patterns/freely_walking_pattern_32.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_32_RevPhi_0_3_8_4px_step/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_32_RevPhi_0_3_8_4px_step/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 33](../patterns/freely_walking_pattern_33.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_33_RevPhi_0_3_8_8px_step/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_33_RevPhi_0_3_8_8px_step/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 34](../patterns/freely_walking_pattern_34.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_34_FoE_1-875_step_30deg_Pattern_G4/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_34_FoE_1-875_step_30deg_Pattern_G4/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 35](../patterns/freely_walking_pattern_35.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_35_FoE_1-875_step_15deg_Pattern_G4/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_35_FoE_1-875_step_15deg_Pattern_G4/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 36](../patterns/freely_walking_pattern_36.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 37](../patterns/freely_walking_pattern_37.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_37_8px_bar_fixation_OFF/frame_0000.png){.ifr}
+
+#### [Pattern 38](../patterns/freely_walking_pattern_38.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_38_8px_bar_fixation_ON/frame_0000.png){.ifr}
+

@@ -1,0 +1,58 @@
+---
+title: "protocol_15"
+---
+
+Protocol_15 - testing the sider gap skinny bars (4ON 12OFF) (12ON 4OFF)
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 3 |
+| Patterns Used | 3 |
+| t_acclim | 20s |
+| t_pause | 0.015 |
+
+
+## Conditions
+
+| # | Pattern | Speed | Duration | Description |
+|--:|:--------|------:|---------:|:------------|
+| 1 | [Pattern 4](../patterns/freely_walking_pattern_04.qmd) | 5 | -s | standard 4ON 4OFF |
+| 2 | [Pattern 13](../patterns/freely_walking_pattern_13.qmd) | 14 | -s | 4ON 12OFF |
+| 3 | [Pattern 16](../patterns/freely_walking_pattern_16.qmd) | 14 | -s | 12 ON 4OFF |
+
+
+## Pattern Previews
+
+
+#### [Pattern 4](../patterns/freely_walking_pattern_04.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_04_optomotor_4pixel_binary/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_04_optomotor_4pixel_binary/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 13](../patterns/freely_walking_pattern_13.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_13_optomotor_skinny_4ON_12OFF_binary/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_13_optomotor_skinny_4ON_12OFF_binary/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 16](../patterns/freely_walking_pattern_16.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_16_optomotor_wide_12ON_4OFF_binary/frame_0000.png){.ifr}
+:::
+

@@ -1,0 +1,55 @@
+---
+title: "Pattern_36_FoE_1-875_step_60deg_Pattern_G4"
+---
+
+## Preview
+
+
+::: {.content-visible when-format="html"}
+![Pattern_36_FoE_1-875_step_60deg_Pattern_G4 animation](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/animation.gif){.ifr_center}
+:::
+
+::: {.content-visible when-format="pdf"}
+![Pattern_36_FoE_1-875_step_60deg_Pattern_G4](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/frame_0000.png){.ifr_center}
+:::
+
+
+## Metadata
+
+| Property | Value |
+|:---------|------:|
+| Pattern ID | 36 |
+| Type | Focus of Expansion |
+| Greyscale Levels | 2 (gs_val=1) |
+| Animation Frames | 32 |
+| Y Frames | 1 |
+
+: {.bordered .striped}
+
+## Description
+
+Radial expansion pattern simulating approach or looming stimuli.
+
+
+
+## Frame Gallery
+
+::: {layout-ncol=4}
+
+![Frame 0](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/frame_0000.png)
+
+![Frame 1](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/frame_0001.png)
+
+![Frame 2](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/frame_0002.png)
+
+![Frame 3](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/frame_0003.png)
+
+![Frame 4](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/frame_0004.png)
+
+![Frame 5](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/frame_0005.png)
+
+![Frame 6](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/frame_0006.png)
+
+![Frame 7](../../assets/imgs/freely/patterns/Pattern_36_FoE_1-875_step_60deg_Pattern_G4/frame_0007.png)
+
+:::

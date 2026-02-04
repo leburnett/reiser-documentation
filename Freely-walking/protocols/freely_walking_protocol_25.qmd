@@ -1,0 +1,56 @@
+---
+title: "protocol_25"
+---
+
+Protocol_25.m  - short protocol for testing individual flies.
+Includes:
+- off background interval - pattern 47
+- 60 deg gratings - 2 speeds
+- flicker - 1 speed
+20s interval
+30s trial duration - 2x15s trials
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 4 |
+| Patterns Used | 4 |
+| t_acclim_start | 300s |
+| t_acclim_end | 30s |
+| t_interval | 20s |
+| t_flash | 5s |
+| t_pause | 0.01 |
+
+
+## Conditions
+
+| # | Pattern | Speed | Duration | Description |
+|--:|:--------|------:|---------:|:------------|
+| 1 | [Pattern 27](../patterns/freely_walking_pattern_27.qmd) | 64 | 15s | 60 deg gratings - 4Hz - 2 px step pattern |
+| 2 | [Pattern 27](../patterns/freely_walking_pattern_27.qmd) | 127 | 15s | 60 deg gratings - 8Hz - 2px step pattern |
+| 3 | [Pattern 10](../patterns/freely_walking_pattern_10.qmd) | 8 | 15s | Flicker - 4Hz |
+| 4 | [Pattern 10](../patterns/freely_walking_pattern_10.qmd) | 16 | 15s | Flicker - 8Hz |
+
+
+## Pattern Previews
+
+
+#### [Pattern 10](../patterns/freely_walking_pattern_10.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_10_flicker_16pixel_binary/frame_0000.png){.ifr}
+
+#### [Pattern 27](../patterns/freely_walking_pattern_27.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_27_optomotor_16pixel_binary_2pxsteps/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_27_optomotor_16pixel_binary_2pxsteps/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 47](../patterns/freely_walking_pattern_47.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_47_bkg_0_gsval1_2frames/frame_0000.png){.ifr}
+

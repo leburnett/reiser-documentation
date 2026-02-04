@@ -1,0 +1,55 @@
+---
+title: "Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step"
+---
+
+## Preview
+
+
+::: {.content-visible when-format="html"}
+![Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step animation](../../assets/imgs/freely/patterns/Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step/animation.gif){.ifr_center}
+:::
+
+::: {.content-visible when-format="pdf"}
+![Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step](../../assets/imgs/freely/patterns/Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step/frame_0000.png){.ifr_center}
+:::
+
+
+## Metadata
+
+| Property | Value |
+|:---------|------:|
+| Pattern ID | 62 |
+| Type | Reverse Phi |
+| Greyscale Levels | 4 (gs_val=2) |
+| Animation Frames | 48 |
+| Y Frames | 1 |
+
+: {.bordered .striped}
+
+## Description
+
+Apparent motion stimulus with contrast reversal. Creates motion perception in the opposite direction to physical displacement. 4-pixel stripe width.
+
+
+
+## Frame Gallery
+
+::: {layout-ncol=4}
+
+![Frame 0](../../assets/imgs/freely/patterns/Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step/frame_0000.png)
+
+![Frame 1](../../assets/imgs/freely/patterns/Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step/frame_0001.png)
+
+![Frame 2](../../assets/imgs/freely/patterns/Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step/frame_0002.png)
+
+![Frame 3](../../assets/imgs/freely/patterns/Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step/frame_0003.png)
+
+![Frame 4](../../assets/imgs/freely/patterns/Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step/frame_0004.png)
+
+![Frame 5](../../assets/imgs/freely/patterns/Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step/frame_0005.png)
+
+![Frame 6](../../assets/imgs/freely/patterns/Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step/frame_0006.png)
+
+![Frame 7](../../assets/imgs/freely/patterns/Pattern_62_RevPhi_gsval2_0_1_3_16-16px_4px_step/frame_0007.png)
+
+:::

@@ -1,0 +1,20 @@
+---
+title: "protocol_10"
+---
+
+Protocol_v10_all_tests.m - testing spatial frequencies, speed, and trial lengths in
+one big protocol
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 0 |
+| Patterns Used | 0 |
+| t_acclim | 20s |
+| t_pause | 0.015 |
+
+
+
+## Pattern Previews
+

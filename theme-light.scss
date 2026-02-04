@@ -178,3 +178,48 @@ figure img {
 .quarto-title-meta-contents a[href$=".pdf"]:hover {
     background-color: #0b5ed7;
 }
+
+/* Table styling - bordered tables with thin black lines */
+table.bordered {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+table.bordered th,
+table.bordered td {
+    border: 1px solid #333333;
+    padding: 0.5rem 0.75rem;
+    vertical-align: middle;
+}
+
+table.bordered th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    text-align: left;
+}
+
+table.bordered td {
+    text-align: left;
+}
+
+/* Right-align numeric columns (Value columns) */
+table.bordered td:last-child,
+table.bordered th:last-child {
+    text-align: right;
+}
+
+/* First column left-aligned */
+table.bordered td:first-child,
+table.bordered th:first-child {
+    text-align: left;
+}
+
+/* Striped rows */
+table.striped tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table.striped tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}

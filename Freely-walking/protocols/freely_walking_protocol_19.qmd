@@ -1,0 +1,98 @@
+---
+title: "protocol_19"
+---
+
+Protocol_19.m  - based on protocol 10 - but includes the 'curtain' ON /
+OFF stimuli and the 2ON 14OFF stimuli.
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 12 |
+| Patterns Used | 6 |
+| t_acclim | 20s |
+| t_pause | 0.015 |
+
+
+## Conditions
+
+| # | Pattern | Speed | Duration | Description |
+|--:|:--------|------:|---------:|:------------|
+| 1 | [Pattern 9](../patterns/freely_walking_pattern_09.qmd) | 10 | -s | grating - 60 deg |
+| 2 | [Pattern 9](../patterns/freely_walking_pattern_09.qmd) | 10 | -s |  |
+| 3 | [Pattern 4](../patterns/freely_walking_pattern_04.qmd) | 10 | -s | grating - 15 deg - - 3 |
+| 4 | [Pattern 4](../patterns/freely_walking_pattern_04.qmd) | 10 | -s | - - 4 |
+| 5 | [Pattern 19](../patterns/freely_walking_pattern_19.qmd) | 10 | -s | ON curtain - - 5 |
+| 6 | [Pattern 19](../patterns/freely_walking_pattern_19.qmd) | 10 | -s | - - 6 |
+| 7 | [Pattern 20](../patterns/freely_walking_pattern_20.qmd) | 10 | -s | OFF curtain - - 7 |
+| 8 | [Pattern 20](../patterns/freely_walking_pattern_20.qmd) | 10 | -s | - - 8 |
+| 9 | [Pattern 17](../patterns/freely_walking_pattern_17.qmd) | 10 | -s | 2ON 14OFF grating - - 9 |
+| 10 | [Pattern 17](../patterns/freely_walking_pattern_17.qmd) | 10 | -s | - - 10 |
+| 11 | [Pattern 24](../patterns/freely_walking_pattern_24.qmd) | 10 | -s | 2OFF 14ON grating - - 11 |
+| 12 | [Pattern 24](../patterns/freely_walking_pattern_24.qmd) | 10 | -s | - - 12 |
+
+
+## Pattern Previews
+
+
+#### [Pattern 4](../patterns/freely_walking_pattern_04.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_04_optomotor_4pixel_binary/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_04_optomotor_4pixel_binary/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 9](../patterns/freely_walking_pattern_09.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_09_optomotor_16pixel_binary/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_09_optomotor_16pixel_binary/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 17](../patterns/freely_walking_pattern_17.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_17_optomotor_skinny_2ON_14OFF_binary/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_17_optomotor_skinny_2ON_14OFF_binary/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 19](../patterns/freely_walking_pattern_19.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_19_ON_curtains_16px/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_19_ON_curtains_16px/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 20](../patterns/freely_walking_pattern_20.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_20_OFF_curtains_16px/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_20_OFF_curtains_16px/frame_0000.png){.ifr}
+:::
+
+#### [Pattern 24](../patterns/freely_walking_pattern_24.qmd)
+
+::: {.content-visible when-format="html"}
+![](../../assets/imgs/freely/patterns/Pattern_24_optomotor_skinny_2OFF_14ON_binary/animation.gif){.ifr}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../assets/imgs/freely/patterns/Pattern_24_optomotor_skinny_2OFF_14ON_binary/frame_0000.png){.ifr}
+:::
+

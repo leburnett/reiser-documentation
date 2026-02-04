@@ -197,3 +197,50 @@ hr {
 .navbar {
     background-color: #1a1a1a !important;
 }
+
+/* Table styling - bordered tables with thin lines */
+table.bordered {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+table.bordered th,
+table.bordered td {
+    border: 1px solid #555555;
+    padding: 0.5rem 0.75rem;
+    vertical-align: middle;
+}
+
+table.bordered th {
+    background-color: #333333;
+    font-weight: 600;
+    text-align: left;
+    color: #ffffff;
+}
+
+table.bordered td {
+    text-align: left;
+    background-color: $table-bg;
+}
+
+/* Right-align numeric columns (Value columns) */
+table.bordered td:last-child,
+table.bordered th:last-child {
+    text-align: right;
+}
+
+/* First column left-aligned */
+table.bordered td:first-child,
+table.bordered th:first-child {
+    text-align: left;
+}
+
+/* Striped rows */
+table.striped tbody tr:nth-child(even) td {
+    background-color: $table-striped-bg;
+}
+
+table.striped tbody tr:nth-child(odd) td {
+    background-color: $table-bg;
+}

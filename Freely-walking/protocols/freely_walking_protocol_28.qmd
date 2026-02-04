@@ -1,0 +1,29 @@
+---
+title: "protocol_28"
+---
+
+Protocol_28.m  - Test REVERSE PHI modifications
+Try GSVAL = 3, not 4.
+Try wider bars.
+
+## Protocol Parameters
+
+| Parameter | Value |
+|:----------|:------|
+| Conditions | 0 |
+| Patterns Used | 2 |
+| t_acclim_start | 30s |
+| t_acclim_end | 30s |
+| t_interval | 15s |
+| t_flash | 5s |
+| t_pause | 0.01 |
+
+
+
+## Pattern Previews
+
+
+#### [Pattern 47](../patterns/freely_walking_pattern_47.qmd)
+
+![](../../assets/imgs/freely/patterns/Pattern_47_bkg_0_gsval1_2frames/frame_0000.png){.ifr}
+
