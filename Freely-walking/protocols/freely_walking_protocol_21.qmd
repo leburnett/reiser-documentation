@@ -14,6 +14,10 @@ Created new:
 - 30 deg and 60 deg grating patterns that move by 2 pixels every frame
 instead of 1 in order to mimic double the speed.
 
+Used 30 deg (16 pixels) curtains. Ended up using 32 pixel curtains in the p27 protocol to match the number of pixels of one white - black bar for the 60 deg gratings. 
+
+Results and analysis can be found in the Numbers file "2502_follow_up_protocols".
+
 ## Protocol Parameters
 
 | Parameter | Value |
