@@ -2,7 +2,7 @@
 title: "Overview"
 ---
 
-Between <b>May and October 2024</b>, <b>Jin Yong Park</b> recorded from different cell types with the `DS_probe_protocol` in the G4 ephys setup.
+Between <i>May and October 2024</i>, <b>Jin Yong Park</b> recorded from different cell types with the `DS_probe_protocol` in the G4 ephys setup.
 
  These experiments were run based on the prior analysis conducted by <b>Judith Hoeller</b> of theoretical receptive field properties of the different cell types, which suggested that they would display directionally selective responses to moving bars in specific orientations. 
  
@@ -12,7 +12,7 @@ Between <b>May and October 2024</b>, <b>Jin Yong Park</b> recorded from differen
 
 ::: {.callout-note}
 ### Quick summary:
-3 repetitions of light and dark moving bars, edges, gratings and full field flashes.
+3 repetitions of light and dark moving bars, edges, gratings and full field flashes. This protocol is run through the `G4_experiment_conductor` GUI.
 :::
 
 ::: {.callout-note}
@@ -246,4 +246,4 @@ The data from these experiments can be found on the Reiser Lab prfs group drive 
 
 ## Notes 
 
-In retrospect, we should have recorded from the T4T5 driver first (as these cells are well studied) to validate the protocol before moving on to the less well characterised TmY cell types. I would advise anyone wishing to continue with this project to start with T4T5 recordings to ensure the protocol is working as expected.
+In retrospect, we should have recorded from the T4T5 driver first (as these cells are well studied) to validate the protocol before moving on to the less well characterised cell types. I would advise anyone wishing to continue with this project to start with T4T5 recordings to ensure the protocol is working as expected and to provide a benchmark against which to compare the responses of the other cell types.
