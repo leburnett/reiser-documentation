@@ -1,5 +1,5 @@
 ---
-title: "DS protocol"
+title: "Overview"
 ---
 
 Between May and October 2024, Jin Yong Park recorded from different cell types with the "DS_probe_protocol" in the G4 ephys setup. These experiments were run based on the prior analysis conducted by Judith Hoeller of theoretical receptive field properties of the different cell types, which suggested that they would display directionally selective responses to moving bars in specific orientations. The aim of these experiments was to test these predictions and to characterise the direction selectivity of the different cell types.
