@@ -40,6 +40,9 @@ website:
                 - Ephys/ephys_nested_rf_bar-sweep-analysis.qmd
                 - Ephys/ephys_nested_rf_flash-analysis.qmd
             - Ephys/ephys_nested_rf_data_structure.qmd
+        - section: "DS Probe Protocol"
+          contents:
+            - Ephys/ephys_ds_probe_protocol.qmd
 
     - title: "Freely-walking"
       contents:
