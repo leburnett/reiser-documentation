@@ -2,6 +2,14 @@
 title: "Overview"
 ---
 
+The following pages outline how to create, run and analyse experiments run on the G4 LED arena for electrophysiology recordings. 
+
+Outline of the experiments that were run in collaboration with Jin Yong Park from PTR: 
+
+
+
+The protocols described here are designed to probe the receptive field properties of visual neurons in Drosophila, with a focus on the TmY and T4/T5 cell types.
+
 Here is some general documentation for the Ephys setup. This includes information on how to design and run protocols, as well as the specifications of the arena used in experiments.
 
 There are different protocols that can be run on the Ephys setup. This website contains documentation on the following protocols:

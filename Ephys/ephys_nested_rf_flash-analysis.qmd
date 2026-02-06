@@ -87,3 +87,8 @@ The function `src/analysis/protocol2/gaussian_RF_estimate` fits and plots a rota
 
 [ PNG - 0020 ]
 ^ fitted inhibitory plot
+
+
+__________________________
+
+![Example receptive field analysis to 4 pixel square flashes in the same fly as the polar plot above.](../assets/imgs/ephys/nested_RF_stimulus/overview/0006.png){.ifr_center}

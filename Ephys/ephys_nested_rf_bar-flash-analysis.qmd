@@ -1,0 +1,12 @@
+---
+title: "Bar flash analysis"
+---
+
+_______________________________
+
+
+![Bar flash stimuli examples showing the 11 different positions for the 8 different orientations.](../assets/imgs/ephys/nested_RF_stimulus/overview/0003.png){.ifr_center}
+
+![Example bar flash stimuli analysis. Timeseries are plotted for the responses to each flash. The coloured squares in the top row correspond to the colours of the bars in the images in the furthest left column. Left column contains an image of all 11 bars of that orientation overlaid. This example was made for the bar flashes that were shifted by 1 pixel steps.](../assets/imgs/ephys/nested_RF_stimulus/overview/0004.png){.ifr_center}
+
+_______________________________

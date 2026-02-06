@@ -155,3 +155,11 @@ The data that is eventually saved includes `data`, `data_ordered` - ordered by a
 - `cv` - circular variance of the responses. If CV = 0, all responses are in one direction (sharp tuning). If CV = 1, responses are uniformly spread (broad tuning).
 
 - `thetahat` and `kappa` - parameters of the von Mises distribution fitted to the data. `thetahat` is the preferred direction (PD) and `kappa` is the concentration parameter (higher values = sharper tuning).
+
+
+_____________________
+
+![Example polar plot of bar sweep responses in a control RNAi fly to P2 in Dec 2024.](../assets/imgs/ephys/nested_RF_stimulus/overview/0005.png){.ifr_center}
+
+
+![Example polar plot of a T4 cell after Octopamine application showing the responses to the 5 different bar sweep speeds in the P2 version used in Dec 2025.](../assets/imgs/ephys/nested_RF_stimulus/overview/0007.png){.ifr_center}

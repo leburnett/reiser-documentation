@@ -1,0 +1,266 @@
+---
+title: "Experiment Log"
+---
+
+From <b>October 2025</b>, automatic logging to a google sheet was implemented. This [google sheet](https://docs.google.com/spreadsheets/d/1O7PnOvNsQB3CQl6SMOh6jvBitfoKoZenH5Djex-WX8c/edit?resourcekey=&gid=1394701893#gid=1394701893) contains the full experiment log from this date onwards.
+
+### tutl RNAi experiments
+
+The original experiments with the `nested_RF_protocol`. 
+
+| Male | Female | Neuron Type | Effector | 
+|----------|---------|----|-----|
+| <i>w;pJFRC28-10XUAS-IVS-GFP-p10 (su(Hw)attP5);GR_42F06</i>|<i>y,sc,v,sev; P{TRiP HMJ21587}(attP40);+</i>|T4/T5 |tutl RNAi, cytoplasmic GFP|
+: Fly strains {.bordered}
+
+::: {.callout-note}
+<b>PC</b> = Preferred Contrast determined from Protocol 1 (P1). Either ON (light flash) or OFF (dark flash).
+:::
+
+| Date | Time | Experiment Folder | Genotype | PC |
+|------|------|-------------------|---------|---------|
+| 2024_12_12 | 12_12 | RNAi_ttl_2025/control/ON/2024_12_12_12_12 | control | ON |
+| 2024_12_12 | 13_40 | RNAi_ttl_2025/control/OFF/2024_12_12_13_40 | control | OFF |
+| 2024_12_18 | 15_07 | RNAi_ttl_2025/control/ON/2024_12_18_15_07 | control | ON |
+| 2024_12_18 | 15_49 | RNAi_ttl_2025/control/OFF/2024_12_18_15_49 | control | OFF |
+| 2024_12_19 | 15_53 | RNAi_ttl_2025/control/OFF/2024_12_19_15_53 | control | OFF |
+| 2024_12_20 | 09_57 | RNAi_ttl_2025/control/OFF/2024_12_20_09_57 | control | OFF |
+| 2024_12_20 | 10_45 | RNAi_ttl_2025/control/OFF/2024_12_20_10_45 | control | OFF |
+| 2024_12_20 | 17_00 | RNAi_ttl_2025/control/OFF/2024_12_20_17_00 | control | OFF |
+| 2024_12_23 | 11_31 | RNAi_ttl_2025/ttl/OFF/2024_12_23_11_31 | ttl | OFF |
+| 2024_12_23 | 12_28 | RNAi_ttl_2025/ttl/OFF/2024_12_23_12_28 | ttl | OFF |
+| 2024_12_24 | 13_21 | RNAi_ttl_2025/ttl/OFF/2024_12_24_13_21 | ttl | OFF |
+| 2024_12_24 | 16_50 | RNAi_ttl_2025/ttl/OFF/2024_12_24_16_50 | ttl | OFF |
+| 2025_01_02 | 14_05 | RNAi_ttl_2025/control/OFF/2025_01_02_14_05 | control | OFF |
+| 2025_01_03 | 13_12 | RNAi_ttl_2025/ttl/ON/2025_01_03_13_12 | ttl | ON |
+| 2025_01_03 | 14_24 | RNAi_ttl_2025/ttl/OFF/2025_01_03_14_24 | ttl | OFF |
+| 2025_01_10 | 12_24 | RNAi_ttl_2025/ttl/OFF/2025_01_10_12_24 | ttl | OFF |
+| 2025_01_13 | 15_40 | RNAi_ttl_2025/ttl/OFF/2025_01_13_15_40 | ttl | OFF |
+| 2025_01_14 | 15_41 | RNAi_ttl_2025/control/ON/2025_01_14_15_41 | control | ON |
+| 2025_01_15 | 12_29 | RNAi_ttl_2025/control/ON/2025_01_15_12_29 | control | ON |
+| 2025_01_15 | 17_03 | RNAi_ttl_2025/control/ON/2025_01_15_17_03 | control | ON |
+| 2025_01_17 | 12_40 | RNAi_ttl_2025/ttl/ON/2025_01_17_12_40 | ttl | ON |
+| 2025_01_17 | 13_31 | RNAi_ttl_2025/ttl/ON/2025_01_17_13_31 | ttl | ON |
+| 2025_01_21 | 15_35 | RNAi_ttl_2025/ttl/ON/2025_01_21_15_35 | ttl | ON |
+| 2025_01_21 | 16_09 | RNAi_ttl_2025/ttl/ON/2025_01_21_16_09 | ttl | ON |
+| 2025_01_22 | 14_34 | RNAi_ttl_2025/ttl/ON/2025_01_22_14_34 | ttl | ON |
+| 2025_01_22 | 16_03 | RNAi_ttl_2025/ttl/ON/2025_01_22_16_03 | ttl | ON |
+| 2025_01_23 | 13_20 | RNAi_ttl_2025/control/ON/2025_01_23_13_20 | control | ON |
+: Experiment log {.bordered}
+
+
+### DS Probe experiments - v2
+
+Probed the direction selectivity of some little studied cell types using the `nested_rf_protocol` instead of the previous `DS_probe_protocol`.
+
+| Male | Female | Neuron Type | Effector | 
+|-----|---------|----|-----|
+| <i>SS00395</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| TmY3 | cytoplasmic GFP |
+| <i>SS02701</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| TmY18 | cytoplasmic GFP |
+| <i>SS2594</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| TmY5a | cytoplasmic GFP |
+| <i>SS03722</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| Tm5Y | cytoplasmic GFP |
+: Fly strains {.bordered}
+
+| Date | Time | Experiment Folder | Cell Type |
+|------|------|-------------------|---------|
+| 2025_04_08 | 12_51 | DS_v2/TmY3/2025_04_08_12_51 | TmY3 |
+| 2025_04_11 | 16_20 | DS_v2/TmY3/2025_04_11_16_20 | TmY3 |
+| 2025_04_14 | 13_57 | DS_v2/TmY3/2025_04_14_13_57 | TmY3 |
+| 2025_04_15 | 12_31 | DS_v2/TmY18/2025_04_15_12_31 | TmY18 |
+| 2025_04_16 | 11_29 | DS_v2/TmY18/2025_04_16_11_29 | TmY18 |
+| 2025_04_18 | 16_26 | DS_v2/TmY18/2025_04_18_16_26 | TmY18 |
+| 2025_04_22 | 11_58 | DS_v2/TmY5a/2025_04_22_11_58 | TmY5a |
+| 2025_05_06 | 12_19 | DS_v2/TmY5a/2025_05_06_12_19 | TmY5a |
+| 2025_05_06 | 15_24 | DS_v2/TmY5a/2025_05_06_15_24 | TmY5a |
+| 2025_05_08 | 12_19 | DS_v2/Tm5Y/2025_05_08_12_19 | Tm5Y |
+| 2025_05_09 | 14_56 | DS_v2/Tm5Y/2025_05_09_14_56 | Tm5Y |
+| 2025_05_09 | 15_46 | DS_v2/Tm5Y/2025_05_09_15_46 | Tm5Y |
+: Experiment log {.bordered}
+
+### T4T5 MARCM experiments - Summer2025
+
+These were the first experiments where MARCM flies were used. The MARCM method was used as an alternative to RNAi to manipulate protein expression in T4/T5 cells. The MARCM method is a sparse labelling approach, so not all of the T4/T5 cells will contain the effector with the manipulation and GFP labelling, but the cells that do express GFP and the manipulation can be targeted for recording.
+
+Mid-way through the experiments Jin Yong and Ed realised that the eyes of the flies were lighter than they would have expected, so they switched to using a w+ background flies to improve eye pigmentation and hopefully avoid any potential issues from the reduced eye pigmentation in the earlier w- flies.
+
+The protocol was updated from that used for the RNAi experiments so that the background value was reduced to (4/15) from (6/15) to improve the contrast of the stimuli against the background.
+
+| Male | Female | Neuron Type | Effector | 
+|----|-----------|----|-----|
+| <i>FRT40A</i>|<i>hsFlp, 10XUAS-mCD8-GFP; tub-GAL80, FRT40A/CyO; 42F06-GAL4</i>|T4/T5|MARCM, membrane bound GFP|
+| <i>tutl[SK], FRT 40A</i>|<i>hsFlp, 10XUAS-mCD8-GFP; tub-GAL80, FRT40A/CyO; 42F06-GAL4</i>|T4/T5|MARCM, membrane bound GFP|
+| <i>w+; FRT40A</i>|<i>hsFlp, 10XUAS-mCD8-GFP; tub-GAL80, FRT40A/CyO; 42F06-GAL4</i>|T4/T5|MARCM, membrane bound GFP|
+| <i>w+; tutl[SK], FRT 40A</i>|<i>hsFlp, 10XUAS-mCD8-GFP; tub-GAL80, FRT40A/CyO; 42F06-GAL4</i>|T4/T5|MARCM, membrane bound GFP|
+: Fly strains {.bordered}
+
+| Date | Time | Experiment Folder | W+ |
+|------|------|-------------------|----|
+| 2025_07_12 | 17_31 | T4T5_Summer2025/2025_07_12_17_31 | 0 |
+| 2025_07_14 | 16_18 | T4T5_Summer2025/2025_07_14_16_18 | 0 |
+| 2025_07_17 | 14_38 | T4T5_Summer2025/2025_07_17_14_38 | 0 |
+| 2025_07_17 | 15_05 | T4T5_Summer2025/2025_07_17_15_05 | 0 |
+| 2025_07_22 | 16_38 | T4T5_Summer2025/2025_07_22_16_38 | 0 |
+| 2025_07_22 | 18_15 | T4T5_Summer2025/2025_07_22_18_15 | 0 |
+| 2025_07_23 | 13_34 | T4T5_Summer2025/2025_07_23_13_34 | 0 |
+| 2025_07_25 | 16_34 | T4T5_Summer2025/2025_07_25_16_34 | 0 |
+| 2025_07_29 | 14_11 | T4T5_Summer2025/2025_07_29_14_11 | 0 |
+| 2025_08_26 | 14_39 | T4T5_Summer2025/2025_08_26_14_39 | 0 |
+| 2025_08_26 | 16_31 | T4T5_Summer2025/2025_08_26_16_31 | 0 |
+| 2025_08_27 | 12_32 | T4T5_Summer2025/2025_08_27_12_32 | 0 |
+| 2025_08_27 | 16_02 | T4T5_Summer2025/2025_08_27_16_02 | 0 |
+| 2025_08_28 | 14_46 | T4T5_Summer2025/2025_08_28_14_46 | 0 |
+| 2025_09_03 | 11_18 | T4T5_Summer2025/2025_09_03_11_18 | 0 |
+| 2025_09_04 | 13_37 | T4T5_Summer2025/2025_09_04_13_37 | 0 |
+| 2025_09_05 | 15_51 | T4T5_Summer2025/2025_09_05_15_51 | 0 |
+| 2025_09_08 | 15_45 | T4T5_Summer2025/2025_09_08_15_45 | 0 |
+| 2025_09_09 | 12_16 | T4T5_Summer2025/2025_09_09_12_16 | 0 |
+| 2025_09_10 | 14_15 | T4T5_Summer2025/2025_09_10_14_15 | 1 |
+| 2025_09_10 | 16_11 | T4T5_Summer2025/2025_09_10_16_11 | 1 |
+| 2025_09_11 | 11_08 | T4T5_Summer2025/2025_09_11_11_08 | 1 |
+| 2025_09_11 | 12_49 | T4T5_Summer2025/2025_09_11_12_49 | 1 |
+| 2025_09_12 | 12_23 | T4T5_Summer2025/2025_09_12_12_23 | 1 |
+| 2025_09_12 | 12_40 | T4T5_Summer2025/2025_09_12_12_40 | 1 |
+: Experiment log {.bordered}
+
+### T4T5 MARCM experiments - Autumn2025
+
+Continuation of the MARCM experiments started in the summer. The protocol was adjusted to include bar flashes and an additional speed for the bar sweeps. 
+
+| Male | Female | Neuron Type | Effector | 
+|----|-----------|----|-----|
+| <i>w+; FRT40A</i>|<i>hsFlp, 10XUAS-mCD8-GFP; tub-GAL80, FRT40A/CyO; 42F06-GAL4</i>|T4/T5|MARCM, membrane bound GFP|
+| <i>w+; tutl[SK], FRT 40A</i>|<i>hsFlp, 10XUAS-mCD8-GFP; tub-GAL80, FRT40A/CyO; 42F06-GAL4</i>|T4/T5|MARCM, membrane bound GFP|
+: Fly strains {.bordered}
+
+| Date | Time | Experiment Folder | W+ |
+|------|------|-------------------|-----|
+| 2025_10_20 | 11_53 | T4T5_autumn2025/2025_10_20_11_53 | 1 |
+| 2025_10_20 | 12_18 | T4T5_autumn2025/2025_10_20_12_18 | 1 |
+| 2025_10_22 | 13_10 | T4T5_autumn2025/2025_10_22_13_10 | 1 |
+| 2025_10_22 | 13_51 | T4T5_autumn2025/2025_10_22_13_51 | 1 |
+| 2025_10_23 | 10_31 | T4T5_autumn2025/2025_10_23_10_31 | 1 |
+| 2025_10_23 | 13_53 | T4T5_autumn2025/2025_10_23_13_53 | 1 |
+| 2025_10_23 | 15_03 | T4T5_autumn2025/2025_10_23_15_03 | 1 |
+| 2025_10_24 | 12_49 | T4T5_autumn2025/2025_10_24_12_49 | 1 |
+| 2025_10_24 | 17_50 | T4T5_autumn2025/2025_10_24_17_50 | 1 |
+| 2025_10_28 | 13_54 | T4T5_autumn2025/2025_10_28_13_54 | 1 |
+| 2025_10_28 | 17_37 | T4T5_autumn2025/2025_10_28_17_37 | 1 |
+| 2025_10_29 | 09_21 | T4T5_autumn2025/2025_10_29_09_21 | 1 |
+| 2025_10_29 | 11_06 | T4T5_autumn2025/2025_10_29_11_06 | 1 |
+| 2025_10_30 | 10_47 | T4T5_autumn2025/2025_10_30_10_47 | 1 |
+| 2025_10_31 | 10_16 | T4T5_autumn2025/2025_10_31_10_16 | 1 |
+| 2025_11_03 | 11_54 | T4T5_autumn2025/2025_11_03_11_54 | 1 |
+| 2025_11_03 | 15_50 | T4T5_autumn2025/2025_11_03_15_50 | 1 |
+| 2025_11_04 | 10_01 | T4T5_autumn2025/2025_11_04_10_01 | 1 |
+| 2025_11_04 | 11_56 | T4T5_autumn2025/2025_11_04_11_56 | 1 |
+| 2025_11_05 | 10_10 | T4T5_autumn2025/2025_11_05_10_10 | 1 |
+| 2025_11_05 | 15_54 | T4T5_autumn2025/2025_11_05_15_54 | 1 |
+| 2025_11_05 | 18_33 | T4T5_autumn2025/2025_11_05_18_33 | 1 |
+| 2025_11_10 | 10_17 | T4T5_autumn2025/2025_11_10_10_17 | 1 |
+| 2025_11_10 | 11_43 | T4T5_autumn2025/2025_11_10_11_43 | 1 |
+| 2025_11_11 | 12_04 | T4T5_autumn2025/2025_11_11_12_04 | 1 |
+| 2025_11_13 | 11_03 | T4T5_autumn2025/2025_11_13_11_03 | 1 |
+| 2025_11_13 | 12_21 | T4T5_autumn2025/2025_11_13_12_21 | 1 |
+| 2025_11_17 | 09_44 | T4T5_autumn2025/2025_11_17_09_44 | 1 |
+: Experiment log {.bordered}
+
+### CGP54626 
+
+Selective GABA-B receptor antagonist CGP54626 was applied to T4 and T5 cells to investigate the role of GABA-B receptor mediated inhibition on their receptive field properties.
+
+The protocol was adjusted again - the square flash stimuli were removed from the second protocol and 2 faster speeds were added to the moving bar sweeps. 
+
+| Male | Female | Neuron Type | Effector | 
+|-----|---------|----|-----|
+| <i>SS02344</i>|<i>w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| T4 |cytoplasmic GFP|
+| <i>SS25175</i>|<i>w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| T5 |cytoplasmic GFP|
+: Fly strains {.bordered}
+
+| Date | Time | Experiment Folder | Cell Type | Drug Application |
+|------|------|---------------|---------|------|
+| 2025_11_18 | 10_08 | CGP54626/T4/pre/2025_11_18_10_08 | T4 | pre |
+| 2025_11_18 | 10_37 | CGP54626/T4/post/2025_11_18_10_37 | T4 | post |
+| 2025_11_19 | 10_59 | CGP54626/T4/pre/2025_11_19_10_59 | T4 | pre |
+| 2025_11_19 | 11_34 | CGP54626/T4/post/2025_11_19_11_34 | T4 | post |
+| 2025_11_20 | 13_16 | CGP54626/T4/pre/2025_11_20_13_16 | T4 | pre |
+| 2025_11_20 | 13_48 | CGP54626/T4/post/2025_11_20_13_48 | T4 | post |
+| 2025_11_21 | 09_54 | CGP54626/T4/pre/2025_11_21_09_54 | T4 | pre |
+| 2025_11_21 | 10_26 | CGP54626/T4/post/2025_11_21_10_26 | T4 | post |
+| 2025_11_21 | 14_57 | CGP54626/T4/pre/2025_11_21_14_57 | T4 | pre |
+| 2025_11_21 | 15_29 | CGP54626/T4/post/2025_11_21_15_29 | T4 | post |
+| 2025_11_24 | 09_30 | CGP54626/T5/pre/2025_11_24_09_30 | T5 | pre |
+| 2025_11_24 | 10_02 | CGP54626/T5/post/2025_11_24_10_02 | T5 | post |
+| 2025_11_25 | 10_36 | CGP54626/T5/pre/2025_11_25_10_36 | T5 | pre |
+| 2025_11_25 | 11_13 | CGP54626/T5/post/2025_11_25_11_13 | T5 | post |
+| 2025_11_25 | 15_52 | CGP54626/T5/pre/2025_11_25_15_52 | T5 | pre |
+| 2025_11_25 | 16_24 | CGP54626/T5/post/2025_11_25_16_24 | T5 | post |
+| 2025_12_02 | 09_27 | CGP54626/T5/pre/2025_12_02_09_27 | T5 | pre |
+| 2025_12_02 | 10_06 | CGP54626/T5/post/2025_12_02_10_06 | T5 | post |
+| 2025_12_03 | 09_34 | CGP54626/T5/pre/2025_12_03_09_34 | T5 | pre |
+| 2025_12_03 | 10_08 | CGP54626/T5/post/2025_12_03_10_08 | T5 | post |
+| 2025_12_03 | 13_32 | CGP54626/T5/pre/2025_12_03_13_32 | T5 | pre |
+| 2025_12_03 | 14_09 | CGP54626/T5/post/2025_12_03_14_09 | T5 | post |
+| 2025_12_04 | 10_22 | CGP54626/T4/pre/2025_12_04_10_22 | T4 | pre |
+| 2025_12_04 | 11_00 | CGP54626/T4/post/2025_12_04_11_00 | T4 | post |
+: Experiment log {.bordered}
+
+| Date | Time | Experiment Folder | Drug Application |
+|------|------|-------------------|---------|
+| 2025_12_01 | 10_29 | CGP54626/pre/2025_12_01_10_29 | pre |
+| 2025_12_01 | 11_46 | CGP54626/pre/2025_12_01_11_46 | pre |
+| 2025_12_01 | 15_18 | CGP54626/pre/2025_12_01_15_18 | pre |
+| 2025_12_01 | 15_43 | CGP54626/pre/2025_12_01_15_43 | pre |
+| 2025_12_01 | 16_01 | CGP54626/pre/2025_12_01_16_01 | pre |
+| 2025_12_02 | 08_59 | CGP54626/pre/2025_12_02_08_59 | pre |
+| 2025_11_19 | 11_17 | CGP54626/post/2025_11_19_11_17 | post |
+| 2025_11_19 | 11_51 | CGP54626/post/2025_11_19_11_51 | post |
+| 2025_11_20 | 14_06 | CGP54626/post/2025_11_20_14_06 | post |
+| 2025_11_21 | 10_44 | CGP54626/post/2025_11_21_10_44 | post |
+| 2025_11_21 | 15_46 | CGP54626/post/2025_11_21_15_46 | post |
+| 2025_11_24 | 10_28 | CGP54626/post/2025_11_24_10_28 | post |
+: Experiment log - duplicates experiments {.bordered}
+
+### Octopamine
+
+The same protocol as used for the CGP54626 experiments was used to investigate the effect of octopamine application on T4 and T5 cell receptive field properties.
+
+| Male | Female | Neuron Type | Effector | 
+|----|---------|----|-----|
+| <i>SS02344</i>|<i>w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| T4 |cytoplasmic GFP|
+| <i>SS25175</i>|<i>w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| T5 |cytoplasmic GFP|
+: Fly strains {.bordered}
+
+| Date | Time | Experiment Folder | Cell Type | Drug Application |
+|------|------|-------------------|---------|---------|
+| 2025_12_08 | 10_43 | Octopamine/pre/2025_12_08_10_43 | T4 | pre |
+| 2025_12_08 | 11_15 | Octopamine/post/2025_12_08_11_15 | T4 | post |
+| 2025_12_09 | 13_17 | Octopamine/pre/2025_12_09_13_17 | T4 | pre |
+| 2025_12_09 | 13_51 | Octopamine/post/2025_12_09_13_51 | T4 | post |
+| 2025_12_09 | 14_26 | Octopamine/wash/2025_12_09_14_26 | T4 | wash |
+| 2025_12_12 | 09_23 | Octopamine/pre/2025_12_12_09_23 | T4 | pre |
+| 2025_12_12 | 09_58 | Octopamine/post/2025_12_12_09_58 | T4 | post |
+| 2025_12_16 | 12_07 | Octopamine/pre/2025_12_16_12_07 | T4 | pre |
+| 2025_12_16 | 12_41 | Octopamine/post/2025_12_16_12_41 | T4 | post |
+| 2025_12_17 | 09_18 | Octopamine/pre/2025_12_17_09_18 | T4 | pre |
+| 2025_12_17 | 09_57 | Octopamine/post/2025_12_17_09_57 | T4 | post |
+| 2025_12_19 | 10_15 | Octopamine/pre/2025_12_19_10_15 | T5 | pre |
+| 2025_12_19 | 10_55 | Octopamine/post/2025_12_19_10_55 | T5 | post |
+| 2025_12_19 | 11_12 | Octopamine/post/2025_12_19_11_12 | T5 | post |
+| 2025_12_22 | 09_33 | Octopamine/pre/2025_12_22_09_33 | T5 | pre |
+| 2025_12_22 | 10_08 | Octopamine/post/2025_12_22_10_08 | T5 | post |
+: Experiment log {.bordered}
+
+### Tests with the SS0324 T4T5 line
+
+These experiments were done to test whether the mixed T4/T5 split GAL4 line cells responded differently to the single T4 or T5 split GAL4 lines used previously since some differences in the control / baseline responses of T4/T5 cells were observed when running the CGP54626 experiments. 
+
+| Male | Female | Neuron Type | Effector | 
+|-----|---------|----|-----|
+| <i>SS00324</i>|<i>w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| T4/T5 |cytoplasmic GFP|
+: Fly strains {.bordered}
+
+| Date | Time | Experiment Folder | PC |
+|------|------|-------------------|---------|
+| 2025_12_17 | 14_03 | SS0324_T4T5/OFF/2025_12_17_14_03 | OFF |
+| 2025_12_17 | 15_01 | SS0324_T4T5/OFF/2025_12_17_15_01 | OFF |
+: Experiment log {.bordered}
