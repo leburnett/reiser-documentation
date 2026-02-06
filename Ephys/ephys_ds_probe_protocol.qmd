@@ -2,15 +2,23 @@
 title: "Overview"
 ---
 
-Between May and October 2024, Jin Yong Park recorded from different cell types with the "DS_probe_protocol" in the G4 ephys setup. These experiments were run based on the prior analysis conducted by Judith Hoeller of theoretical receptive field properties of the different cell types, which suggested that they would display directionally selective responses to moving bars in specific orientations. The aim of these experiments was to test these predictions and to characterise the direction selectivity of the different cell types.
+Between <b>May and October 2024</b>, <b>Jin Yong Park</b> recorded from different cell types with the `DS_probe_protocol` in the G4 ephys setup.
+
+ These experiments were run based on the prior analysis conducted by <b>Judith Hoeller</b> of theoretical receptive field properties of the different cell types, which suggested that they would display directionally selective responses to moving bars in specific orientations. 
+ 
+ The aim of these experiments was to test these predictions and to characterise the direction selectivity of the different cell types.
 
 ## Protocol overview 
 
-- 3 repetitions of light and dark moving bars, edges, gratings and full field flashes.
+::: {.callout-note}
+### Quick summary:
+3 repetitions of light and dark moving bars, edges, gratings and full field flashes.
+:::
 
-________________________________
-
-<b>Aim:</b> To characterise the direction selectivity and temporal frequency tuning of different cell types in Drosophila visual system.
+::: {.callout-note}
+### Aim:
+To characterise the direction selectivity and temporal frequency tuning of different cell types in Drosophila visual system.
+:::
 
 <b>Bar stimuli</b> moving in multiple orientations - horizontal, vertical, and diagonal (45° and -45°) - presented at two different speeds (20 and 100 degrees per second). These bars come in two spatial sizes (2 and 6 pixels wide) and are shown in both standard and flipped (reverse contrast) versions.
 
@@ -154,7 +162,7 @@ ________________________________
 |  126 | 0023_ON_edge_H_12edge_4bkg_G4           | 0092_horizontal_bar_100dps_0-55s_49fr_0st_G4 |        0.6 |
 |  127 | 0040_ON_edge_H_12edge_4bkg_Reverse_G4   | 0092_horizontal_bar_100dps_0-55s_49fr_0st_G4 |        0.6 |
 
-: Description of patterns, functions and their durations (in minutes) for the "DS_probe_protocol" used in G4 ephys recordings.
+: Description of patterns, functions and their durations (in minutes) for the "DS_probe_protocol" used in G4 ephys recordings. {.bordered}
 
 ## Experiment Log
 
@@ -169,7 +177,7 @@ ________________________________
 | TmY18       |              7 |
 | TmY3        |              8 |
 
-: Number of recordings by cell type
+: Number of recordings by cell type {.bordered}
 
 
 |   ID | cell_type   |   date_str |   date_to_process |
@@ -222,7 +230,7 @@ ________________________________
 |   46 | T4T5        | 10_04_2024 |      10_04_2024_2 |
 |   47 | T4T5        | 10_08_2024 |        10_08_2024 |
 
-: Comprehensive experiment log
+: Comprehensive experiment log {.bordered}
 
 ## Analysing the data 
 
