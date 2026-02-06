@@ -20,11 +20,15 @@ To characterise the receptive field structure and direction selectivity of visua
 
 ## Protocol descriptions 
 
-[Protocol 1](ephys_nested_rf_protocol1.qmd)
+If you would like to see detailed descrptions of the contents of the two protocols, please see the following pages:
 
-[Protocol 2](ephys_nested_rf_protocol2.qmd)
+- [Protocol 1](ephys_nested_rf_protocol1.qmd)
 
-[Version History](ephys_nested_rf_version_history.qmd)
+- [Protocol 2](ephys_nested_rf_protocol2.qmd)
+
+If you would like to see how the parameters of Protocol 1 and 2 have changed over time please see the following page:
+
+- [Version History](ephys_nested_rf_version_history.qmd)
 
 ## Experiment Log
 
@@ -75,12 +79,12 @@ The original experiments with the `nested_RF_protocol`.
 : Experiment log {.bordered}
 
 
-### v2 DS Probe experiments
+### DS Probe experiments - v2
 
 Probed the direction selectivity of some little studied cell types using the `nested_rf_protocol` instead of the previous `DS_probe_protocol`.
 
 | Male | Female | Neuron Type | Effector | 
-|----------|---------|----|-----|
+|-----|---------|----|-----|
 | <i>SS00395</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| TmY3 | cytoplasmic GFP |
 | <i>SS02701</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| TmY18 | cytoplasmic GFP |
 | <i>SS2594</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| TmY5a | cytoplasmic GFP |
@@ -197,7 +201,7 @@ Sleective GABA-B receptor antagonist CGP54626 was applied to T4 and T5 cells to 
 The protocol was adjusted again - the square flash stimuli were removed from the second protocol and 2 faster speeds were added to the moving bar sweeps. 
 
 | Male | Female | Neuron Type | Effector | 
-|----------|---------|----|-----|
+|-----|---------|----|-----|
 | <i>SS02344</i>|<i>w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| T4 |cytoplasmic GFP|
 | <i>SS25175</i>|<i>w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| T5 |cytoplasmic GFP|
 : Fly strains {.bordered}
@@ -249,7 +253,7 @@ The protocol was adjusted again - the square flash stimuli were removed from the
 ### Octopamine
 
 | Male | Female | Neuron Type | Effector | 
-|----------|---------|----|-----|
+|----|---------|----|-----|
 | <i>SS02344</i>|<i>w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| T4 |cytoplasmic GFP|
 | <i>SS25175</i>|<i>w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| T5 |cytoplasmic GFP|
 : Fly strains {.bordered}
@@ -279,7 +283,7 @@ The protocol was adjusted again - the square flash stimuli were removed from the
 These experiments were done to test whether the mixed T4/T5 split GAL4 line cells responded differently to the single T4 or T5 split GAL4 lines used previously since some differences in the control / baseline responses of T4/T5 cells were observed when running the CGP54626 experiments. 
 
 | Male | Female | Neuron Type | Effector | 
-|----------|---------|----|-----|
+|-----|---------|----|-----|
 | <i>SS00324</i>|<i>w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| T4/T5 |cytoplasmic GFP|
 : Fly strains {.bordered}
 
@@ -309,11 +313,13 @@ Running these experiments requires the user to have the 'G4_Display_Tools' [repo
 
 ## Data availability
 
-The data from all of these experiments can be found on the Reiser Lab prfs drive here: `smb://prfs.hhmi.org/reiserlab/burnettl/Ephys_experiments/nested_RF_stimulus/DATA`. The data is then further organised based on sub-type of experiment grouped in the same way as the Experiment Log above (e.g. RNAi ttl experiments, DS_v2 experiments). The data within the folder `2025_whiteplus` contains <b>duplicates</b> of data in other folders. This folder was created for ease of access to all experiments involving the white+ genotype.
+The data from all of these experiments can be found on the Reiser Lab prfs drive here: `smb://prfs.hhmi.org/reiserlab/burnettl/Ephys_experiments/nested_RF_stimulus/DATA`. The data is then further organised based on sub-type of experiment grouped in the same way as the Experiment Log above (e.g. RNAi ttl experiments, DS_v2 experiments). 
+
+The data within the folder `2025_whiteplus` contains <b>duplicates</b> of data in other folders. This folder was created for ease of access to all experiments involving the white+ genotype.
 
 The raw data is also found on the computer in the Ephys rig room within the folder `C:\matlabroot\G4_Protocols\nested_RF_protocol2\data`.
 
-[Outline of how the data is stored](ephys_nested_rf_data_structure.qmd) 
+Please see the following [page](ephys_nested_rf_data_structure.qmd) for details on how the data is saved and stored.
 
 
 # References
