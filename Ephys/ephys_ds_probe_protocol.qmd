@@ -2,7 +2,7 @@
 title: "DS protocol"
 ---
 
-Between May and October 2024, Jin Yong Park recorded from different cell types with the "DS_probe_protocol" in the G4 ephys setup. 
+Between May and October 2024, Jin Yong Park recorded from different cell types with the "DS_probe_protocol" in the G4 ephys setup. These experiments were run based on the prior analysis conducted by Judith Hoeller of theoretical receptive field properties of the different cell types, which suggested that they would display directionally selective responses to moving bars in specific orientations. The aim of these experiments was to test these predictions and to characterise the direction selectivity of the different cell types.
 
 ## Protocol overview 
 
@@ -224,9 +224,13 @@ ________________________________
 
 : Comprehensive experiment log
 
+## Analysing the data 
+
+To analyse a folder of data from running this protocol, run the script `process_ds_probe_protocol_data` that can be found [here](https://github.com/leburnett/DS_probe_protocol/blob/main/src/processing/process_ds_probe_protocol_data.m). This script will process all the data in the specified folder and save the results in a new folder called `processed_data` within the same directory. The script will also generate a summary figure for each recording, which will be saved in the `processed_data` folder.
+
 ## Code availability
 
-The code for generating and analysing the DS_Probe_protocol can be found in this [repository](https://github.com/leburnett/DS_probe_protocol).
+The code for analysing the DS_Probe_protocol can be found in this [repository](https://github.com/leburnett/DS_probe_protocol).
 
 ## Data availability
 
