@@ -87,7 +87,7 @@ ___________________________________________________________________________
 
 ## Protocol 2 Data Structure
 
-Protocol 2 data is stored in `nested_RF_stimulus/protocol2/data/`, organized by experiment campaign and condition.
+Protocol 2 data is stored in `nested_RF_stimulus/protocol2/data/`. The data folders follow the naming structure `YYYY_MM_DD_HH_MM` and on the experiment computer itself they are automatically stored in `C:\matlabroot\G4_Protocols\nested_RF_protocol2\data`. These folders were then moved onto the group drive and organized based on the type of experiment (e.g. RNAi knockdown experiments, direction selectivity experiments) and within that by condition (e.g. control vs TTL knockdown, ON vs OFF contrast).
 
 ```
 protocol2/data/
@@ -153,6 +153,8 @@ YYYY_MM_DD_HH_MM/               # e.g., 2024_12_12_12_12/
 └── metadata_YYYY_MM_DD_HH_MM.mat  # Experiment metadata
 ```
 
+All of these files are generated and saved with every run of the `generate_protocol2()` script in MATLAB. This means that there is a lot of redundancy across the different experiment folders, as the patterns and functions are the same for all experiments within a given protocol version. However, this structure enables the user to see the exact patterns/functions used for the experiment. From <b>October 2025</b>, automatic logging to a google sheet was implemented. This [google sheet](https://docs.google.com/spreadsheets/d/1O7PnOvNsQB3CQl6SMOh6jvBitfoKoZenH5Djex-WX8c/edit?resourcekey=&gid=1394701893#gid=1394701893) contains the full experiment log from this date onwards.
+
 ___________________________________________________________________________
 
 ## Key Data Files
@@ -167,12 +169,12 @@ Contains experiment metadata including:
 
 ### exp_order.mat
 
-Contains the randomized order in which stimuli were presented during the experiment.
+Contains the order in which stimuli were presented during the experiment.
 
 ### processedData.mat
 
 Contains processed analysis results including:
-- Extracted spike times or membrane potential traces
+- Extracted membrane potential traces
 - Stimulus-aligned responses
 - Summary statistics
 
@@ -191,21 +193,3 @@ Raw data files from the G4 display system:
 - `*_ADC0_Time.tdms` / `*_ADC1_Time.tdms` - Timestamps
 - `*_Frame_Position.tdms` - Current frame being displayed
 - `*_Frame_Time.tdms` - Frame timing
-
-___________________________________________________________________________
-
-## Finding Specific Experiments
-
-### By Date
-- **Protocol 1:** Look for date folders (MM_DD_YYYY) within the appropriate protocol version folder
-- **Protocol 2:** Experiment folders are named with timestamps (YYYY_MM_DD_HH_MM)
-
-### By Strain/Genotype
-- **Protocol 1:** Strain is encoded in the experiment folder name (e.g., `42F06XJFRC28_T4T5-15_29_81`)
-- **Protocol 2:** Navigate to the appropriate experiment category folder (e.g., `DS_v2/TmY3/`)
-
-### By Condition (Drug/Treatment)
-- **Protocol 2 only:** Navigate to condition subfolders (e.g., `Octopamine/pre/`, `RNAi_ttl_2025/control/`)
-
-### By Contrast (ON/OFF)
-- **Protocol 2:** Some experiment folders have ON/OFF subfolders indicating which contrast was presented
