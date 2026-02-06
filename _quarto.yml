@@ -26,9 +26,11 @@ website:
         - section: "Nested RF Protocol"
           contents:
             - Ephys/ephys_nested_rf.qmd
-            - Ephys/ephys_nested_rf_protocol1.qmd
-            - Ephys/ephys_nested_rf_protocol2.qmd
-            - Ephys/ephys_nested_rf_version_history.qmd
+            - section: "Protocol descriptions"
+              contents:
+              - Ephys/ephys_nested_rf_protocol1.qmd
+              - Ephys/ephys_nested_rf_protocol2.qmd
+              - Ephys/ephys_nested_rf_version_history.qmd
             - section: "How to guides"
               contents:
                 - Ephys/ephys_nested_rf_how-to-make.qmd
