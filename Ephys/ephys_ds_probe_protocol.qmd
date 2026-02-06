@@ -28,7 +28,7 @@ To characterise the direction selectivity and temporal frequency tuning of diffe
 
 <b>Flash stimuli</b> presented at various temporal frequencies (0.5 Hz to 64 Hz) to examine responses to uniform field flicker without spatial structure.
 
-<b>Pixel intensity values</b> The protocol's patterns are `gs_val` 4 (intensity values can be values between 0-15). The protocol first presents all dark stimuli (intensity 1/15) and then runs through all stimuli again with light stimuli (intensity 12/15). Each stimulus is presented for 3 repetitions.
+<b>Pixel intensity values</b> The protocol's patterns are `gs_val = 4` (intensity values can be 0-15). The protocol first presents all dark stimuli (intensity 1/15) and then runs through all stimuli again with light stimuli (intensity 12/15). Each stimulus is presented 3 times.
 
 ## Protocol description
 
@@ -231,6 +231,21 @@ To characterise the direction selectivity and temporal frequency tuning of diffe
 |   47 | T4T5        | 10_08_2024 |        10_08_2024 |
 
 : Comprehensive experiment log {.bordered}
+
+## Fly Strains
+
+| Male | Female | Neuron Type | Effector | 
+|----|----------|----|-----|
+| <i>SS00395</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| TmY3 | cytoplasmic GFP |
+| <i>SS14770</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| TmY13 | cytoplasmic GFP |
+| <i>SS02701</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| TmY18 | cytoplasmic GFP |
+| <i>SS02582</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| Cm10 | cytoplasmic GFP |
+| <i>SS00297</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| Dm4 | cytoplasmic GFP |
+| <i>SS02044</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| Tm24 | cytoplasmic GFP |
+| <i>SS03722</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| Tm5Y | cytoplasmic GFP |
+| <i>GR_42F06</i>|<i> w+(DL);;pJFRC28-10XUAS-IVS-GFP-p10(attP2)</i>| T4T5 | cytoplasmic GFP |
+ <i>GR_42F06</i>|<i> w;pJFRC28-10XUAS-IVS-GFP-p10 (su(Hw)attP5)</i>| T4T5 | cytoplasmic GFP |
+: Fly strains {.bordered}
 
 ## Analysing the data 
 
