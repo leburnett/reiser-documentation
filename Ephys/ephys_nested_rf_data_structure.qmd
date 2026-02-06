@@ -9,7 +9,7 @@ This page documents the folder organization for data collected using the Nested 
 Data is organized into two main directories based on which protocol was run:
 
 - **Protocol 1 data:** Located within the protocol folder itself (organized by screen side and protocol version)
-- **Protocol 2 data:** Located in a dedicated `data/` subfolder (organized by experiment type and condition)
+- **Protocol 2 data:** Located in a dedicated `data/` subfolder.
 
 ___________________________________________________________________________
 
