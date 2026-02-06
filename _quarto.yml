@@ -66,7 +66,7 @@ website:
 
   page-navigation: true
 
-  repo-url: https://github.com/leburnett/labdocs
+  repo-url: https://github.com/leburnett/reiser-documentation
   repo-actions: [issue]
 
 format:
