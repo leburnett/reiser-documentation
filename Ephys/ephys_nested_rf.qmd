@@ -4,8 +4,6 @@ title: "Overview"
 
 The **Nested RF Protocol** was designed by LE Burnett in 2024 for patch electrophysiology experiments ran by <b>Jin Yong Park</b>. It was based upon the protocol used in *Gruntman et al. 2018[^1]*. All fly husbandry was carried out by <b>Edward Rogers</b>.
 
-![<b>Experiment Rig: </b> G4 LED - Ephys arena with a cartoon representation of the position of the fly within the arena. For many protocols, visual stimuli are only presented over 1/2 of the arena screen, ipsilateral to the location of the recorded cell.](../assets/imgs/ephys/nested_RF_stimulus/setup.png){.ifr_center}
-
 ## Protocol overview 
 
 ::: {.callout-note}
