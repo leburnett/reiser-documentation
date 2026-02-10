@@ -350,5 +350,5 @@ ___________________________________________________________________________
 
 ::: {.callout-note}
 ### How to verify the version if unsure
-For definitive confirmation, check the `metadata.mat` or `currentExp.mat` files within the experiment folder, which contain the exact parameters used.
+For definitive confirmation, check the metadata within the `.mat` saved within the `params` folder and the `currentExp.mat` file within the experiment folder, which contain the exact parameters used. The exact pattern and position functions used are saved within the experiment folder too.
 :::

@@ -16,7 +16,7 @@ title: "Rig Specs"
 | Degrees per pixel | 1.25 | 
 | Arena size (Degrees of visual field) | 240 x 60 degrees| 
 | LED wavelength | Green (xnm) | 
-| MATLAB version | - | 
+| MATLAB version | R2023a | 
 | Panel version | - | 
 : {.bordered}
 

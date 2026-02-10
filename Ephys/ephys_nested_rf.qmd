@@ -8,14 +8,16 @@ The **Nested RF Protocol** was designed by LE Burnett in 2024 for patch electrop
 
 ::: {.callout-note}
 ### Quick summary:
-This is a multi-step protocol consisting of a short first protocol (P1) that determines the rough receptive field location and preferred contrast of the cell, and a longer second protocol (P2) that is only presented at the location of the RF determined in P1. This follow-up protocol probes the direction selectivity of the cell using moving bar stimuli, as well as measuring the receptive field structure at higher spatial resolution using small flashing squares. 
+This is a multi-step protocol consisting of a <b>short first protocol (P1)</b> that determines the rough receptive field location and preferred contrast of the cell, and a <b>longer second protocol (P2)</b> that is only presented at the location of the RF determined in P1. This follow-up protocol probes the direction selectivity of the cell using moving bar stimuli, as well as measuring the receptive field structure at higher spatial resolution using small flashing squares. 
 
-The first protocol is run through the `G4_experiment_conductor` GUI whereas the second protocol is generated and run through a custom MATLAB script called `generate_protocol2()`.
+The first protocol is run through the `G4_experiment_conductor` [GUI](/G4%20Software/index.qmd) whereas the second protocol is generated and run through a custom MATLAB script called `generate_protocol2()`.
 :::
 
 ::: {.callout-note}
 ### Aim:
-To characterise the receptive field structure and direction selectivity of visual neurons in Drosophila, particularly T4/T5 cells. The experiments specifically aimed to understand the role of certain proteins linked to specific receptors that are localised to specific locations along the T4/T5 dendrites in shaping the receptive field properties of these cells[^2].
+To characterise the receptive field structure and direction selectivity of visual neurons in Drosophila, particularly T4/T5 cells.
+
+The experiments specifically aimed to understand the role of certain proteins linked to specific receptors that are localised to specific locations along the T4/T5 dendrites in shaping the receptive field properties of these cells[^2].
 :::
 
 ## Protocol descriptions 
@@ -56,16 +58,16 @@ Running these experiments requires the user to have the 'G4_Display_Tools' [repo
 
 ## Data availability
 
-The data from all of these experiments can be found on the Reiser Lab prfs drive here: `smb://prfs.hhmi.org/reiserlab/burnettl/Ephys_experiments/nested_RF_stimulus/DATA`. The data is then further organised based on sub-type of experiment grouped in the same way as the Experiment Log above (e.g. RNAi ttl experiments, DS_v2 experiments). 
-
-The data within the folder `2025_whiteplus` contains <b>duplicates</b> of data in other folders. This folder was created for ease of access to all experiments involving the white+ genotype.
+The data from all of these experiments can be found on the Reiser Lab prfs drive here: `smb://prfs.hhmi.org/reiserlab/burnettl/Ephys_experiments/nested_RF_stimulus/DATA`. The data is then further organised based on sub-type of experiment grouped in the same way as the [Experiment Log](/Ephys/ephys_nested_rf_exp_log.qmd). 
 
 The raw data is also found on the computer in the Ephys rig room within the folder `C:\matlabroot\G4_Protocols\nested_RF_protocol2\data`.
 
 Please see the following [page](ephys_nested_rf_data_structure.qmd) for details on how the data is saved and stored.
 
+::: {.callout-note}
+The data within the folder `2025_whiteplus` contains <b>duplicates</b> of data in other folders. This folder was created for ease of access to all experiments involving the white+ genotype.
+:::
 
-# References
 
 [^1]: Gruntman, E., Romani, S. & Reiser, M.B. Simple integration of fast excitation and offset, delayed inhibition computes directional selectivity in Drosophila . Nat Neurosci 21, 250–257 (2018). https://doi.org/10.1038/s41593-017-0046-4
 [^2]: Sanfilippo, P., Kim, A.J., Bhukel, A., Yoo, J., Mirshahidi, P.S., Pandey, V., Bevir, H., Yuen, A., Mirshahidi, P.S.,  Guo, P., Li, H.S., Wohlschlegel, J.A., Aso, Y., Zipursky, S.L. (2024) Mapping of multiple neurotransmitter receptor subtypes and distinct protein complexes to the connectome. Neuron, https://doi.org/10.1016/j.neuron.2023.12.014.
