@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Ephys Overview"
 ---
 
 The following pages outline how to create, run and analyse experiments run on the G4 LED arena for electrophysiology recordings. 
