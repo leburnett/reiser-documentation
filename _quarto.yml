@@ -12,12 +12,18 @@ website:
     left:
       - text: "Home"
         href: index.qmd
+      - text: "G4 Software"
+        href: G4%20Software/index.qmd
       - text: "Electrophysiology"
         href: Ephys/index.qmd
       - text: "Freely-walking"
         href: Freely-walking/index.qmd
 
   sidebar:
+    - title: "G4 Software"
+      style: docked
+      contents:
+        - G4 Software/index.qmd
     - title: "Electrophysiology"
       style: docked
       contents:
