@@ -2,13 +2,14 @@ project:
   type: website
   output-dir: _site
 
-date-format: "YYYY-MM-DD HH:mm"
+filters:
+  - _extensions/timestamp/timestamp.lua
 
 website:
   title: ""
   description: "Documentation on experiments run on G3/G4 LED arena setups in the Reiser Lab at HHMI Janelia Research Campus."
   page-footer:
-    center: "Page generated on {{< meta date >}}" 
+    center: "Page generated on {{< meta buildtime >}}" 
 
   navbar:
     background: dark
@@ -105,7 +106,6 @@ format:
     toc-depth: 3
     code-copy: true
     code-overflow: wrap
-    date: today
   pdf:
     documentclass: scrartcl
     toc: true

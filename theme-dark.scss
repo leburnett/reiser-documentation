@@ -244,3 +244,8 @@ table.striped tbody tr:nth-child(even) td {
 table.striped tbody tr:nth-child(odd) td {
     background-color: $table-bg;
 }
+
+/* Hide the published date at the top of pages */
+.quarto-title-meta {
+    display: none;
+}
