@@ -139,7 +139,7 @@ Continuation of the MARCM experiments started in the summer. The protocol was ad
 : Fly strains {.bordered}
 
 | ID | Date | Time | Experiment Folder | W+ | Frame | PC | Geno | Notes |
-|----|------|------|-------------|-----|----|----|----|----|
+|---|------|------|------------|-----|--|----|----|------|
 | 1 | 2025_10_20 | 11_53 | T4T5_autumn2025 | 1 | 206 | ON | CTL | 1px |
 | 2 | 2025_10_20 | 12_18 | T4T5_autumn2025 | 1 | 207 | ON | CTL | 1px  - rep|
 | 3 | 2025_10_22 | 13_10 | T4T5_autumn2025 | 1 | 200 | ON | TTL | 1px |
