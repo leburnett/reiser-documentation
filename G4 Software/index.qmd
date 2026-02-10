@@ -22,3 +22,10 @@ Learn more about the experiment designer [here](https://reiserlab.github.io/Modu
 - Run the experiment in the `G4_experiment_conductor`.\
 See an overview on how to use the experiment conductor [here](https://reiserlab.github.io/Modular-LED-Display/Generation%204/Display_Tools/docs/experiment-conductor_getting-started.html). 
 
+__________________________
+
+#### GUI use cases
+
+- For running [protocol 1](/Ephys/ephys_nested_rf_protocol1.qmd) of the `nested_RF_stimulus` protocol and [designing](/Ephys/ephys_nested_rf_how-to-make.qmd) the bar stimuli used in the protocols. 
+
+- For running the TAFC bar fixation task on the [tethered](/Tethered/index.qmd) flight setup.
