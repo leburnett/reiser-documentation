@@ -10,6 +10,7 @@ website:
   description: "Documentation on experiments run on G3/G4 LED arena setups in the Reiser Lab at HHMI Janelia Research Campus."
   page-footer:
     center: "Page generated on {{< meta buildtime >}}" 
+  repo-url: https://github.com/leburnett/reiser-documentation
 
   navbar:
     background: dark
@@ -94,9 +95,6 @@ website:
 
   page-navigation: true
 
-  repo-url: https://github.com/leburnett/reiser-documentation
-  repo-actions: [issue]
-
 format:
   html:
     theme:
@@ -106,6 +104,7 @@ format:
     toc-depth: 3
     code-copy: true
     code-overflow: wrap
+    
   pdf:
     documentclass: scrartcl
     toc: true
