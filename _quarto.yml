@@ -5,6 +5,8 @@ project:
 website:
   title: ""
   description: "Documentation on experiments run on G3/G4 LED arena setups in the Reiser Lab at HHMI Janelia Research Campus."
+  page-footer:
+    center: "Page generated on {{< meta today >}}" 
 
   navbar:
     background: dark
@@ -14,18 +16,46 @@ website:
         href: index.qmd
       - text: "G4 Software"
         href: G4%20Software/index.qmd
-      - text: "Electrophysiology"
-        href: Ephys/index.qmd
       - text: "Freely-walking"
         href: Freely-walking/index.qmd
+      - text: "Electrophysiology"
+        href: Ephys/index.qmd
+      - text: "Tethered flight"
+        href: Tethered/index.qmd
+      - text: "Resources"
+        href: resources.qmd
+    right: 
+      - icon: github
+        href: https://github.com/leburnett?tab=repositories
 
   sidebar:
     - title: "G4 Software"
-      style: docked
       contents:
         - G4 Software/index.qmd
+
+    - title: "Freely-walking"
+      collapse-level: 1
+      contents:
+        - Freely-walking/index.qmd
+        - Freely-walking/freely-walking-rig-specs.qmd
+        - Freely-walking/freely_walking_how_to_run_exp.qmd
+        - Freely-walking/freely_walking_data.qmd
+        - section: "Protocols"
+          contents:
+            - Freely-walking/freely_walking_protocols_index.qmd
+            - Freely-walking/freely_walking_logging_system.qmd
+        - section: "Patterns"
+          contents:
+            - Freely-walking/freely_walking_patterns_index.qmd
+        - section: "Analysis"
+          contents:
+            - Freely-walking/freely_walking_analysis.qmd
+            - Freely-walking/freely-walking-analysis-new-protocol.qmd
+        - Freely-walking/freely_walking_visualisation.qmd
+        - Freely-walking/freely_walking_observations.qmd
+    
     - title: "Electrophysiology"
-      style: docked
+      collapse-level: 1
       contents:
         - Ephys/index.qmd
         - Ephys/ephys_rig_specs.qmd
@@ -54,25 +84,10 @@ website:
           contents:
             - Ephys/ephys_ds_probe_protocol.qmd
 
-    - title: "Freely-walking"
+    - title: "Tethered flight"
+      collapse-level: 1
       contents:
-        - Freely-walking/index.qmd
-        - Freely-walking/freely-walking-rig-specs.qmd
-        - Freely-walking/freely_walking_how_to_run_exp.qmd
-        - Freely-walking/freely_walking_data.qmd
-        - section: "Protocols"
-          contents:
-            - Freely-walking/freely_walking_protocols_index.qmd
-            - Freely-walking/freely_walking_logging_system.qmd
-        - section: "Patterns"
-          contents:
-            - Freely-walking/freely_walking_patterns_index.qmd
-        - section: "Analysis"
-          contents:
-            - Freely-walking/freely_walking_analysis.qmd
-            - Freely-walking/freely-walking-analysis-new-protocol.qmd
-        - Freely-walking/freely_walking_visualisation.qmd
-        - Freely-walking/freely_walking_observations.qmd
+        - Tethered/index.qmd
 
   page-navigation: true
 
