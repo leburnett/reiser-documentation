@@ -2,40 +2,10 @@
 title: "Ephys Overview"
 ---
 
-The following pages outline how to create, run and analyse experiments run on the G4 LED arena for electrophysiology recordings. 
+This documentation outlines the creation, execution, and analysis of electrophysiology experiments using the G4 LED arena setup in the Reiser Lab at HHMI's Janelia Research Campus performed by <b>Jin Yong Park</b> of PTR in 2024 and 2025. 
 
-Outline of the experiments that were run in collaboration with Jin Yong Park from PTR: 
+________________
 
+In 2024, the [`DS_probe_protocol`](/Ephys/ephys_nested_rf.qmd) was created to investigate directionally selective responses in some less well characterized cell types that had been predicted to have directionally selective responses based on the spatial positioning of input synapses along their dendrites. This analysis was spearheaded by <b>Judith Hoeller</b> of the Romani lab at Janelia. 
 
-
-The protocols described here are designed to probe the receptive field properties of visual neurons in Drosophila, with a focus on the TmY and T4/T5 cell types.
-
-Here is some general documentation for the Ephys setup. This includes information on how to design and run protocols, as well as the specifications of the arena used in experiments.
-
-There are different protocols that can be run on the Ephys setup. This website contains documentation on the following protocols:
-
-- nested_RF_stimulus protocol
-
-- DS_Probe_protocol
-
-## Designing and running a protocol
-
-Protocols to be run on the G4 ephys arena can be designed in two ways. Through the in-built G4 GUIs or through custom scripts.
-
-The G4 GUIs are designed to be user-friendly and allow for the generation of patterns, position functions, and experiment designs without needing to write code.
-The full documentation can be found [here](https://reiserlab.github.io/Modular-LED-Display/G4).
-The code for the GUI can be found [here](https://github.com/JaneliaSciComp/G4_Display_Tools).
-
-- Generate patterns in the `G4_pattern_generator_gui`.
-
-- Generate position functions in the `G4_function_generator_gui`.
-
-- Design the experiment in the `G4_experiment_designer`.
-
-- Run the experiment in the `G4_experiment_conductor`.
-
-A detailed description of the patterns, functions and the experiment design for each protocol can be found within the protocol's section of this documentation.
-
-## Analysing the data
-
-After running a protocol, either through the GUI or through the custom scripts, a 'Log' file is generated that contains the electrophysiology data and the frame position data. The rate at which both of these types of data are acquired is set in the `G4_experiment_designer` GUI or in the custom scripts. For these ephys protocols, both the electrophysiology data and the frame position is acquired at 10 kHz. How this data is processed and analysed depends on the protocol that was run and will be described within the relevant sections of this documentation for each protocol.
+In late 2024-2025, the [`nested_RF_stimulus`](/Ephys/ephys_ds_probe_protocol.qmd) protocol was created to more thoroughly investigate the receptive field properties of T4/T5 cells in Drosophila as well as their directionally selective responses to moving bars. It was generated for experiments that were part of a collaboration with the Zipursky lab at UCLA that aimed to investigate the role of the receptor-associated protein turtle "Tutl" on the establishment of directionally selective responses in T4/T5 cells. This protocol was based on a protocol created previously by <b>Eyal Gruntman</b> in the Reiser lab.
