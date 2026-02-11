@@ -2,11 +2,44 @@
 title: "Bar flash analysis"
 ---
 
-_______________________________
+### Key points:
+- <b>88 flashes</b> in total (8 orientations, 11 flashes per orientation.)
+- 88 flashes repeated <b>3 times</b> in a different <b>random order</b> per repetition.
+- Flashes are only in <b>one contrast</b>, either bright or dark.
+- 1 flash centred within the 30 x 30 pixel square and then <b>5 positions</b> above and below that position along the axis.
+- Fast flashes = <b>1s total</b> each - 80ms flash with 920ms interval. 
+- Slow flashes = <b>0.5s total</b> each - 14ms flash with 486ms interval.
 
+### Stimulus description
 
 ![Bar flash stimuli examples showing the 11 different positions for the 8 different orientations.](../assets/imgs/ephys/nested_RF_stimulus/overview/0003.png){.ifr_center}
 
-![Example bar flash stimuli analysis. Timeseries are plotted for the responses to each flash. The coloured squares in the top row correspond to the colours of the bars in the images in the furthest left column. Left column contains an image of all 11 bars of that orientation overlaid. This example was made for the bar flashes that were shifted by 1 pixel steps.](../assets/imgs/ephys/nested_RF_stimulus/overview/0004.png){.ifr_center}
+| Parameter | Value |
+|------------|----------|
+| Num Orientations | 8 | 
+| Flashes per orientation | 11 | 
+| Step size (px) | 1 / 2| 
+| Duration slow | 80ms | 
+| Inter-flash interval slow | 920ms | 
+| Duration fast | 14ms | 
+| Inter-flash interval fast | 486ms | 
 
-_______________________________
+::: {.callout-note}
+### Stimulus generation
+Scripts used to make the stimulus:\
+
+`generate_bar_flash_stimulus_xy.m` - makes the pattern.\
+
+`generate_bar_flash_pos_fns.m` - creates the position functions.\
+This function makes a different position function for each repetition so that the bar flashes are represented in a random order each time. 
+
+The stimulus is made from the pre-made bar patterns within the folder `C:\matlabroot\G4_Protocols\nested_RF_stimulus\results\patterns\protocol2\full_field_bars4` that are used for generating the bar sweep stimuli too. So, the pixel intensity values will match those stimuli. 
+::: 
+
+::: {.callout-important}
+Bar flash stimulus changed from 1 to 2 pixel steps per frame on <b>October 23rd 2025</b>.
+:::
+
+### Analysis
+
+![Example bar flash stimuli analysis. Timeseries are plotted for the responses to each flash. The coloured squares in the top row correspond to the colours of the bars in the images in the furthest left column. Left column contains an image of all 11 bars of that orientation overlaid. This example was made for the bar flashes that were shifted by 1 pixel steps.](../assets/imgs/ephys/nested_RF_stimulus/overview/0004.png){.ifr_center}
