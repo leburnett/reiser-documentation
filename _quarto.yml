@@ -11,6 +11,7 @@ website:
   page-footer:
     center: "Page generated on {{< meta buildtime >}}" 
   repo-url: https://github.com/leburnett/reiser-documentation
+  favicon: /assets/favicon/favicon.ico
 
   navbar:
     background: dark
