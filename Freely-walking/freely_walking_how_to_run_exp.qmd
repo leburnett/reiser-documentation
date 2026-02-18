@@ -2,6 +2,14 @@
 title: "Quickstart"
 ---
 
+## Designing and running a protocol
+
+Patterns for the G3 arena can be generated using the `G4_pattern_generator_gui`, but for this screen all patterns and function were made from scratch using custom scripts and the protocols themselves are run through custom scripts that present the patterns using the `panel_com` class of functions from the `G4_Display_Tools` repository.
+
+The scripts for making the different patterns can be found within the repository [here](https://github.com/leburnett/freely-walking-optomotor/tree/main/script_to_make_patterns).
+
+The scripts for the protocols themselves can be found within the repository [here](https://github.com/leburnett/freely-walking-optomotor/tree/main/protocols). This folder contains a [subfolder](https://github.com/leburnett/freely-walking-optomotor/tree/main/protocols/protocol_functions) that contains the functions that are required to run the protocols.
+
 ## How to run a protocol
 
 - Arena on and controller on.
@@ -11,3 +19,12 @@ title: "Quickstart"
 - Run MATLAB protocol script.
 
 The protocol used for the Motion-Induced Centring screen was protocol 27. 
+
+
+## Analysing the data
+
+There are two levels to the analyis of the data from the 'protocol_27' screen.
+
+The first level is done for every run of the protocol (i.e. each individual vial of flies run) and is done by running the script `process_freely_walking_data()` ([code](https://github.com/leburnett/freely-walking-optomotor/blob/processing_computer/processing_functions/process_freely_walking_data.m)). This function requires a string `date_to_analyse` which should the name of the directory that was generated for the day's experiments. It should be in the format 'YY_MM_DD'. This function returns a number of figures and results files for each individual experiments (run of the protocol / vial of flies).
+
+The second level is done after running the protocol for multiple vials of multiple strains and is done by running the script `process_screen_data` ([code](https://github.com/leburnett/freely-walking-optomotor/blob/processing_computer/processing_functions/process_screen_data.m)). This function requires a string `protocol` which is a string of the protocol number that you would like to process all of the data for, in this case `protocol = 'protocol_27'`. This function combines the data across all of the individual experiments and strains and creates timeseries plots comparing the behaviour of each strain of fly against the empty-split control flies.

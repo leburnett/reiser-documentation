@@ -1,5 +1,5 @@
 ---
-title: "Data Structure"
+title: "Data Organisation"
 ---
 
 This page documents the folder organization for data collected using the Nested RF Protocol. Understanding this structure is essential for locating experiment data and for automated analysis scripts.

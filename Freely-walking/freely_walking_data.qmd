@@ -1,10 +1,13 @@
 ---
-title: "Data"
+title: "Data Organisation"
 ---
 
-[Link](freely_walking_logging_system.qmd) to documentation on how the automatic logging system was set up. 
+Here is a link to the [google sheet](https://docs.google.com/spreadsheets/d/1IsT3YndxAy3yN8o38r5RGK4dZsEdPXe0In4-OTEcXNw/edit?resourcekey=&gid=35583985#gid=35583985)  with the automatic logging of experiments. 
 
-[Link](https://docs.google.com/spreadsheets/d/1IsT3YndxAy3yN8o38r5RGK4dZsEdPXe0In4-OTEcXNw/edit?resourcekey=&gid=35583985#gid=35583985) to the google sheet with the automatic logging of experiments. 
+::: {.callout-note}
+### How to set up the automatic logging system
+Here is the [documentation](freely_walking_logging_system.qmd) on how the automatic logging system was set up. 
+:::
 
 Each protocol run generates:
 

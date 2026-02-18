@@ -2,12 +2,21 @@
 title: "Experiment Log"
 ---
 
-Below is a comprehensive log of the dates, times, experiment folders, fly strains and genotypes for all of the experiments run with the `nested_RF_protocol`. The experiment logs are grouped based on experiment type. Detailed descriptions of the differences in the protocol used between experiment types can be found on the protocol descriptions [page](/Ephys/ephys_nested_rf_version_history.qmd).
+This [excel sheet](https://github.com/leburnett/nested_RF_stimulus/blob/main/reiser-lab-ephys-experiment-log.xlsx) includes information on all of the experiments run with the `nested_RF_protocol`. It includes the experiments that were automatically tracked and also the experiments that were run before the implementation of the google sheet logging.
 
-::: {.callout-note}
-From <b>October 2025</b>, automatic logging to a google sheet was implemented. This [google sheet](https://docs.google.com/spreadsheets/d/1O7PnOvNsQB3CQl6SMOh6jvBitfoKoZenH5Djex-WX8c/edit?resourcekey=&gid=1394701893#gid=1394701893) contains the full experiment log from this date onwards.
+::: {.callout-important} 
+## Experiment Logs - Quick Access
+From <b>October 2025</b>, automatic logging to a google sheet was implemented. 
+
+This [google sheet](https://docs.google.com/spreadsheets/d/1O7PnOvNsQB3CQl6SMOh6jvBitfoKoZenH5Djex-WX8c/edit?resourcekey=&gid=1394701893#gid=1394701893) contains the full experiment log from this date onwards. The google sheet should be considered the most up-to-date record of the experiments run with the `nested_RF_protocol`.
+
 :::
 
+## Detailed experiment logs
+
+Below is a comprehensive and detailed log of the dates, times, experiment folders, fly strains and genotypes for all of the experiments run with the `nested_RF_protocol`. The experiment logs are grouped based on experiment type. 
+
+Detailed descriptions of the differences in the protocol used between experiment types can be found on the protocol descriptions [page](/Ephys/ephys_nested_rf_version_history.qmd).
 _______________
 
 ### tutl RNAi experiments

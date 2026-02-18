@@ -42,8 +42,8 @@ website:
       collapse-level: 1
       contents:
         - Freely-walking/index.qmd
-        - Freely-walking/freely-walking-rig-specs.qmd
         - Freely-walking/freely_walking_how_to_run_exp.qmd
+        - Freely-walking/freely-walking-rig-specs.qmd
         - Freely-walking/freely_walking_data.qmd
         - section: "Protocols"
           contents:
@@ -67,24 +67,34 @@ website:
         - section: "Nested RF Protocol"
           contents:
             - Ephys/ephys_nested_rf.qmd
-            - Ephys/ephys_nested_rf_exp_log.qmd
-            - section: "Protocol descriptions"
+            - Ephys/ephys_nested_rf_getting-started.qmd
+            - Ephys/ephys_nested_rf_concepts.qmd
+            - section: "Protocol Descriptions"
               contents:
-              - Ephys/ephys_nested_rf_protocol1.qmd
-              - Ephys/ephys_nested_rf_protocol2.qmd
-              - Ephys/ephys_nested_rf_version_history.qmd
-            - section: "How to guides"
+                - Ephys/ephys_nested_rf_protocol1.qmd
+                - Ephys/ephys_nested_rf_protocol2.qmd
+                - Ephys/ephys_nested_rf_version_history.qmd
+            - section: "How-To Guides"
               contents:
                 - Ephys/ephys_nested_rf_how-to-make.qmd
                 - Ephys/ephys_nested_rf_how-to-run.qmd
+                - Ephys/ephys_nested_rf_adapting-protocols.qmd
             - section: "Analysis"
               contents:
                 - Ephys/ephys_nested_rf_how-to-analyse-p1.qmd
                 - Ephys/ephys_nested_rf_how-to-analyse-p2.qmd
-                - Ephys/ephys_nested_rf_bar-sweep-analysis.qmd
-                - Ephys/ephys_nested_rf_bar-flash-analysis.qmd
-                - Ephys/ephys_nested_rf_flash-analysis.qmd
-            - Ephys/ephys_nested_rf_data_structure.qmd
+                - section: "Analysis Deep Dives"
+                  contents:
+                    - Ephys/ephys_nested_rf_bar-sweep-analysis.qmd
+                    - Ephys/ephys_nested_rf_flash-analysis.qmd
+                    - Ephys/ephys_nested_rf_bar-flash-analysis.qmd
+                - Ephys/ephys_nested_rf_interpreting-results.qmd
+            - section: "Reference"
+              contents:
+                - Ephys/ephys_nested_rf_code-architecture.qmd
+                - Ephys/ephys_nested_rf_data_structure.qmd
+                - Ephys/ephys_nested_rf_exp_log.qmd
+                - Ephys/ephys_nested_rf_troubleshooting.qmd
         - section: "DS Probe Protocol"
           contents:
             - Ephys/ephys_ds_probe_protocol.qmd

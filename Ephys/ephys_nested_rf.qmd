@@ -4,11 +4,18 @@ title: "Overview"
 
 The **Nested RF Protocol** was designed by LE Burnett in 2024 for patch electrophysiology experiments ran by <b>Jin Yong Park</b>. It was based upon the protocol used in *Gruntman et al. 2018[^1]*. All fly husbandry was carried out by <b>Edward Rogers</b>.
 
-## Protocol overview 
+::: {.callout-tip}
+### New to this protocol?
+If you are setting up this protocol for the first time, start with the [Getting Started](ephys_nested_rf_getting-started.qmd) page for installation and setup instructions, then read [Key Concepts](ephys_nested_rf_concepts.qmd) for background on the G4 arena, coordinate system, and terminology used throughout this documentation.
+:::
+
+## Protocol overview
 
 ::: {.callout-note}
 ### Quick summary:
-This is a multi-step protocol consisting of a <b>short first protocol (P1)</b> that determines the rough receptive field location and preferred contrast of the cell, and a <b>longer second protocol (P2)</b> that is only presented at the location of the RF determined in P1. This follow-up protocol probes the direction selectivity of the cell using moving bar stimuli, as well as measuring the receptive field structure at higher spatial resolution using small flashing squares. 
+This is a multi-step protocol consisting of a <b>short first protocol (P1)</b> that determines the rough receptive field location and preferred contrast of the cell, and a <b>longer second protocol (P2)</b> that is only presented at the location of the RF determined in P1. 
+
+This follow-up protocol probes the direction selectivity of the cell using moving bar stimuli, as well as measuring the receptive field structure at higher spatial resolution using small flashing squares.
 
 The first protocol is run through the `G4_experiment_conductor` [GUI](/G4%20Software/index.qmd) whereas the second protocol is generated and run through a custom MATLAB script called `generate_protocol2()`.
 :::
@@ -20,9 +27,50 @@ To characterise the receptive field structure and direction selectivity of visua
 The experiments specifically aimed to understand the role of certain proteins linked to specific receptors that are localised to specific locations along the T4/T5 dendrites in shaping the receptive field properties of these cells[^2].
 :::
 
-## Protocol descriptions 
+### Experiment workflow
 
-If you would like to see detailed descrptions of the contents of the two protocols, please see the following pages:
+The typical workflow for running the Nested RF Protocol is:
+
+```
+            ┌──────────────────────────┐
+            │ Protocol 1 (~6-7.5 min)  │
+            │                          │
+            │ Run coarse RF mapping    │
+            │ using G4_experiment_     │
+            │ conductor GUI            │
+            └────────────┬─────────────┘
+                        │
+                        ▼
+                    ┌─────────────────────────┐
+                    │ Between P1 & P2         │
+                    │                         │
+                    │ Identify peak_frame     │
+                    │ from 6px grid plots.    │
+                    │ Determine ON/OFF        │
+                    └────────────┬────────────┘
+                                │
+                                ▼
+                            ┌──────────────────────────────┐
+                            │ Protocol 2 (~20-25 min)      │
+                            │                              │
+                            │ Run high-res RF mapping and  │
+                            │ direction selectivity via    │
+                            │ generate_protocol2()         │
+                            └───────────────┬──────────────┘
+                                            │
+                                            ▼
+                                    ┌─────────────────────┐
+                                    │ Analysis            │
+                                    │                     │
+                                    │ process_protocol2() │
+                                    │ in experiment folder│
+                                    └─────────────────────┘
+```
+
+
+## Protocol descriptions
+
+If you would like to see detailed descriptions of the contents of the two protocols, please see the following pages:
 
 - [Protocol 1](ephys_nested_rf_protocol1.qmd)
 
@@ -65,7 +113,7 @@ The raw data is also found on the computer in the Ephys rig room within the fold
 Please see the following [page](ephys_nested_rf_data_structure.qmd) for details on how the data is saved and stored.
 
 ::: {.callout-note}
-The data within the folder `2025_whiteplus` contains <b>duplicates</b> of data in other folders. This folder was created for ease of access to all experiments involving the white+ genotype.
+The data within the folder `1DRF` contains <b>duplicates</b> of data in other folders. The curated folder contains a subset of experiments that were performed with the same experimental protocol. This data was selected to be used to make the main paper figure for the UCLA collaboration.
 :::
 
 
