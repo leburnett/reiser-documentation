@@ -2,104 +2,41 @@
 title: "Version History"
 ---
 
-This page contains a detailed description of how the Nested RF Protocols have evolved over time. It includes detailed descriptions of the contents of the different protocol versions, a timeline of changes and tabular comparisons of the different parameters used in each version.
+This page documents how the Nested RF Protocols have evolved over time. 
 
-## Descriptions of Protocol 1 Versions
+Parameters that **changed from the preceding version** are shown in **bold**.
 
-#### P1 protocol (Dec 2024 - January 2025) - RNAi experiments
+## Protocol 1
 
-- Area of arena presented: Left half of the arena screen (LHS). 17:112 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
-- Background intensity: (6/15) - gs_val = 4.
-- Number of repetitions: 4
-- Flash sizes: 12 x 12 pixels and 6 x 6 pixels
-- Flash contrasts: both ON (15/15) and OFF (0/15)
-- Flash duration: 200ms
-- Flash overlap: 0% (non-overlapping grid)
-- Interval between flashes: 50ms
-- Location: `protocols/LHS` within the `nested_RF_stimulus` GitHub repository.
-- Protocol: `protocol1_10kHz_4reps_12px_6px_LHS_2sbkg_200msfl_50msint_12-13-24_14-33-03`
+### P1 Parameter Comparison
 
-::: {.callout-note}
-### Results file:
-"Spring2025_RNAi_Protocol2_Analysis". Data: 2024_12_12 to 2025_01_23. See the file "RNAi_exp_log".
-:::
-_______________________________________________________________
-
-#### P1 protocol (April 2025 - May 2025) - TmY3, TmY18, TmY5a, Tm5Y
-
-- Area of arena presented: Right half of the arena screen (LHS). 97:196 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
-- Background intensity: (6/15) - gs_val = 4.
-- Number of repetitions: 4
-- Flash sizes: 12 x 12 pixels and 6 x 6 pixels
-- Flash contrasts: both ON (15/15) and OFF (0/15)
-- Flash duration: 200ms
-- Flash overlap: 0% (non-overlapping grid)
-- Interval between flashes: 50ms
-- Location: `protocols/RHS` within the `nested_RF_stimulus` GitHub repository.
-- Protocol: `protocol1_10kHz_4reps_12px_6px_RHS_2sbkg_200msfl_50msint_04-08-25_08-08-42` and `protocol1_10kHz_4reps_12px_6px_RHS2_2sbkg_200msfl_50msint_81_180_05-05-25_16-18-66`
-
-::: {.callout-note}
-### Results file:
-"Exp_Log_NestedRF_v2". Data: 2025_04_08 to 2025_05_09
-:::
-______________________________________________________________
-
-#### P1 protocol (July 2025 - Nov 2025) - T4/T5 experiments
-
-- Area of arena presented: Left half of the arena screen (LHS). 17:112 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
-- Background intensity: (4/15) - gs_val = 4.
-- Number of repetitions: 4
-- Flash sizes: 12 x 12 pixels and 6 x 6 pixels
-- Flash contrasts: both ON (15/15) and OFF (0/15)
-- Flash duration: 200ms
-- Flash overlap: 0% (non-overlapping grid)
-- Interval between flashes: 150ms
-- Location: `protocols/bkg4/LHS` within the `nested_RF_stimulus` GitHub repository.
-- Protocol: `protocol1_10kHz_4reps_12px_6px_LHS_2sbkg_200msfl_150msint_07-10-25_15-45-60`
-
-::: {.callout-note}
-### Results file:
-"Summer2025_MARCM_p2_analysis" and "Autumn2025_MARCM_p2_analysis". Data: 2025_07_12 to 2025_11_13
-:::
-__________________________________________________________________
-
-#### P1 protocol (Sep 2025 - Dec 2025) - pharmacology experiments
-
-- Area of arena presented: Left half of the arena screen (LHS). 17:112 pixels in x (width) and 1:48 pixels in y (height). [96 x 48 pixels area]
-- Background intensity: (4/15) - gs_val = 4.
-- Number of repetitions: 4
-- Flash sizes: 6 x 6 pixels
-- Flash contrasts: both ON (15/15) and OFF (0/15)
-- Flash duration: 200ms
-- Flash overlap: 0% (non-overlapping grid)
-- Interval between flashes: 150ms
-- Location: `protocols/bkg4/LHS` within the `nested_RF_stimulus` GitHub repository.
-- Protocol: `protocol1_10kHz_4reps_6pxONLY_LHS_2sbkg_200msfl_150msint_11-14-25_13-47-30`
-
-::: {.callout-note}
-### Results file:
-"Autumn2025_T4T5_Pharma". Data: 2025_11_18 to 2025_12_22
-:::
-
-## Parameter Overview 
-
-### Protocol 1 Parameter Comparison
-
-Side-by-side comparison of all Protocol 1 versions, highlighting the key parameter differences.
-
-| Parameter | Early Testing | RNAi (Dec-Jan) | DS (Apr-May) | T4/T5 (Jul-Nov) | Pharmacology (Nov-Dec) |
-|:----------|:--------------|:---------------|:--------------|:----------------|:-----------------------|
-| **Date range** | Nov 27 - Dec 12, 2024 | Dec 13, 2024 - Jan 23, 2025 | Apr 8 - May 9, 2025 | Jul 10 - Nov 2025 | Nov 14 - Dec 2025 |
-| **Screen side** | LHS | LHS | RHS | LHS | LHS |
-| **Pixel range (x)** | 17:112 | 17:112 | 97:196/81:180 | 17:112 | 17:112 |
-| **Flash sizes** | 12px + 6px | 12px + 6px | 12px + 6px | 12px + 6px | 6px only |
-| **Flash duration** | 200ms | 200ms | 200ms | 200ms | 200ms |
-| **Inter-flash interval** | 50ms | 50ms | 50ms | 150ms | 150ms |
-| **Background intensity** | gs_val=4 (6/15) | gs_val=4 (6/15) | gs_val=4 (6/15) | gs_val=4 (4/15) | gs_val=4 (4/15) |
-| **Flash contrasts** | ON + OFF | ON + OFF | ON + OFF | ON + OFF | ON + OFF |
-| **Repetitions** | 4 | 4 | 4 | 4 | 4 |
-| **Sampling rate** | 20 kHz | 10 kHz | 10 kHz | 10 kHz | 10 kHz |
+| Parameter | v1 | v2 | v3 | v4 |
+|:----------|:---------|:------------|:-----------|:----------|
+| Name | RNAi  | DS Probe | MARCM | Pharmacology |
+| Dates | Dec 24 – Jan 25 | Apr – May 25 | Jul – Nov 25 | Nov – Dec 25 |
+| Screen side | LHS | **RHS** | **LHS** | LHS |
+| Pixel range (x) | 17:112 | **97:196 / 81:180** | **17:112** | 17:112 |
+| Background intensity | 6/15 (gs_val=4) | 6/15 (gs_val=4) | **4/15 (gs_val=4)** | 4/15 (gs_val=4) |
+| Flash sizes | 12px + 6px | 12px + 6px | 12px + 6px | **6px only** |
+| Flash duration | 200ms | 200ms | 200ms | 200ms |
+| Inter-flash interval | 50ms | 50ms | **150ms** | 150ms |
+| Flash contrasts | ON + OFF | ON + OFF | ON + OFF | ON + OFF |
+| Flash overlap | 0% | 0% | 0% | 0% |
+| Repetitions | 4 | 4 | 4 | 4 |
+| Sampling rate | 10 kHz | 10 kHz | 10 kHz | 10 kHz |
+| Protocol folder | `protocols/LHS` | **`protocols/RHS`** | **`protocols/bkg4/LHS`** | `protocols/bkg4/LHS` |
 : {.bordered}
+
+::: {.callout-note}
+### Numbers results files 
+
+| Version | Results file |
+|:-------|:-------------|
+| v1 | Spring2025_RNAi_Protocol2_Analysis |
+| v2 | Exp_Log_NestedRF_v2 |
+| v3 | Summer2025_MARCM_p2_analysis |
+| v4 | Autumn2025_T4T5_Pharma |
+:::
 
 ::: {.callout-important}
 #### Key Protocol 1 Changes Over Time
@@ -109,253 +46,101 @@ Side-by-side comparison of all Protocol 1 versions, highlighting the key paramet
 3. **Jul 2025:** Increased inter-flash interval from 50ms to 150ms; changed background from 6/15 to 4/15
 4. **Nov 2025:** Removed 12px flashes for pharmacology experiments (6px only)
 :::
-___________________________________________________________________________
 
-## Descriptions of Protocol 2 Versions
+### P1 Timeline
 
-#### P2 protocol (Dec 2024 - Jan 2025) - RNAi experiments
-
-- Area of arena presented: [30 x 30 pixel area]
-- Background intensity: (6/15) - gs_val = 4.
-- Number of repetitions: 3
-- Only ONE contrast - either ON (15/15) or OFF (0/15)
-- Square flashes presented on 50% overlapping grid.
-
-Sequence of stimuli in the protocol:
-
-- 4 pixel square flashes - 160ms duration - 340ms interval
-- 4 pixel square flashes - 80ms duration - 170ms interval
-- 4 pixel wide bar sweeps - 28 dps
-- 4 pixel wide bar sweeps - 56 dps
-
-::: {.callout-note}
-### Results file:
-"Spring2025_RNAi_Protocol2_Analysis". Data: 2024_12_12 to 2025_01_23. See the file "RNAi_exp_log".
-:::
-
-_______________________________________________________________
-
-
-#### P2 protocol (April 2025 - May 2025) - TmY3, TmY18, TmY5a, Tm5Y
-
-- Area of arena presented: [30 x 30 pixel area]
-- Background intensity: (6/15) - gs_val = 4.
-- Number of repetitions: 3
-- Only ONE contrast - either ON (15/15) or OFF (0/15)
-- Square flashes presented on 50% overlapping grid.
-
-Sequence of stimuli in the protocol:
-
-- 10s background at the start and between repetitions (added 2025_05_06 onwards)
-- 4 pixel square flashes - 160ms duration - 340ms interval
-- 4 pixel square flashes - 80ms duration - 170ms interval
-- 4 pixel wide bar sweeps - 28 dps
-- 4 pixel wide bar sweeps - 56 dps
-
-::: {.callout-note}
-### Results file:
-"Exp_Log_NestedRF_v2". Data: 2025_04_08 to 2025_05_09
-:::
-
-_______________________________
-
-#### P2 protocol (July 2025 - Sep 2025) - T4/T5 experiments - SUMMER
-
-- Area of arena presented: [30 x 30 pixel area]
-The 6 x 6 pixel flashes are presented in a 33 x 33 pixel square area - larger than the 30 x 30 pixel square area for the 4 x 4 pixel flashes - to get an even number of flashes on a 50% overlapping grid.
-- Background intensity: (4/15) - gs_val = 4.
-- Number of repetitions: 3
-- Only ONE contrast - either ON (15/15) or OFF (0/15)
-- Square flashes presented on 50% overlapping grid.
-- 1s interval between each bar sweep
-
-Sequence of stimuli in the protocol:
-
-- 10s background at the start and between repetitions
-- 4 pixel square flashes - 160ms duration - 440ms interval
-- 6 pixel square flashes - 160ms duration - 440ms interval
-- 4 pixel wide bar sweeps - 28 dps
-- 4 pixel wide bar sweeps - 56 dps
-
-::: {.callout-note}
-### Results file:
-"Summer2025_MARCM_p2_analysis". Data: 2025_07_12 to 2025_09_12
-:::
-
-_______________________________
-
-#### P2 protocol (Oct 2025 - Nov 2025) - T4/T5 experiments - AUTUMN
-
-- Area of arena presented: [30 x 30 pixel area]
-The 6 x 6 pixel flashes are presented in a 33 x 33 pixel square area - larger than the 30 x 30 pixel square area for the 4 x 4 pixel flashes - to get an even number of flashes on a 50% overlapping grid.
-- Background intensity: (4/15) - gs_val = 4.
-- Number of repetitions: 3
-- Only ONE contrast - either ON (15/15) or OFF (0/15)
-- Square flashes presented on 50% overlapping grid.
-- 1s interval between each bar sweep
-
-Sequence of stimuli in the protocol:
-
-- 10s background at the start and between repetitions
-- 3s background interval between square flashes and sweeps, between sweep speeds and between bar flash speeds. (Added 2025_10_21).
-- 4 pixel square flashes - 160ms duration - 440ms interval
-- 6 pixel square flashes - 160ms duration - 440ms interval
-- 4 pixel wide bar sweeps - 28 dps
-- 4 pixel wide bar sweeps - 56 dps
-- **4 pixel wide bar sweeps - 168 dps**
-- **4 pixel wide bar flashes - 80ms duration - 920ms interval**
-- **4 pixel wide bar flashes - 14ms duration - 486ms interval**
-
-The bar flashes are presented in different random orders for each repetition.
-The bar flash stimuli contains 11 different positions.
-From 2025_10_15 - 2025_10_23, the "central" bar flash is positioned in the middle of the 30 x 30 pixel area, then the 5 positions either side are this bar moved by 1 pixel increments and decrements from this position in the 8 different orientations.
-From 2024_10_23 onwards, these 5 other positions are the central bar moved by 2 pixel increments and decrements.
-
-::: {.callout-important}
-### Changed the full field bar stimuli 00015 and 00016
-Remade 0015 and 0016 full field bar stimuli - corresponds to dark bars 6/8pi and 7/8pi - so that their "normal" and "flipped" directions match the sequence of the other bar orientations. Before they were moving from west to east, but now changed so that they're moving from east to west. 
-:::
-
-
-::: {.callout-note}
-### Results file:
-"Autumn2025_MARCM_p2_analysis". Data: 2025_10_15 to 2025_11_17
-:::
-
-_______________________________
-
-#### P2 protocol (Nov 2025 - Dec 2025) - T4/T5 pharmacology experiments
-
-- Area of arena presented: [30 x 30 pixel area]
-- Background intensity: (4/15) - gs_val = 4.
-- Number of repetitions: 3
-- Only ONE contrast - either ON (15/15) or OFF (0/15)
-- 1s interval between each bar sweep
-- NO SQUARE PIXEL FLASHES PRESENTED IN P2.
-
-Sequence of stimuli in the protocol:
-
-- 10s background at the start and between repetitions
-- 3s background interval between sweep speeds and between bar flash speeds.
-- 4 pixel wide bar sweeps - 28 dps
-- 4 pixel wide bar sweeps - 56 dps
-- 4 pixel wide bar sweeps - 168 dps
-- **4 pixel wide bar sweeps - 250 dps**
-- **4 pixel wide bar sweeps - 500 dps**
-- 4 pixel wide bar flashes - 80ms duration - 920ms interval
-- 4 pixel wide bar flashes - 14ms duration - 486ms interval
-
-There are 88 bar flash stimuli. 8 different orientations. Bar centred on the 30 x 30 pixel square and then moved by 2 pixel steps in either direction along this axis.
-
-::: {.callout-note}
-### Results file:
-"Autumn2025_T4T5_Pharma". Data: 2025_11_18 to 2025_12_22
-:::
-
-::: {.callout-important}
-### 2025-11-20: "Dummy" sweep added
-At the beginning of each repetition through the stimuli, the slowest speed starts with one additional right to left sweep. This is then followed by the normal order of sweeps (left to right, then right to left). This extra sweep happens only for the slowest speed, but at the beginning of each rep. 
-:::
-
-_______________________________
-
-### Protocol 2 Parameter Comparison
-
-Side-by-side comparison of all Protocol 2 versions.
-
-| Parameter | RNAi | DS Probe | T4/T5 Summer | T4/T5 Autumn | Pharmacology |
-|:-------|:------|:-------|:---------|:---------|:---------|
-| **Date range** | Dec 12, 2024 - Jan 23, 2025 | Apr 8 - May 9, 2025 | Jul 12 - Sep 12, 2025 | Oct 15 - Nov 17, 2025 | Nov 18 - Dec 22, 2025 |
-| **Background intensity** | 6 | 6 | 4 | 4 | 4 |
-| **Repetitions** | 3 | 3 | 3 | 3 | 3 |
-| **Stimulus area** | 30x30 px | 30x30 px | 30x30 px (33x33 for 6px) | 30x30 px (33x33 for 6px) | 30x30 px |
-| **Contrast** | ON or OFF | ON or OFF | ON or OFF | ON or OFF | ON or OFF |
+| Date Range | Experiment Type | Key Changes | Data Location |
+|:-----------|:---------------|:------------|:-------------|
+| Nov 27 – Dec 12, 2024 | Early testing | Initial version, 20kHz | `protocol1/LHS/protocol1_4reps_12px_6px_LHS_2sbkg _200msfl_50msint_11-27-24_15-02-95/` |
+| Dec 13, 2024 – Jan 23, 2025 | RNAi experiments | 10kHz sampling, 50ms interval, LHS | `protocol1/LHS/protocol1_10kHz_4reps_12px_6px_LHS_2sbkg_ 200msfl_50msint_12-13-24_14-33-03/` |
+| Apr 8 – May 4, 2025 | DS Probe (TmY3, TmY18, TmY5a, Tm5Y) | Switched to RHS | `protocol1/RHS/protocol1_10kHz_4reps_12px_6px_RHS_2sbkg_ 200msfl_50msint_04-08-25_08-08-42/` |
+| May 5 – May 9, 2025 | DS Probe (continued) | RHS v2 (pixels 81-180) shifted to more central part of arena | `protocol1/RHS/protocol1_10kHz_4reps_12px_6px_RHS2_2sbkg_ 200msfl_50msint_81_180_05-05-25_16-18-66/` |
+| Jul 10 – Nov 2025 | T4/T5 MARCM | 150ms interval, bkg4 | `protocol1/bkg4/protocol1_10kHz_4reps_12px_6px_LHS_2sbkg_ 200msfl_150msint_07-10-25_15-45-60/` |
+| Nov 14 – Dec 2025 | Pharmacology | 6px flashes only | `protocol1/bkg4/protocol1_10kHz_4reps_6pxONLY_LHS_2sbkg_ 200msfl_150msint_11-14-25_13-47-30/` |
 : {.bordered}
 
-### Square Flash Parameters
+___________________________________________________________________________
 
-| Parameter | RNAi | DS Probe | T4/T5 Summer | T4/T5 Autumn | Pharmacology |
-|:----------|:-----|:------|:-----------|:-----------|:-----------|
-| **4px flashes** | Yes | Yes | Yes | Yes | No |
-| **4px duration** | 160ms, 80ms | 160ms, 80ms | 160ms | 160ms | - |
-| **4px interval** | 340ms, 170ms | 340ms, 170ms | 440ms | 440ms | - |
-| **6px flashes** | No | No | Yes | Yes | No |
-| **6px duration** | - | - | 160ms | 160ms | - |
-| **6px interval** | - | - | 440ms | 440ms | - |
+## Protocol 2
 
-### Bar Sweep Parameters
+### P2 Parameter Comparison
 
-| Parameter | RNAi | DS Probe | T4/T5 Summer | T4/T5 Autumn | Pharmacology |
-|:----------|:-----|:------|:----------|:-----------|:----------|
-| **14 dps** | No | No | No | No | No |
-| **28 dps** | Yes | Yes | Yes | Yes | Yes |
-| **56 dps** | Yes | Yes | Yes | Yes | Yes |
-| **168 dps** | No | No | No | Yes | Yes |
-| **250 dps** | No | No | No | No | Yes |
-| **500 dps** | No | No | No | No | Yes |
-| **Inter-sweep interval** | - | - | 1s | 1s | 1s |
+| Parameter | v1 | v2 | v3 | v4 | v5 |
+|:----------|:---------|:------------|:-----------|:-----------|:----------|
+| Name | RNAi  | DS Probe | MARCM - Summer | MARCM - Autumn | Pharmacology |
+| Dates | Dec 24 – Jan 25 | Apr – May 25 | Jul – Sep 25 | Oct – Nov 25 | Nov – Dec 25 |
+| Background intensity | 6/15 | 6/15 | **4/15** | 4/15 | 4/15 |
+| Repetitions | 3 | 3 | 3 | 3 | 3 |
+| Stimulus area | 30x30 px | 30x30 px | **30x30 px (33x33 for 6px)** | 30x30 px (33x33 for 6px) | **30x30 px** |
+| Contrast | ON or OFF | ON or OFF | ON or OFF | ON or OFF | ON or OFF |
+| 10s grey between reps | No | **Yes (from May 6)** | Yes | Yes | Yes |
+| 3s grey between blocks | No | No | No | **Yes (from Oct 21)** | Yes |
+| | | | | | |
+| **Square flashes** | | | | | |
+| 4px flash duration/interval | 160ms/340ms + 80ms/170ms | 160ms/340ms + 80ms/170ms | **160ms/440ms** | 160ms/440ms | **None** |
+| 6px flash duration/interval | - | - | **160ms/440ms** | 160ms/440ms | **None** |
+| | | | | | |
+| **Bar sweeps** | | | | | |
+| 28 dps | Yes | Yes | Yes | Yes | Yes |
+| 56 dps | Yes | Yes | Yes | Yes | Yes |
+| 168 dps | No | No | No | **Yes** | Yes |
+| 250 dps | No | No | No | No | **Yes** |
+| 500 dps | No | No | No | No | **Yes** |
+| Inter-sweep baseline | — | — | **1s** | 1s | 1s |
+| Dummy sweep | No | No | No | No | **Yes** |
+| | | | | | |
+| **Bar flashes** | | | | | |
+| 80ms bar flashes | - | - | - | **Yes (920ms interval)** | Yes (920ms interval) |
+| 14ms bar flashes | - | - | - | **Yes (486ms interval)** | Yes (486ms interval) |
+| Number of positions | — | — | — | **11** | 11 |
+| Position spacing | — | — | — | **1px (Oct 15–23), 2px (Oct 23+)** | 2px |
+: {.bordered}
+
+::: {.callout-note}
+### Numbers results files 
+
+| Version | Results file |
+|:-------|:-------------|
+| v1 | Spring2025_RNAi_Protocol2_Analysis |
+| v2 | Exp_Log_NestedRF_v2 |
+| v3 | Summer2025_MARCM_p2_analysis |
+| v4 | Autumn2025_MARCM_p2_analysis |
+| v5 | Autumn2025_T4T5_Pharma |
+:::
 
 
-### Bar Flash Parameters
+::: {.callout-important}
+### T4/T5 Autumn: Bar stimulus fix
+Remade patterns 0015 and 0016 (full field bar stimuli — dark bars at 6/8&pi; and 7/8&pi;) so that their "normal" and "flipped" directions match the sequence of the other bar orientations. Before they were moving from west to east, now changed to east to west.
+:::
 
-| Parameter | RNAi | DS Probe | T4/T5 Summer | T4/T5 Autumn | Pharmacology |
-|:----------|:-----|:----|:---------|:-------------|:-------------|
-| **80ms bar flashes** | - | - | - | Yes (920ms interval) | Yes (920ms interval) |
-| **14ms bar flashes** |  - | - | - | Yes (486ms interval) | Yes (486ms interval) |
-| **Number of positions** | - | - | - |  11 | 11 |
-| **Position spacing** |  - | - | - | 1px (Oct 15-23), 2px (Oct 23+) | 2px |
-
-
-### Timing Parameters
-
-| Parameter | RNAi | DS Probe | T4/T5 Summer | T4/T5 Autumn | Pharmacology |
-|:--------------|:-----|:----|:--------|:---------|:--------|
-| **10s background at start** | No | Yes (from May 6) | Yes | Yes | Yes |
-| **10s background between reps** | No | Yes (from May 6) | Yes | Yes | Yes |
-| **3s background between stimuli** | No | No | No | Yes (from Oct 21) | Yes |
-
+::: {.callout-important}
+### Pharmacology: "Dummy" sweep added (2025-11-20)
+At the beginning of each repetition, the slowest speed starts with one additional right-to-left sweep. This is then followed by the normal order of sweeps (left to right, then right to left). This extra sweep happens only for the slowest speed, at the beginning of each rep.
+:::
 
 ::: {.callout-important}
 #### Key Protocol 2 Changes Over Time
 
-1. **May 6th 2025:** Added 10s background intervals between repetitions amd at the start of the protocol.
+1. **May 6th 2025:** Added 10s background intervals between repetitions and at the start of the protocol.
 2. **July 2025:** Changed the background intensity from 6/15 to 4/15.
 3. **Oct 2025:** Added 168 dps sweeps and bar flashes (80ms and 14ms) to the protocol.
 4. **Oct 2025:** Introduced a 3s background interval between stimulus blocks for easier data parsing.
 5. **Oct 23rd 2025:** Changed bar flash position spacing from 1px to 2px increments.
-6. **Nov 2025:** Removed square flashes for pharmacology experiments, focusing solely on bar sweeps and flashes. Added 2 faster speeds. 
+6. **Nov 2025:** Removed square flashes for pharmacology experiments, focusing solely on bar sweeps and flashes. Added 2 faster speeds.
 :::
 
-
-## Timeline Overview
-
-The following table provides a chronological overview of all protocol versions used, linking dates to experiment types and data locations.
-
-### Protocol 1 Timeline
-
-| Date Range | Experiment Type | Key Changes | Data Location |
-|-------------|----------------|----------------|------|
-| Nov 27 - Dec 12, 2024 | Early testing | Initial version, 20kHz | `protocol1/LHS/protocol1_4reps_12px_6px_LHS_2sbkg _200msfl_50msint_11-27-24_15-02-95/` |
-| Dec 13, 2024 - Jan 23, 2025 | RNAi experiments | 10kHz sampling, 50ms interval, LHS | `protocol1/LHS/protocol1_10kHz_4reps_12px_6px_LHS_2sbkg_ 200msfl_50msint_12-13-24_14-33-03/` |
-| Apr 8 - May 4, 2025 | DS Probe (TmY3, TmY18, TmY5a, Tm5Y) | Switched to RHS | `protocol1/RHS/protocol1_10kHz_4reps_12px_6px_RHS_2sbkg_ 200msfl_50msint_04-08-25_08-08-42/` |
-| May 5 - May 9, 2025 | DS Probe (continued) | RHS v2 (pixels 81-180) shifted to more central part of arena | `protocol1/RHS/protocol1_10kHz_4reps_12px_6px_RHS2_2sbkg_ 200msfl_50msint_81_180_05-05-25_16-18-66/` |
-| Jul 10 - Nov 2025 | T4/T5 MARCM | 150ms interval, bkg4 | `protocol1/bkg4/protocol1_10kHz_4reps_12px_6px_LHS_2sbkg_ 200msfl_150msint_07-10-25_15-45-60/` |
-| Nov 14 - Dec 2025 | Pharmacology | 6px flashes only | `protocol1/bkg4/protocol1_10kHz_4reps_6pxONLY_LHS_2sbkg_ 200msfl_150msint_11-14-25_13-47-30/` |
-: {.bordered}
-
-### Protocol 2 Timeline
+### P2 Timeline
 
 | Date Range | Experiment Type | Key Changes | Data Location |
 |:-----------|:---------|:-------------|:--------------|
-| Dec 12, 2024 - Jan 23, 2025 | RNAi experiments | 160ms/80ms flashes, 28/56 dps sweeps | `protocol2/data/RNAi_ttl_2025/` |
-| Apr 8 - May 5, 2025 | DS Probe | Same as RNAi version | `protocol2/data/DS_v2/` |
-| May 6 - May 9, 2025 | DS Probe | Added 10s background between reps | `protocol2/data/DS_v2/` |
-| Jul 12 - Sep 12, 2025 | MARCM summer | Added 6px flashes, 440ms intervals | `protocol2/data/T4T5_Summer2025/` |
-| Oct 15 - Nov 17, 2025 | MARCM autumn | Added 168 dps sweeps, bar flashes | `protocol2/data/T4T5_autumn2025/` |
-| Nov 18 - Dec 22, 2025 | Pharmacology | No square flashes, 5 sweep speeds | `protocol2/data/Octopamine/`, `protocol2/data/CGP54626/` |
+| Dec 12, 2024 – Jan 23, 2025 | RNAi experiments | 160ms/80ms flashes, 28/56 dps sweeps | `protocol2/data/RNAi_ttl_2025/` |
+| Apr 8 – May 5, 2025 | DS Probe | Same as RNAi version | `protocol2/data/DS_v2/` |
+| May 6 – May 9, 2025 | DS Probe | Added 10s background between reps | `protocol2/data/DS_v2/` |
+| Jul 12 – Sep 12, 2025 | MARCM summer | Added 6px flashes, 440ms intervals | `protocol2/data/T4T5_Summer2025/` |
+| Oct 15 – Nov 17, 2025 | MARCM autumn | Added 168 dps sweeps, bar flashes | `protocol2/data/T4T5_autumn2025/` |
+| Nov 18 – Dec 22, 2025 | Pharmacology | No square flashes, 5 sweep speeds | `protocol2/data/Octopamine/`, `protocol2/data/CGP54626/` |
 : {.bordered}
-
-
 
 ___________________________________________________________________________
 
