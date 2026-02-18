@@ -211,6 +211,12 @@ The bar flash stimuli contains 11 different positions.
 From 2025_10_15 - 2025_10_23, the "central" bar flash is positioned in the middle of the 30 x 30 pixel area, then the 5 positions either side are this bar moved by 1 pixel increments and decrements from this position in the 8 different orientations.
 From 2024_10_23 onwards, these 5 other positions are the central bar moved by 2 pixel increments and decrements.
 
+::: {.callout-important}
+### Changed the full field bar stimuli 00015 and 00016
+Remade 0015 and 0016 full field bar stimuli - corresponds to dark bars 6/8pi and 7/8pi - so that their "normal" and "flipped" directions match the sequence of the other bar orientations. Before they were moving from west to east, but now changed so that they're moving from east to west. 
+:::
+
+
 ::: {.callout-note}
 ### Results file:
 "Autumn2025_MARCM_p2_analysis". Data: 2025_10_15 to 2025_11_17
@@ -244,6 +250,11 @@ There are 88 bar flash stimuli. 8 different orientations. Bar centred on the 30 
 ::: {.callout-note}
 ### Results file:
 "Autumn2025_T4T5_Pharma". Data: 2025_11_18 to 2025_12_22
+:::
+
+::: {.callout-important}
+### 2025-11-20: "Dummy" sweep added
+At the beginning of each repetition through the stimuli, the slowest speed starts with one additional right to left sweep. This is then followed by the normal order of sweeps (left to right, then right to left). This extra sweep happens only for the slowest speed, but at the beginning of each rep. 
 :::
 
 _______________________________
