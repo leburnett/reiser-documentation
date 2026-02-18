@@ -10,9 +10,9 @@ title: "Rig Specs"
 | Room | 2E.270.3 | 
 | Arena circumference (panels) | 18 | 
 | Pixels per panel |256 (16 x 16) | 
-| Panels (width) | 11 | 
+| Panels (width) | 12 | 
 | Panels (height) | 3 | 
-| Pattern size (pixels) | 193 x 48 | 
+| Pattern size (pixels) | 192 x 48 | 
 | Degrees per pixel | 1.25 | 
 | Arena size (Degrees of visual field) | 240 x 60 degrees| 
 | LED wavelength | Green (xnm) | 
