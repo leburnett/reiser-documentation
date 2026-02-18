@@ -161,10 +161,10 @@ ___________________________________________________________________________
 
 ### metadata.mat / metadata_*.mat
 
-Contains experiment metadata including:
-- Fly genotype/strain
-- Experimenter notes
-- Protocol parameters used
+Contains experiment metadata including:\
+- Fly genotype/strain\
+- Experimenter notes\
+- Protocol parameters used\
 - Date and time of experiment
 
 ### exp_order.mat
@@ -180,16 +180,16 @@ Contains processed analysis results including:
 
 ### G4_TDMS_Logs_*.mat
 
-MATLAB-converted version of the raw TDMS log files, containing:
-- ADC voltage recordings (electrophysiology data)
-- Frame position data (stimulus timing)
+MATLAB-converted version of the raw TDMS log files, containing:\
+- ADC voltage recordings (electrophysiology data)\
+- Frame position data (stimulus timing)\
 - Timestamps
 
 ### TDMS Files
 
-Raw data files from the G4 display system:
-- `*_ADC0_Volts.tdms` - Channel 0 voltage (typically membrane potential)
-- `*_ADC1_Volts.tdms` - Channel 1 voltage (if used)
-- `*_ADC0_Time.tdms` / `*_ADC1_Time.tdms` - Timestamps
-- `*_Frame_Position.tdms` - Current frame being displayed
+Raw data files from the G4 display system:\
+- `*_ADC0_Volts.tdms` - Channel 0 voltage (typically membrane potential)\
+- `*_ADC1_Volts.tdms` - Channel 1 voltage (if used)\
+- `*_ADC0_Time.tdms` / `*_ADC1_Time.tdms` - Timestamps\
+- `*_Frame_Position.tdms` - Current frame being displayed\
 - `*_Frame_Time.tdms` - Frame timing
