@@ -2,7 +2,6 @@
 title: "Experiment Logging System"
 ---
 
-## Automatic logging of experiments using a google form.
 As well as recording which experiments were run in a physical lab book, the running of any "protocol_X" script will automatically log the experiment using an in-built [google form](https://docs.google.com/spreadsheets/d/1IsT3YndxAy3yN8o38r5RGK4dZsEdPXe0In4-OTEcXNw/edit?resourcekey=&gid=35583985#gid=35583985). This process works by feeding the parameter "params" into a pre-made google form which then exports the results to a google sheet.
 
 When any protocol is started by clicking on the "Run" button within the MATLAB editor, the function `get_input_parameters()` is run which opens a pop up window where the user can fill in details about the current experiment using a series of dropdown boxes (See figure). These values are assigned to fields within the struct `params` which is returned by the function.

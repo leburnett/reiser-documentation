@@ -2,14 +2,48 @@
 title: "Rig Specs"
 ---
 
-These protocols are designed to run on the Reiser Lab's G3 18 x 3 LED panel setup.
+These protocols are designed to run on the Reiser Lab's G3 24 x 3 LED panel setup.
 
-[0000 - PNG of setup - annotated]
+### LED arena
 
-- 18 panel circumeference.
-- 3 panel height.
-- Each panel is 8 x 8 pixels, so the arena is 18 x 8 = 144 pixels wide and 3 x 8 = 24 pixels high.
-- Each pixel is 1.875 degrees of visual angle per pixel and covers 360 degrees of visual angle along the azimuth and 45 degrees of visual angle along the elevation.
-- The LEDS are green LEDs with a peak wavelength of ~570 nm.
+The arena consists of 24 panels arranged in a full cylinder (360° azimuth), 3 panels high. Each panel is 8 x 8 pixels, giving a total resolution of 192 pixels wide by 24 pixels high. The LEDs are green with a peak wavelength of ~570 nm.
+
+| Parameter | Value | Units |
+|:----------|:------|:------|
+| Panel layout | 24 x 3 | panels |
+| Resolution | 192 x 24 | pixels |
+| Visual angle per pixel | 1.875 | degrees |
+| Azimuth coverage | 360 | degrees |
+| Elevation coverage | 45 | degrees |
+| LED wavelength | ~570 | nm (green) |
+| Greyscale levels | 1-bit (2), 2-bit (4), 3-bit (8), or 4-bit (16) | — |
+: {.bordered}
+
+### Arena geometry
+
+The following constants are used throughout the processing code for converting between pixel coordinates and physical distances:
+
+| Parameter | Value | Units |
+|:----------|:------|:------|
+| Arena radius | 119.0 (496 px) | mm |
+| Arena center | [126.6, 124.7] ([528, 520] px) | mm |
+| Pixels per mm (PPM) | 4.1691 | px/mm |
+| Camera frame rate | 30 | fps |
+: {.bordered}
+
+### Software requirements
+
+| Software | Purpose |
+|:---------|:--------|
+| MATLAB | Protocol execution, data processing, analysis |
+| Statistics and Machine Learning Toolbox | Statistical tests |
+| Image Processing Toolbox | Video processing |
+| Circular Statistics Toolbox | Phototaxis analysis |
+| [G4_Display_Tools](https://github.com/JaneliaSciComp/G4_Display_Tools) | LED panel control (`panel_com`) |
+| [FlyTracker](https://github.com/kristinbranson/FlyTracker) | Video tracking (produces `trx.mat`, `feat.mat`) |
+| [JAABA](https://github.com/kristinbranson/JAABA) | Required for stimulus video generation |
+| BIAS (SimpleBiasCameraInterface) | Camera acquisition (.ufmf recording) |
+| PControl | MATLAB GUI for connecting to LED panels |
+: {.bordered}
 
 There is a lot of useful, and more detailed documentation on the specifications of the G3 arena and how to design and run protocols [here](https://reiserlab.github.io/Modular-LED-Display/Generation%203/Software/docs/g3_user-guide.html).

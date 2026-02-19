@@ -4,8 +4,32 @@ title: "Analysing a new protocol"
 
 If you create a new protocol for the freely-walking arena, you should be able to make simple overview plots using the same "cohort level" analysis code described [here](freely_walking_analysis.qmd#level-1---analyse-per-cohort-process_freely_walking_data) since this analysis doesn't need any knowledge of the conditions and stimuli used in the protocol. However, the second level of analysis might not work automatically and might not do what you want anyway.
 
+### Level 1 — per-cohort overview plots
 
-[pink /blue rects in overview plots - how this needs to be updated.]
+The Level 1 pipeline (`process_freely_walking_data` → `process_data_features`) works for any protocol because it processes the full recording without needing condition information. It produces:
 
+- Locomotion histograms (forward velocity, angular velocity, turning rate distributions)
+- Full-experiment timeseries with coloured background rectangles marking each condition
 
-You probably want to return the 'DATA' sturcture with the behavioural data parsed by condition. `comb_data_across_cohorts_cond` should be able to do this automatically if the protocol saves the condition number to the LOG file. From this structure many things can be looked at and plotted.
+The coloured rectangles in the overview timeseries plots are generated from the LOG file's condition timing. If your new protocol logs conditions in the same format (i.e. `LOG.log_1`, `LOG.log_2`, etc. with `start_f` and `stop_f` fields), these rectangles will appear automatically. If your protocol uses a different LOG structure, you will need to update the plotting code to match.
+
+### Level 2 — condition-parsed analysis
+
+For condition-level analysis, you need the `DATA` structure with behavioural data parsed by condition. The function `comb_data_across_cohorts_cond` should be able to do this automatically **if** the protocol saves the condition number to the LOG file.
+
+To ensure compatibility, your protocol script should define an `all_conditions` matrix with the following 7-column format:
+
+```matlab
+all_conditions = [
+    pattern_id, interval_id, speed_patt, speed_int, trial_dur, int_dur, condition_n;
+    ...
+];
+```
+
+Where `condition_n` is an integer identifying each unique stimulus condition. This value is written to the LOG file during the experiment and used by the parsing functions to group data by condition.
+
+::: {.callout-note}
+Older protocols that do not save condition numbers to the LOG file cannot be processed with `comb_data_across_cohorts_cond`. Protocol-specific parsing functions (e.g. `comb_data_across_cohorts_cond_v14`) exist for some earlier protocols.
+:::
+
+From the resulting `DATA` structure, behavioural metrics can be extracted per condition and plotted using the existing plotting functions (e.g. `plot_allcond_acrossgroups_tuning`, `plot_boxchart_metrics_xcond`).

@@ -4,7 +4,7 @@ title: "Quickstart"
 
 ## Designing and running a protocol
 
-Patterns for the G3 arena can be generated using the `G4_pattern_generator_gui`, but for this screen all patterns and function were made from scratch using custom scripts and the protocols themselves are run through custom scripts that present the patterns using the `panel_com` class of functions from the `G4_Display_Tools` repository.
+Patterns for the G3 arena can be generated using the `G4_pattern_generator_gui`, but for this screen all patterns and position functions were made from scratch using custom scripts and the protocols themselves are run through custom scripts that present the patterns using the `panel_com` class of functions from the `G4_Display_Tools` repository.
 
 The scripts for making the different patterns can be found within the repository [here](https://github.com/leburnett/freely-walking-optomotor/tree/main/script_to_make_patterns).
 
@@ -12,19 +12,19 @@ The scripts for the protocols themselves can be found within the repository [her
 
 ## How to run a protocol
 
-- Arena on and controller on.
-- BIAS open
-- PControl open in MATLAB
-- Camera open to view flies live in the arena (visible light).
-- Run MATLAB protocol script.
+1. Power on the LED arena and the controller.
+2. Open **BIAS** (SimpleBiasCameraInterface) — this is the camera acquisition software that records the .ufmf video. Ensure the IR illumination is on and the camera is acquiring at 30 fps.
+3. Open **PControl** in MATLAB and verify it connects to the LED panels.
+4. Use the live camera view to confirm the flies are visible in the arena.
+5. Load the flies into the arena and allow them to settle.
+6. Run the MATLAB protocol script (e.g. `protocol_27.m`). The script handles the full stimulus sequence including acclimation periods, stimulus presentation, and data logging.
+7. After the protocol finishes, transfer the data folder to the processing computer and run FlyTracker to generate tracking output.
 
-The protocol used for the Motion-Induced Centring screen was protocol 27. 
-
+The protocol used for the Motion-Induced Centring screen was [protocol 27](protocols/freely_walking_protocol_27.qmd). This protocol presents 12 stimulus conditions (gratings, bars, curtains, reverse-phi, flicker, and a fixation bar) with 15 s stimulus trials separated by 20 s dark intervals, repeated twice. A 5-minute dark acclimation precedes the stimulus block.
 
 ## Analysing the data
 
-There are two levels to the analyis of the data from the 'protocol_27' screen.
+The analysis pipeline is described in detail on the [analysis page](freely_walking_analysis.qmd). In brief, data processing proceeds in two levels:
 
-The first level is done for every run of the protocol (i.e. each individual vial of flies run) and is done by running the script `process_freely_walking_data()` ([code](https://github.com/leburnett/freely-walking-optomotor/blob/processing_computer/processing_functions/process_freely_walking_data.m)). This function requires a string `date_to_analyse` which should the name of the directory that was generated for the day's experiments. It should be in the format 'YY_MM_DD'. This function returns a number of figures and results files for each individual experiments (run of the protocol / vial of flies).
-
-The second level is done after running the protocol for multiple vials of multiple strains and is done by running the script `process_screen_data` ([code](https://github.com/leburnett/freely-walking-optomotor/blob/processing_computer/processing_functions/process_screen_data.m)). This function requires a string `protocol` which is a string of the protocol number that you would like to process all of the data for, in this case `protocol = 'protocol_27'`. This function combines the data across all of the individual experiments and strains and creates timeseries plots comparing the behaviour of each strain of fly against the empty-split control flies.
+1. **Level 1** — per-cohort processing via `process_freely_walking_data()`, which generates overview figures and results files for each individual vial of flies.
+2. **Level 2** — cross-cohort analysis via `process_screen_data()`, which combines data across all strains and cohorts and creates comparison plots against the empty-split control flies.

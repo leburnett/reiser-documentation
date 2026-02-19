@@ -2,20 +2,24 @@
 title: "Data Organisation"
 ---
 
-Here is a link to the [google sheet](https://docs.google.com/spreadsheets/d/1IsT3YndxAy3yN8o38r5RGK4dZsEdPXe0In4-OTEcXNw/edit?resourcekey=&gid=35583985#gid=35583985)  with the automatic logging of experiments. 
+::: {.callout-important}
+Here is a link to the [google sheet](https://docs.google.com/spreadsheets/d/1IsT3YndxAy3yN8o38r5RGK4dZsEdPXe0In4-OTEcXNw/edit?resourcekey=&gid=35583985#gid=35583985)  with the automatic logging of experiments.
+:::
 
 ::: {.callout-note}
 ### How to set up the automatic logging system
-Here is the [documentation](freely_walking_logging_system.qmd) on how the automatic logging system was set up. 
+Here is the [documentation](freely_walking_logging_system.qmd) on how the automatic logging system was set up.
 :::
+
+## Raw data
 
 Each protocol run generates:
 
-- **Video**: UFMF format via SimpleBiasCameraInterface
+- **Video**: UFMF format via SimpleBiasCameraInterface (compressed — stores frame differences, not full frames)
 - **LOG.mat**: Trial timing, conditions, temperature, metadata
 - **Google Sheets**: Optional export for experiment tracking
 
-Output folder structure:
+Raw data folder structure:
 ```
 project_data_folder/
   YYYY-MM-DD/
@@ -27,6 +31,73 @@ project_data_folder/
             video.ufmf
 ```
 
+## Tracking output
+
+After recording, FlyTracker processes the .ufmf video and generates two files saved within a subdirectory:
+
+| File | Description |
+|:-----|:------------|
+| `trx.mat` | Trajectory data — a MATLAB table with one row per tracked fly. Each row contains arrays of x position, y position, heading, and timestamps across all video frames. |
+| `*-feat.mat` | Behavioural features computed by FlyTracker — includes distance from arena edge, wing angles, body length, and other morphological/behavioural measurements per frame. |
+: {.bordered}
+
+Both files have arrays of the same length corresponding to the total number of frames in the video. The `trx` data provides the spatial coordinates and heading used for computing velocities, while `feat` provides arena-relative measurements like distance from the wall.
+
+## LOG.mat structure
+
+The LOG file records the timing and metadata for every part of the experiment. It is structured as follows:
+
+| Field | Contents |
+|:------|:---------|
+| `LOG.meta` | Experiment metadata: fly strain, sex, date, time, protocol name |
+| `LOG.acclim_off1` | Pre-stimulus dark acclimation (typically 300 s) |
+| `LOG.acclim_patt` | Pattern flash acclimation (calibration flash) |
+| `LOG.log_1` ... `LOG.log_N` | Per-condition stimulus timing (one field per condition per repetition) |
+| `LOG.acclim_off2` | Post-stimulus dark acclimation (typically 30 s) |
+: {.bordered}
+
+Each stimulus log entry (e.g. `LOG.log_1`) contains:
+
+| Field | Description |
+|:------|:------------|
+| `start_t` / `stop_t` | Start and stop timestamps (seconds) |
+| `start_f` / `stop_f` | Start and stop frame numbers (at 30 fps) |
+| `optomotor_pattern` | Pattern ID used for this condition |
+| `optomotor_speed` | Speed value (0–127 scale) |
+| `condition` | Condition number |
+: {.bordered}
+
+## Processed data
+
+After running the processing pipeline (`process_freely_walking_data`), results are saved as `*_data.mat` files within the results directory. Each file contains:
+
+| Variable | Description |
+|:---------|:------------|
+| `LOG` | The original LOG structure |
+| `feat` | FlyTracker features with poorly tracked flies removed |
+| `trx` | FlyTracker trajectories with poorly tracked flies removed |
+| `comb_data` | Combined behavioural metrics — struct with fields for each metric (e.g. `fv_data`), each containing a `[n_flies x n_frames]` array |
+| `n_fly_data` | `[3 x 1]` array: [n_flies_in_arena, n_flies_tracked, n_flies_removed] |
+: {.bordered}
+
+## Condition naming convention
+
+When data is parsed by condition using `comb_data_one_cohort_cond` or `comb_data_across_cohorts_cond`, the resulting DATA structure uses the following condition names:
+
+- `acclim_off1` — pre-stimulus dark acclimation
+- `acclim_patt` — calibration flash acclimation
+- `R1_condition_1` ... `R1_condition_N` — first repetition, conditions 1 through N
+- `R2_condition_1` ... `R2_condition_N` — second repetition, conditions 1 through N
+- `acclim_off2` — post-stimulus dark acclimation
+
 ## Where to locate the data
 
+Raw data and results are stored within the project data directory, organised by date, protocol, strain, and sex. The results from the processing pipeline are saved in a parallel `results/` directory:
 
+```
+results/
+  protocol_name/
+    strain/
+      sex/
+        YYYYMMDD_HHMMSS_strain_protocol_sex_data.mat
+```

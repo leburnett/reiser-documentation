@@ -2,16 +2,23 @@
 title: "Overview"
 ---
 
-This documentation outlines the creation, execution, and analysis of behavioural experiments using the G3 LED arena setup in the Reiser Lab at HHMI’s Janelia Research Campus performed as part of the <b>Freely walking course control mechanisms</b> screen conducted in <b>2025</b>. 
+This documentation outlines the creation, execution, and analysis of behavioural experiments using the G3 LED arena setup in the Reiser Lab at HHMI's Janelia Research Campus performed as part of the <b>Freely walking course control mechanisms</b> screen conducted in <b>2025</b>.
+
+The screen measures optomotor responses, motion-induced centring behaviour, and general locomotion metrics in freely-walking *Drosophila*. Flies are presented with moving visual stimuli (gratings, bars, flicker, curtains, reverse-phi) while their trajectories are tracked at 30 fps. Behavioural metrics including forward velocity, angular velocity, turning rate, and spatial distribution are then computed and compared across genotypes.
 
 ______________________
 
 The experiment protocol was designed by Laura Burnett and experiments were conducted by Laura Burnett and <b>Aparna Dev</b> from PTR. All fly husbandry was carried out by <b>Edward Rogers</b>.
 
-This documentation includes information on how to [design and run](Freely-walking/freely_walking_how_to_run_exp.qmd) protocols, [analyse]() the data, as well as the [specifications](Freely-walking/freely-walking-rig-specs.qmd) of the arena.
+This documentation includes information on how to [design and run](freely_walking_how_to_run_exp.qmd) protocols, [analyse](freely_walking_analysis.qmd) the data, as well as the [specifications](freely-walking-rig-specs.qmd) of the arena.
 
 ______________________
 
-For clarity, this documentation will centre on how to run and analyse the specific [protocol](Freely-walking/protocols/freely_walking_protocol_27.qmd) that was used in the screen experiments (`protocol_27.mat`). 
+For clarity, this documentation will centre on how to run and analyse the specific [protocol](protocols/freely_walking_protocol_27.qmd) that was used in the screen experiments (`protocol_27.mat`).
 
 Other protocols that were run on this arena can be found within the `protocols` [folder](https://github.com/leburnett/freely-walking-optomotor/tree/main/protocols) of the repository, but they are not documented here.
+
+::: {.callout-note}
+### Auto-generated pages
+The individual [pattern](freely_walking_patterns_index.qmd) and [protocol](freely_walking_protocols_index.qmd) documentation pages are auto-generated from the code repository using Python scripts in the `docs_generator/` folder. See the pattern and protocol index pages for instructions on regenerating these pages after making changes.
+:::

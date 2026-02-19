@@ -2,37 +2,50 @@
 title: "Visualisation"
 ---
 
-# Create per condition vidoes with `generate_circ_stim_ufmf`
+# Create per-condition videos with `generate_circ_stim_ufmf`
 
-This function can be used to generate .mp4 videos of each individual condition within an experiment. These videos contain the behavioural video of the flies, recorded in IR, with the visual stimulus displayed around the outside of this circular image. 2s trajectories of the flies are superimposed on to the image and only every other frame from the behavioural video is used so the videos are 2x the speed of real time.
+This function generates .mp4 videos for each individual condition within an experiment. Each video contains:
 
-It should be run within each experiment's directory - for instance: "/Users/burnettl/Documents/Projects/oaky_cokey/data/2025_04_18/protocol_27/2575_LPC1_shibire_kir/F/15_58_42". In order to work, inside this directory there should be:
+- The **behavioural video** of the flies (recorded in IR)
+- The **visual stimulus** displayed as a ring around the outside of the circular arena image, reconstructed from the pattern file used during the experiment
+- **2-second trajectory traces** of the flies superimposed on the image
 
-- the .ufmf video of the entire experiment.
-- the .mat LOG file.
-- a directory containing the 'trx.mat' file containing the output from FlyTracker.
+The videos are played at **2x real time** — only every other frame from the original 30 fps video is used.
 
-It also requires the JAABA repository to be downloaded and saved locally on the computer.
-A folder containing the patterns used within the experiments should also be available since these videos used the metadata from the experiment to open the exact pattern used and use that to generate the stimulus pattern within the video.
+### Requirements
 
-If no inputs are used when running the function, then the function defaults to generating the stimulus videos for all conditions within the experiment. Otherwise, if an array is inputted then only videos for those conditions will be made.
+The function should be run from within each experiment's directory. Inside this directory there must be:
 
-[Fig. X] - Screenshot of a single frame of this stim-cond video.
+- The `.ufmf` video of the entire experiment
+- The `.mat` LOG file
+- A subdirectory containing `trx.mat` from FlyTracker
 
+The function also depends on two external resources:
 
-## Detailed description of how this script runs:
+- The **JAABA repository** (for video reading utilities)
+- The **patterns folder** (`patterns/Patterns_optomotor/`) — the function reads the LOG metadata to determine which pattern was used for each condition and opens the corresponding `.mat` pattern file to reconstruct the stimulus display
 
-Requires LOG, ufmf video, trx
+### Usage
 
-Logged during the experiment - the frame numbers at the beginning and end of each condition, the pattern used for each condition.
-These are then used to open the appropriate pattern from within the "pattern_optomotor" folder.
-At the moment, the speed is not linked to the actual speed of the experiment.
-These videos are 2x real time. Only every other frame of the original video is used.
+```matlab
+% Generate videos for all conditions in the current experiment directory
+generate_circ_stim_ufmf()
 
-This function then calls `create_stim_video_loop.m` ["plotting_functions/videos"].
+% Generate videos for specific conditions only
+generate_circ_stim_ufmf([1, 3, 5])
+```
 
-Things that need to be updated if run on a different computer:
+The function iterates through each condition logged in the LOG file, determines the repetition number (rep 1 if condition index ≤ n_conditions, rep 2 otherwise), and calls `create_stim_video_loop` to render each video.
 
-- Path to the patterns.
-- Path to the JAABA repository.
-- Output directory.
+::: {.callout-important}
+### Computer-specific paths
+The following paths are hardcoded and must be updated if running on a different computer:
+
+- **Path to the JAABA repository** — currently set to `/Users/burnettl/Documents/Non-GitHub-Repos/JAABA-master`
+- **Path to the patterns folder** — must point to the `patterns/Patterns_optomotor/` directory
+- **Output directory** — where the generated .mp4 files are saved
+:::
+
+::: {.callout-note}
+The stimulus speed shown in the video is not currently linked to the actual speed used during the experiment — the pattern animation plays at a fixed rate.
+:::
