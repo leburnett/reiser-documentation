@@ -1,5 +1,48 @@
 ---
-title: "Overview"
+title: "Reiser Lab Documentation"
 ---
 
-This documentation covers the setup specifications and how to <b>design</b>, <b>run</b> and <b>analyse</b> experiments using the LED panel setups for experiments with <i>Drosophila melanogaster</i> within the Reiser Lab at HHMI's Janelia Research Campus.
+This documentation covers how to **design**, **run**, and **analyse** experiments using LED panel arena setups for experiments with *Drosophila melanogaster* within the Reiser Lab at HHMI's Janelia Research Campus.
+
+## How to use this documentation
+
+Each experiment section follows a consistent structure designed to serve different needs:
+
+| Tier | What it contains | Who it's for |
+|:-----|:-----------------|:-------------|
+| **Overview** | Project summary, experiment workflow, and links to all pages in the section | Anyone getting oriented with a project |
+| **Quickstart** | Prerequisites checklist and quick-reference steps for running, making, and analysing protocols | Experienced users who need a quick refresher, or new users who want to get started fast |
+| **Rig Specs** | Arena hardware, software requirements, and calibration constants | Anyone setting up or troubleshooting the physical rig |
+| **Deep Dives** | Detailed protocol descriptions, stimulus generation, analysis pipelines, and data structures | Users who need to understand *how* and *why* things work |
+| **Reference** | Code architecture, data formats, experiment logs, and visualisation tools | Users looking up specific technical details |
+| **Help** | Troubleshooting guides organised by experiment stage, common errors, and quality control checks | Anyone who has hit a problem |
+: {.bordered}
+
+::: {.callout-tip}
+### Where to start
+**New to a project?** Start with the **Quickstart** page for that section — it has a prerequisites checklist and the essential steps to run and analyse an experiment. Then check the **Rig Specs** page for hardware and software details.
+
+**Something not working?** Jump straight to the **Troubleshooting** page at the bottom of each section's sidebar.
+:::
+
+## Experiment sections
+
+### [Freely-walking experiments](Freely-walking/index.qmd)
+
+Behavioural experiments measuring optomotor responses, motion-induced centring, and locomotion in freely-walking *Drosophila* using the **G3 LED arena**. Part of the Freely Walking Course Control Mechanisms screen (2025).
+
+&rarr; [Quickstart](Freely-walking/freely_walking_quickstart.qmd)
+
+### [Electrophysiology experiments](Ephys/index.qmd)
+
+Patch electrophysiology experiments characterising receptive field structure and direction selectivity of visual neurons using the **G4 LED arena**. Includes the Nested RF Protocol and DS Probe Protocol (2024–2025).
+
+&rarr; [Nested RF Quickstart](Ephys/ephys_nested_rf.qmd)
+
+### [Tethered flight experiments](Tethered/index.qmd)
+
+Two-alternative forced choice experiments with tethered flying *Drosophila* using the **G4 LED arena**. *(Documentation in progress.)*
+
+___________________________________________________________________________
+
+See the [Resources](resources.qmd) page for links to GitHub repositories, G4 software tools, and external LED Display documentation.

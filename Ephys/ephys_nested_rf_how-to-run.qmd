@@ -8,7 +8,7 @@ Before running either protocol, ensure:
 
 - [ ] The G4 arena is powered on and connected
 - [ ] MATLAB is open with the `nested_RF_stimulus` source folders on the path
-- [ ] G4_Display_Tools is installed and configured (see [Getting Started](ephys_nested_rf_getting-started.qmd))
+- [ ] G4_Display_Tools is installed and configured (see [Installation & Setup](ephys_nested_rf_getting-started.qmd))
 - [ ] The `userSettings.m` file points to the correct directories
 - [ ] The PanelsController can connect to the arena (test by running `PanelsController` in the MATLAB Command Window)
 

@@ -1,22 +1,63 @@
 ---
-title: "Overview"
+title: "Freely-walking Experiments"
 ---
 
-This documentation outlines the creation, execution, and analysis of behavioural experiments using the G3 LED arena setup in the Reiser Lab at HHMI's Janelia Research Campus performed as part of the <b>Freely walking course control mechanisms</b> screen conducted in <b>2025</b>.
-
-The screen measures optomotor responses, motion-induced centring behaviour, and general locomotion metrics in freely-walking *Drosophila*. Flies are presented with moving visual stimuli (gratings, bars, flicker, curtains, reverse-phi) while their trajectories are tracked at 30 fps. Behavioural metrics including forward velocity, angular velocity, turning rate, and spatial distribution are then computed and compared across genotypes.
+The **Freely Walking Course Control Mechanisms** screen was conducted in **2025** using the G3 LED arena in the Reiser Lab at HHMI's Janelia Research Campus. The screen measures optomotor responses, motion-induced centring behaviour, and general locomotion metrics in freely-walking *Drosophila*. Flies are presented with moving visual stimuli (gratings, bars, flicker, curtains, reverse-phi) while their trajectories are tracked at 30 fps.
 
 ______________________
 
-The experiment protocol was designed by Laura Burnett and experiments were conducted by Laura Burnett and <b>Aparna Dev</b> from PTR. All fly husbandry was carried out by <b>Edward Rogers</b>.
+The experiment protocol was designed by Laura Burnett and experiments were conducted by Laura Burnett and **Aparna Dev** from PTR. All fly husbandry was carried out by **Edward Rogers**.
 
-This documentation includes information on how to [design and run](freely_walking_how_to_run_exp.qmd) protocols, [analyse](freely_walking_analysis.qmd) the data, as well as the [specifications](freely-walking-rig-specs.qmd) of the arena.
+::: {.callout-tip}
+### New to this project?
+Start with the [Quickstart](freely_walking_quickstart.qmd) page for step-by-step instructions on running, creating, and analysing experiments. See the [Rig Specs](freely-walking-rig-specs.qmd) page for hardware and software requirements. If something goes wrong, check the [Troubleshooting](freely_walking_troubleshooting.qmd) page.
+:::
 
-______________________
+## Experiment workflow
 
-For clarity, this documentation will centre on how to run and analyse the specific [protocol](protocols/freely_walking_protocol_27.qmd) that was used in the screen experiments (`protocol_27.mat`).
+The typical workflow for running the freely-walking screen is:
 
-Other protocols that were run on this arena can be found within the `protocols` [folder](https://github.com/leburnett/freely-walking-optomotor/tree/main/protocols) of the repository, but they are not documented here.
+```
+    ┌──────────────────────────────┐
+    │  Prepare arena               │
+    │                              │
+    │  Power on arena, open BIAS   │
+    │  and PControl, load flies    │
+    └──────────────┬───────────────┘
+                   │
+                   ▼
+            ┌──────────────────────────────┐
+            │  Run protocol (~17 min)      │
+            │                              │
+            │  Run protocol_27.m in MATLAB │
+            │  5 min acclimation + 12      │
+            │  conditions x 2 reps         │
+            └──────────────┬───────────────┘
+                           │
+                           ▼
+                    ┌──────────────────────────────┐
+                    │  Track flies                  │
+                    │                               │
+                    │  Run FlyTracker on .ufmf      │
+                    │  video → trx.mat + feat.mat   │
+                    └──────────────┬────────────────┘
+                                  │
+                                  ▼
+                           ┌──────────────────────────────┐
+                           │  Analyse                      │
+                           │                               │
+                           │  process_freely_walking_data  │
+                           │  then process_screen_data     │
+                           └───────────────────────────────┘
+```
+
+## Code availability
+
+The code for generating and running these protocols is publicly available [here](https://github.com/leburnett/freely-walking-optomotor).
+
+## Data availability
+
+See the [Data Organisation](freely_walking_data.qmd) page for details on where data is stored and how it is structured.
 
 ::: {.callout-note}
 ### Auto-generated pages

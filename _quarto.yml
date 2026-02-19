@@ -9,7 +9,7 @@ website:
   title: ""
   description: "Documentation on experiments run on G3/G4 LED arena setups in the Reiser Lab at HHMI Janelia Research Campus."
   page-footer:
-    center: "Page generated on {{< meta buildtime >}}" 
+    center: "Page generated on {{< meta buildtime >}}"
   repo-url: https://github.com/leburnett/reiser-documentation
   favicon: /assets/favicon/favicon.ico
 
@@ -19,8 +19,6 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "G4 Software"
-        href: G4%20Software/index.qmd
       - text: "Freely-walking"
         href: Freely-walking/index.qmd
       - text: "Electrophysiology"
@@ -29,22 +27,17 @@ website:
         href: Tethered/index.qmd
       - text: "Resources"
         href: resources.qmd
-    right: 
+    right:
       - icon: github
         href: https://github.com/leburnett?tab=repositories
 
   sidebar:
-    - title: "G4 Software"
-      contents:
-        - G4 Software/index.qmd
-
     - title: "Freely-walking"
       collapse-level: 1
       contents:
         - Freely-walking/index.qmd
-        - Freely-walking/freely_walking_how_to_run_exp.qmd
+        - Freely-walking/freely_walking_quickstart.qmd
         - Freely-walking/freely-walking-rig-specs.qmd
-        - Freely-walking/freely_walking_data.qmd
         - section: "Protocols"
           contents:
             - Freely-walking/freely_walking_protocols_index.qmd
@@ -56,9 +49,13 @@ website:
           contents:
             - Freely-walking/freely_walking_analysis.qmd
             - Freely-walking/freely-walking-analysis-new-protocol.qmd
-        - Freely-walking/freely_walking_visualisation.qmd
-        - Freely-walking/freely_walking_observations.qmd
-    
+        - section: "Reference"
+          contents:
+            - Freely-walking/freely_walking_data.qmd
+            - Freely-walking/freely_walking_visualisation.qmd
+            - Freely-walking/freely_walking_observations.qmd
+        - Freely-walking/freely_walking_troubleshooting.qmd
+
     - title: "Electrophysiology"
       collapse-level: 1
       contents:
@@ -94,7 +91,7 @@ website:
                 - Ephys/ephys_nested_rf_code-architecture.qmd
                 - Ephys/ephys_nested_rf_data_structure.qmd
                 - Ephys/ephys_nested_rf_exp_log.qmd
-                - Ephys/ephys_nested_rf_troubleshooting.qmd
+            - Ephys/ephys_nested_rf_troubleshooting.qmd
         - section: "DS Probe Protocol"
           contents:
             - Ephys/ephys_ds_probe_protocol.qmd
@@ -115,7 +112,7 @@ format:
     toc-depth: 3
     code-copy: true
     code-overflow: wrap
-    
+
   pdf:
     documentclass: scrartcl
     toc: true

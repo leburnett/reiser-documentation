@@ -63,7 +63,7 @@ The analysis generates figures and saves results to the following locations:
 : {.bordered}
 
 ::: {.callout-note}
-The `PROJECT_ROOT` variable in `process_protocol2.m` determines where results and figures are saved. If you are running this on a different computer, you may need to update this path. See [Getting Started](ephys_nested_rf_getting-started.qmd) for details.
+The `PROJECT_ROOT` variable in `process_protocol2.m` determines where results and figures are saved. If you are running this on a different computer, you may need to update this path. See [Installation & Setup](ephys_nested_rf_getting-started.qmd) for details.
 :::
 
 ### How the data is organised

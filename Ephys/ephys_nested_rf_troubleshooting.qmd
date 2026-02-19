@@ -22,13 +22,13 @@ Also verify that G4_Display_Tools is on the path: `which PanelsController` shoul
 
 **Symptom:** `Undefined function 'circ_vmpar'` during analysis.
 
-**Solution:** Install the Circular Statistics Toolbox from the MATLAB Add-On Explorer. See [Getting Started](ephys_nested_rf_getting-started.qmd).
+**Solution:** Install the Circular Statistics Toolbox from the MATLAB Add-On Explorer. See [Installation & Setup](ephys_nested_rf_getting-started.qmd).
 
 ### Hardcoded path errors
 
 **Symptom:** File not found errors referencing `C:\matlabroot\...` or `/Users/burnettl/...`.
 
-**Solution:** Several files contain hardcoded paths specific to the original rig. Update them for your system — see the [hardcoded paths table](ephys_nested_rf_getting-started.qmd#hardcoded-paths-to-update) in Getting Started.
+**Solution:** Several files contain hardcoded paths specific to the original rig. Update them for your system — see the [hardcoded paths table](ephys_nested_rf_getting-started.qmd#hardcoded-paths-to-update) in Installation & Setup.
 
 ___________________________________________________________________________
 

@@ -1,0 +1,58 @@
+---
+title: "Quickstart"
+---
+
+::: {.callout-tip}
+### Quick reference
+This page covers the essential steps to **run**, **create**, and **analyse** a freely-walking experiment. For detailed explanations, see the deep-dive pages linked throughout. For hardware and software requirements, see the [Rig Specs](freely-walking-rig-specs.qmd) page.
+:::
+
+## Prerequisites
+
+Before running an experiment, ensure the following are in place:
+
+- [ ] LED arena powered on and controller connected
+- [ ] **BIAS** (SimpleBiasCameraInterface) open — IR illumination on, camera acquiring at 30 fps
+- [ ] **PControl** connected to the LED panels in MATLAB
+- [ ] `freely-walking-optomotor` repository on the MATLAB path (`addpath(genpath('/path/to/freely-walking-optomotor'))`)
+- [ ] Required MATLAB toolboxes installed: Statistics and Machine Learning, Image Processing, Circular Statistics
+- [ ] [G4_Display_Tools](https://github.com/JaneliaSciComp/G4_Display_Tools) installed (provides the `panel_com` functions)
+- [ ] [FlyTracker](https://github.com/kristinbranson/FlyTracker) installed (for post-experiment tracking)
+
+See the [Rig Specs](freely-walking-rig-specs.qmd) page for full hardware and software details.
+
+___________________________________________________________________________
+
+## How to run a protocol
+
+1. Power on the LED arena and the controller.
+2. Open **BIAS** (SimpleBiasCameraInterface) — ensure the IR illumination is on and the camera is acquiring at 30 fps.
+3. Open **PControl** in MATLAB and verify it connects to the LED panels.
+4. Use the live camera view to confirm the flies are visible in the arena.
+5. Load the flies into the arena and allow them to settle.
+6. Run the MATLAB protocol script (e.g. `protocol_27.m`). The script handles the full stimulus sequence including acclimation periods, stimulus presentation, and data logging.
+7. After the protocol finishes, transfer the data folder to the processing computer and run FlyTracker to generate tracking output.
+
+The protocol used for the screen was [protocol 27](protocols/freely_walking_protocol_27.qmd). It presents 12 stimulus conditions (gratings, bars, curtains, reverse-phi, flicker, and a fixation bar) with 15 s stimulus trials separated by 20 s dark intervals, repeated twice. A 5-minute dark acclimation precedes the stimulus block.
+
+___________________________________________________________________________
+
+## How to make a protocol
+
+Patterns for the G3 arena can be generated using the `G4_pattern_generator_gui`, but for this screen all patterns and position functions were made from scratch using custom scripts. The protocols themselves are run through custom scripts that present the patterns using the `panel_com` class of functions from the `G4_Display_Tools` repository.
+
+- Pattern scripts: [script_to_make_patterns/](https://github.com/leburnett/freely-walking-optomotor/tree/main/script_to_make_patterns)
+- Protocol scripts: [protocols/](https://github.com/leburnett/freely-walking-optomotor/tree/main/protocols) (includes a [subfolder](https://github.com/leburnett/freely-walking-optomotor/tree/main/protocols/protocol_functions) with helper functions)
+- See the [Protocols](freely_walking_protocols_index.qmd) and [Patterns](freely_walking_patterns_index.qmd) index pages for documentation on each stimulus
+
+___________________________________________________________________________
+
+## How to analyse the data
+
+The analysis pipeline is described in detail on the [Analysis](freely_walking_analysis.qmd) page. In brief, data processing proceeds in three levels:
+
+1. **Level 1** — per-cohort processing via `process_freely_walking_data()`, which generates overview figures and results files for each individual vial of flies.
+2. **Level 2** — cross-cohort analysis via `process_screen_data()`, which combines data across all strains and cohorts and creates comparison plots against the empty-split control flies.
+3. **Level 3** — statistical testing via `make_summary_heat_maps_p27()`, which generates p-value heatmaps comparing each strain to the empty-split control.
+
+If you are analysing data from a different protocol, see [Analysing a new protocol](freely-walking-analysis-new-protocol.qmd).

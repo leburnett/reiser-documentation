@@ -2,37 +2,46 @@
 title: "Resources"
 ---
 
-<br>
+## GitHub repositories
 
-#### GitHub repositories
-
--  G3 [freely-walking](https://github.com/leburnett/freely-walking-optomotor) experiments
-
+- G3 [freely-walking](https://github.com/leburnett/freely-walking-optomotor) experiments
 - G4 electrophysiology [direction selectivity](https://github.com/leburnett/DS_probe_protocol) protocol
-
 - G4 electrophysiology [nested receptive field](https://github.com/leburnett/nested_RF_stimulus) protocol
-
 - G4 [tethered flight](https://github.com/leburnett/G4-LB) 2-alternative forced choice experiments
-
-- <b>Janelia SciComp</b> [G4_Display_Tools](https://github.com/JaneliaSciComp/G4_Display_Tools) repository for the G4 software GUIs. 
-
-<br>
+- **Janelia SciComp** [G4_Display_Tools](https://github.com/JaneliaSciComp/G4_Display_Tools) repository for the G4 software GUIs
 
 _______________
 
-#### Other resources
+## G4 software and GUIs {#g4-software}
 
+The G4 GUIs are designed to be user-friendly and allow for the generation of patterns, position functions, and experiment designs without needing to write code.
 
-The <b>LED Display Tools</b> [documentation](https://reiserlab.github.io/Modular-LED-Display/) contains detailed information on the different versions of the LED arenas, the different GUIs that can be used to generate patterns and run protocols and the MATLAB functions that can be used to interact with the LED arenas.
+- **`G4_pattern_generator_gui`** — Generate patterns. See the [tutorial](https://reiserlab.github.io/Modular-LED-Display/Generation%204/Display_Tools/docs/pattern-generator_generate_tutorial.html).
 
-- This [page](https://reiserlab.github.io/Modular-LED-Display/Generation%203/Software/docs/g3_user-guide.html) has useful historical information about running experiments on the G3 and G4 arenas, especially tethered flight experiments. It explains how the MATLAB `panel_com` class of functions can be used to interact with and display patterns on the LED arenas. 
+- **`G4_function_generator_gui`** — Generate position functions. See the [tutorial](https://reiserlab.github.io/Modular-LED-Display/Generation%204/Display_Tools/docs/function-generator_generate_tutorial.html).
 
-- This [page](https://reiserlab.github.io/Modular-LED-Display/G4/) has more detailed information on the G4 setups and the different GUIs that can be used to generate patterns and run protocols on the G4 arena.
+- **`G4_experiment_designer`** — Design experiments. [Learn more](https://reiserlab.github.io/Modular-LED-Display/Generation%204/Display_Tools/docs/protocol-designer.html).
+
+- **`G4_experiment_conductor`** — Run experiments. See the [getting started guide](https://reiserlab.github.io/Modular-LED-Display/Generation%204/Display_Tools/docs/experiment-conductor_getting-started.html).
+
+::: {.callout-note}
+### Where are the GUIs used?
+- For running [Protocol 1](/Ephys/ephys_nested_rf_protocol1.qmd) of the Nested RF Protocol and [designing](/Ephys/ephys_nested_rf_how-to-make.qmd) bar stimuli used in the electrophysiology experiments.
+- For running the TAFC bar fixation task on the [tethered flight](/Tethered/index.qmd) setup.
+:::
 
 _______________
 
-#### How to...
+## LED Display documentation
 
-- Make the google form [logging system](/Freely-walking/freely_walking_logging_system.qmd)
+The **LED Display Tools** [documentation](https://reiserlab.github.io/Modular-LED-Display/) contains detailed information on the different versions of the LED arenas, the GUIs for generating patterns and running protocols, and the MATLAB functions for interacting with the LED arenas.
 
-- Use the G4 [software](/G4%20Software/index.qmd)
+- [G3 user guide](https://reiserlab.github.io/Modular-LED-Display/Generation%203/Software/docs/g3_user-guide.html) — historical information about running experiments on the G3 and G4 arenas, especially tethered flight experiments. Explains the `panel_com` class of functions.
+
+- [G4 documentation](https://reiserlab.github.io/Modular-LED-Display/G4/) — detailed information on the G4 setups and the GUIs for generating patterns and running protocols.
+
+_______________
+
+## How to...
+
+- Make the Google Form [logging system](/Freely-walking/freely_walking_logging_system.qmd)

@@ -1,8 +1,8 @@
 ---
-title: "Getting Started"
+title: "Installation & Setup"
 ---
 
-This page covers everything you need to set up your environment before running the Nested RF Protocol for the first time. For details on the physical rig setup and arena specifications, see the [Rig Specs](ephys_rig_specs.qmd) page.
+This page covers the full installation and configuration process for the Nested RF Protocol. For a brief prerequisites checklist, see the [Quickstart](ephys_nested_rf.qmd) page. For details on the physical rig setup and arena specifications, see the [Rig Specs](ephys_rig_specs.qmd) page.
 
 ## System requirements
 
@@ -78,7 +78,7 @@ The G4_Display_Tools uses a `userSettings.m` file to configure paths and default
 - The path to the G4 Protocols directory
 - Communication settings for the PanelsController
 
-Refer to the [G4 Software](/G4%20Software/index.qmd) documentation for detailed configuration instructions.
+Refer to the [G4 Software](/resources.qmd#g4-software) documentation for detailed configuration instructions.
 
 ## Verifying your setup
 

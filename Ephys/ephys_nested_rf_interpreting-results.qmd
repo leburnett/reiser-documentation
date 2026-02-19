@@ -155,4 +155,4 @@ When comparing results between experimental groups (e.g., control vs experimenta
 | RF figures | `<PROJECT_ROOT>/figures/flash_stimuli/` |
 : {.bordered}
 
-The `PROJECT_ROOT` is defined in `process_protocol2.m` (line 45). See [Getting Started](ephys_nested_rf_getting-started.qmd) for details on updating this path.
+The `PROJECT_ROOT` is defined in `process_protocol2.m` (line 45). See [Installation & Setup](ephys_nested_rf_getting-started.qmd) for details on updating this path.

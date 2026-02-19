@@ -1,0 +1,192 @@
+---
+title: "Troubleshooting"
+---
+
+::: {.callout-tip}
+### Having trouble?
+This page covers common problems and their solutions, organised by the stage at which they occur.
+:::
+
+## Setup issues
+
+### MATLAB cannot find functions
+
+**Symptom:** `Undefined function or variable 'process_freely_walking_data'` or similar errors.
+
+**Solution:** Ensure the freely-walking-optomotor repository is on the MATLAB path:
+
+```matlab
+addpath(genpath('/path/to/freely-walking-optomotor'));
+```
+
+Verify by running `which process_freely_walking_data` — it should return a valid path.
+
+### Missing toolboxes
+
+**Symptom:** Errors referencing functions like `ranksum`, `fittype`, or `circ_vtest`.
+
+**Solution:** The following MATLAB toolboxes are required:
+
+| Toolbox | Required for |
+|:--------|:-------------|
+| Statistics and Machine Learning Toolbox | Statistical tests (`ranksum`, FDR correction) |
+| Image Processing Toolbox | Video processing |
+| Circular Statistics Toolbox | Phototaxis analysis (`circ_vtest`, Watson-Williams test) |
+: {.bordered}
+
+Install missing toolboxes via MATLAB's Add-On Explorer.
+
+### Arena not responding
+
+**Symptom:** The protocol script runs but no stimuli appear on the arena.
+
+**Possible causes:**
+
+- Arena is not powered on or the controller is disconnected
+- PControl cannot connect — try running PControl standalone to test the connection
+- The `panel_com` functions are not on the MATLAB path — verify G4_Display_Tools is installed
+
+### BIAS not recording
+
+**Symptom:** The protocol runs but no `.ufmf` video file is created.
+
+**Possible causes:**
+
+- BIAS was not started before the protocol script
+- The camera is not acquiring (check that IR illumination is on and the frame rate is 30 fps)
+- Disk space is full on the recording drive
+
+___________________________________________________________________________
+
+## Running the experiment
+
+### LOG file not created
+
+**Symptom:** No `LOG_*.mat` file appears in the experiment directory after the protocol finishes.
+
+**Possible causes:**
+
+- The protocol was interrupted before completion (check MATLAB command window for errors)
+- The output directory path in the protocol script is incorrect
+- MATLAB did not have write permissions to the directory
+
+### Flies not visible in video
+
+**Symptom:** The `.ufmf` video shows a dark image with no flies visible.
+
+**Possible causes:**
+
+- IR illumination was not turned on
+- The camera exposure settings in BIAS are too low
+- The arena LEDs were overpowering the IR illumination (LEDs should be green, not visible to the IR camera)
+
+___________________________________________________________________________
+
+## Tracking issues
+
+### FlyTracker loses flies
+
+**Symptom:** Fewer flies tracked than were loaded into the arena. The `n_fly_data` array shows a large number in the third element (flies removed).
+
+**Explanation:** The function `check_tracking_FlyTrk` removes any tracked object whose frame count does not match the mode frame count. This catches cases where:
+
+- A fly's tracking was split across multiple identities
+- A non-fly object (debris, shadow) was briefly tracked
+- A fly stopped moving and was lost by the tracker
+
+**What to check:**
+
+- Verify the arena was clean before loading flies
+- Check that lighting conditions were consistent throughout the experiment
+- Review the `.ufmf` video to see if flies were genuinely lost from tracking
+
+### High velocity artifacts
+
+**Symptom:** Unrealistic velocity spikes in the timeseries plots.
+
+**Explanation:** Frames where the forward velocity exceeds 50 mm/s are treated as tracking errors and set to NaN. These are then filled using interpolation. If many consecutive frames exceed this threshold, the interpolation may produce unusual values.
+
+**What to check:**
+
+- A few isolated spikes are normal and handled automatically
+- Persistent high-velocity regions suggest the tracker jumped between flies — re-run FlyTracker with adjusted settings or exclude the cohort
+
+___________________________________________________________________________
+
+## Processing issues
+
+### `process_freely_walking_data` errors
+
+**Symptom:** The batch processing function fails on a specific experiment folder.
+
+**Common causes:**
+
+- **Missing files:** Ensure the experiment folder contains a `.ufmf` video, `LOG_*.mat` file, and a subdirectory with `trx.mat` and `*-feat.mat`
+- **Date format:** The function expects the date folder to be named `YYYY_MM_DD` (underscores, not hyphens)
+- **Empty LOG:** If the protocol was aborted, the LOG file may be incomplete
+
+**Debugging approach:**
+
+1. Navigate to the experiment folder manually
+2. Try running `process_data_features` directly on that folder
+3. Check that `load('LOG_*.mat')` works and the LOG structure contains the expected fields
+
+### Strain name mismatches
+
+**Symptom:** Data from the same strain appears under different names in the combined DATA structure.
+
+**Explanation:** Strain names are extracted from the LOG metadata and can vary due to typos or inconsistent naming. The function `check_strain_typos` attempts to normalise common variations, but may not catch all cases.
+
+**Solution:** Check the strain names in the LOG files for consistency. If needed, update the mapping in `check_strain_typos.m`.
+
+___________________________________________________________________________
+
+## Analysis issues
+
+### `comb_data_across_cohorts_cond` fails
+
+**Symptom:** Error when trying to combine data across cohorts, often referencing missing fields or unexpected structure.
+
+**Common causes:**
+
+- **Missing condition numbers:** Older protocols (before protocol 24) do not save condition numbers to the LOG file. The function requires this field. Use a version-specific parser (e.g. `comb_data_across_cohorts_cond_v14.m`) for older protocols.
+- **Mismatched protocols:** Experiments from different protocol versions may have different numbers of conditions or different timing structures
+- **Incomplete experiments:** If a protocol was interrupted, some conditions may be missing from the LOG
+
+### Empty or unexpected results
+
+**Symptom:** Plots show flat lines or the DATA structure has empty fields.
+
+**What to check:**
+
+- Verify the processed `*_data.mat` file exists and contains `comb_data` with the expected fields
+- Check `n_fly_data` — if all flies were removed during tracking QC, `comb_data` arrays will be empty
+- Confirm the LOG file has the correct condition definitions (pattern IDs, speed values)
+
+___________________________________________________________________________
+
+## Hardcoded paths
+
+Several files contain paths specific to the original computers. If running on a different machine, update these:
+
+| Location | What to change |
+|:---------|:---------------|
+| `generate_circ_stim_ufmf.m` | Path to JAABA repository (currently `/Users/burnettl/Documents/Non-GitHub-Repos/JAABA-master`) |
+| `generate_circ_stim_ufmf.m` | Path to patterns folder (`patterns/Patterns_optomotor/`) |
+| Processing functions | Root data directory paths |
+| `make_summary_heat_maps_p27.m` | `ROOT_DIR` for results (currently `/Users/burnettl/Documents/Projects/oaky_cokey`) |
+: {.bordered}
+
+___________________________________________________________________________
+
+## Quality control
+
+The processing pipeline generates several overview figures that can help diagnose data quality issues:
+
+| Figure | What it shows | What to look for |
+|:-------|:-------------|:-----------------|
+| Locomotion histograms (`make_overview`) | Distribution of velocity, angular velocity, and turning rate | Bimodal distributions may indicate mixed fly health; very narrow distributions suggest most flies were stationary |
+| Full-experiment timeseries (`plot_all_features_filt`) | All flies' metrics across the entire protocol with coloured condition markers | Baseline drift, sudden changes in activity, or missing condition periods |
+| Acclimation timeseries (`plot_all_features_acclim`) | Metrics during the 5-minute dark acclimation | Flies should settle to a stable baseline; consistently high activity may indicate stress or arena vibration |
+| Per-condition plots (`plot_allcond_onecohort_tuning`) | Mean + SEM for each condition | Responses should be consistent across the two repetitions; large SEM suggests variable behaviour |
+: {.bordered}
