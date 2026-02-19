@@ -19,7 +19,7 @@ ___________________________________________________________________________
 Protocol 1 is run through the `G4_experiment_conductor` GUI.
 
 ::: {.callout-tip}
-A detailed explanation of Protocol 1 can be found [here](Ephys/ephys_nested_rf_protocol1.qmd).
+A detailed explanation of Protocol 1 can be found [here](ephys_nested_rf_protocol1.qmd).
 :::
 
 ### Step-by-step
@@ -63,7 +63,7 @@ ___________________________________________________________________________
 Protocol 2 is generated and run entirely through a single MATLAB script. Unlike Protocol 1, it does **not** use the `G4_experiment_conductor` GUI.
 
 ::: {.callout-tip}
-A detailed explanation of Protocol 2 can be found [here](Ephys/ephys_nested_rf_protocol2.qmd).
+A detailed explanation of Protocol 2 can be found [here](ephys_nested_rf_protocol2.qmd).
 :::
 
 ### Step-by-step
