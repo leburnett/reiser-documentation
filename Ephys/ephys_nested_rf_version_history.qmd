@@ -110,8 +110,8 @@ ___________________________________________________________________________
 
 
 ::: {.callout-important}
-### T4/T5 Autumn: Bar stimulus fix
-Remade patterns 0015 and 0016 (full field bar stimuli — dark bars at 6/8&pi; and 7/8&pi;) so that their "normal" and "flipped" directions match the sequence of the other bar orientations. Before they were moving from west to east, now changed to east to west.
+### Bar stimulus fix (2025-10-15)
+Remade patterns 0015 and 0016 (full field bar stimuli — dark bars at 6/8&pi; and 7/8&pi;) so that their "normal" and "flipped" directions match the sequence of the other bar orientations. Before they were moving from west to east, now changed to east to west. This change was made in commit [82badc7](https://github.com/leburnett/nested_RF_stimulus/commit/82badc7c0f12916d037b11a98a3e712ef3c9322c), so all `T4T5 MARCM Autumn2025` data will be consistent and data in `T4T5 MARCM Summer2025` will have the original bar stimuli.
 :::
 
 ::: {.callout-important}
