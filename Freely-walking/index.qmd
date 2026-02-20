@@ -36,19 +36,19 @@ The typical workflow for running the freely-walking screen is:
                            │
                            ▼
                     ┌──────────────────────────────┐
-                    │  Track flies                  │
-                    │                               │
-                    │  Run FlyTracker on .ufmf      │
-                    │  video → trx.mat + feat.mat   │
-                    └──────────────┬────────────────┘
+                    │  Track flies                 │
+                    │                              │
+                    │  Run FlyTracker on .ufmf     │
+                    │  video → trx.mat + feat.mat  │
+                    └──────────────┬───────────────┘
                                   │
                                   ▼
                            ┌──────────────────────────────┐
-                           │  Analyse                      │
-                           │                               │
-                           │  process_freely_walking_data  │
-                           │  then process_screen_data     │
-                           └───────────────────────────────┘
+                           │  Analyse                     │
+                           │                              │
+                           │  process_freely_walking_data │
+                           │  then process_screen_data    │
+                           └──────────────────────────────┘
 ```
 
 ## Code availability
