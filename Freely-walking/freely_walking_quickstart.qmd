@@ -3,8 +3,13 @@ title: "Quickstart"
 ---
 
 ::: {.callout-tip}
-### Quick reference
-This page covers the essential steps to **run**, **create**, and **analyse** a freely-walking experiment. For detailed explanations, see the deep-dive pages linked throughout. For hardware and software requirements, see the [Rig Specs](freely-walking-rig-specs.qmd) page.
+### Welcome!
+This page will walk you through everything you need to **run**, **create**, and **analyse** a freely-walking experiment. If you are new to this setup, read through this page first, then follow the links to the detailed pages as needed. For hardware and software requirements, see the [Rig Specs](freely-walking-rig-specs.qmd) page.
+:::
+
+::: {.callout-note}
+### Training guide
+A comprehensive training guide is available as a PDF at `docs/training_guide/training_guide.pdf` in the [freely-walking-optomotor](https://github.com/leburnett/freely-walking-optomotor) repository. The training guide covers the full data pipeline in detail — from running experiments through to the DATA struct — and includes diagrams, code walkthroughs, and a glossary of key terms. It is a useful companion to this documentation site, especially for understanding the processing functions and data structures in depth.
 :::
 
 ## Prerequisites
@@ -14,7 +19,7 @@ Before running an experiment, ensure the following are in place:
 - [ ] LED arena powered on and controller connected
 - [ ] **BIAS** (SimpleBiasCameraInterface) open — IR illumination on, camera acquiring at 30 fps
 - [ ] **PControl** connected to the LED panels in MATLAB
-- [ ] `freely-walking-optomotor` repository on the MATLAB path (`addpath(genpath('/path/to/freely-walking-optomotor'))`)
+- [ ] `freely-walking-optomotor` repository cloned and configured — see [Configuration & Paths](freely_walking_configuration.qmd)
 - [ ] Required MATLAB toolboxes installed: Statistics and Machine Learning, Image Processing, Circular Statistics
 - [ ] [G4_Display_Tools](https://github.com/JaneliaSciComp/G4_Display_Tools) installed (provides the `panel_com` functions)
 - [ ] [FlyTracker](https://github.com/kristinbranson/FlyTracker) installed (for post-experiment tracking)
@@ -31,7 +36,7 @@ ___________________________________________________________________________
 4. Use the live camera view to confirm the flies are visible in the arena.
 5. Load the flies into the arena and allow them to settle.
 6. Run the MATLAB protocol script (e.g. `protocol_27.m`). The script handles the full stimulus sequence including acclimation periods, stimulus presentation, and data logging.
-7. After the protocol finishes, transfer the data folder to the processing computer and run FlyTracker to generate tracking output.
+7. After the protocol finishes, transfer the data folder to the processing computer and run FlyTracker to generate tracking output — or let the [automated pipeline](freely_walking_pipeline.qmd) handle this for you.
 
 The protocol used for the screen was [protocol 27](protocols/freely_walking_protocol_27.qmd). It presents 12 stimulus conditions (gratings, bars, curtains, reverse-phi, flicker, and a fixation bar) with 15 s stimulus trials separated by 20 s dark intervals, repeated twice. A 5-minute dark acclimation precedes the stimulus block.
 
@@ -39,7 +44,22 @@ ___________________________________________________________________________
 
 ## How to make a protocol
 
-Patterns for the G3 arena can be generated using the `G4_pattern_generator_gui`, but for this screen all patterns and position functions were made from scratch using custom scripts. The protocols themselves are run through custom scripts that present the patterns using the `panel_com` class of functions from the `G4_Display_Tools` repository.
+The easiest way to create a new protocol is to start from the **protocol template** (`src/protocols/protocol_template.m`) in the [freely-walking-optomotor](https://github.com/leburnett/freely-walking-optomotor) repository. The template is based on `protocol_27` and includes:
+
+- Annotated sections for each part of the experiment (workspace setup, timing parameters, condition definitions, stimulus presentation, data saving)
+- A comprehensive speed reference table mapping speed values to temporal frequencies for all common patterns
+- Commented examples for different stimulus routing options (standard gratings, curtains, fixation bars, mixed routing)
+- Automatic condition numbering (the 7th column of `all_conditions` is generated from the row index)
+
+To create a new protocol:
+
+1. Copy `protocol_template.m` and rename it (e.g. `protocol_XX.m`)
+2. Edit the header comments to describe the scientific question and stimuli
+3. Define your `all_conditions` matrix with the desired patterns, speeds, and durations
+4. Choose the appropriate presentation function(s) in the stimulus routing section
+5. Test with a short acclimation time (`t_acclim_start = 30`) before running the full experiment
+
+Patterns for the G3 arena can be generated using the `G4_pattern_generator_gui`, but for this screen all patterns and position functions were made from scratch using custom scripts:
 
 - Pattern scripts: [script_to_make_patterns/](https://github.com/leburnett/freely-walking-optomotor/tree/main/script_to_make_patterns)
 - Protocol scripts: [protocols/](https://github.com/leburnett/freely-walking-optomotor/tree/main/protocols) (includes a [subfolder](https://github.com/leburnett/freely-walking-optomotor/tree/main/protocols/protocol_functions) with helper functions)
@@ -56,3 +76,11 @@ The analysis pipeline is described in detail on the [Analysis](freely_walking_an
 3. **Level 3** — statistical testing via `make_summary_heat_maps_p27()`, which generates p-value heatmaps comparing each strain to the empty-split control.
 
 If you are analysing data from a different protocol, see [Analysing a new protocol](freely-walking-analysis-new-protocol.qmd).
+
+For interactive data exploration, see the [Dashboard](freely_walking_dashboard.qmd) page — it provides a browser-based interface for comparing strains and conditions without writing code.
+
+___________________________________________________________________________
+
+## What happens automatically
+
+If you are running experiments at Janelia, the [automated pipeline](freely_walking_pipeline.qmd) handles the data flow after you finish recording. Data is automatically copied from the acquisition PC, tracked with FlyTracker, and processed with the MATLAB pipeline. You can monitor the progress of all experiments via the [pipeline status page](freely_walking_pipeline.qmd#pipeline-status-page).

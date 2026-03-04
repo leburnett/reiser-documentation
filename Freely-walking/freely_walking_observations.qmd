@@ -35,3 +35,28 @@ A free-text field is also available for recording any additional observations as
 The script automatically extracts metadata from the video filename (date, time, condition number, condition name, repetition) and includes it in the Google Form submission alongside the scores.
 
 See the [logging system](freely_walking_logging_system.qmd) page for how to set up a Google Form for automatic data logging.
+
+### Usage
+
+```matlab
+% Review all condition videos in the current folder
+review_behavioural_data()
+
+% Review only grating conditions
+review_behavioural_data("gratings")
+
+% Review only reverse-phi conditions
+review_behavioural_data("reversephi")
+```
+
+Available filter options: `"gratings"`, `"flicker"`, `"phototaxis"`, `"reversephi"`, `"static"`, `"offset"`.
+
+### When to use this tool
+
+The manual scoring GUI is most useful for:
+
+- **Initial quality control** — quickly reviewing whether experiments produced expected behavioural responses
+- **Qualitative assessment** — recording subjective observations about centring, turning, and rebound behaviours that may not be fully captured by the automated metrics
+- **Identifying outliers** — flagging experiments with unusual behaviour for further investigation
+
+The scored data complements the quantitative analysis pipeline and can be correlated with the automated metrics to validate observations.

@@ -49,3 +49,7 @@ The following paths are hardcoded and must be updated if running on a different 
 ::: {.callout-note}
 The stimulus speed shown in the video is not currently linked to the actual speed used during the experiment — the pattern animation plays at a fixed rate.
 :::
+
+### Automated video generation
+
+When the automated pipeline processes experiments via `daily_processing.py`, stimulus videos can be generated automatically as part of the processing step if the `make_videos` flag is set to `true` when calling `process_freely_walking_data`. The `.mp4` files are then copied to the network `2_processed` directory alongside the processed data. See the [Pipeline](freely_walking_pipeline.qmd) page for details.

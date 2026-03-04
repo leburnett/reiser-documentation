@@ -233,3 +233,59 @@ Several analysis scripts handle data from protocols other than the main screen p
 : {.bordered}
 
 Additional analysis scripts for phototaxis (`analyse_phototaxis_polar.m`), viewing distance (`analyse_viewing_distance.m`), and spatial occupancy (`occupancy_heatmaps_quadrants_phototaxis.m`) can be applied to data from any protocol.
+
+___________________________________________________________________________
+
+## Processing details
+
+### Tracking quality control
+
+Before computing behavioural metrics, the function `check_tracking_FlyTrk` removes badly tracked flies. FlyTracker sometimes produces artifacts — a single fly split into two tracks, or a non-fly object (dust, shadow) tracked. The function detects these by comparing the frame count for each tracked object against the mode (the most common frame count, which corresponds to the true video length). Any fly whose frame count differs from the mode is removed from both `trx` and `feat.data`.
+
+### High-velocity filtering
+
+For each fly, frames where the FlyTracker-reported velocity exceeds 50 mm/s are marked as tracking errors. This threshold is well above the typical maximum walking speed of *Drosophila* (~30 mm/s) and reliably catches tracking jumps. At these frames, position, heading, and distance data are set to NaN for interpolation.
+
+### Interpolation methods
+
+Missing values from filtering are filled using method-appropriate interpolation:
+
+| Data | Method | Reason |
+|:-----|:-------|:-------|
+| Distance to wall (`d_wall_data`) | Spline | Smooth, continuous changes in distance |
+| Heading angle (`heading_data`) | Previous value | Avoids introducing artificial heading jumps |
+| X and Y position | Spline | Smooth position trajectories |
+
+### Condition splitting
+
+The function `comb_data_one_cohort_cond` slices continuous data into per-condition segments using LOG frame indices. For each condition, the data slice runs from `start_f(1) - 300` to `stop_f(end)`, where the 300-frame (10-second) pre-buffer captures baseline behaviour before stimulus onset. Conditions are named `R1_condition_N` or `R2_condition_N` for repetitions 1 and 2 respectively, plus `acclim_off1`, `acclim_patt`, and `acclim_off2` for the acclimation phases.
+
+### The DATA struct
+
+The final `DATA` struct organises all experimental data in a nested hierarchy:
+
+```
+DATA.(strain).(sex)(cohort_idx).(condition).(data_type)
+```
+
+For example: `DATA.jfrc100_es_shibire_kir.F(1).R1_condition_1.fv_data` returns a `[n_flies x n_frames]` array. Each condition also contains stimulus metadata (`trial_len`, `interval_dur`, `optomotor_pattern`, `optomotor_speed`, etc.).
+
+```matlab
+% Load combined data for protocol_27
+DATA = comb_data_across_cohorts_cond('/path/to/results/protocol_27');
+
+% List all strains
+strain_names = fieldnames(DATA);
+
+% Number of cohorts for a strain/sex
+n_cohorts = length(DATA.jfrc100_es_shibire_kir.F);
+
+% Mean forward velocity across all flies in one condition
+fv = DATA.jfrc100_es_shibire_kir.F(1).R1_condition_1.fv_data;
+mean_fv = mean(fv, 1, 'omitnan');  % [1 x n_frames]
+```
+
+::: {.callout-tip}
+### Further reading
+The training guide PDF (`docs/training_guide/training_guide.pdf` in the [freely-walking-optomotor](https://github.com/leburnett/freely-walking-optomotor) repository) provides detailed walkthroughs of every processing function, including the mathematical derivations for angular velocity, forward velocity, viewing distance, and inter-fly distance computations.
+:::

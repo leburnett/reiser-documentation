@@ -1,65 +1,54 @@
 ---
-title: "Freely-walking Experiments"
+title: "Overview"
 ---
+
+Welcome to the documentation for the freely-walking optomotor experiments conducted in the Reiser Lab. This section covers everything you need to know to run, process, and analyse experiments using the G3 LED arena.
+
+## Background
 
 The **Freely Walking Course Control Mechanisms** screen was conducted in **2025** using the G3 LED arena in the Reiser Lab at HHMI's Janelia Research Campus. The screen measures optomotor responses, motion-induced centring behaviour, and general locomotion metrics in freely-walking *Drosophila*. Flies are presented with moving visual stimuli (gratings, bars, flicker, curtains, reverse-phi) while their trajectories are tracked at 30 fps.
 
-______________________
-
 The experiment protocol was designed by Laura Burnett and experiments were conducted by Laura Burnett and **Aparna Dev** from PTR. All fly husbandry was carried out by **Edward Rogers**.
 
-::: {.callout-tip}
-### New to this project?
-Start with the [Quickstart](freely_walking_quickstart.qmd) page for step-by-step instructions on running, creating, and analysing experiments. See the [Rig Specs](freely-walking-rig-specs.qmd) page for hardware and software requirements. If something goes wrong, check the [Troubleshooting](freely_walking_troubleshooting.qmd) page.
-:::
+## Section guide
 
-## Experiment workflow
-
-The typical workflow for running the freely-walking screen is:
-
-```
-    ┌──────────────────────────────┐
-    │  Prepare arena               │
-    │                              │
-    │  Power on arena, open BIAS   │
-    │  and PControl, load flies    │
-    └──────────────┬───────────────┘
-                   │
-                   ▼
-            ┌──────────────────────────────┐
-            │  Run protocol (~17 min)      │
-            │                              │
-            │  Run protocol_27.m in MATLAB │
-            │  5 min acclimation + 12      │
-            │  conditions x 2 reps         │
-            └──────────────┬───────────────┘
-                           │
-                           ▼
-                    ┌──────────────────────────────┐
-                    │  Track flies                 │
-                    │                              │
-                    │  Run FlyTracker on .ufmf     │
-                    │  video → trx.mat + feat.mat  │
-                    └──────────────┬───────────────┘
-                                  │
-                                  ▼
-                           ┌──────────────────────────────┐
-                           │  Analyse                     │
-                           │                              │
-                           │  process_freely_walking_data │
-                           │  then process_screen_data    │
-                           └──────────────────────────────┘
-```
+| Page | Description |
+|:-----|:------------|
+| [Quickstart](freely_walking_quickstart.qmd) | Step-by-step instructions for running, creating, and analysing experiments — start here if you are new |
+| [Rig Specs](freely-walking-rig-specs.qmd) | Hardware and software requirements for the G3 LED arena setup |
+| [Pipeline](freely_walking_pipeline.qmd) | Experiment workflow, the automated processing pipeline, and the pipeline status page |
+| [Data Organisation](freely_walking_data.qmd) | How raw, tracked, and processed data is structured and where it is stored |
+| **Protocols** | |
+| [Protocols Overview](freely_walking_protocols_index.qmd) | Full list of experimental protocols with timing, conditions, and lineage |
+| [Experiment Logging](freely_walking_logging_system.qmd) | How experiment metadata is logged to Google Sheets |
+| **Patterns** | |
+| [Patterns Overview](freely_walking_patterns_index.qmd) | Catalogue of all LED pattern files with previews and parameters |
+| **Analysis** | |
+| [Analysis](freely_walking_analysis.qmd) | The three-level data processing and analysis pipeline |
+| [Analysing a New Protocol](freely-walking-analysis-new-protocol.qmd) | Guide to analysing data from protocols other than the main screen protocol |
+| [Visualisation](freely_walking_visualisation.qmd) | Generating per-condition stimulus videos with fly trajectories |
+| [Recording Observations](freely_walking_observations.qmd) | Manual behavioural scoring using the review GUI |
+| [Dashboard](freely_walking_dashboard.qmd) | Interactive Dash web dashboard for exploring processed data |
+| **Reference** | |
+| [Configuration & Paths](freely_walking_configuration.qmd) | Three-computer setup, path configuration, and automation scripts |
+| [Troubleshooting](freely_walking_troubleshooting.qmd) | Common issues and solutions organised by category |
 
 ## Code availability
 
-The code for generating and running these protocols is publicly available [here](https://github.com/leburnett/freely-walking-optomotor).
+The code for generating and running these protocols, processing and plotting the data, generating the documentation and the interactive dashboard is publicly available at [github.com/leburnett/freely-walking-optomotor](https://github.com/leburnett/freely-walking-optomotor).
 
 ## Data availability
 
-See the [Data Organisation](freely_walking_data.qmd) page for details on where data is stored and how it is structured.
+Experiment data is saved directly on the `acquisition computer`, it is then copied to the `prfs group drive` and copied locally onto the `processing computer` to be processed. The results of the processing and analysis are saved on the `analysis computer` and backed up to the `prfs group drive`. See [Configuration & Paths](freely_walking_configuration.qmd) for details on the three-computer setup and path configuration.
 
-::: {.callout-note}
-### Auto-generated pages
-The individual [pattern](freely_walking_patterns_index.qmd) and [protocol](freely_walking_protocols_index.qmd) documentation pages are auto-generated from the code repository using Python scripts in the `docs_generator/` folder. See the pattern and protocol index pages for instructions on regenerating these pages after making changes.
-:::
+See the [Data Organisation](freely_walking_data.qmd) page for details on the exact paths to where the data is stored and how it is structured.
+
+## Key Resources
+
+| Resource | Description |
+|:--------|:------------|
+| [Google Sheets experiment log](https://docs.google.com/spreadsheets/d/1IsT3YndxAy3yN8o38r5RGK4dZsEdPXe0In4-OTEcXNw/edit?resourcekey=&gid=35583985#gid=35583985) | Automatic log filled in after the completetion of successful experiments (see [Experiment Logging](freely_walking_logging_system.qmd)) |
+| [Training Guide PDF](https://github.com/leburnett/freely-walking-optomotor/blob/main/docs/training_guide/_output/training_guide.pdf) | Step-by-step guide for training new experimenters on the G3 LED arena setup. |
+| Dashboard | Interactive web dashboard for exploring processed data (see [Dashboard](freely_walking_dashboard.qmd)) |
+| `Pipeline-status.html` page | Status page for the automated processing pipeline (see [Pipeline](freely_walking_pipeline.qmd)) |
+| Reiser Lab LED Panel [documentation](https://reiserlab.github.io/Modular-LED-Display/Generation%203/Software/docs/g3_user-guide.html) | Detailed documentation on the specifications of the G3 arena and how to design and run protocols. |

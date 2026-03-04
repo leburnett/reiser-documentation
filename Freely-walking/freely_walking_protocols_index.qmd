@@ -84,14 +84,25 @@ The `all_conditions` matrix has 7 columns:
 
 ### Speed Values
 
-| Speed Value | Approximate Rate |
-|-------------|------------------|
-| 0 | Static (no motion) |
-| 1 | Minimal (fixation) |
-| 8 | ~4 Hz |
-| 32 | ~16 Hz |
-| 64 | ~32 Hz |
-| 127 | Maximum (~63 Hz) |
+The `speed_patt` value = frames per second (fps). The actual temporal frequency depends on the pattern's spatial period and step size:
+
+**TF (Hz) = fps × step_size / spatial_period_px**
+
+**Velocity (deg/s) = TF × spatial_period_deg**
+
+Arena geometry: 192 columns = 360° → 1 pixel = 1.875°
+
+| Pattern | Type | Period | Step | spd 8 | spd 16 | spd 32 | spd 64 | spd 127 |
+|--------:|:-----|-------:|-----:|------:|-------:|-------:|-------:|--------:|
+| 4 | 15° grating | 8 px | 1 px/f | 1 Hz | 2 Hz | 4 Hz | 8 Hz | ~16 Hz |
+| 6 | 30° grating | 16 px | 1 px/f | 0.5 Hz | 1 Hz | 2 Hz | 4 Hz | ~8 Hz |
+| 9 | 60° grating | 32 px | 1 px/f | 0.25 Hz | 0.5 Hz | 1 Hz | 2 Hz | ~4 Hz |
+| 27 | 60° grating (2px step) | 32 px | 2 px/f | 0.5 Hz | 1 Hz | 2 Hz | 4 Hz | ~8 Hz |
+| 63 | 15° grating (2px step) | 8 px | 2 px/f | 2 Hz | 4 Hz | 8 Hz | 16 Hz | ~32 Hz |
+
+: {.bordered .striped}
+
+For non-grating patterns (flicker, curtains, fixation), the speed value simply controls the frame presentation rate.
 
 ## Data Output
 
@@ -101,16 +112,16 @@ Each protocol run generates:
 - **LOG.mat**: Trial timing, conditions, temperature, metadata
 - **Google Sheets**: Optional export for experiment tracking
 
-Output folder structure:
+Output folder structure (on the acquisition rig, under `cfg.rig_data_folder` — see [Configuration & Paths](freely_walking_configuration.qmd)):
 ```
-project_data_folder/
-  YYYY-MM-DD/
+rig_data_folder/
+  YYYY_MM_DD/
     protocol_name/
       strain/
         sex/
-          HH-MM-SS/
+          HH_MM_SS/
             LOG_YYYYMMDD_HHMMSS.mat
-            video.ufmf
+            REC_.ufmf
 ```
 
 
@@ -140,6 +151,21 @@ Purpose-specific protocols for particular experiments:
 - **protocol_18-19**: Curtain stimuli
 - **protocol_30-33**: Contrast and luminance variations
 
+## Protocol Lineage
+
+```
+v1 ─> v2 ─> v3, v4/r4, v5, v6, v7, v8, v9
+                                              ╲
+                                v10 ─> 10 ─> 18 ─> 19 ─> 24 (Screen 1) ─> 25
+                                                     │                  ╲
+                                                     ├─> 20              27 (Screen 2) ─> 29 (Screen 3)
+                                                     ├─> 21                             ╲
+                                                     ├─> 22                              ├─> 30
+                                                     └─> 23                              ├─> 31 ─> 32
+                                                                                         └─> 35 ─> 36
+Standalone: 15/16, 17, 26, 28, 33/34, 37
+```
+
 
 
 ## Adding a New Protocol
@@ -148,35 +174,25 @@ When you create a new experiment protocol, follow these steps to add it to this 
 
 ### Step 1: Create the Protocol File
 
-Create your protocol in the `freely-walking-optomotor/protocols/` directory.
+Start from the **protocol template** at `src/protocols/protocol_template.m`. This template includes:
 
-Your protocol should follow this structure:
+- A documentation header with fields for rationale, stimulus summary, and timing
+- Comprehensive speed reference tables with computed Hz values for all common patterns
+- Column-by-column documentation of the `all_conditions` matrix
+- Annotated routing examples for all 8 stimulus presentation functions
+- Standard initialization, logging, and cleanup code
+
+Copy the template and rename it:
 
 ```matlab
-% protocol_XX.m - Brief description
-%
-% Includes:
-% - List of stimuli types
-% - Key parameters
-
-clear
-
-% Initialize temperature recording
-d = initialize_temp_recording();
-
-% Protocol parameters
-t_acclim_start = 300;  % seconds
-t_interval = 20;       % seconds
-t_pause = 0.01;
-
-% Conditions: [pattern_id, interval_id, speed, speed_int, trial_dur, int_dur, condition_n]
-all_conditions = [
-    9, 47, 127, 1, 15, t_interval, 1;  % 60 deg gratings - 4Hz
-    % Add more conditions...
-];
-
-% ... rest of protocol
+% In src/protocols/:
+% 1. Copy protocol_template.m to protocol_XX.m
+% 2. Fill in the docstring header
+% 3. Edit the all_conditions matrix
+% 4. Choose the appropriate routing in Section 5
 ```
+
+See also `src/protocols/PROTOCOL_REFERENCE.md` for a quick-reference table of all existing protocols, pattern properties, and lineage.
 
 ### Step 2: Generate Documentation
 
