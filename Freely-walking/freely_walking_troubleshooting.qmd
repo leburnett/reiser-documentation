@@ -2,11 +2,6 @@
 title: "Troubleshooting"
 ---
 
-::: {.callout-tip}
-### Having trouble?
-This page covers common problems and their solutions, organised by the stage at which they occur.
-:::
-
 ## Setup issues
 
 ### Camera not detected
@@ -191,7 +186,7 @@ Several files contain paths specific to the original computers. If running on a 
 
 ___________________________________________________________________________
 
-## Quality control
+## Quality control plots
 
 The processing pipeline generates several overview figures that can help diagnose data quality issues:
 

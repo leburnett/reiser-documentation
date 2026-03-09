@@ -42,6 +42,36 @@ Before running the protocol, ensure the following are in place:
 
 For full installation and configuration details, see the [Installation & Setup](ephys_nested_rf_getting-started.qmd) page.
 
+## Protocol descriptions
+
+If you would like to see detailed descriptions of the contents of the two protocols, please see the following pages:
+
+- [Protocol 1](ephys_nested_rf_protocol1.qmd)
+
+- [Protocol 2](ephys_nested_rf_protocol2.qmd)
+
+If you would like to see how the parameters of Protocol 1 and 2 have changed over time please see the following page:
+
+- [Version History](ephys_nested_rf_version_history.qmd)
+
+## Creating and running the protocols
+
+- [How the protocols are made](ephys_nested_rf_how-to-make.qmd)
+
+- [How to run the protocols](ephys_nested_rf_how-to-run.qmd)
+
+## Experiment log
+
+Find a log of the different experiments and fly strains here:
+
+- [Experiment Log](ephys_nested_rf_exp_log.qmd).
+
+## Analysing the data
+
+- [How to analyse P1](ephys_nested_rf_how-to-analyse-p1.qmd)
+
+- [How to analyse P2](ephys_nested_rf_how-to-analyse-p2.qmd)
+
 ### Experiment workflow
 
 The typical workflow for running the Nested RF Protocol is:
@@ -81,33 +111,3 @@ The typical workflow for running the Nested RF Protocol is:
                                     │ in experiment folder│
                                     └─────────────────────┘
 ```
-
-## Protocol descriptions
-
-If you would like to see detailed descriptions of the contents of the two protocols, please see the following pages:
-
-- [Protocol 1](ephys_nested_rf_protocol1.qmd)
-
-- [Protocol 2](ephys_nested_rf_protocol2.qmd)
-
-If you would like to see how the parameters of Protocol 1 and 2 have changed over time please see the following page:
-
-- [Version History](ephys_nested_rf_version_history.qmd)
-
-## Creating and running the protocols
-
-- [How the protocols are made](ephys_nested_rf_how-to-make.qmd)
-
-- [How to run the protocols](ephys_nested_rf_how-to-run.qmd)
-
-## Experiment log
-
-Find a log of the different experiments and fly strains here:
-
-- [Experiment Log](ephys_nested_rf_exp_log.qmd).
-
-## Analysing the data
-
-- [How to analyse P1](ephys_nested_rf_how-to-analyse-p1.qmd)
-
-- [How to analyse P2](ephys_nested_rf_how-to-analyse-p2.qmd)

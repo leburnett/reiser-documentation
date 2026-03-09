@@ -2,7 +2,7 @@
 title: "Visualisation"
 ---
 
-# Create per-condition videos with `generate_circ_stim_ufmf`
+## Create per-condition videos with `generate_circ_stim_ufmf`
 
 This function generates .mp4 videos for each individual condition within an experiment. Each video contains:
 

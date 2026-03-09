@@ -60,6 +60,10 @@ ___________________________________________________________________________
 
 After the protocol finishes, the data folder is transferred to the processing computer and runs FlyTracker to generate tracking output. The MATLAB processing pipeline then generates results files and figures, which are saved on the network drive and local archive. You can monitor the progress of all experiments via the [pipeline status page](freely_walking_pipeline.qmd#pipeline-status-page).
 
+::: {.callout-tip}
+### Having trouble?
+This [page](freely_walking_troubleshooting.qmd) covers common problems and their solutions, organised by the stage at which they occur.
+:::
 ___________________________________________________________________________
 
 ## The screen protocol
