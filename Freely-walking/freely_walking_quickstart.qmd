@@ -12,17 +12,24 @@ This page will walk you through everything you need to **run**, **create**, and 
 A comprehensive training guide is available as a PDF at `docs/training_guide/training_guide.pdf` in the [freely-walking-optomotor](https://github.com/leburnett/freely-walking-optomotor) repository. The training guide covers the full data pipeline in detail — from running experiments through to the DATA struct — and includes diagrams, code walkthroughs, and a glossary of key terms. It is a useful companion to this documentation site, especially for understanding the processing functions and data structures in depth.
 :::
 
-## Prerequisites
+## Software Prerequisites
 
-Before running an experiment, ensure the following are in place:
+The following are the software prerequisites to run experiments and process data with the freely-walking optomotor setup:
 
-- [ ] LED arena powered on and controller connected
-- [ ] **BIAS** (SimpleBiasCameraInterface) open — IR illumination on, camera acquiring at 30 fps
-- [ ] **PControl** connected to the LED panels in MATLAB
-- [ ] `freely-walking-optomotor` repository cloned and configured — see [Configuration & Paths](freely_walking_configuration.qmd)
+**General requirements:**
+
+- [ ] [freely-walking-optomotor](https://github.com/leburnett/freely-walking-optomotor) repository cloned and configured — see [Configuration & Paths](freely_walking_configuration.qmd)
 - [ ] Required MATLAB toolboxes installed: Statistics and Machine Learning, Image Processing, Circular Statistics
+
+**Acquisition computer:**
+
+- [ ] [BIAS](http://stuff.iorodeo.com/notes/bias/) (SimpleBiasCameraInterface) - for video acquisition.
 - [ ] [G4_Display_Tools](https://github.com/JaneliaSciComp/G4_Display_Tools) installed (provides the `panel_com` functions)
-- [ ] [FlyTracker](https://github.com/kristinbranson/FlyTracker) installed (for post-experiment tracking)
+
+**Processing computer:**
+
+- [ ] [FlyTracker](https://github.com/kristinbranson/FlyTracker) installed (for post-experiment tracking) on the `processing_computer`.
+- [ ] [JAABA](https://github.com/kristinbranson/JAABA) installed (for for generating stimulus videos with fly trajectories) on the `processing_computer`. 
 
 See the [Rig Specs](freely-walking-rig-specs.qmd) page for full hardware and software details.
 
@@ -30,13 +37,32 @@ ___________________________________________________________________________
 
 ## How to run a protocol
 
-1. Power on the LED arena and the controller.
-2. Open **BIAS** (SimpleBiasCameraInterface) — ensure the IR illumination is on and the camera is acquiring at 30 fps.
-3. Open **PControl** in MATLAB and verify it connects to the LED panels.
-4. Use the live camera view to confirm the flies are visible in the arena.
-5. Load the flies into the arena and allow them to settle.
-6. Run the MATLAB protocol script (e.g. `protocol_27.m`). The script handles the full stimulus sequence including acclimation periods, stimulus presentation, and data logging.
-7. After the protocol finishes, transfer the data folder to the processing computer and run FlyTracker to generate tracking output — or let the [automated pipeline](freely_walking_pipeline.qmd) handle this for you.
+- [ ] 45-60 minutes before starting, turn the red switch on the heating board at the top of the box on to pre-warm the chamber. This ceramic heating unit is plugged into a thermostat (temp sensor is located above the arena near the camera) and stabilizes the temperature at 28deg celsius (+/- 0.5deg)
+
+- [ ] Fill an ice bucket in preparation for anesthetizing flies for loading into the arena.
+- [ ] Retrieve a vial of 15 sorted flies. Move the flies into the small tube vial and place the vial into the ice.
+
+- [ ] Make sure the acquisition computer is on and connected to the LED arena, and that the processing computer is on and connected to the network drive.
+- [ ] Turn on the LED arena and the power supply for the heat ring by turning on the multi-socket at the back of the cabinet. The arena should light up with a test pattern when it is powered on. This multi-socket also turns on a small fan that is inside the cabinet which can be turned on between experiments if needed.
+- [ ] Press the 'Output ON/OFF' button on the heat ring's power supply and twist the dial til the display reads 20V. During drier periods of the year, this can be reduced to 18-19V to prevent overheating. 
+- [ ] Turn the arena controller on by flipping the switch on the front of the controller box. The controller box is the black box on the shelf outside of the cabinet.
+
+- [ ] Open the **BIAS** (SimpleBiasCameraInterface) software on the acquisition computer — ensure the IR illumination is on and the camera is acquiring at 30 fps.
+- [ ] Open **PControl** in MATLAB and verify it connects to the LED panels.
+- [ ] Open the camera software on the processing computer. This is linked up to a small webcam camera that relays a live stream view of the arena in visible light (while the main camera records in IR). This is useful for monitoring the flies throughout the experiment.
+
+- [ ] Once cooled, load the flies into the arena, place the glass plate on top of the flies making sure that the sigmacote-d side is face down. 
+- [ ] Count the number of flies now while they are still anesthetized, this will be entered in the parameters drop down when starting the experiment. 
+- [ ] Close the cabinet door.
+- [ ] Wait for 5 minutes.
+- [ ] Open the MATLAB script for the protocol you want to run (e.g. `protocol_27.m`).
+- [ ] Press 'Run' to start the MATLAB protocol script. A MATLAB pop-up window should appear where the user should select the input parameters for the experiment. Once the parameters are selected, the script will begin executing. You should see that the BIAS software has started acquiring frames and the experiment progress will be printed in the MATLAB command window. The stimulus will start after the initial acclimation period (typically 5 minutes) and the flies will be recorded throughout.
+
+After the protocol finishes, the data folder is transferred to the processing computer and runs FlyTracker to generate tracking output. The MATLAB processing pipeline then generates results files and figures, which are saved on the network drive and local archive. You can monitor the progress of all experiments via the [pipeline status page](freely_walking_pipeline.qmd#pipeline-status-page).
+
+___________________________________________________________________________
+
+## The screen protocol
 
 The protocol used for the screen was [protocol 27](protocols/freely_walking_protocol_27.qmd). It presents 12 stimulus conditions (gratings, bars, curtains, reverse-phi, flicker, and a fixation bar) with 15 s stimulus trials separated by 20 s dark intervals, repeated twice. A 5-minute dark acclimation precedes the stimulus block.
 

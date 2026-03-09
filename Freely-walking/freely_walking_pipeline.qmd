@@ -4,6 +4,11 @@ title: "Pipeline"
 
 This page describes the full experimental workflow — from running an experiment through to processed results — and the automated processing pipeline that handles data flow between machines.
 
+::: {.callout-tip}
+### Pipeline status page
+The processing pipeline generates a standalone HTML page that shows the current processing stage of every experiment. It is auto-regenerated whenever the pipeline updates an experiment's status. You can view it here: `reiserlab/oaky-cokey/pipeline_status.html`.
+:::
+
 ## Experiment workflow
 
 The data pipeline has five stages:

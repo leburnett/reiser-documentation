@@ -171,10 +171,10 @@ Several files contain paths specific to the original computers. If running on a 
 
 | Location | What to change |
 |:---------|:---------------|
-| `generate_circ_stim_ufmf.m` | Path to JAABA repository (currently `/Users/burnettl/Documents/Non-GitHub-Repos/JAABA-master`) |
+| `generate_circ_stim_ufmf.m` | Path to JAABA repository (currently `C:\Users\labadmin\Documents\GitHub\JAABA-master`) |
 | `generate_circ_stim_ufmf.m` | Path to patterns folder (`patterns/Patterns_optomotor/`) |
 | Processing functions | Root data directory paths |
-| `make_summary_heat_maps_p27.m` | `ROOT_DIR` for results (currently `/Users/burnettl/Documents/Projects/oaky_cokey`) |
+| `make_summary_heat_maps_p27.m` | `ROOT_DIR` for results. This will be specific for each user. |
 : {.bordered}
 
 ___________________________________________________________________________
