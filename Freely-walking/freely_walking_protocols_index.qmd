@@ -168,7 +168,7 @@ Standalone: 15/16, 17, 26, 28, 33/34, 37
 
 
 
-## Adding a New Protocol
+## Adding a New Protocol to the Documentation
 
 When you create a new experiment protocol, follow these steps to add it to this documentation:
 

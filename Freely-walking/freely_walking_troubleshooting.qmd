@@ -9,6 +9,12 @@ This page covers common problems and their solutions, organised by the stage at 
 
 ## Setup issues
 
+### Camera not detected
+
+**Symptom:** MATLAB pop-up appears asking for the user to enter the port number for the camera. 
+
+**Solution:** The port on the acquisition computer is **Port 4**. Just type `4` into the pop-up and press Enter. This should allow the protocol to run and the camera to start acquiring.
+
 ### MATLAB cannot find functions
 
 **Symptom:** `Undefined function or variable 'process_freely_walking_data'` or similar errors.
@@ -59,6 +65,12 @@ Install missing toolboxes via MATLAB's Add-On Explorer.
 ___________________________________________________________________________
 
 ## Running the experiment
+
+### The LED arena does not turn on
+
+**Symptom:** MATLAB command window shows that the protocol is running, but the LED arena remains dark.
+
+**Solution:** Stop the protocol in the MATLAB editor tab. Stop BIAS from acquiring frames. Delete the folder that has been created for the experiment. Turn the controller off and the switch on the side of the LED arena off. Wait for 10s, then switch the LED arena switch on. Wait for the test pattern to appear, wait for 5s, then switch on the controller again. Restart the protocol script in MATLAB. This should resolve the issue. If not, check the power supply and connections to the arena. Unfortunately, the problem occurs not too infrequently and we don't have a good idea of why. Normally, some combination of turning things off and on again seems to fix it.
 
 ### LOG file not created
 
