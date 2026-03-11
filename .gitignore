@@ -52,3 +52,4 @@ __pycache__/
 
 /.quarto/
 **/*.quarto_ipynb
+session-notes.md
