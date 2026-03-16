@@ -29,15 +29,13 @@ jobs:
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          tinytex: true
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Render Quarto Project
-        run: quarto render
+      - name: Render Quarto Project (HTML only)
+        run: quarto render --to html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -2,7 +2,19 @@
 title: "Analysis (freely-walking)"
 ---
 
-# Overview
+## Experiment workflow
+
+The data pipeline has five stages:
+
+1. **Run the experiment** — A MATLAB protocol script (e.g. `protocol_27.m`) controls the LED arena and camera, producing a UFMF video file and a `LOG.mat` file with stimulus timing and metadata.
+2. **Track the flies** — FlyTracker processes the video offline, extracting each fly's position, heading, and basic features into `trx.mat` (trajectories) and `feat.mat` (features).
+3. **Compute behavioural metrics** — `combine_data_one_cohort(feat, trx)` filters bad tracking, interpolates gaps, and computes 12 behavioural metrics (forward velocity, angular velocity, turning rate, distance from centre, etc.).
+4. **Split by condition** — `comb_data_one_cohort_cond(LOG, comb_data)` uses LOG frame indices to slice the continuous data into per-condition segments.
+5. **Merge experiments** — `comb_data_across_cohorts_cond(protocol_dir)` combines all sessions into a single hierarchical `DATA` struct for group analysis.
+
+Steps **2–3** can be fully automated by the [processing pipeline](freely_walking_pipeline.qmd).
+
+## Overview
 
 The data acquired from freely-walking optomotor experiments, especially during the screen using protocol 27, is analysed in two main steps.
 

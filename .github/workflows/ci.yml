@@ -15,8 +15,6 @@ jobs:
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          tinytex: true
 
-      - name: Render Quarto Project
-        run: quarto render
+      - name: Render Quarto Project (HTML only)
+        run: quarto render --to html

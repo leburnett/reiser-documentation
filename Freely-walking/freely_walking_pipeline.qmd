@@ -1,60 +1,102 @@
 ---
-title: "Pipeline"
+title: "Processing Pipeline"
 ---
 
-This page describes the full experimental workflow — from running an experiment through to processed results — and the automated processing pipeline that handles data flow between machines.
+This page describes the automated processing pipeline that handles data flow from the acquisition rig through tracking and MATLAB processing to final results on the network drive.
 
 ::: {.callout-tip}
 ### Pipeline status page
-The processing pipeline generates a standalone HTML page that shows the current processing stage of every experiment. It is auto-regenerated whenever the pipeline updates an experiment's status. You can view it here: `reiserlab/oaky-cokey/pipeline_status.html`.
+The processing pipeline generates a standalone HTML page that shows the current processing stage of every experiment. It is auto-regenerated whenever the pipeline updates an experiment's status. See [Pipeline status page] below for details.
 :::
 
-## Experiment workflow
+## Overview
 
-The data pipeline has five stages:
+Three Python scripts automate data flow from the acquisition PC to processed results. The scripts run on two physical machines and communicate via a shared network drive. Each script monitors for new data, processes it, and advances it to the next pipeline stage.
 
-1. **Run the experiment** — A MATLAB protocol script (e.g. `protocol_27.m`) controls the LED arena and camera, producing a UFMF video file and a `LOG.mat` file with stimulus timing and metadata.
-2. **Track the flies** — FlyTracker processes the video offline, extracting each fly's position, heading, and basic features into `trx.mat` (trajectories) and `feat.mat` (features).
-3. **Compute behavioural metrics** — `combine_data_one_cohort(feat, trx)` filters bad tracking, interpolates gaps, and computes 12 behavioural metrics (forward velocity, angular velocity, turning rate, distance from centre, etc.).
-4. **Split by condition** — `comb_data_one_cohort_cond(LOG, comb_data)` uses LOG frame indices to slice the continuous data into per-condition segments.
-5. **Merge experiments** — `comb_data_across_cohorts_cond(protocol_dir)` combines all sessions into a single hierarchical `DATA` struct for group analysis.
+```
+ACQUISITION PC              NETWORK DRIVE              PROCESSING PC
+                           (oaky-cokey/data/)
 
-Steps **2–3** can be fully automated by the pipeline described below.
+┌──────────────────┐
+│ MATLAB experiment│
+│ (.ufmf + LOG.mat)│
+└────────┬─────────┘
+         v
+┌──────────────────┐
+│monitor_and_copy  │
+│ [acquired]       │
+│ [copied_to_net]  ├──────> 0_unprocessed/
+└──────────────────┘              │
+                                  │
+                                  └──────> ┌──────────────────┐
+                                           │monitor_and_track │
+                                           │ [tracked]        │
+                            1_tracked/ <───┤                  │
+                                           └────────┬─────────┘
+                                                    v
+                                           ┌──────────────────┐
+                                           │daily_processing  │
+                                           │ [processed]      │
+                                           │ [synced_to_net]  ├─┐
+                                           └──────────────────┘ │
+                                                                v
+                            2_processed/  <─────────────────────┘
+                            exp_results/
+                            exp_figures/
+```
 
-## Automated data pipeline
+### Pipeline stages
 
-Three Python scripts (written by Aparna Dev) automate data flow from the acquisition PC to processed results. The scripts run on two physical machines and communicate via shared network directories.
+| Stage | Script | Machine | Description |
+|:------|:-------|:--------|:------------|
+| 1. `acquired` | `monitor_and_copy.py` | Acquisition PC | Raw data detected on the rig |
+| 2. `copied_to_network` | `monitor_and_copy.py` | Acquisition PC | Folder copied to network `0_unprocessed` |
+| 3. `tracked` | `monitor_and_track.py` | Processing PC | FlyTracker completed, `trx.mat` generated |
+| 4. `processed` | `daily_processing.py` | Processing PC | MATLAB processing complete, results generated |
+| 5. `synced_to_network` | `daily_processing.py` | Processing PC | Results, figures, and videos copied to network |
 
-### Overview
+### Network directory structure
 
-The automated pipeline eliminates manual file management between running an experiment and analysing the results. Three scripts, launched via Windows Task Scheduler batch files, handle the progression of data through a series of network directory stages. Each script monitors for new data, processes it, and advances it to the next stage.
-
-| Stage | Script | Runs on | Input | Output | Polling |
-|:------|:-------|:--------|:------|:-------|:--------|
-| 1. Copy | `monitor_and_copy.py` | Acquisition PC | Local experiment data | Network `0_unprocessed` | 30 s (watchdog) |
-| 2. Track | `monitor_and_track.py` | Processing PC | Network `0_unprocessed` | Network `1_tracked` | 5 min, 15 cycles |
-| 3. Process | `daily_processing.py` | Processing PC | Local `01_tracked` | Network `2_processed` | One-shot (daily) |
-
-### Network directory stages
+All network directories reside on the Janelia network share at `\\prfs.hhmi.org\reiserlab\oaky-cokey\`.
 
 | Directory | Contents | State |
 |:----------|:---------|:------|
-| `0_unprocessed` | Raw experiment folders (.ufmf + LOG.mat + stamp_log) | Awaiting tracking |
-| `1_tracked` | Tracked folders (+ trx.mat, feat.mat) | Awaiting processing |
-| `2_processed` | Fully processed folders (+ MP4 videos) | Complete |
+| `data/0_unprocessed` | Raw experiment folders (.ufmf + LOG.mat + stamp_log) | Awaiting tracking |
+| `data/1_tracked` | Tracked folders (+ trx.mat, feat.mat) | Awaiting processing |
+| `data/2_processed` | Fully processed folders (+ MP4 videos) | Complete |
 | `exp_results` | Result `.mat` files organised by protocol | Analysis ready |
-| `exp_figures` | Overview figures (PDF/PNG) | QC and review |
-
-All network directories reside on the Janelia network share at `\\prfs.hhmi.org\reiserlab\oaky-cokey\data\`.
+| `exp_figures/overview_figs` | Overview figures (PDF/PNG) | QC and review |
 
 ::: {.callout-tip}
 ### Completeness check
-A folder is considered "complete" (ready to advance to the next stage) when it contains at least one `.ufmf` file, at least one `.mat` file, and a file whose name starts with `stamp_log`. This ensures the experiment has finished writing all outputs before any copying or processing begins.
+A folder is considered "complete" (ready to advance to the next stage) when it contains at least one `.ufmf` file, at least one `.mat` file, and a file whose name starts with `stamp_log`. This is checked by `is_folder_complete()` in the shared utilities module and ensures the experiment has finished writing all outputs before any copying or processing begins.
 :::
+
+### Experiment folder hierarchy
+
+From September 25, 2024 onwards, experiment folders follow a structured hierarchy:
+
+```
+{date}/
+  {protocol}/
+    {strain}/
+      {sex}/
+        {time}/
+          LOG_YYYY_MM_DD_HH_MM_SS.mat
+          REC__cam_0_date_..._v001.ufmf
+          stamp_log_cam0.txt
+          pipeline_status.json          # added by pipeline
+```
+
+Earlier experiments (before September 25, 2024) use a flat `{date}/{time}/` structure without intermediate metadata folders.
+
+## Pipeline scripts
 
 ### Stage 1: Monitor and copy
 
-`monitor_and_copy.py` runs on the **acquisition PC**. It uses the Python `watchdog` library to monitor the data folder for new experiment directories. When a new folder is detected, it is added to a pending set. Every 30 seconds, the script checks pending folders for completeness and copies complete folders to the network `0_unprocessed` directory using `shutil.copytree()`, preserving the full folder hierarchy (`{date}/{protocol}/{strain}/{sex}/{time}/`).
+`monitor_and_copy.py` runs on the **acquisition PC**. It uses the Python `watchdog` library to monitor the data folder (`SOURCE_ROOT`) for new experiment directories. When a new folder is detected, it is added to a pending set. Every 30 seconds, the script checks pending folders for completeness and copies complete folders to the network `0_unprocessed` directory using `shutil.copytree()`, preserving the full folder hierarchy.
+
+On startup, it also scans for any existing folders that may have been created while the script was not running, so experiments are never missed.
 
 The script runs indefinitely until manually stopped. It is launched on login via `run_monitor_and_copy.bat` registered with Windows Task Scheduler.
 
@@ -63,39 +105,97 @@ The script runs indefinitely until manually stopped. It is launched on login via
 `monitor_and_track.py` runs on the **processing PC**. It polls the network `0_unprocessed` directory every 5 minutes for new folders. For each untracked folder:
 
 1. Checks whether the folder has already been processed (exists in `1_tracked` or `2_processed`)
-2. Copies the folder locally (tracking over the network would be extremely slow)
+2. Copies the folder locally to `DATA_UNPROCESSED` (tracking over the network would be extremely slow)
 3. Runs MATLAB FlyTracker in batch mode: `matlab -batch "batch_track_ufmf('<folder>')"`
 4. Verifies tracking success by checking for `trx.mat`
-5. Moves the tracked data to `1_tracked` on the network and the local archive
+5. Archives locally to `DATA_TRACKED`
+6. Moves the tracked data to `1_tracked` on the network, deletes from `0_unprocessed`
+7. Cleans up any empty parent directories left behind
 
-The script auto-exits after 15 consecutive scan cycles (75 minutes) with no new data. It is launched on the processing PC at scheduled times via `run_monitor_and_track.bat`.
+**CLI options:**
+
+```cmd
+run_monitor_and_track.bat                  # Default: exit after 75 min idle
+run_monitor_and_track.bat --timeout 0      # Run indefinitely
+run_monitor_and_track.bat --timeout 120    # Exit after 120 min idle
+```
+
+The `--timeout` flag controls how long the script waits (in minutes) with no new data before exiting. Default is 75 minutes (15 scan cycles × 5 minutes). Set to `0` to run indefinitely.
 
 ### Stage 3: Daily processing
 
 `daily_processing.py` runs once daily on the **processing PC**. It is a one-shot script (not a polling loop):
 
-1. Scans `01_tracked` for date folders (`YYYY_MM_DD`) not yet in `02_processed`
+1. Scans `DATA_TRACKED` for date folders (`YYYY_MM_DD`) not yet in `DATA_PROCESSED`
 2. For each new date, calls: `matlab -batch "process_freely_walking_data('YYYY_MM_DD')"`
-3. Copies result `.mat` files to `exp_results` on the network (organised by protocol)
-4. Copies overview figures to `exp_figures` on the network
-5. Moves the date folder from `01_tracked` to `02_processed` (local and network)
+3. Copies result `.mat` files to `exp_results` on the network (filtered by date prefix)
+4. Copies overview figures (PDF/PNG) to `exp_figures/overview_figs` on the network
+5. Moves the date folder from `DATA_TRACKED` to `DATA_PROCESSED` (local and network)
 6. Copies generated `.mp4` stimulus videos to `2_processed` on the network
+
+**CLI options:**
+
+```cmd
+run_daily_processing.bat                              # Process new dates only
+run_daily_processing.bat --reprocess                  # Reprocess ALL dates
+run_daily_processing.bat --reprocess 2025_03_01       # Reprocess specific date(s)
+```
+
+The `--reprocess` flag forces reprocessing of dates that have already been processed. Without arguments it reprocesses all dates; with date arguments it reprocesses only those specific dates. This replaces the former standalone `reprocessing_script.py`.
 
 ### Supporting scripts
 
 | Script | Purpose |
 |:-------|:--------|
-| `reprocessing_script.py` | Variant of `daily_processing.py` that reprocesses **all** dates (used when processing logic changes) |
-| `copy_movies_to_network.py` | Syncs `.mp4` video files from local `02_processed` to network `2_processed` |
+| `copy_movies_to_network.py` | Backfill tool: syncs `.mp4` video files from local `DATA_PROCESSED` to network `2_processed` for experiments where videos were missed |
+| `backfill_registry.py` | One-time utility to retroactively generate `pipeline_status.json` files and populate the global registry for pre-existing experiments |
+| `generate_batch_files.py` | Auto-generates `.bat` launcher files from `config.py` paths. Run after changing Python or repo paths |
 
-### Deployment
+## Status tracking system
 
-| Machine | Role | Windows user | Scripts |
-|:--------|:-----|:-------------|:--------|
-| Acquisition PC | Runs experiments, captures video | `labadmin` | `monitor_and_copy.py` |
-| Processing PC | FlyTracker tracking, MATLAB processing | `burnettl` | `monitor_and_track.py`, `daily_processing.py` |
+The pipeline tracks every experiment's progress through two complementary mechanisms: per-experiment status files and a global registry.
 
-All automation scripts are located in `python/automation/` within the [freely-walking-optomotor](https://github.com/leburnett/freely-walking-optomotor) repository.
+### Per-experiment status
+
+Each experiment folder contains a `pipeline_status.json` file that records which stages have been completed, when, and by which machine. This file is created when the experiment first enters the pipeline and updated at each stage.
+
+```json
+{
+  "experiment_id": "2025_02_26_14_30_00_jfrc100_es_protocol_27_F",
+  "date": "2025_02_26",
+  "protocol": "protocol_27",
+  "strain": "jfrc100_es",
+  "sex": "F",
+  "time": "14_30_00",
+  "stages": {
+    "acquired": {
+      "timestamp": "2025-02-26T14:31:00",
+      "machine": "acquisition",
+      "status": "complete"
+    },
+    "copied_to_network": { "..." : "..." },
+    "tracked": { "..." : "..." }
+  },
+  "current_stage": "tracked",
+  "errors": []
+}
+```
+
+### Global registry
+
+A single `pipeline_status.json` file on the network drive aggregates the status of all experiments. It is updated atomically (via temp file + rename) by whichever machine completes a pipeline stage. The global registry drives the HTML status page and includes cross-reference fields indicating which machines have local copies of the data and results.
+
+### Shared utilities module
+
+The pipeline scripts share a common utilities package (`python/automation/shared/`) with six modules:
+
+| Module | Purpose |
+|:-------|:--------|
+| `status.py` | Per-experiment `pipeline_status.json` CRUD (`init_status`, `update_stage`, `read_status`, `record_error`) |
+| `registry.py` | Global registry management and HTML status page generation (`update_registry`, `generate_status_page`) |
+| `file_ops.py` | Consolidated file operations: completeness checks, folder hierarchy parsing, safe moves/copies, cleanup |
+| `matlab.py` | MATLAB subprocess wrapper: runs MATLAB functions in batch mode, returns success/stdout/stderr |
+| `logging_config.py` | Centralised rotating log files (5 MB max, 3 backups) written to `PROJECT_ROOT/logs/` |
 
 ## Pipeline status page
 
@@ -103,16 +203,15 @@ The automation scripts generate a standalone HTML page (`pipeline_status.html`) 
 
 ### What it contains
 
-The status page includes:
-
 - **Sortable and filterable tables** with colour-coded pipeline stages for each experiment
-- **Production experiments** (from September 25, 2024 onwards) — displayed prominently with full metadata. An orange warning indicator flags experiments with missing metadata or missing LOG files.
-- **Testing-phase experiments** (before September 25, 2024) — collapsed by default. These older experiments have flat folder structures and "unknown" metadata is expected.
+- **Cross-reference columns** showing which machines hold copies of the data (Data Acq, Data Proc, Data Net) and results (Res Acq, Res Proc, Res Net)
+- **Production experiments** (from September 25, 2024 onwards) — displayed prominently with full metadata. An orange warning indicator (⚠) flags experiments with missing metadata or missing LOG files
+- **Testing-phase experiments** (before September 25, 2024) — collapsed by default. These older experiments have flat folder structures and "unknown" metadata is expected
 - **Summary charts** — breakdowns by protocol, by strain, and a timeline view (production data only)
 
 ### How it is generated
 
-The status page is generated by the `generate_status_page()` function in `python/automation/shared/registry.py`. It is called automatically whenever the automation pipeline updates an experiment's processing status. The function reads the experiment registry (a JSON file tracking all experiments and their current pipeline stage) and renders the HTML page with the current state.
+The status page is generated by `generate_status_page()` in `python/automation/shared/registry.py`. It is called automatically every time the pipeline updates an experiment's status (i.e., after each call to `update_registry()`). The function reads the global registry JSON, computes summary statistics, and renders a self-contained HTML page with embedded JavaScript for sorting, filtering, and charting.
 
 ### How to view it
 
@@ -125,3 +224,87 @@ open /Volumes/reiserlab/oaky-cokey/pipeline_status.html
 # Windows:
 start \\prfs.hhmi.org\reiserlab\oaky-cokey\pipeline_status.html
 ```
+
+## Configuration
+
+All path configuration is centralised in `config/config.py` within the [freely-walking-optomotor](https://github.com/leburnett/freely-walking-optomotor) repository. Each machine's role is set once via the `MACHINE_ROLE` environment variable, and all other paths are derived automatically.
+
+See the [Configuration](freely_walking_configuration.qmd) page for full details on path setup for each machine.
+
+### Machine roles
+
+| Machine | `MACHINE_ROLE` | Key paths |
+|:--------|:---------------|:----------|
+| Acquisition PC | `acquisition` | `SOURCE_ROOT` (where MATLAB/BIAS writes data), `PROJECT_ROOT` |
+| Processing PC | `processing` | `PROJECT_ROOT` (local data directories), MATLAB on PATH |
+| Analysis machines | `analysis` (default) | `PROJECT_ROOT` (optional, for dashboard/local analysis) |
+
+### Setting up the environment variable
+
+On the two lab machines, the environment variable must be set once (admin terminal):
+
+```cmd
+setx MACHINE_ROLE acquisition    REM on the acquisition rig
+setx MACHINE_ROLE processing     REM on the processing machine
+```
+
+Analysis machines do not need any setup — the role defaults to `analysis` automatically.
+
+### Generating batch files
+
+The `.bat` launcher files used by Windows Task Scheduler are auto-generated from `config.py` paths. After changing the Python executable path or repository location, regenerate them:
+
+```cmd
+cd python\automation
+python generate_batch_files.py
+```
+
+This creates three batch files (one per pipeline script) in their respective subdirectories.
+
+## Deployment
+
+### Machines
+
+| Machine | Role | Scripts | Schedule |
+|:--------|:-----|:--------|:---------|
+| Acquisition PC | Runs experiments, captures video | `monitor_and_copy.py` | Runs continuously (launched on login) |
+| Processing PC | FlyTracker tracking, MATLAB processing | `monitor_and_track.py` | Runs at scheduled times (Task Scheduler) |
+| Processing PC | MATLAB processing, network sync | `daily_processing.py` | Runs once daily (Task Scheduler) |
+
+### Setup checklist
+
+**Both machines:**
+
+1. Set the `MACHINE_ROLE` environment variable (see above)
+2. Verify Python is installed at the path specified in `config.py`
+3. Verify MATLAB is installed and on PATH
+4. Verify the network drive is accessible: `dir \\prfs.hhmi.org\reiserlab\oaky-cokey`
+5. Install the `watchdog` Python package (acquisition machine only)
+6. Generate batch files: `python generate_batch_files.py`
+
+**Processing machine additionally:**
+
+- Create local data directories if they do not exist:
+
+```cmd
+mkdir %PROJECT_ROOT%\DATA\00_unprocessed
+mkdir %PROJECT_ROOT%\DATA\01_tracked
+mkdir %PROJECT_ROOT%\DATA\02_processed
+mkdir %PROJECT_ROOT%\results
+mkdir %PROJECT_ROOT%\figures
+mkdir %PROJECT_ROOT%\logs
+```
+
+### Logs
+
+Each script writes rotating log files to `PROJECT_ROOT/logs/`:
+
+| Log file | Source |
+|:---------|:-------|
+| `monitor_and_copy.log` | Stage 1 script |
+| `monitor_and_track.log` | Stage 2 script |
+| `daily_processing.log` | Stage 3 script |
+
+Logs rotate at 5 MB with 3 backups retained.
+
+All automation scripts are located in `python/automation/` within the [freely-walking-optomotor](https://github.com/leburnett/freely-walking-optomotor) repository.
