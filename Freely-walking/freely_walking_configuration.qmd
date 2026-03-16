@@ -28,18 +28,10 @@ The two config files live in the `config/` directory at the repository root:
 
 The automation pipeline moves data through four stages:
 
-```{mermaid}
-flowchart LR
-    A["**Acquisition rig**\n(BIAS + MATLAB)"] -->|monitor_and_copy| B["**Network drive**\n0_unprocessed/"]
-    B -->|monitor_and_track| C["**Network drive**\n1_tracked/"]
-    C -->|daily_processing| D["**Network drive**\nexp_results/ +\nexp_figures/"]
-    C -->|daily_processing| E["**Network drive**\n2_processed/"]
-```
-
 1. **Acquisition rig** records video and LOG files to `rig_data_folder`
-2. `monitor_and_copy` transfers completed folders to the network drive (`0_unprocessed/`)
-3. `monitor_and_track` copies to local, runs FlyTracker, moves tracked data to `1_tracked/`
-4. `daily_processing` runs MATLAB processing, saves results and figures, moves data to `2_processed/`
+2. `monitor_and_copy` transfers completed folders to the **network drive** (`0_unprocessed/`)
+3. `monitor_and_track` copies to the **Processing PC**, runs FlyTracker, moves tracked data to `1_tracked/` on the **network drive**
+4. `daily_processing` runs MATLAB processing on the **Processing PC**, saves results and figures, moves data to `2_processed/` on the **network drive**
 
 The processing machine maintains a local copy of the data under `project_root` and synchronises with the network drive. Analysis computers can work from either a local copy or a mounted network drive.
 
@@ -272,25 +264,7 @@ The three automation scripts in `python/automation/` run on the processing machi
 See the [Data Organisation](freely_walking_data.qmd) page for details on what each processing stage produces.
 
 
-## Troubleshooting
-
-**"Path not found" errors in MATLAB**
-Run `setup_path.m` to add all `src/` subdirectories to the MATLAB path, then check that `get_config().project_root` points to an existing directory:
-
-```matlab
-cfg = get_config();
-assert(isfolder(cfg.project_root), 'project_root does not exist: %s', cfg.project_root);
-```
-
-**Network paths unreachable**
-The `NETWORK_*` paths require the network drive to be mounted. On Windows this is typically automatic via domain login. On Mac, connect via Finder: Go > Connect to Server > `smb://prfs.hhmi.org/reiserlab/oaky-cokey`.
-
-**Python import errors**
-Make sure `sys.path.insert` reaches the repo root before importing from `config.config`. The depth depends on the script's location in the directory tree. For example, scripts in `python/automation/daily_processing/` need four levels:
-
-```python
-sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
-```
-
-**Dashboard can't find data**
-The dashboard reads from `RESULTS_PATH / "protocol_27"` by default. Ensure you have run `process_freely_walking_data` for the relevant dates, or point the dashboard to a different protocol directory.
+::: {.callout-tip}
+### Troubleshooting
+For configuration-related troubleshooting (path errors, network connectivity, Python imports), see the [Troubleshooting](freely_walking_troubleshooting.qmd) page.
+:::

@@ -2,14 +2,24 @@
 title: "Troubleshooting"
 ---
 
-## Setup issues
+This page collects common issues grouped by topic. Click any issue to expand the details.
 
-### Camera not detected
+## Setup & configuration {#setup}
 
-**Symptom:** MATLAB pop-up appears asking for the user to enter the port number for the camera. 
+::: {.callout-warning collapse="true"}
+### "Path not found" errors in MATLAB
 
-**Solution:** The port on the acquisition computer is **Port 4**. Just type `4` into the pop-up and press Enter. This should allow the protocol to run and the camera to start acquiring.
+**Symptom:** MATLAB reports that functions or directories cannot be found.
 
+**Solution:** Run `setup_path.m` to add all `src/` subdirectories to the MATLAB path, then check that `get_config().project_root` points to an existing directory:
+
+```matlab
+cfg = get_config();
+assert(isfolder(cfg.project_root), 'project_root does not exist: %s', cfg.project_root);
+```
+:::
+
+::: {.callout-warning collapse="true"}
 ### MATLAB cannot find functions
 
 **Symptom:** `Undefined function or variable 'process_freely_walking_data'` or similar errors.
@@ -21,8 +31,10 @@ addpath(genpath('/path/to/freely-walking-optomotor'));
 ```
 
 Verify by running `which process_freely_walking_data` — it should return a valid path.
+:::
 
-### Missing toolboxes
+::: {.callout-warning collapse="true"}
+### Missing MATLAB toolboxes
 
 **Symptom:** Errors referencing functions like `ranksum`, `fittype`, or `circ_vtest`.
 
@@ -33,10 +45,57 @@ Verify by running `which process_freely_walking_data` — it should return a val
 | Statistics and Machine Learning Toolbox | Statistical tests (`ranksum`, FDR correction) |
 | Image Processing Toolbox | Video processing |
 | Circular Statistics Toolbox | Phototaxis analysis (`circ_vtest`, Watson-Williams test) |
-: {.bordered}
 
 Install missing toolboxes via MATLAB's Add-On Explorer.
+:::
 
+::: {.callout-warning collapse="true"}
+### Network paths unreachable
+
+**Symptom:** Scripts fail with errors about `NETWORK_*` paths not existing.
+
+**Solution:** The `NETWORK_*` paths require the network drive to be mounted. On Windows this is typically automatic via domain login. On Mac, connect via Finder: Go > Connect to Server > `smb://prfs.hhmi.org/reiserlab/oaky-cokey`.
+:::
+
+::: {.callout-warning collapse="true"}
+### Python import errors
+
+**Symptom:** `ModuleNotFoundError: No module named 'config'` or similar import failures.
+
+**Solution:** Make sure `sys.path.insert` reaches the repo root before importing from `config.config`. The depth depends on the script's location in the directory tree. For example, scripts in `python/automation/daily_processing/` need four levels:
+
+```python
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
+```
+:::
+
+::: {.callout-warning collapse="true"}
+### Hardcoded paths
+
+**Symptom:** Scripts fail on a different machine than the one they were originally written on.
+
+**Solution:** Several files contain paths specific to the original computers. If running on a different machine, update these:
+
+| Location | What to change |
+|:---------|:---------------|
+| `generate_circ_stim_ufmf.m` | Path to JAABA repository (currently `C:\Users\labadmin\Documents\GitHub\JAABA-master`) |
+| `generate_circ_stim_ufmf.m` | Path to patterns folder (`patterns/Patterns_optomotor/`) |
+| Processing functions | Root data directory paths |
+| `make_summary_heat_maps_p27.m` | `ROOT_DIR` for results — specific per user |
+:::
+
+
+## Hardware & acquisition {#hardware}
+
+::: {.callout-warning collapse="true"}
+### Camera not detected
+
+**Symptom:** MATLAB pop-up appears asking for the user to enter the port number for the camera.
+
+**Solution:** The port on the acquisition computer is **Port 4**. Just type `4` into the pop-up and press Enter. This should allow the protocol to run and the camera to start acquiring.
+:::
+
+::: {.callout-warning collapse="true"}
 ### Arena not responding
 
 **Symptom:** The protocol script runs but no stimuli appear on the arena.
@@ -46,7 +105,17 @@ Install missing toolboxes via MATLAB's Add-On Explorer.
 - Arena is not powered on or the controller is disconnected
 - PControl cannot connect — try running PControl standalone to test the connection
 - The `panel_com` functions are not on the MATLAB path — verify G4_Display_Tools is installed
+:::
 
+::: {.callout-warning collapse="true"}
+### The LED arena does not turn on
+
+**Symptom:** MATLAB command window shows that the protocol is running, but the LED arena remains dark.
+
+**Solution:** Stop the protocol in the MATLAB editor tab. Stop BIAS from acquiring frames. Delete the folder that has been created for the experiment. Turn the controller off and the switch on the side of the LED arena off. Wait for 10s, then switch the LED arena switch on. Wait for the test pattern to appear, wait for 5s, then switch on the controller again. Restart the protocol script in MATLAB. This should resolve the issue. If not, check the power supply and connections to the arena. Unfortunately, the problem occurs not too infrequently and we don't have a good idea of why. Normally, some combination of turning things off and on again seems to fix it.
+:::
+
+::: {.callout-warning collapse="true"}
 ### BIAS not recording
 
 **Symptom:** The protocol runs but no `.ufmf` video file is created.
@@ -56,17 +125,9 @@ Install missing toolboxes via MATLAB's Add-On Explorer.
 - BIAS was not started before the protocol script
 - The camera is not acquiring (check that IR illumination is on and the frame rate is 30 fps)
 - Disk space is full on the recording drive
+:::
 
-___________________________________________________________________________
-
-## Running the experiment
-
-### The LED arena does not turn on
-
-**Symptom:** MATLAB command window shows that the protocol is running, but the LED arena remains dark.
-
-**Solution:** Stop the protocol in the MATLAB editor tab. Stop BIAS from acquiring frames. Delete the folder that has been created for the experiment. Turn the controller off and the switch on the side of the LED arena off. Wait for 10s, then switch the LED arena switch on. Wait for the test pattern to appear, wait for 5s, then switch on the controller again. Restart the protocol script in MATLAB. This should resolve the issue. If not, check the power supply and connections to the arena. Unfortunately, the problem occurs not too infrequently and we don't have a good idea of why. Normally, some combination of turning things off and on again seems to fix it.
-
+::: {.callout-warning collapse="true"}
 ### LOG file not created
 
 **Symptom:** No `LOG_*.mat` file appears in the experiment directory after the protocol finishes.
@@ -76,7 +137,9 @@ ___________________________________________________________________________
 - The protocol was interrupted before completion (check MATLAB command window for errors)
 - The output directory path in the protocol script is incorrect
 - MATLAB did not have write permissions to the directory
+:::
 
+::: {.callout-warning collapse="true"}
 ### Flies not visible in video
 
 **Symptom:** The `.ufmf` video shows a dark image with no flies visible.
@@ -86,11 +149,12 @@ ___________________________________________________________________________
 - IR illumination was not turned on
 - The camera exposure settings in BIAS are too low
 - The arena LEDs were overpowering the IR illumination (LEDs should be green, not visible to the IR camera)
+:::
 
-___________________________________________________________________________
 
-## Tracking issues
+## Tracking {#tracking}
 
+::: {.callout-warning collapse="true"}
 ### FlyTracker loses flies
 
 **Symptom:** Fewer flies tracked than were loaded into the arena. The `n_fly_data` array shows a large number in the third element (flies removed).
@@ -106,7 +170,9 @@ ___________________________________________________________________________
 - Verify the arena was clean before loading flies
 - Check that lighting conditions were consistent throughout the experiment
 - Review the `.ufmf` video to see if flies were genuinely lost from tracking
+:::
 
+::: {.callout-warning collapse="true"}
 ### High velocity artifacts
 
 **Symptom:** Unrealistic velocity spikes in the timeseries plots.
@@ -117,11 +183,12 @@ ___________________________________________________________________________
 
 - A few isolated spikes are normal and handled automatically
 - Persistent high-velocity regions suggest the tracker jumped between flies — re-run FlyTracker with adjusted settings or exclude the cohort
+:::
 
-___________________________________________________________________________
 
-## Processing issues
+## Processing {#processing}
 
+::: {.callout-warning collapse="true"}
 ### `process_freely_walking_data` errors
 
 **Symptom:** The batch processing function fails on a specific experiment folder.
@@ -137,7 +204,9 @@ ___________________________________________________________________________
 1. Navigate to the experiment folder manually
 2. Try running `process_data_features` directly on that folder
 3. Check that `load('LOG_*.mat')` works and the LOG structure contains the expected fields
+:::
 
+::: {.callout-warning collapse="true"}
 ### Strain name mismatches
 
 **Symptom:** Data from the same strain appears under different names in the combined DATA structure.
@@ -145,11 +214,9 @@ ___________________________________________________________________________
 **Explanation:** Strain names are extracted from the LOG metadata and can vary due to typos or inconsistent naming. The function `check_strain_typos` attempts to normalise common variations, but may not catch all cases.
 
 **Solution:** Check the strain names in the LOG files for consistency. If needed, update the mapping in `check_strain_typos.m`.
+:::
 
-___________________________________________________________________________
-
-## Analysis issues
-
+::: {.callout-warning collapse="true"}
 ### `comb_data_across_cohorts_cond` fails
 
 **Symptom:** Error when trying to combine data across cohorts, often referencing missing fields or unexpected structure.
@@ -159,7 +226,9 @@ ___________________________________________________________________________
 - **Missing condition numbers:** Older protocols (before protocol 24) do not save condition numbers to the LOG file. The function requires this field. Use a version-specific parser (e.g. `comb_data_across_cohorts_cond_v14.m`) for older protocols.
 - **Mismatched protocols:** Experiments from different protocol versions may have different numbers of conditions or different timing structures
 - **Incomplete experiments:** If a protocol was interrupted, some conditions may be missing from the LOG
+:::
 
+::: {.callout-warning collapse="true"}
 ### Empty or unexpected results
 
 **Symptom:** Plots show flat lines or the DATA structure has empty fields.
@@ -169,24 +238,21 @@ ___________________________________________________________________________
 - Verify the processed `*_data.mat` file exists and contains `comb_data` with the expected fields
 - Check `n_fly_data` — if all flies were removed during tracking QC, `comb_data` arrays will be empty
 - Confirm the LOG file has the correct condition definitions (pattern IDs, speed values)
+:::
 
-___________________________________________________________________________
 
-## Hardcoded paths
+## Dashboard {#dashboard}
 
-Several files contain paths specific to the original computers. If running on a different machine, update these:
+::: {.callout-warning collapse="true"}
+### Dashboard can't find data
 
-| Location | What to change |
-|:---------|:---------------|
-| `generate_circ_stim_ufmf.m` | Path to JAABA repository (currently `C:\Users\labadmin\Documents\GitHub\JAABA-master`) |
-| `generate_circ_stim_ufmf.m` | Path to patterns folder (`patterns/Patterns_optomotor/`) |
-| Processing functions | Root data directory paths |
-| `make_summary_heat_maps_p27.m` | `ROOT_DIR` for results. This will be specific for each user. |
-: {.bordered}
+**Symptom:** The dashboard starts but shows no data or reports missing files.
 
-___________________________________________________________________________
+**Solution:** The dashboard reads from `RESULTS_PATH / "protocol_27"` by default. Ensure you have run `process_freely_walking_data` for the relevant dates, or point the dashboard to a different protocol directory.
+:::
 
-## Quality control plots
+
+## Quality control reference {#qc}
 
 The processing pipeline generates several overview figures that can help diagnose data quality issues:
 
