@@ -11,14 +11,12 @@ This page provides an overview of the Nested RF Protocol and links to all the gu
 
 ## Protocol overview
 
-::: {.callout-note}
-### Quick summary:
-This is a multi-step protocol consisting of a <b>short first protocol (P1)</b> that determines the rough receptive field location and preferred contrast of the cell, and a <b>longer second protocol (P2)</b> that is only presented at the location of the RF determined in P1.
+- Multi-step protocol consisting of a <b>short first protocol (P1)</b> that determines the rough receptive field location and preferred contrast of the cell, and a <b>longer second protocol (P2)</b> that is only presented within a subsection of the arena screen, centred on the location of the peak response determined in P1.
 
-This follow-up protocol probes the direction selectivity of the cell using moving bar stimuli, as well as measuring the receptive field structure at higher spatial resolution using small flashing squares.
+- P2 probes the direction selectivity of the cell using moving bar stimuli, as well as measuring the receptive field structure at higher spatial resolution using small flashing squares.
 
-The first protocol is run through the `G4_experiment_conductor` [GUI](/resources.qmd#g4-software) whereas the second protocol is generated and run through a custom MATLAB script called `generate_protocol2()`.
-:::
+- P1 is run through the `G4_experiment_conductor` [GUI](/resources.qmd#g4-software)
+- P2 is generated and run through a custom MATLAB script called `generate_protocol2()`.
 
 ::: {.callout-note}
 ### Aim:

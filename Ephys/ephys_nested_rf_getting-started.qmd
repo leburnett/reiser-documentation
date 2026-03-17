@@ -21,7 +21,7 @@ You need three software packages installed:
 
 Clone the repository to the rig computer:
 
-```
+```bash
 git clone https://github.com/leburnett/nested_RF_stimulus.git C:\matlabroot\G4_Protocols\nested_RF_stimulus
 ```
 
@@ -29,7 +29,7 @@ git clone https://github.com/leburnett/nested_RF_stimulus.git C:\matlabroot\G4_P
 
 Clone or download the G4_Display_Tools repository from GitHub:
 
-```
+```bash
 git clone https://github.com/JaneliaSciComp/G4_Display_Tools.git
 ```
 
