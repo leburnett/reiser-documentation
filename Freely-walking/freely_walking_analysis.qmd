@@ -220,7 +220,7 @@ ___________________________________________________________________________
 
 ## Level 3 — Statistical analysis: `make_summary_heat_maps_p27`
 
-This [function](https://github.com/leburnett/freely-walking-optomotor/blob/processing_computer/plotting_functions/summary_plot/make_summary_heat_maps_p27.m) generates a red-blue heatmap of p-values comparing each strain to the empty-split control across all conditions and behavioural metrics.
+This [function](https://github.com/leburnett/freely-walking-optomotor/blob/main/src/plotting/summary_plot/make_summary_heat_maps_p27.m) generates a red-blue heatmap of p-values comparing each strain to the empty-split control across all conditions and behavioural metrics.
 
 The statistical pipeline:
 
@@ -239,12 +239,12 @@ Several analysis scripts handle data from protocols other than the main screen p
 |:---------|:-------|:---------|
 | `protocol_30` | `p30_different_contrasts_analysis.m` | Contrast tuning curves — compares optomotor responses across different contrast levels |
 | `protocol_31` | `p31_different_speeds_analysis.m` | Speed tuning curves — compares responses across 4 speeds (32, 64, 127 px/s) at two spatial frequencies |
-| `protocol_25` | `single_lady_analysis.m` | Single-fly analysis — tests individual fly behaviour in isolation |
+| `protocol_25` | `p25_single_lady_analysis.m` | Single-fly analysis — tests individual fly behaviour in isolation |
 | `protocol_33/34` | `analyse_p33_p34.m` | Eye-painted fly experiments |
 | `protocol_35` | `analyse_p35_shiftedCoR.m` | Shifted centre of rotation experiments |
 : {.bordered}
 
-Additional analysis scripts for phototaxis (`analyse_phototaxis_polar.m`), viewing distance (`analyse_viewing_distance.m`), and spatial occupancy (`occupancy_heatmaps_quadrants_phototaxis.m`) can be applied to data from any protocol.
+Additional analysis scripts for phototaxis (`analyse_phototaxis.m`) and viewing distance (`analyse_viewing_distance.m`) can be applied to data from any protocol.
 
 ___________________________________________________________________________
 
