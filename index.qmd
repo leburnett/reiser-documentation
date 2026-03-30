@@ -1,8 +1,8 @@
 ---
-title: "Reiser Lab Documentation"
+title: "Welcome!"
 ---
 
-This documentation covers how to **design**, **run**, and **analyse** experiments using LED panel arena setups for experiments with *Drosophila melanogaster* within the Reiser Lab at HHMI's Janelia Research Campus.
+This documentation web resource covers how to **design**, **run**, and **analyse** experiments using LED panel arena setups for experiments with *Drosophila melanogaster* within the Reiser Lab at HHMI's Janelia Research Campus.
 
 ## How to use this documentation
 
@@ -17,13 +17,6 @@ Each experiment section follows a consistent structure designed to serve differe
 | **Reference** | Code architecture, data formats, experiment logs, and visualisation tools | Users looking up specific technical details |
 | **Help** | Troubleshooting guides organised by experiment stage, common errors, and quality control checks | Anyone who has hit a problem |
 : {.bordered}
-
-::: {.callout-tip}
-### Where to start
-**New to a project?** Start with the **Quickstart** page for that section — it has a prerequisites checklist and the essential steps to run and analyse an experiment. Then check the **Rig Specs** page for hardware and software details.
-
-**Something not working?** Jump straight to the **Troubleshooting** page at the bottom of each section's sidebar.
-:::
 
 ## Experiment sections
 
