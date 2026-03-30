@@ -54,6 +54,7 @@ website:
             - Freely-walking/freely_walking_visualisation.qmd
             - Freely-walking/freely_walking_observations.qmd
         - Freely-walking/freely_walking_dashboard.qmd
+        - Freely-walking/freely_walking_trajectory_viewer.qmd
         - Freely-walking/freely_walking_configuration.qmd
         - Freely-walking/freely_walking_troubleshooting.qmd
 
