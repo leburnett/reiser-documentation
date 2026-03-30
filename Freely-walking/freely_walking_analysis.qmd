@@ -272,31 +272,6 @@ Missing values from filtering are filled using method-appropriate interpolation:
 
 The function `comb_data_one_cohort_cond` slices continuous data into per-condition segments using LOG frame indices. For each condition, the data slice runs from `start_f(1) - 300` to `stop_f(end)`, where the 300-frame (10-second) pre-buffer captures baseline behaviour before stimulus onset. Conditions are named `R1_condition_N` or `R2_condition_N` for repetitions 1 and 2 respectively, plus `acclim_off1`, `acclim_patt`, and `acclim_off2` for the acclimation phases.
 
-### The DATA struct
-
-The final `DATA` struct organises all experimental data in a nested hierarchy:
-
-```
-DATA.(strain).(sex)(cohort_idx).(condition).(data_type)
-```
-
-For example: `DATA.jfrc100_es_shibire_kir.F(1).R1_condition_1.fv_data` returns a `[n_flies x n_frames]` array. Each condition also contains stimulus metadata (`trial_len`, `interval_dur`, `optomotor_pattern`, `optomotor_speed`, etc.).
-
-```matlab
-% Load combined data for protocol_27
-DATA = comb_data_across_cohorts_cond('/path/to/results/protocol_27');
-
-% List all strains
-strain_names = fieldnames(DATA);
-
-% Number of cohorts for a strain/sex
-n_cohorts = length(DATA.jfrc100_es_shibire_kir.F);
-
-% Mean forward velocity across all flies in one condition
-fv = DATA.jfrc100_es_shibire_kir.F(1).R1_condition_1.fv_data;
-mean_fv = mean(fv, 1, 'omitnan');  % [1 x n_frames]
-```
-
 ::: {.callout-tip}
 ### Further reading
 The training guide PDF (`docs/training_guide/training_guide.pdf` in the [freely-walking-optomotor](https://github.com/leburnett/freely-walking-optomotor) repository) provides detailed walkthroughs of every processing function, including the mathematical derivations for angular velocity, forward velocity, viewing distance, and inter-fly distance computations.

@@ -102,9 +102,44 @@ Each file contains:
 | `n_fly_data` | `[3 x 1]` array: [n_flies_in_arena, n_flies_tracked, n_flies_removed] |
 : {.bordered}
 
-## Condition naming convention
 
-When data is parsed by condition using `comb_data_one_cohort_cond` or `comb_data_across_cohorts_cond`, the resulting DATA structure uses the following condition names:
+### The DATA struct
+
+The final `DATA` struct organises all experimental data in a nested hierarchy and can be made using either `comb_data_one_cohort_cond` or `comb_data_across_cohorts_cond`.
+
+```
+DATA.(strain).(sex)(cohort_idx).(condition).(data_type)
+```
+
+For example: `DATA.jfrc100_es_shibire_kir.F(1).R1_condition_1.fv_data` returns a `[n_flies x n_frames]` array. Each condition also contains stimulus metadata (`trial_len`, `interval_dur`, `optomotor_pattern`, `optomotor_speed`, etc.).
+
+```matlab
+% Load combined data for protocol_27
+DATA = comb_data_across_cohorts_cond('/path/to/results/protocol_27');
+
+% List all strains
+strain_names = fieldnames(DATA);
+
+% Number of cohorts for a strain/sex
+n_cohorts = length(DATA.jfrc100_es_shibire_kir.F);
+
+% Mean forward velocity across all flies in one condition
+fv = DATA.jfrc100_es_shibire_kir.F(1).R1_condition_1.fv_data;
+mean_fv = mean(fv, 1, 'omitnan');  % [1 x n_frames]
+```
+
+This struct is critical for many of the analysis scripts within the repository. These scripts often start with these lines of code to generate the struct from teh .mat results files:
+
+```
+  if ~exist('DATA', 'var')
+      cfg = get_config();
+      protocol_dir = fullfile(cfg.results, 'protocol_27');
+      DATA = comb_data_across_cohorts_cond(protocol_dir);
+      fprintf('Loaded DATA from %s\n', protocol_dir);
+  end
+```
+
+The DATA structure uses the following condition names:
 
 - `acclim_off1` — pre-stimulus dark acclimation
 - `acclim_patt` — calibration flash acclimation
