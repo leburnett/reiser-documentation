@@ -2,6 +2,8 @@
 title: "Visualisation"
 ---
 
+![<b>Figure:</b> Frame from a video generated using `generate_circ_stim_ufmf` showing the stimulus, behavioural image and superimporsed fly trajectories.](../assets/imgs/freely/generate_circ_stim_ufmf.png){.ifr_center}
+
 ## Create per-condition videos with `generate_circ_stim_ufmf`
 
 This function generates .mp4 videos for each individual condition within an experiment. Each video contains:

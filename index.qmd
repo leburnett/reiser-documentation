@@ -4,20 +4,6 @@ title: "Welcome!"
 
 This documentation web resource covers how to **design**, **run**, and **analyse** experiments using LED panel arena setups for experiments with *Drosophila melanogaster* within the Reiser Lab at HHMI's Janelia Research Campus.
 
-## How to use this documentation
-
-Each experiment section follows a consistent structure designed to serve different needs:
-
-| Tier | What it contains | Who it's for |
-|:-----|:-----------------|:-------------|
-| **Overview** | Project summary, experiment workflow, and links to all pages in the section | Anyone getting oriented with a project |
-| **Quickstart** | Prerequisites checklist and quick-reference steps for running, making, and analysing protocols | Experienced users who need a quick refresher, or new users who want to get started fast |
-| **Rig Specs** | Arena hardware, software requirements, and calibration constants | Anyone setting up or troubleshooting the physical rig |
-| **Deep Dives** | Detailed protocol descriptions, stimulus generation, analysis pipelines, and data structures | Users who need to understand *how* and *why* things work |
-| **Reference** | Code architecture, data formats, experiment logs, and visualisation tools | Users looking up specific technical details |
-| **Help** | Troubleshooting guides organised by experiment stage, common errors, and quality control checks | Anyone who has hit a problem |
-: {.bordered}
-
 ## Experiment sections
 
 ### [Freely-walking experiments](Freely-walking/index.qmd)
@@ -35,6 +21,21 @@ Patch electrophysiology experiments characterising receptive field structure and
 ### [Tethered flight experiments](Tethered/index.qmd)
 
 Two-alternative forced choice experiments with tethered flying *Drosophila* using the **G4 LED arena**. *(Documentation in progress.)*
+
+## How to use this documentation
+
+Each experiment section follows a consistent structure designed to serve different needs:
+
+| Tier | What it contains | Who it's for |
+|:-----|:-----------------|:-------------|
+| **Overview** | Project summary, experiment workflow, and links to all pages in the section | Anyone getting oriented with a project |
+| **Quickstart** | Prerequisites checklist and quick-reference steps for running, making, and analysing protocols | Experienced users who need a quick refresher, or new users who want to get started fast |
+| **Rig Specs** | Arena hardware, software requirements, and calibration constants | Anyone setting up or troubleshooting the physical rig |
+| **Deep Dives** | Detailed protocol descriptions, stimulus generation, analysis pipelines, and data structures | Users who need to understand *how* and *why* things work |
+| **Reference** | Code architecture, data formats, experiment logs, and visualisation tools | Users looking up specific technical details |
+| **Help** | Troubleshooting guides organised by experiment stage, common errors, and quality control checks | Anyone who has hit a problem |
+: {.bordered}
+
 
 ___________________________________________________________________________
 

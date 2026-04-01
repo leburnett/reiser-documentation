@@ -38,60 +38,7 @@ The processing machine maintains a local copy of the data under `project_root` a
 
 ## Setup instructions
 
-### Step 1 — Clone the repository
-
-```bash
-git clone https://github.com/leburnett/freely-walking-optomotor.git
-```
-
-### Step 2 — Create the local data folder
-
-Create the following folder structure (or point to an existing one):
-
-```
-your_data_root/
-  DATA/
-    00_unprocessed/
-    01_tracked/
-    02_processed/
-  results/
-  figures/
-```
-
-### Step 3 — Edit the config files
-
-**MATLAB** — edit `config/get_config.m` (one line):
-
-```matlab
-cfg.project_root = '/path/to/your_data_root';
-```
-
-**Python** — edit `config/config.py` (one line):
-
-```python
-PROJECT_ROOT = Path("/path/to/your_data_root")
-```
-
-Both files contain commented examples for Windows and Mac.
-
-### Step 4 — Add MATLAB paths
-
-Run `setup_path.m` once per MATLAB session (or add it to your `startup.m`):
-
-```matlab
-run('/path/to/freely-walking-optomotor/setup_path.m')
-```
-
-This adds all `src/` subdirectories to the MATLAB path so that functions like `get_config()`, `process_freely_walking_data()`, and the protocol helper functions are available.
-
-### Step 5 — Install the Python environment
-
-```bash
-cd freely-walking-optomotor/python/freely-walking-python
-pixi install
-```
-
-This installs all Python dependencies (numpy, pandas, scipy, dash, etc.) into an isolated environment managed by [pixi](https://pixi.sh).
+For step-by-step installation and configuration instructions, see the [Installation & Setup](freely_walking_installation.qmd) page.
 
 
 ## Config file reference

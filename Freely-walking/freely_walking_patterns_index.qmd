@@ -87,15 +87,8 @@ The patterns are organized into several categories based on their visual propert
 
 : {.bordered .striped}
 
-## Pattern Gallery
-
-Below is a gallery of all patterns. Click on any pattern number in the table above to see detailed information including animated previews.
-
-::: {.callout-note}
-Patterns are displayed as they appear on the cylindrical LED arena (3 rows x 192 columns of LEDs), scaled up for visibility.
-:::
-
-## Adding a New Pattern
+::: {.callout-note collapse="true"}
+## Adding a New Pattern to the documentation
 
 When you create a new pattern for the LED arena, follow these steps to add it to this documentation:
 
@@ -151,7 +144,9 @@ quarto preview
 ```
 
 Once satisfied, commit and push to deploy.
+:::
 
+::: {.callout-note collapse="true"}
 ## Regenerating All Pattern Documentation
 
 To regenerate documentation for all patterns:
@@ -161,14 +156,9 @@ cd /path/to/freely-walking-optomotor
 pixi run -e default --manifest-path python/freely-walking-python/pixi.toml \
     python docs_generator/generate_pattern_docs.py
 ```
+::: 
 
 ## Technical Details
-
-### Arena Geometry
-
-- **Display**: Cylindrical LED arena with 72 panels
-- **Resolution**: 3 rows x 192 columns (each panel is 8x8 pixels)
-- **Panel arrangement**: `fliplr(flipud(reshape(1:72, 3, 24)))`
 
 ### Greyscale Levels
 

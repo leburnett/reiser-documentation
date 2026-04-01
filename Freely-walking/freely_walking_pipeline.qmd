@@ -48,7 +48,7 @@ ACQUISITION PC              NETWORK DRIVE              PROCESSING PC
 ### Pipeline stages
 
 | Stage | Script | Machine | Description |
-|:------|:-------|:--------|:------------|
+|:--------|:-------|:------|:------------|
 | 1. `acquired` | `monitor_and_copy.py` | Acquisition PC | Raw data detected on the rig |
 | 2. `copied_to_network` | `monitor_and_copy.py` | Acquisition PC | Folder copied to network `0_unprocessed` |
 | 3. `tracked` | `monitor_and_track.py` | Processing PC | FlyTracker completed, `trx.mat` generated |
@@ -275,25 +275,12 @@ This creates three batch files (one per pipeline script) in their respective sub
 
 **Both machines:**
 
-1. Set the `MACHINE_ROLE` environment variable (see above)
-2. Verify Python is installed at the path specified in `config.py`
-3. Verify MATLAB is installed and on PATH
-4. Verify the network drive is accessible: `dir \\prfs.hhmi.org\reiserlab\oaky-cokey`
-5. Install the `watchdog` Python package (acquisition machine only)
-6. Generate batch files: `python generate_batch_files.py`
-
-**Processing machine additionally:**
-
-- Create local data directories if they do not exist:
-
-```cmd
-mkdir %PROJECT_ROOT%\DATA\00_unprocessed
-mkdir %PROJECT_ROOT%\DATA\01_tracked
-mkdir %PROJECT_ROOT%\DATA\02_processed
-mkdir %PROJECT_ROOT%\results
-mkdir %PROJECT_ROOT%\figures
-mkdir %PROJECT_ROOT%\logs
-```
+- [ ] Set the `MACHINE_ROLE` environment variable (see above)
+- [ ] Verify Python is installed at the path specified in `config.py`
+- [ ] Verify MATLAB is installed and on PATH
+- [ ] Verify the network drive is accessible: `dir \\prfs.hhmi.org\reiserlab\oaky-cokey`
+- [ ] Install the `watchdog` Python package (acquisition machine only)
+- [ ] Generate batch files: `python generate_batch_files.py`
 
 ### Logs
 
@@ -304,7 +291,5 @@ Each script writes rotating log files to `PROJECT_ROOT/logs/`:
 | `monitor_and_copy.log` | Stage 1 script |
 | `monitor_and_track.log` | Stage 2 script |
 | `daily_processing.log` | Stage 3 script |
-
-Logs rotate at 5 MB with 3 backups retained.
 
 All automation scripts are located in `python/automation/` within the [freely-walking-optomotor](https://github.com/leburnett/freely-walking-optomotor) repository.

@@ -4,9 +4,13 @@ title: "Overview"
 
 Welcome to the documentation for the freely-walking optomotor experiments conducted in the Reiser Lab. This section covers everything you need to know to run, process, and analyse experiments using the G3 LED arena.
 
+![Raw behavioural frame from a freely walking experiment in the G3 arena.](../assets/imgs/freely/raw_behavioural_image_G3){.ifr_center width=60%}
+
 ## Background
 
-The **Freely Walking Course Control Mechanisms** screen was conducted in **2025** using the G3 LED arena in the Reiser Lab at HHMI's Janelia Research Campus. The screen measures optomotor responses, motion-induced centring behaviour, and general locomotion metrics in freely-walking *Drosophila*. Flies are presented with moving visual stimuli (gratings, bars, flicker, curtains, reverse-phi) while their trajectories are tracked at 30 fps.
+The **Freely Walking Course Control Mechanisms** screen was conducted in **2025** using the G3 LED arena in the Reiser Lab at HHMI's Janelia Research Campus. 
+
+The screen measures optomotor responses, motion-induced centring behaviour, and general locomotion metrics in freely-walking *Drosophila*. Flies are presented with moving visual stimuli (gratings, bars, flicker, curtains, reverse-phi) while their trajectories are tracked at 30 fps.
 
 The experiment protocol was designed by Laura Burnett and experiments were conducted by Laura Burnett and **Aparna Dev** from PTR. All fly husbandry was carried out by **Edward Rogers**.
 
@@ -39,16 +43,23 @@ The code for generating and running these protocols, processing and plotting the
 
 ## Data availability
 
-Experiment data is saved directly on the `acquisition computer`, it is then copied to the `prfs group drive` and copied locally onto the `processing computer` to be processed. The results of the processing and analysis are saved on the `analysis computer` and backed up to the `prfs group drive`. See [Configuration & Paths](freely_walking_configuration.qmd) for details on the three-computer setup and path configuration.
+Experiment data is saved directly on the `acquisition computer` after running an experiment.
+
+This data is then copied to the `prfs group drive` and copied locally onto the `processing computer` to be processed. 
+
+The results of the processing and analysis are saved on the `analysis computer` and backed up to the `prfs group drive`. 
+
+See [Configuration & Paths](freely_walking_configuration.qmd) for details on the three-computer setup and path configuration.
 
 See the [Data Organisation](freely_walking_data.qmd) page for details on the exact paths to where the data is stored and how it is structured.
 
 ## Key Resources
 
-| Resource | Description |
-|:--------|:------------|
-| [Google Sheets experiment log](https://docs.google.com/spreadsheets/d/1IsT3YndxAy3yN8o38r5RGK4dZsEdPXe0In4-OTEcXNw/edit?resourcekey=&gid=35583985#gid=35583985) | Automatic log filled in after the completetion of successful experiments (see [Experiment Logging](freely_walking_logging_system.qmd)) |
-| [Training Guide PDF](https://github.com/leburnett/freely-walking-optomotor/blob/main/docs/training_guide/_output/training_guide.pdf) | Step-by-step guide for training new experimenters on the G3 LED arena setup. |
-| Dashboard | Interactive web dashboard for exploring processed data (see [Dashboard](freely_walking_dashboard.qmd)) |
-| `Pipeline-status.html` page | Status page for the automated processing pipeline (see [Pipeline](freely_walking_pipeline.qmd)) |
-| Reiser Lab LED Panel [documentation](https://reiserlab.github.io/Modular-LED-Display/Generation%203/Software/docs/g3_user-guide.html) | Detailed documentation on the specifications of the G3 arena and how to design and run protocols. |
+| Resource | Type | Description |
+|:--------|:-------|:------------|
+| [Dashboard](/Users/burnettl/Documents/GitHub/reiser-documentation/Freely-walking/freely_walking_dashboard.qmd) | Visualiser | Interactive web dashboard for exploring processed data (see [Dashboard](freely_walking_dashboard.qmd)). Python app |
+| [Trajectory viewer](/Users/burnettl/Documents/GitHub/reiser-documentation/Freely-walking/freely_walking_trajectory_viewer.qmd) | Visualiser | Interactive html page for visualising trajectories |
+| `Pipeline-status.html` page | Log | Status page for the automated processing pipeline (see [Pipeline](freely_walking_pipeline.qmd)) |
+| [Google Sheets experiment log](https://docs.google.com/spreadsheets/d/1IsT3YndxAy3yN8o38r5RGK4dZsEdPXe0In4-OTEcXNw/edit?resourcekey=&gid=35583985#gid=35583985) | Log | Automatic log filled in after the completetion of successful experiments (see [Experiment Logging](freely_walking_logging_system.qmd)) |
+| [Training Guide PDF](https://github.com/leburnett/freely-walking-optomotor/blob/main/docs/training_guide/_output/training_guide.pdf) | Documentation | Step-by-step guide for training new experimenters on the G3 LED arena setup |
+| Reiser Lab LED Panel [documentation](https://reiserlab.github.io/Modular-LED-Display/Generation%203/Software/docs/g3_user-guide.html) | Documentation | Detailed documentation on the specifications of the G3 arena and how to design and run protocols |

@@ -38,6 +38,7 @@ website:
         - Freely-walking/index.qmd
         - Freely-walking/freely_walking_quickstart.qmd
         - Freely-walking/freely-walking-rig-specs.qmd
+        - Freely-walking/freely_walking_installation.qmd
         - Freely-walking/freely_walking_pipeline.qmd
         - Freely-walking/freely_walking_data.qmd
         - section: "Protocols"

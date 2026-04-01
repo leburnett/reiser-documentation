@@ -16,7 +16,7 @@ A protocol is a MATLAB script that defines a complete experimental session, incl
 ## Protocol Overview
 
 | Protocol | Description | Patterns | Conditions |
-|----------|-------------|----------|------------|
+|------------|-------------|-------|-------|
 | [Protocol_v1](protocols/freely_walking_Protocol_v1.qmd) | Circadian optomotor experiments | 2 | 0 |
 | [Protocol_v10_all_tests](protocols/freely_walking_Protocol_v10_all_tests.qmd) | Testing spatial frequencies, speed, and trial lengths | 4 | 8 |
 | [protocol_10](protocols/freely_walking_protocol_10.qmd) | Testing spatial frequencies, speed, and trial lengths | 0 | 0 |
@@ -168,11 +168,12 @@ Standalone: 15/16, 17, 26, 28, 33/34, 37
 
 
 
-## Adding a New Protocol to the Documentation
+::: {.callout-tip collapse="true"}
+### Adding a New Protocol to the Documentation
 
 When you create a new experiment protocol, follow these steps to add it to this documentation:
 
-### Step 1: Create the Protocol File
+**Step 1: Create the Protocol File**
 
 Start from the **protocol template** at `src/protocols/protocol_template.m`. This template includes:
 
@@ -194,7 +195,7 @@ Copy the template and rename it:
 
 See also `src/protocols/PROTOCOL_REFERENCE.md` for a quick-reference table of all existing protocols, pattern properties, and lineage.
 
-### Step 2: Generate Documentation
+**Step 2: Generate Documentation**
 
 From the `freely-walking-optomotor` directory, run:
 
@@ -210,7 +211,7 @@ This will:
 1. Parse the protocol file and extract metadata
 2. Create a `.qmd` documentation page in `reiser-documentation/Freely-walking/`
 
-### Step 3: Preview and Deploy
+**Step 3: Preview and Deploy**
 
 ```bash
 cd /path/to/reiser-documentation
@@ -218,8 +219,10 @@ quarto preview
 ```
 
 Once satisfied, commit and push to deploy.
+:::
 
-## Regenerating All Protocol Documentation
+::: {.callout-tip collapse="true"}
+### Regenerating All Protocol Documentation
 
 To regenerate documentation for all protocols:
 
@@ -228,3 +231,4 @@ cd /path/to/freely-walking-optomotor
 pixi run -e default --manifest-path python/freely-walking-python/pixi.toml \
     python docs_generator/generate_protocol_docs.py
 ```
+:::

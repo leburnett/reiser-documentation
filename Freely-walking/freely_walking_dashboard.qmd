@@ -2,6 +2,8 @@
 title: "Dashboard"
 ---
 
+![](../assets/imgs/freely/dashboard/strain_view){.ifr_center}
+
 The interactive Dash web dashboard provides a browser-based interface for exploring processed experimental data from the freely-walking optomotor experiments. It is built with [Plotly Dash](https://dash.plotly.com/) and [Dash Bootstrap Components](https://dash-bootstrap-components.opensource.faculty.ai/).
 
 ## What the dashboard shows
@@ -83,3 +85,37 @@ On startup, the dashboard pre-loads all strain data into memory for fast interac
 2. **Select a strain** — Choose from the dropdown list of available strains.
 3. **Select a metric** — Choose the behavioural metric to plot (forward velocity, angular velocity, turning rate, distance from centre, or distance delta).
 4. **Browse conditions** — The main panel displays timeseries subplots for each condition, showing the selected strain against the empty-split control with mean and SEM shading.
+
+#### Metadata and navigation
+
+![<b>Figure:</b> Metadata page ](../assets/imgs/freely/dashboard/metadata.png){.ifr_center}
+
+![<b>Figure:</b> Nav bar](../assets/imgs/freely/dashboard/nav_bar.png){.ifr_center width=40%}
+
+#### Cohort View
+
+![<b>Figure:</b> Cohort view](../assets/imgs/freely/dashboard/cohort_view.png){.ifr_center}
+
+![<b>Figure:</b> Cohort view - condition dropdown](../assets/imgs/freely/dashboard/cohort_view_dropdown.png){.ifr_center}
+
+![<b>Figure:</b> Cohort view - strain dropdown](../assets/imgs/freely/dashboard/cohort_view_strain.png){.ifr_center}
+
+#### Strain view
+
+![<b>Figure:</b> Strain view ](../assets/imgs/freely/dashboard/strain_view.png){.ifr_center}
+
+![<b>Figure:</b> Strain view - tiled layout ](../assets/imgs/freely/dashboard/strain_view_tiled.png){.ifr_center}
+
+![<b>Figure:</b> Strain view - individual cohort comparison ](../assets/imgs/freely/dashboard/Strain_view_all_cohorts_ind.png){.ifr_center}
+
+#### Cross-strain view
+
+![<b>Figure:</b> Cross strain comparison ](../assets/imgs/freely/dashboard/cross_strain.png){.ifr_center}
+
+![<b>Figure:</b> Cross strain comparison - grid layout ](../assets/imgs/freely/dashboard/cross_strain_grid.png){.ifr_center}
+
+#### Summary heatmaps
+
+![<b>Figure:</b> Summary heatmap ](../assets/imgs/freely/dashboard/heatmap.png){.ifr_center}
+
+![<b>Figure:</b> Summary heatmap - click on an individual tile to see plots of data compared to controls ](../assets/imgs/freely/dashboard/heatmap_view.png){.ifr_center}

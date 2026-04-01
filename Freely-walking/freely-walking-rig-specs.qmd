@@ -4,6 +4,8 @@ title: "Rig Specs"
 
 These protocols are designed to run on the Reiser Lab's G3 24 x 3 LED panel setup.
 
+![<b>Experiment Rig: </b> G3 LED arena schematic](../assets/imgs/freely/G3_schematic.png){.ifr_center}
+
 ### LED arena
 
 The arena consists of 24 panels arranged in a full cylinder (360° azimuth), 3 panels high. Each panel is 8 x 8 pixels, giving a total resolution of 192 pixels wide by 24 pixels high. The LEDs are green with a peak wavelength of ~570 nm.
@@ -15,7 +17,7 @@ The arena consists of 24 panels arranged in a full cylinder (360° azimuth), 3 p
 | Visual angle per pixel | 1.875 | degrees |
 | Azimuth coverage | 360 | degrees |
 | Elevation coverage | 45 | degrees |
-| LED wavelength | ~570 | nm (green) |
+| LED wavelength | ~550 | nm (green) |
 | Greyscale levels | 1-bit (2), 2-bit (4), 3-bit (8), or 4-bit (16) | — |
 : {.bordered}
 
@@ -45,5 +47,3 @@ The following constants are used throughout the processing code for converting b
 | BIAS (SimpleBiasCameraInterface) | Camera acquisition (.ufmf recording) |
 | PControl | MATLAB GUI for connecting to LED panels |
 : {.bordered}
-
-There is a lot of useful, and more detailed documentation on the specifications of the G3 arena and how to design and run protocols [here](https://reiserlab.github.io/Modular-LED-Display/Generation%203/Software/docs/g3_user-guide.html).

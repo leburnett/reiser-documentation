@@ -1,0 +1,110 @@
+---
+title: "Installation & Setup"
+---
+
+This page covers the full installation and configuration process for the freely-walking optomotor system. For a brief prerequisites checklist, see the [Quickstart](freely_walking_quickstart.qmd) page. For hardware and arena specifications, see the [Rig Specs](freely-walking-rig-specs.qmd) page.
+
+## System requirements
+
+The system runs across three computers, each with a specific role:
+
+| Computer | OS | Role |
+|:---------|:---|:-----|
+| Acquisition rig | Windows | Runs protocols, records video |
+| Processing machine | Windows | Automated tracking & processing |
+| Analysis computer | Mac / any | Manual analysis, plotting, dashboard |
+: {.bordered}
+
+
+## Software dependencies
+
+### 1. freely-walking-optomotor repository
+
+Clone the repository:
+
+```bash
+git clone https://github.com/leburnett/freely-walking-optomotor.git
+```
+
+### 2. MATLAB toolboxes
+
+The following MATLAB toolboxes are required on all computers:
+
+- [ ] [Statistics and Machine Learning Toolbox](https://mathworks.com/products/statistics.html)
+- [ ] [Image Processing Toolbox](https://mathworks.com/products/image.html)
+- [ ] [Circular Statistics Toolbox](https://www.mathworks.com/matlabcentral/fileexchange/10676-circular-statistics-toolbox-directional-statistics) (from MATLAB File Exchange, by Philipp Berens)
+
+### 3. Acquisition software
+
+Install on the **acquisition rig**:
+
+- [ ] [BIAS](http://stuff.iorodeo.com/notes/bias/) (SimpleBiasCameraInterface) — for video acquisition
+- [ ] [G4_Display_Tools](https://github.com/JaneliaSciComp/G4_Display_Tools) — provides the `panel_com` functions for LED arena control
+
+### 4. Processing software
+
+Install on the **processing machine**:
+
+- [ ] [FlyTracker](https://github.com/kristinbranson/FlyTracker) — for post-experiment tracking
+- [ ] [JAABA](https://github.com/kristinbranson/JAABA) — for generating stimulus videos with fly trajectories
+
+
+## Configuration
+
+### Step 1 — Edit the config files
+
+**MATLAB** — edit `config/get_config.m` (one line):
+
+```matlab
+cfg.project_root = '/path/to/your_data_root';
+```
+
+**Python** — edit `config/config.py` (one line):
+
+```python
+PROJECT_ROOT = Path("/path/to/your_data_root")
+```
+
+Both files contain commented examples for Windows and Mac. The required data subdirectories (`DATA/`, `results/`, `figures/`) are created automatically the first time `get_config()` or `config.py` is called.
+
+### Step 2 — Add MATLAB paths
+
+Run `setup_path.m` once per MATLAB session (or add it to your `startup.m`):
+
+```matlab
+run('/path/to/freely-walking-optomotor/setup_path.m')
+```
+
+This adds all `src/` subdirectories to the MATLAB path so that functions like `get_config()`, `process_freely_walking_data()`, and the protocol helper functions are available.
+
+### Step 3 — Install the Python environment (optional)
+
+::: {.callout-note}
+The Python environment is **not** required to run experiments — experiments are run entirely in MATLAB using protocol scripts (e.g. `protocol_27.m`). Python is only needed for the [automated processing pipeline](freely_walking_pipeline.qmd) scripts (`monitor_and_copy`, `monitor_and_track`, `daily_processing`) and the [Dashboard](freely_walking_dashboard.qmd).
+:::
+
+```bash
+cd freely-walking-optomotor/python/freely-walking-python
+pixi install
+```
+
+This installs all Python dependencies (numpy, pandas, scipy, dash, etc.) into an isolated environment managed by [pixi](https://pixi.sh).
+
+
+## Verifying your setup
+
+Run through this checklist to confirm everything is working:
+
+- [ ] **Repository:** The `freely-walking-optomotor` folder exists and contains `config/get_config.m`
+- [ ] **MATLAB path:** Type `which get_config` in the MATLAB Command Window — it should return the path to the file
+- [ ] **Toolboxes:** Type `which circ_mean` — it should return a path (Circular Statistics Toolbox)
+- [ ] **Config:** Run `cfg = get_config()` and verify that `cfg.project_root` points to your data folder — the `DATA/`, `results/`, and `figures/` subdirectories should be created automatically
+
+
+## Next steps
+
+Once your environment is set up:
+
+1. Read the [Quickstart](freely_walking_quickstart.qmd) to run your first experiment
+2. See [Configuration & Paths](freely_walking_configuration.qmd) for the full config file reference and data flow details
+3. See the [Pipeline](freely_walking_pipeline.qmd) page to understand the automated processing pipeline

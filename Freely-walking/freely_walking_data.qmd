@@ -105,13 +105,15 @@ Each file contains:
 
 ### The DATA struct
 
-The final `DATA` struct organises all experimental data in a nested hierarchy and can be made using either `comb_data_one_cohort_cond` or `comb_data_across_cohorts_cond`.
+The final `DATA` struct organises all experimental data into a **nested hierarchy** and can be made using either `comb_data_one_cohort_cond` (for data from a single cohort) or `comb_data_across_cohorts_cond` (to combine data across cohorts). Data from all protocols from p19 onwards should be able to be formatted into this `DATA` struct using the standard processing pipeline. I have found it useful to use this as a generalisable data entry point for analysis code.
 
 ```
 DATA.(strain).(sex)(cohort_idx).(condition).(data_type)
 ```
 
-For example: `DATA.jfrc100_es_shibire_kir.F(1).R1_condition_1.fv_data` returns a `[n_flies x n_frames]` array. Each condition also contains stimulus metadata (`trial_len`, `interval_dur`, `optomotor_pattern`, `optomotor_speed`, etc.).
+For example: `DATA.jfrc100_es_shibire_kir.F(1).R1_condition_1.fv_data` returns a `[n_flies x n_frames]` array.
+
+Each condition also contains stimulus metadata (`trial_len`, `interval_dur`, `optomotor_pattern`, `optomotor_speed`, etc.).
 
 ```matlab
 % Load combined data for protocol_27
@@ -128,15 +130,15 @@ fv = DATA.jfrc100_es_shibire_kir.F(1).R1_condition_1.fv_data;
 mean_fv = mean(fv, 1, 'omitnan');  % [1 x n_frames]
 ```
 
-This struct is critical for many of the analysis scripts within the repository. These scripts often start with these lines of code to generate the struct from teh .mat results files:
+This struct is **critical** for many of the analysis scripts within the repository. These scripts often start with these lines of code to generate the struct from teh .mat results files:
 
-```
-  if ~exist('DATA', 'var')
-      cfg = get_config();
-      protocol_dir = fullfile(cfg.results, 'protocol_27');
-      DATA = comb_data_across_cohorts_cond(protocol_dir);
-      fprintf('Loaded DATA from %s\n', protocol_dir);
-  end
+```matlab
+if ~exist('DATA', 'var')
+    cfg = get_config();
+    protocol_dir = fullfile(cfg.results, 'protocol_27');
+    DATA = comb_data_across_cohorts_cond(protocol_dir);
+    fprintf('Loaded DATA from %s\n', protocol_dir);
+end
 ```
 
 The DATA structure uses the following condition names:

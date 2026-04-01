@@ -4,6 +4,8 @@ title: "Trajectory Viewer"
 
 The Trajectory Viewer is a standalone HTML page for interactively exploring individual fly trajectories from freely-walking optomotor experiments. It can be opened locally in any modern browser with no server or software dependencies, making it easy to share with collaborators.
 
+![<b>Figure: </b> How to use the trajectory viewer html page](../assets/imgs/freely/traj_viewer/traj_viewer.gif){.ifr_center}
+
 ## What the viewer shows
 
 For each fly, the viewer displays:
@@ -64,8 +66,8 @@ The `Strains` parameter does **substring matching** (case-insensitive), so `'Dm4
 ### All parameters
 
 | Parameter | Default | Description |
-|:----------|:--------|:------------|
-| `OutputDir` | `~/Documents/Projects/oaky_cokey/html_files/trajectories` | Output directory for JSON files and viewer HTML |
+|:----------|:----|:------------------|
+| `OutputDir` | `~/Documents/Projects/` `oaky_cokey/html_files/` `trajectories` | Output directory for JSON files and viewer HTML |
 | `Sex` | `'F'` | Sex filter: `'F'`, `'M'`, or `'both'` |
 | `Strains` | `{}` (all) | Cell array of substring filters for strain names |
 | `Conditions` | `[]` (all) | Numeric array of condition indices to include |
@@ -89,6 +91,8 @@ When data is reprocessed or new experiments are added, re-run the export to upda
 
 The viewer shows a badge indicating how many strains are currently loaded.
 
+![<b>Figure: </b> Landing page of the trajectory viewer](../assets/imgs/freely/traj_viewer/trajectory_viewer_landing){.ifr_center}
+
 ### Controls
 
 | Control | Description |
@@ -110,6 +114,8 @@ Both the trajectory plot and time series plots support interactive zoom and pan:
 - **Double-click** to reset to the default view
 
 An **ⓘ** button in the viewer provides a tooltip reminder of these controls.
+
+![](../assets/imgs/freely/traj_viewer/trajectory_viewer){.ifr_center}
 
 ### Time series metrics
 
@@ -136,6 +142,8 @@ When colour mode is set to **Condition (phase)**, the trajectory and time series
 | Post-stimulus | Grey | 1200+ |
 
 Frame boundaries may vary slightly depending on hardware timing pauses in the protocol.
+
+![<b>Figure: </b> Adjust the metric used to colour the trajectory line](../assets/imgs/freely/traj_viewer/trajectory_viewer_change_line_colour){.ifr_center}
 
 ### Saving images
 
