@@ -57,8 +57,8 @@ See the [Data Organisation](freely_walking_data.qmd) page for details on the exa
 
 | Resource | Type | Description |
 |:--------|:-------|:------------|
-| [Dashboard](/Users/burnettl/Documents/GitHub/reiser-documentation/Freely-walking/freely_walking_dashboard.qmd) | Visualiser | Interactive web dashboard for exploring processed data (see [Dashboard](freely_walking_dashboard.qmd)). Python app |
-| [Trajectory viewer](/Users/burnettl/Documents/GitHub/reiser-documentation/Freely-walking/freely_walking_trajectory_viewer.qmd) | Visualiser | Interactive html page for visualising trajectories |
+| [Dashboard](freely_walking_dashboard.qmd) | Visualiser | Interactive web dashboard for exploring processed data. Python app |
+| [Trajectory viewer](freely_walking_trajectory_viewer.qmd) | Visualiser | Interactive html page for visualising trajectories |
 | `Pipeline-status.html` page | Log | Status page for the automated processing pipeline (see [Pipeline](freely_walking_pipeline.qmd)) |
 | [Google Sheets experiment log](https://docs.google.com/spreadsheets/d/1IsT3YndxAy3yN8o38r5RGK4dZsEdPXe0In4-OTEcXNw/edit?resourcekey=&gid=35583985#gid=35583985) | Log | Automatic log filled in after the completetion of successful experiments (see [Experiment Logging](freely_walking_logging_system.qmd)) |
 | [Training Guide PDF](https://github.com/leburnett/freely-walking-optomotor/blob/main/docs/training_guide/_output/training_guide.pdf) | Documentation | Step-by-step guide for training new experimenters on the G3 LED arena setup |
