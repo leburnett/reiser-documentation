@@ -201,13 +201,29 @@ The pipeline scripts share a common utilities package (`python/automation/shared
 
 The automation scripts generate a standalone HTML page (`pipeline_status.html`) on the network drive that shows the processing stage of every experiment. It is auto-regenerated whenever the pipeline updates an experiment's status.
 
+![<b>Figure: </b> ](../assets/imgs/freely/dashboard/pipeline_status1.png){.ifr_center}
+
+![<b>Figure: </b> ](../assets/imgs/freely/dashboard/pipeline_status2.png){.ifr_center}
+
 ### What it contains
 
 - **Sortable and filterable tables** with colour-coded pipeline stages for each experiment
+
+![<b>Figure: </b> ](../assets/imgs/freely/dashboard/pipeline_table.png){.ifr_center}
+
 - **Cross-reference columns** showing which machines hold copies of the data (Data Acq, Data Proc, Data Net) and results (Res Acq, Res Proc, Res Net)
+
 - **Production experiments** (from September 25, 2024 onwards) — displayed prominently with full metadata. An orange warning indicator (⚠) flags experiments with missing metadata or missing LOG files
+
 - **Testing-phase experiments** (before September 25, 2024) — collapsed by default. These older experiments have flat folder structures and "unknown" metadata is expected
+
 - **Summary charts** — breakdowns by protocol, by strain, and a timeline view (production data only)
+
+![<b>Figure: </b> ](../assets/imgs/freely/dashboard/pipeline_status_protocol.png){.ifr_center}
+
+![<b>Figure: </b> ](../assets/imgs/freely/dashboard/pipeline_status_strain.png){.ifr_center}
+
+![<b>Figure: </b> ](../assets/imgs/freely/dashboard/pipeline_timeline.png){.ifr_center}
 
 ### How it is generated
 
