@@ -9,6 +9,7 @@ _freeze/
 *.html
 *.pdf
 !README.html
+!Freely-walking/data_flow_schematic.html
 
 # LaTeX intermediate files (generated during PDF rendering)
 *.aux
