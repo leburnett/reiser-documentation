@@ -2,16 +2,6 @@
 title: "Analysis Overview"
 ---
 
-## Data processing pipeline
-
-The interactive schematic below shows the full data processing pipeline, from experiment acquisition through to the downstream analysis outputs. Letter badges link each step to reference images showing what the data structures look like at that stage.
-
-<iframe src="data_flow_schematic.html" width="100%" height="1200" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-
-<p style="font-size:0.8rem; color:#888; text-align:center; margin-top:4px;">
-<a href="data_flow_schematic.html" target="_blank">Open schematic in new tab</a>
-</p>
-
 ## Experiment workflow
 
 The data pipeline has five stages:
