@@ -4,7 +4,9 @@ title: "Trajectory Viewer"
 
 The Trajectory Viewer is a standalone HTML page for interactively exploring individual fly trajectories from freely-walking optomotor experiments. It can be opened locally in any modern browser with no server or software dependencies, making it easy to share with collaborators.
 
+::: {.content-visible when-format="html"}
 ![<b>Figure: </b> How to use the trajectory viewer html page](../assets/imgs/freely/traj_viewer/traj_viewer.gif){.ifr_center}
+:::
 
 ## What the viewer shows
 
