@@ -4,9 +4,7 @@ title: "Trajectory Viewer"
 
 The Trajectory Viewer is a standalone HTML page for interactively exploring individual fly trajectories from freely-walking optomotor experiments. It can be opened locally in any modern browser with no server or software dependencies, making it easy to share with collaborators.
 
-::: {.content-visible when-format="html"}
 ![<b>Figure: </b> How to use the trajectory viewer html page](../assets/imgs/freely/traj_viewer/traj_viewer.gif){.ifr_center}
-:::
 
 ## What the viewer shows
 
@@ -93,7 +91,7 @@ When data is reprocessed or new experiments are added, re-run the export to upda
 
 The viewer shows a badge indicating how many strains are currently loaded.
 
-![<b>Figure: </b> Landing page of the trajectory viewer](../assets/imgs/freely/traj_viewer/trajectory_viewer_landing){.ifr_center}
+![<b>Figure: </b> Landing page of the trajectory viewer](../assets/imgs/freely/traj_viewer/trajectory_viewer_landing.png){.ifr_center}
 
 ### Controls
 
@@ -117,7 +115,7 @@ Both the trajectory plot and time series plots support interactive zoom and pan:
 
 An **ⓘ** button in the viewer provides a tooltip reminder of these controls.
 
-![](../assets/imgs/freely/traj_viewer/trajectory_viewer){.ifr_center}
+![](../assets/imgs/freely/traj_viewer/trajectory_viewer.png){.ifr_center}
 
 ### Time series metrics
 
@@ -145,7 +143,7 @@ When colour mode is set to **Condition (phase)**, the trajectory and time series
 
 Frame boundaries may vary slightly depending on hardware timing pauses in the protocol.
 
-![<b>Figure: </b> Adjust the metric used to colour the trajectory line](../assets/imgs/freely/traj_viewer/trajectory_viewer_change_line_colour){.ifr_center}
+![<b>Figure: </b> Adjust the metric used to colour the trajectory line](../assets/imgs/freely/traj_viewer/trajectory_viewer_change_line_colour.png){.ifr_center}
 
 ### Saving images
 

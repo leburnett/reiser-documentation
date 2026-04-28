@@ -2,7 +2,7 @@
 title: "Dashboard"
 ---
 
-![](../assets/imgs/freely/dashboard/strain_view){.ifr_center}
+![](../assets/imgs/freely/dashboard/strain_view.png){.ifr_center}
 
 The interactive Dash web dashboard provides a browser-based interface for exploring processed experimental data from the freely-walking optomotor experiments. It is built with [Plotly Dash](https://dash.plotly.com/) and [Dash Bootstrap Components](https://dash-bootstrap-components.opensource.faculty.ai/).
 

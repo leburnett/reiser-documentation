@@ -4,6 +4,7 @@ project:
 
 filters:
   - _extensions/timestamp/timestamp.lua
+  - skip-gifs-in-pdf.lua
 
 website:
   title: ""

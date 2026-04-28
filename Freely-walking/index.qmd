@@ -4,7 +4,7 @@ title: "Overview"
 
 Welcome to the documentation for the freely-walking optomotor experiments conducted in the Reiser Lab. This section covers everything you need to know to run, process, and analyse experiments using the G3 LED arena.
 
-![Raw behavioural frame from a freely walking experiment in the G3 arena.](../assets/imgs/freely/raw_behavioural_image_G3){.ifr_center width=60%}
+![Raw behavioural frame from a freely walking experiment in the G3 arena.](../assets/imgs/freely/raw_behavioural_image_G3.png){.ifr_center width=60%}
 
 ## Background
 
