@@ -260,8 +260,11 @@ See the [Configuration](freely_walking_configuration.qmd) page for full details 
 On the two lab machines, the environment variable must be set once (admin terminal):
 
 ```cmd
-setx MACHINE_ROLE acquisition    REM on the acquisition rig
-setx MACHINE_ROLE processing     REM on the processing machine
+REM on the acquisition rig:
+setx MACHINE_ROLE acquisition
+
+REM on the processing machine:
+setx MACHINE_ROLE processing
 ```
 
 Analysis machines do not need any setup — the role defaults to `analysis` automatically.
