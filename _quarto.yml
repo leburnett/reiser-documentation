@@ -24,8 +24,6 @@ website:
         href: Freely-walking/index.qmd
       - text: "Electrophysiology"
         href: Ephys/index.qmd
-      - text: "Tethered flight"
-        href: Tethered/index.qmd
       - text: "Resources"
         href: resources.qmd
     right:
@@ -99,11 +97,6 @@ website:
         - section: "DS Probe Protocol"
           contents:
             - Ephys/ephys_ds_probe_protocol.qmd
-
-    - title: "Tethered flight"
-      collapse-level: 1
-      contents:
-        - Tethered/index.qmd
 
   page-navigation: true
 
