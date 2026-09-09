@@ -64,7 +64,7 @@ Several source files contain hardcoded paths that are specific to the original r
 | `src/protocol_generation/generate_protocol2.m` | 92 | `C:\matlabroot\G4_Protocols\nested_RF_protocol2` | Path where Protocol 2 experiment folders are created |
 | `src/stimulus_generation/helper/patt_frame_to_coord.m` | 46 | `C:\matlabroot\G4_Protocols\nested_RF_stimulus\protocols\LHS\...\Patterns` | Path to Protocol 1 LHS pattern files |
 | `src/stimulus_generation/helper/patt_frame_to_coord.m` | 49 | `C:\matlabroot\G4_Protocols\nested_RF_stimulus\protocols\RHS2\...\Patterns` | Path to Protocol 1 RHS pattern files |
-| `src/analysis/process_protocol2.m` | 45 | `/Users/burnettl/Documents/Projects/nested_RF_stimulus/protocol2` | `PROJECT_ROOT` — where analysis results and figures are saved |
+| `src/analysis/process_protocol2.m` | 45 | `<data_root>/protocol2` | `PROJECT_ROOT` — where analysis results and figures are saved |
 : {.bordered}
 
 ::: {.callout-important}

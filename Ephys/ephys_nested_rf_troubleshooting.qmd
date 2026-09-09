@@ -31,7 +31,7 @@ Also verify that G4_Display_Tools is on the path: `which PanelsController` shoul
 ::: {.callout-warning collapse="true"}
 ### Hardcoded path errors
 
-**Symptom:** File not found errors referencing `C:\matlabroot\...` or `/Users/burnettl/...`.
+**Symptom:** File not found errors referencing `C:\matlabroot\...` or `/Users/<someone>/...`.
 
 **Solution:** Several files contain hardcoded paths specific to the original rig. Update them for your system — see the [hardcoded paths table](ephys_nested_rf_getting-started.qmd#hardcoded-paths-to-update) in Installation & Setup.
 :::

@@ -78,7 +78,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 
 | Location | What to change |
 |:---------|:---------------|
-| `generate_circ_stim_ufmf.m` | Path to JAABA repository (currently `C:\Users\labadmin\Documents\GitHub\JAABA-master`) |
+| `generate_circ_stim_ufmf.m` | Path to JAABA repository (currently `<processing PC>\Documents\GitHub\JAABA-master`) |
 | `generate_circ_stim_ufmf.m` | Path to patterns folder (`patterns/Patterns_optomotor/`) |
 | Processing functions | Root data directory paths |
 | `make_summary_heat_maps_p27.m` | `ROOT_DIR` for results — specific per user |

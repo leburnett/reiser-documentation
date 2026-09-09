@@ -43,7 +43,7 @@ The function iterates through each condition logged in the LOG file, determines 
 ### Computer-specific paths
 The following paths are hardcoded and must be updated if running on a different computer:
 
-- **Path to the JAABA repository** — currently set to `/Users/burnettl/Documents/Non-GitHub-Repos/JAABA-master`
+- **Path to the JAABA repository** — set this to your own JAABA checkout, e.g. `<path to>/JAABA-master`
 - **Path to the patterns folder** — must point to the `patterns/Patterns_optomotor/` directory
 - **Output directory** — where the generated .mp4 files are saved
 :::
